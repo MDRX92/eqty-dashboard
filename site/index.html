@@ -131,12 +131,6 @@
     <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Suggestions and address labels are welcome via GitHub.</p>
   </details>
 
-  <details class="card about guide" id="label-guide" style="display:none">
-    <summary>Wallet label guide</summary>
-    <p class="note">What each label on this dashboard means. Labels without a mark are verified; labels marked <b>≈</b> are an estimate from on-chain behaviour – helpful context while we wait for confirmation. Know who is behind a wallet? You are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
-    <dl id="guide-list"></dl>
-  </details>
-
   <div class="kpis">
     <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div></div>
     <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div><div class="delta" id="k-holders-d"></div></div>
@@ -322,6 +316,12 @@
       </table>
     </div>
   </section>
+
+  <details class="card about guide" style="display:none;margin-top:16px" id="label-guide">
+    <summary>Wallet label guide</summary>
+    <p class="note">What each label on this dashboard means. Labels without a mark are verified; labels marked <b>≈</b> are an estimate from on-chain behaviour – helpful context while we wait for confirmation. Know who is behind a wallet? You are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
+    <dl id="guide-list"></dl>
+  </details>
 
   <footer>
     Token <a href="https://basescan.org/token/0xc71f37d9bf4c5d1e7fe4bccb97e6f30b11b37d29">0xc71f…7d29</a> ·
