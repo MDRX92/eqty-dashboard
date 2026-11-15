@@ -115,7 +115,7 @@
       <li><b>Activity</b> – daily and monthly transfer counts and the amount of EQTY moved.</li>
       <li><b>Distribution</b> – how concentrated the supply is across the 50 largest wallets.</li>
       <li><b>Market</b> – price (USD/EUR), Uniswap buy/sell volume, trade sizes and the latest trades.</li>
-      <li><i>Coming next:</i> large wallet transfers (whale tracker).</li>
+      <li><b>Whale tracker</b> – large wallet-to-wallet transfers and the most active large senders.</li>
     </ul>
     <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. Supply = minted − burned. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Spam pools with 88–99% fees are ignored. Suggestions and address labels are welcome via GitHub.</p>
   </details>
@@ -236,6 +236,43 @@
       <table>
         <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
         <tbody id="holders"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <h3>Whale tracker</h3>
+  <p class="sectext">Large wallet-to-wallet transfers (swaps, liquidity moves and mints excluded). A transfer counts as large when it is at least 0.25% of total supply or worth $10k+ at that day's price. Large inflows to exchanges can precede selling; transfers between known wallets are often internal moves.</p>
+  <div class="kpis">
+    <div class="card kpi"><div class="label">Large transfers (30 days)</div><div class="value" id="w-30">–</div><div class="delta" id="w-30e"></div></div>
+    <div class="card kpi"><div class="label">Largest transfer (30 days)</div><div class="value" id="w-max">–</div><div class="delta" id="w-maxd"></div></div>
+    <div class="card kpi"><div class="label">Large transfers (all time)</div><div class="value" id="w-all">–</div><div class="delta" id="w-thr"></div></div>
+  </div>
+
+  <section class="card" style="margin-top:16px">
+    <h2>Large transfers per month</h2>
+    <p class="note">Bars = number of large transfers, orange line = EQTY moved in them.</p>
+    <div id="w-monthly"></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>large transfers (left)</span><span><i style="background:var(--vol)"></i>EQTY moved (right)</span></div>
+  </section>
+
+  <section class="card">
+    <h2>Latest large transfers</h2>
+    <p class="note">Most recent 100. Click a time to open the transaction on Basescan.</p>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>Time (UTC)</th><th>From</th><th>To</th><th class="num">EQTY</th><th class="num">% supply</th><th class="num">USD</th></tr></thead>
+        <tbody id="w-latest"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Most active large senders</h2>
+    <p class="note">Wallets sending transfers of at least 0.5% of supply or $10k+ (all time), ranked by number of transfers.</p>
+    <div class="tablebox" style="max-height:320px">
+      <table>
+        <thead><tr><th>Sender</th><th class="num">Transfers</th><th class="num">Total EQTY</th><th class="num">Average EQTY</th><th class="num">Recipients</th><th>Last</th></tr></thead>
+        <tbody id="w-pivot"></tbody>
       </table>
     </div>
   </section>
@@ -366,8 +403,8 @@ function bars(el, rows, value, title) {
 }
 
 (async () => {
-  const [supply, holders, daily, growth, life, monthly, market] = await Promise.all(
-    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market"].map(get));
+  const [supply, holders, daily, growth, life, monthly, market, whales] = await Promise.all(
+    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales"].map(get));
 
   if (!supply) { $("updated").textContent = "no data yet – run the workflow first"; return; }
   $("updated").textContent = "updated " + new Date(supply.updated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" });
@@ -489,6 +526,43 @@ function bars(el, rows, value, title) {
     const mo = [...monthly.rows].sort(byDate("month"));
     dualChart($("monthly-chart"), mo, { x: r => r.month, bar: r => r.monthly_transfers, line: r => r.monthly_volume_tokens,
       xLabel: r => String(r.month).slice(2, 7), tip: r => `${String(r.month).slice(0, 7)}: ${fmt(r.monthly_transfers)} transfers · ${fmt(r.monthly_volume_tokens)} EQTY` });
+  }
+
+  // Whale tracker
+  if (whales) {
+    const k = whales.kpis;
+    const addr = (a, label) => `<a href="https://basescan.org/address/${a}">${short(a)}</a>${label ? `<span class="tag">${label}</span>` : ""}`;
+    $("w-30").textContent = fmt(k.large_30d);
+    $("w-30e").textContent = compact(k.large_30d_eqty) + " EQTY moved";
+    if (k.largest_30d) {
+      $("w-max").textContent = compact(k.largest_30d.eqty) + " EQTY";
+      $("w-maxd").textContent = `${fmt(k.largest_30d.pct_supply, 2)}% of supply · ${k.largest_30d.time.slice(0, 10)}`;
+    } else { $("w-max").textContent = "none"; }
+    $("w-all").textContent = fmt(k.large_all);
+    $("w-thr").textContent = `threshold ≥ ${compact(k.threshold_eqty)} EQTY or $10k`;
+
+    dualChart($("w-monthly"), whales.monthly, { x: r => r.month, bar: r => r.count, line: r => r.eqty,
+      xLabel: r => r.month.slice(2), tip: r => `${r.month}: ${fmt(r.count)} large transfers · ${fmt(r.eqty)} EQTY` });
+
+    $("w-latest").innerHTML = whales.latest.map(r => `
+      <tr>
+        <td><a href="https://basescan.org/tx/${r.tx_hash}">${String(r.time).slice(0, 16).replace("T", " ")}</a></td>
+        <td>${addr(r.sender, r.sender_label)}</td>
+        <td>${addr(r.recipient, r.recipient_label)}</td>
+        <td class="num">${fmt(r.eqty)}</td>
+        <td class="num">${fmt(r.pct_supply, 2)}%</td>
+        <td class="num">${r.usd != null ? "$" + fmt(r.usd) : "–"}</td>
+      </tr>`).join("");
+
+    $("w-pivot").innerHTML = whales.pivot.map(r => `
+      <tr>
+        <td>${addr(r.sender, r.label)}</td>
+        <td class="num">${fmt(r.count)}</td>
+        <td class="num">${compact(r.total_eqty)}</td>
+        <td class="num">${compact(r.avg_eqty)}</td>
+        <td class="num">${fmt(r.recipients)}</td>
+        <td>${String(r.last).slice(0, 10)}</td>
+      </tr>`).join("");
   }
 
   // Top 50

@@ -282,3 +282,11 @@ def update(now_iso: str) -> None:
     result = aggregate(trades, vwap, live_price(), total_supply)
     (OUT / "market.json").write_text(json.dumps({"updated_at": now_iso, **result}, indent=1))
     print(f"[market] market.json: {len(trades)} trades, price {result['kpis']['price_usd']}")
+
+    # Phase 4: whale tracker (uses the daily price from above). Isolated from market.json.
+    try:
+        import whales
+        w = whales.update(vwap, total_supply)
+        (OUT / "whales.json").write_text(json.dumps({"updated_at": now_iso, **w}, indent=1))
+    except Exception as exc:
+        print(f"[FAIL] whales: {exc}", file=sys.stderr)
