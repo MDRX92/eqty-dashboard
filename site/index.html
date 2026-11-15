@@ -60,6 +60,9 @@
   svg.line text { fill: var(--muted); font-size: 11px; }
   svg.line line { stroke: var(--line); }
   .scroll { overflow-x: auto; }
+  .tablebox { max-height: 380px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
+  .tablebox thead th { position: sticky; top: 0; background: var(--card); z-index: 1; box-shadow: 0 1px 0 var(--line); }
+  .tablebox tbody tr:last-child td { border-bottom: none; }
   .meter { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; min-width: 80px; }
   .meter span { display: block; height: 100%; background: var(--accent); }
   footer { color: var(--muted); font-size: 13px; margin-top: 32px; }
@@ -126,8 +129,8 @@
   <h3>Distribution</h3>
   <section class="card">
     <h2>Top 50 holders</h2>
-    <p class="note">Labelled addresses are contracts or known entities (pool, bridge…). Add labels via pull request.</p>
-    <div class="scroll">
+    <p class="note">Labelled addresses are contracts or known entities (pool, bridge…). Add labels via pull request. Scroll the table to see all 50.</p>
+    <div class="tablebox">
       <table>
         <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
         <tbody id="holders"></tbody>
