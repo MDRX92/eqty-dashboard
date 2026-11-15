@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T15:14:07+00:00",
+ "updated_at": "2026-11-15T15:19:05+00:00",
  "labels": {
   "0x2b253a24600ccd524a7264c2360cae49679a9495": {
    "label": "Automated trader",
@@ -7,6 +7,48 @@
    "confidence": "estimated",
    "note": "Very frequent trades of similar size \u2013 likely a market-making or trading bot",
    "source": "manual"
+  },
+  "0xc4640c14e59b8c2f32a0e7b0966295dc47453c33": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from the contract's on-chain events",
+   "source": "auto"
+  },
+  "0x412fd2998b52399f936e2c28d907302e7dbb33f0": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from the contract's on-chain events",
+   "source": "auto"
+  },
+  "0x6fc8b695c2cb4bc26912e5e6461fb70681071f9e": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from the contract's on-chain events",
+   "source": "auto"
+  },
+  "0x14bb312b582252495aaf56f6eedeee5242fc3604": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from the contract's on-chain events",
+   "source": "auto"
+  },
+  "0x236d77890fa2ee69a6fb89976d9da3b70257bd23": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from the contract's on-chain events",
+   "source": "auto"
+  },
+  "0xabec1b4b9333df1b5fca1b4330a92de602571b54": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from the contract's on-chain events",
+   "source": "auto"
   },
   "0x498581ff718922c3f8e6a244956af099b2652b2b": {
    "label": "Uniswap v4 PoolManager",

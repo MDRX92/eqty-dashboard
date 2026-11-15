@@ -1,4 +1,26 @@
 {
- "updated_at": "2026-11-15T15:14:07+00:00",
- "failed": []
+ "updated_at": "2026-11-15T15:19:05+00:00",
+ "failed": [],
+ "warnings": [
+  "wallet type check skipped for 0xbb69fd5e640ce9e053d3c073867ac6cac74ba10c: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x1bcab26a921918e8c44a805ff95017ba69e1be18: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x8d47ba07ff9ccccf58c7e8810ee42c0dc8b8b123: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0xbdbebd58cc8153ce74530bb342427579315915b2: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x54e2acab04c89a3fe02852bf8dd69ee8f526bc75: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0xc8d44c99b775bfd628cf8dcb6e6fdbd3d5170ba4: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x7bda8d479d16d8a1a6ab6d9b1417c03243da0288: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x04d9634df20aa66b23f114d37c45fa6c6ab76d56: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0xd05078f410d92b6b3ef08a789d1b1c624703df7d: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x1eff7220aeee05d4dc24d9f6056aa3a62bf1d02b: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x8a937bd654599aff2e8757074584f4da93b5a844: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x048ef1062cbb39b338ac2685da72adf104b4cef5: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x912ccbce20f38d9121170a5339dfa482530ca317: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0xd068d5abd7bb3320d0afbb786d4c65b066a89b91: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x1278c1e48e3c9548a5d9f2b16dc27ed311b0697c: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x501ef174b66883ba40f92e6fb24bfb49331d4d4c: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x919968a4238a54b381f022a360260ef5d7e015ac: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x768fb85fe1c89502e49440c54ade996930c49604: 'NoneType' object is not iterable",
+  "wallet type check skipped for 0x698dd6c03b50c3d4af12932a0388338bcdd3aaed: 'NoneType' object is not iterable"
+ ]
 }
