@@ -1,7 +1,8 @@
 """Daily update: run the dashboard queries on CDP and write JSON for the static site.
 
-Phase 1 (walking skeleton): supply, top holders and daily transfers.
-More queries (holder growth, swaps, whales, price) are added in the next phases.
+Phase 1: supply, top holders, daily transfers.
+Phase 2: holder growth (new / exited / total), cohorts × lifecycle, monthly volume.
+Next phases: swaps + price, whale transfers.
 """
 import csv
 import json
@@ -20,6 +21,9 @@ DAILY_QUERIES = {
     "03_supply": "supply",
     "04_top_holders": "top_holders",
     "01_daily_transfers": "daily_transfers",
+    "06_holder_growth": "holder_growth",
+    "05_holder_metrics": "holder_metrics",
+    "02_monthly_volume": "monthly_volume",
 }
 
 

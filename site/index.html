@@ -8,23 +8,32 @@
   :root {
     --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1b; --muted: #6b6b66;
     --line: #e4e4df; --accent: #2f5bea; --accent-soft: #dfe7fd;
+    --up: #1f9d6b; --down: #d9534f;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #141413; --card: #1e1e1c; --text: #ededea; --muted: #9b9b95;
-            --line: #2e2e2b; --accent: #7c9cff; --accent-soft: #2a3354; }
+            --line: #2e2e2b; --accent: #7c9cff; --accent-soft: #2a3354;
+            --up: #3ecf8e; --down: #f07470; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
          background: var(--bg); color: var(--text); }
   main { max-width: 1040px; margin: 0 auto; padding: 32px 20px 64px; }
   h1 { font-size: 26px; margin: 0 0 4px; }
-  h2 { font-size: 17px; margin: 0 0 12px; }
+  h2 { font-size: 17px; margin: 0 0 4px; }
+  h3 { font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase;
+       letter-spacing: .04em; margin: 32px 0 12px; }
   .sub { color: var(--muted); margin: 0 0 28px; }
-  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .note { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 8px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
   .kpi .label { color: var(--muted); font-size: 13px; }
   .kpi .value { font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 2px; }
-  section.card { margin-bottom: 20px; }
+  .kpi .delta { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .pos { color: var(--up); } .neg { color: var(--down); }
+  section.card { margin-bottom: 16px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
+  .grid2 section.card { margin-bottom: 0; }
   table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
   th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
   th { color: var(--muted); font-weight: 500; font-size: 13px; }
@@ -34,9 +43,27 @@
   .bars { display: flex; align-items: flex-end; gap: 3px; height: 160px; }
   .bar { flex: 1; background: var(--accent); border-radius: 3px 3px 0 0; min-height: 2px; opacity: .85; }
   .bar:hover { opacity: 1; }
+  .div-bars { display: flex; gap: 2px; height: 140px; }
+  .div-col { flex: 1; display: flex; flex-direction: column; }
+  .div-col .top, .div-col .bot { flex: 1; display: flex; }
+  .div-col .top { align-items: flex-end; border-bottom: 1px solid var(--line); }
+  .div-col .bot { align-items: flex-start; }
+  .div-col span { width: 100%; display: block; }
+  .div-col .top span { background: var(--up); border-radius: 2px 2px 0 0; }
+  .div-col .bot span { background: var(--down); border-radius: 0 0 2px 2px; }
   .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 6px; }
+  .legend { display: flex; gap: 14px; color: var(--muted); font-size: 12px; margin-top: 6px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  svg.line { width: 100%; height: 180px; display: block; overflow: visible; }
+  svg.line path.l { fill: none; stroke: var(--accent); stroke-width: 2; }
+  svg.line path.a { fill: var(--accent-soft); opacity: .7; }
+  svg.line text { fill: var(--muted); font-size: 11px; }
+  svg.line line { stroke: var(--line); }
   .scroll { overflow-x: auto; }
+  .meter { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; min-width: 80px; }
+  .meter span { display: block; height: 100%; background: var(--accent); }
   footer { color: var(--muted); font-size: 13px; margin-top: 32px; }
+  @media (max-width: 520px) { .grid2 { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -45,20 +72,61 @@
   <p class="sub">Community dashboard for the EQTY DAO · data: Coinbase CDP SQL API · <span id="updated">loading…</span></p>
 
   <div class="kpis">
-    <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div></div>
-    <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div></div>
-    <div class="card kpi"><div class="label">Top 50 share of supply</div><div class="value" id="k-top50">–</div></div>
-    <div class="card kpi"><div class="label">Transfers (last 30 days)</div><div class="value" id="k-tx30">–</div></div>
+    <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div><div class="delta" id="k-burned"></div></div>
+    <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div><div class="delta" id="k-holders-d"></div></div>
+    <div class="card kpi"><div class="label">Top 50 share of supply</div><div class="value" id="k-top50">–</div><div class="delta">incl. pool &amp; contracts (see labels)</div></div>
+    <div class="card kpi"><div class="label">Transfers (last 30 days)</div><div class="value" id="k-tx30">–</div><div class="delta" id="k-vol30"></div></div>
   </div>
 
+  <h3>Holders</h3>
   <section class="card">
-    <h2>Daily transfers – last 30 days</h2>
-    <div class="bars" id="bars"></div>
-    <div class="axis"><span id="ax-start"></span><span id="ax-end"></span></div>
+    <h2>Holders over time</h2>
+    <p class="note">Wallets holding more than 0.0001 EQTY at the end of each day (historically reconstructed from all transfers).</p>
+    <div id="holders-line"></div>
   </section>
 
+  <div class="grid2">
+    <section class="card">
+      <h2>New vs. exited holders – last 90 days</h2>
+      <p class="note">New = balance went from zero to positive; exited = balance went to zero.</p>
+      <div class="div-bars" id="newexit"></div>
+      <div class="axis"><span id="ne-start"></span><span id="ne-end"></span></div>
+      <div class="legend"><span><i style="background:var(--up)"></i>new <b id="ne-new"></b></span><span><i style="background:var(--down)"></i>exited <b id="ne-exit"></b></span></div>
+    </section>
+
+    <section class="card">
+      <h2>Holder lifecycle</h2>
+      <p class="note">By year of first transfer and time since last activity.</p>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Cohort</th><th>Status</th><th class="num">Holders</th><th class="num">Balance (EQTY)</th><th>Share of holders</th></tr></thead>
+          <tbody id="lifecycle"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <h3>Activity</h3>
+  <div class="grid2">
+    <section class="card">
+      <h2>Daily transfers – last 30 days</h2>
+      <p class="note">All EQTY transfers, including swaps.</p>
+      <div class="bars" id="bars"></div>
+      <div class="axis"><span id="ax-start"></span><span id="ax-end"></span></div>
+    </section>
+
+    <section class="card">
+      <h2>Monthly transfers – last 12 months</h2>
+      <p class="note">Hover a bar for the transferred volume.</p>
+      <div class="bars" id="mbars"></div>
+      <div class="axis"><span id="mx-start"></span><span id="mx-end"></span></div>
+    </section>
+  </div>
+
+  <h3>Distribution</h3>
   <section class="card">
     <h2>Top 50 holders</h2>
+    <p class="note">Labelled addresses are contracts or known entities (pool, bridge…). Add labels via pull request.</p>
     <div class="scroll">
       <table>
         <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
@@ -74,47 +142,122 @@
 </main>
 
 <script>
+const $ = id => document.getElementById(id);
 const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d });
+const compact = n => Number(n).toLocaleString("en-US", { notation: "compact", maximumFractionDigits: 1 });
 const short = a => a.slice(0, 6) + "…" + a.slice(-4);
-const get = async name => (await fetch(`data/${name}.json?t=${Date.now()}`)).json();
+const signed = n => (n > 0 ? "+" : "") + fmt(n);
+const get = async name => {
+  try { const r = await fetch(`data/${name}.json?t=${Date.now()}`); return r.ok ? r.json() : null; }
+  catch { return null; }
+};
+const byDate = key => (a, b) => String(a[key]).localeCompare(String(b[key]));
+
+function lineChart(el, points) {           // points: [{x: "YYYY-MM-DD", y: number}]
+  if (!points.length) return;
+  const W = 1000, H = 180, P = { l: 44, r: 8, t: 8, b: 20 };
+  const ys = points.map(p => p.y), min = Math.min(...ys), max = Math.max(...ys);
+  const lo = Math.max(0, min - (max - min) * 0.1), hi = max + (max - min) * 0.05 || max + 1;
+  const sx = i => P.l + (i / Math.max(points.length - 1, 1)) * (W - P.l - P.r);
+  const sy = v => P.t + (1 - (v - lo) / (hi - lo)) * (H - P.t - P.b);
+  const d = points.map((p, i) => `${i ? "L" : "M"}${sx(i).toFixed(1)},${sy(p.y).toFixed(1)}`).join("");
+  const area = `${d}L${sx(points.length - 1)},${H - P.b}L${sx(0)},${H - P.b}Z`;
+  const ticks = [lo, (lo + hi) / 2, hi].map(v =>
+    `<line x1="${P.l}" x2="${W - P.r}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${P.l - 6}" y="${sy(v) + 4}" text-anchor="end">${compact(v)}</text>`).join("");
+  const xl = [0, Math.floor(points.length / 2), points.length - 1].map((i, k) =>
+    `<text x="${sx(i)}" y="${H - 4}" text-anchor="${["start", "middle", "end"][k]}">${points[i].x}</text>`).join("");
+  el.innerHTML = `<svg class="line" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${ticks}<path class="a" d="${area}"/><path class="l" d="${d}" vector-effect="non-scaling-stroke"/>${xl}</svg>`;
+}
+
+function bars(el, rows, value, title) {
+  const max = Math.max(...rows.map(value), 1);
+  el.innerHTML = rows.map(r => `<div class="bar" style="height:${(value(r) / max) * 100}%" title="${title(r)}"></div>`).join("");
+}
 
 (async () => {
-  try {
-    const [supply, holders, daily] = await Promise.all([get("supply"), get("top_holders"), get("daily_transfers")]);
+  const [supply, holders, daily, growth, life, monthly] = await Promise.all(
+    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume"].map(get));
 
-    document.getElementById("updated").textContent =
-      "updated " + new Date(supply.updated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" });
+  if (!supply) { $("updated").textContent = "no data yet – run the workflow first"; return; }
+  $("updated").textContent = "updated " + new Date(supply.updated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" });
 
-    const s = supply.rows[0] || {};
-    document.getElementById("k-supply").textContent = fmt(s.total_supply);
+  // KPIs
+  const s = supply.rows[0] || {};
+  $("k-supply").textContent = fmt(s.total_supply);
+  if (s.burned) $("k-burned").textContent = `${fmt(s.burned)} burned`;
 
-    const h = holders.rows;
-    if (h.length) {
-      document.getElementById("k-holders").textContent = fmt(h[0].total_holders);
-      document.getElementById("k-top50").textContent = fmt(h[h.length - 1].cumulative_pct, 1) + "%";
-    }
-    document.getElementById("holders").innerHTML = h.map(r => `
-      <tr>
-        <td>${r.rank}</td>
-        <td><a href="https://basescan.org/address/${r.address}">${short(r.address)}</a>${r.label ? `<span class="tag">${r.label}</span>` : ""}</td>
-        <td class="num">${fmt(r.balance)}</td>
-        <td class="num">${fmt(r.pct_of_supply, 2)}%</td>
-        <td class="num">${fmt(r.cumulative_pct, 1)}%</td>
-      </tr>`).join("");
-
-    const d = [...daily.rows].sort((a, b) => a.date.localeCompare(b.date));
-    document.getElementById("k-tx30").textContent = fmt(d.reduce((t, r) => t + r.total_transfers, 0));
-    const max = Math.max(...d.map(r => r.total_transfers), 1);
-    document.getElementById("bars").innerHTML = d.map(r =>
-      `<div class="bar" style="height:${(r.total_transfers / max) * 100}%" title="${r.date}: ${fmt(r.total_transfers)} transfers, ${fmt(r.total_volume_tokens)} EQTY"></div>`
-    ).join("");
-    if (d.length) {
-      document.getElementById("ax-start").textContent = d[0].date;
-      document.getElementById("ax-end").textContent = d[d.length - 1].date;
-    }
-  } catch (e) {
-    document.getElementById("updated").textContent = "no data yet – run the workflow first";
+  const h = holders ? holders.rows : [];
+  if (h.length) {
+    $("k-holders").textContent = fmt(h[0].total_holders);
+    $("k-top50").textContent = fmt(h[h.length - 1].cumulative_pct, 1) + "%";
   }
+
+  // Holders over time + new/exited
+  if (growth) {
+    const g = [...growth.rows].sort(byDate("date"));
+    lineChart($("holders-line"), g.map(r => ({ x: r.date, y: r.total_holders })));
+
+    const last = g[g.length - 1], ago = g.filter(r => r.date <= new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10)).pop();
+    if (last && ago) {
+      const d = last.total_holders - ago.total_holders;
+      $("k-holders-d").innerHTML = `<span class="${d >= 0 ? "pos" : "neg"}">${signed(d)}</span> vs. 30 days ago`;
+    }
+
+    // fill missing days so the 90-day chart has one column per day
+    const map = Object.fromEntries(g.map(r => [r.date, r]));
+    const days = [...Array(90)].map((_, i) => new Date(Date.now() - (89 - i) * 864e5).toISOString().slice(0, 10));
+    const ne = days.map(dt => map[dt] || { date: dt, new_holders: 0, exited_holders: 0 });
+    const m = Math.max(...ne.map(r => Math.max(r.new_holders, r.exited_holders)), 1);
+    $("newexit").innerHTML = ne.map(r => `
+      <div class="div-col" title="${r.date}: +${r.new_holders} new, −${r.exited_holders} exited">
+        <div class="top"><span style="height:${(r.new_holders / m) * 100}%"></span></div>
+        <div class="bot"><span style="height:${(r.exited_holders / m) * 100}%"></span></div>
+      </div>`).join("");
+    $("ne-start").textContent = days[0];
+    $("ne-end").textContent = days[days.length - 1];
+    $("ne-new").textContent = fmt(ne.reduce((t, r) => t + r.new_holders, 0));
+    $("ne-exit").textContent = fmt(ne.reduce((t, r) => t + r.exited_holders, 0));
+  }
+
+  // Lifecycle
+  if (life) {
+    const total = life.rows.reduce((t, r) => t + r.unique_holders, 0) || 1;
+    $("lifecycle").innerHTML = life.rows.map(r => `
+      <tr>
+        <td>${r.cohort_year}</td>
+        <td>${String(r.lifecycle_status).replace(/^\d\.\s*/, "")}</td>
+        <td class="num">${fmt(r.unique_holders)}</td>
+        <td class="num">${compact(r.total_token_balance)}</td>
+        <td><div class="meter"><span style="width:${(r.unique_holders / total) * 100}%"></span></div></td>
+      </tr>`).join("");
+  }
+
+  // Daily transfers
+  if (daily) {
+    const d = [...daily.rows].sort(byDate("date"));
+    $("k-tx30").textContent = fmt(d.reduce((t, r) => t + r.total_transfers, 0));
+    $("k-vol30").textContent = compact(d.reduce((t, r) => t + r.total_volume_tokens, 0)) + " EQTY moved";
+    bars($("bars"), d, r => r.total_transfers, r => `${r.date}: ${fmt(r.total_transfers)} transfers, ${fmt(r.total_volume_tokens)} EQTY`);
+    if (d.length) { $("ax-start").textContent = d[0].date; $("ax-end").textContent = d[d.length - 1].date; }
+  }
+
+  // Monthly
+  if (monthly) {
+    const mo = [...monthly.rows].sort(byDate("month"));
+    bars($("mbars"), mo, r => r.monthly_transfers,
+      r => `${String(r.month).slice(0, 7)}: ${fmt(r.monthly_transfers)} transfers, ${fmt(r.monthly_volume_tokens)} EQTY`);
+    if (mo.length) { $("mx-start").textContent = String(mo[0].month).slice(0, 7); $("mx-end").textContent = String(mo[mo.length - 1].month).slice(0, 7); }
+  }
+
+  // Top 50
+  $("holders").innerHTML = h.map(r => `
+    <tr>
+      <td>${r.rank}</td>
+      <td><a href="https://basescan.org/address/${r.address}">${short(r.address)}</a>${r.label ? `<span class="tag">${r.label}</span>` : ""}</td>
+      <td class="num">${fmt(r.balance)}</td>
+      <td class="num">${fmt(r.pct_of_supply, 2)}%</td>
+      <td class="num">${fmt(r.cumulative_pct, 1)}%</td>
+    </tr>`).join("");
 })();
 </script>
 </body>
