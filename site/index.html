@@ -114,8 +114,8 @@
     <ul>
       <li><b>Holders</b> – how many wallets hold EQTY, how that changed over time, who joined or left, and how active holders are.</li>
       <li><b>Activity</b> – daily and monthly transfer counts and the amount of EQTY moved.</li>
-      <li><b>Distribution</b> – how concentrated the supply is across the 50 largest wallets.</li>
-      <li><b>Market</b> – price (USD/EUR), Uniswap buy/sell volume, trade sizes and the latest trades.</li>
+      <li><b>Distribution</b> – holders by balance size and how concentrated the supply is across the 50 largest wallets.</li>
+      <li><b>Market</b> – price (USD/EUR), Uniswap buy/sell volume, trade sizes, the latest trades and a trader leaderboard.</li>
       <li><b>Whale tracker</b> – large wallet-to-wallet transfers and the most active large senders.</li>
     </ul>
     <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. Supply = minted − burned. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Spam pools with 88–99% fees are ignored. Suggestions and address labels are welcome via GitHub.</p>
@@ -178,6 +178,19 @@
     </section>
   </div>
 
+  <section class="card" style="margin-top:16px">
+    <h2>Trader leaderboard</h2>
+    <p class="note">Wallets that traded the most on Uniswap, with their net position change. Net = buys − sells (green = accumulating, red = reducing). One wallet doing a large share of the volume often points to a bot or market maker.</p>
+    <div class="tabs" id="lb-tabs"><button data-k="30d" class="on">30 days</button><button data-k="90d">90 days</button></div>
+    <span class="note" id="lb-summary" style="margin-left:10px"></span>
+    <div class="tablebox" style="max-height:340px">
+      <table>
+        <thead><tr><th>#</th><th>Trader</th><th class="num">Trades</th><th class="num">Volume</th><th class="num">Bought</th><th class="num">Sold</th><th class="num">Net</th><th>Share of volume</th></tr></thead>
+        <tbody id="lb-body"></tbody>
+      </table>
+    </div>
+  </section>
+
   <h3>Holders</h3>
   <p class="sectext">Community growth and retention since launch (30 Aug 2025). A steady upward line means organic adoption; spikes in exits can signal sell-offs or wallet consolidation.</p>
   <section class="card">
@@ -228,6 +241,19 @@
 
   <h3>Distribution</h3>
   <p class="sectext">Supply concentration among the largest wallets. High concentration means a few wallets can move the market – some of these are contracts (pools, bridges) rather than people.</p>
+  <section class="card">
+    <h2>Holders by balance size</h2>
+    <p class="note">How many wallets fall in each balance band (bars) and how much of the supply they hold together (orange line). Contracts such as the Uniswap pool are included.</p>
+    <div id="dist-chart"></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>wallets (left)</span><span><i style="background:var(--vol)"></i>EQTY held (right)</span></div>
+    <div class="scroll" style="margin-top:12px">
+      <table>
+        <thead><tr><th>Balance (EQTY)</th><th class="num">Wallets</th><th class="num">% of wallets</th><th class="num">EQTY held</th><th class="num">% of supply</th><th>Share of supply</th></tr></thead>
+        <tbody id="dist-body"></tbody>
+      </table>
+    </div>
+  </section>
+
   <section class="card">
     <h2>Top 50 holders</h2>
     <p class="note">Labelled addresses are contracts or known entities (pool, bridge…). Add labels via pull request. Scroll the table to see all 50.</p>
@@ -350,7 +376,7 @@ function dualChart(el, rows, { x, bar, line, xLabel, tip }) {   // bars + line o
     return `<rect x="${(P.l + cw * i + cw * .12).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * .76).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>${tip(r)}</title></rect>`; }).join("");
   const d = rows.map((r, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${yl(line(r)).toFixed(1)}`).join("");
   const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yl(line(r)).toFixed(1)}" r="2.5"><title>${tip(r)}</title></circle>`).join("");
-  const idx = n <= 13 ? [...Array(n).keys()].filter(i => i % 2 === 0 || i === n - 1) : [0, Math.floor(n / 2), n - 1];
+  const idx = n <= 8 ? [...Array(n).keys()] : n <= 13 ? [...Array(n).keys()].filter(i => i % 2 === 0 || i === n - 1) : [0, Math.floor(n / 2), n - 1];
   const xl = idx.map(i => `<text x="${cx(i)}" y="${H - 6}" text-anchor="middle">${xLabel(rows[i])}</text>`).join("");
   el.innerHTML = `<svg class="dual" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${rects}<path class="v" d="${d}" vector-effect="non-scaling-stroke"/>${dots}${xl}</svg>`;
 }
@@ -405,8 +431,8 @@ function bars(el, rows, value, title) {
 }
 
 (async () => {
-  const [supply, holders, daily, growth, life, monthly, market, whales] = await Promise.all(
-    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales"].map(get));
+  const [supply, holders, daily, growth, life, monthly, market, whales, dist] = await Promise.all(
+    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales", "holder_distribution"].map(get));
 
   if (!supply) { $("updated").textContent = "no data yet – run the workflow first"; return; }
   const meta = await get("meta");
@@ -473,6 +499,49 @@ function bars(el, rows, value, title) {
         <td class="num">${fmt(t.eqty)}</td>
         <td class="num">$${fmt(t.usd, t.usd < 10 ? 2 : 0)}</td>
         <td><a href="https://basescan.org/address/${t.taker}">${short(t.taker)}</a></td>
+      </tr>`).join("");
+  }
+
+  // Trader leaderboard
+  if (market && market.leaderboard) {
+    const showBoard = key => {
+      const b = market.leaderboard[key];
+      if (!b) return;
+      $("lb-summary").textContent = `${fmt(b.traders)} traders · top 5 = ${fmt(b.top5_share_pct, 1)}% of volume`;
+      const maxShare = Math.max(...b.rows.map(r => r.share_pct), 1);
+      $("lb-body").innerHTML = b.rows.map((r, i) => `
+        <tr>
+          <td>${i + 1}</td>
+          <td><a href="https://basescan.org/address/${esc(r.trader)}">${short(r.trader)}</a>${r.label ? `<span class="tag">${esc(r.label)}</span>` : ""}</td>
+          <td class="num">${fmt(r.trades)}</td>
+          <td class="num">$${fmt(r.volume_usd)}</td>
+          <td class="num">$${fmt(r.buy_usd)}</td>
+          <td class="num">$${fmt(r.sell_usd)}</td>
+          <td class="num ${r.net_usd >= 0 ? "pos" : "neg"}">${r.net_usd >= 0 ? "+" : "−"}$${fmt(Math.abs(r.net_usd))}</td>
+          <td><div class="meter" title="${fmt(r.share_pct, 1)}%"><span style="width:${(r.share_pct / maxShare) * 100}%"></span></div></td>
+        </tr>`).join("");
+    };
+    showBoard("30d");
+    document.querySelectorAll("#lb-tabs button").forEach(b => b.onclick = () => {
+      document.querySelectorAll("#lb-tabs button").forEach(x => x.classList.toggle("on", x === b));
+      showBoard(b.dataset.k);
+    });
+  }
+
+  // Holders by balance size
+  if (dist) {
+    const rows = [...dist.rows].sort((a, b) => a.band - b.band);
+    const w = rows.reduce((t, r) => t + r.wallets, 0) || 1, q = rows.reduce((t, r) => t + r.total_eqty, 0) || 1;
+    dualChart($("dist-chart"), rows, { x: r => r.band_label, bar: r => r.wallets, line: r => r.total_eqty,
+      xLabel: r => r.band_label, tip: r => `${r.band_label} EQTY: ${fmt(r.wallets)} wallets · ${compact(r.total_eqty)} EQTY (${fmt(r.total_eqty / q * 100, 1)}% of supply)` });
+    $("dist-body").innerHTML = rows.map(r => `
+      <tr>
+        <td>${esc(r.band_label)}</td>
+        <td class="num">${fmt(r.wallets)}</td>
+        <td class="num">${fmt(r.wallets / w * 100, 1)}%</td>
+        <td class="num">${compact(r.total_eqty)}</td>
+        <td class="num">${fmt(r.total_eqty / q * 100, 1)}%</td>
+        <td><div class="meter"><span style="width:${r.total_eqty / q * 100}%"></span></div></td>
       </tr>`).join("");
   }
 

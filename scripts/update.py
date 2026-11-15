@@ -26,6 +26,7 @@ DAILY_QUERIES = {
     "06_holder_growth": "holder_growth",
     "05_holder_metrics": "holder_metrics",
     "02_monthly_volume": "monthly_volume",
+    "10_holder_distribution": "holder_distribution",
 }
 
 

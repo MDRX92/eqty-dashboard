@@ -189,6 +189,34 @@ def enrich(swaps: list[dict], eth_usd: dict[str, float], pools: dict[str, dict])
     return out, vwap
 
 
+def leaderboard(trades, since: str, labels: dict[str, str], top: int = 25) -> dict:
+    """Per trader (tx sender) since a date: volume, buys, sells, net position change."""
+    agg = defaultdict(lambda: {"trades": 0, "buy_usd": 0.0, "sell_usd": 0.0, "buy_eqty": 0.0, "sell_eqty": 0.0})
+    for t in trades:
+        if t["day"] >= since:
+            a = agg[t["taker"]]
+            a["trades"] += 1
+            a[f"{t['side']}_usd"] += t["usd"]
+            a[f"{t['side']}_eqty"] += t["eqty"]
+    total = sum(a["buy_usd"] + a["sell_usd"] for a in agg.values()) or 1
+    rows = []
+    for trader, a in agg.items():
+        vol = a["buy_usd"] + a["sell_usd"]
+        rows.append({"trader": trader, "label": labels.get(str(trader).lower(), ""), "trades": a["trades"],
+                     "volume_usd": round(vol, 2), "buy_usd": round(a["buy_usd"], 2), "sell_usd": round(a["sell_usd"], 2),
+                     "net_usd": round(a["buy_usd"] - a["sell_usd"], 2),
+                     "net_eqty": round(a["buy_eqty"] - a["sell_eqty"], 2),
+                     "share_pct": round(vol / total * 100, 2)})
+    rows.sort(key=lambda r: -r["volume_usd"])
+    return {"traders": len(rows), "top5_share_pct": round(sum(r["share_pct"] for r in rows[:5]), 1),
+            "rows": rows[:top]}
+
+
+def load_labels() -> dict[str, str]:
+    with open(ROOT / "labels.csv", newline="") as f:
+        return {r["address"].lower(): r["label"] for r in csv.DictReader(f)}
+
+
 def bucket(usd: float) -> str:
     return next(label for limit, label in BUCKETS if usd < limit)
 
@@ -263,7 +291,9 @@ def aggregate(trades, vwap, live, total_supply):
                "price": round(t["usd"] / t["eqty"], 8) if t["eqty"] else None, "taker": t["taker"],
                "tx_hash": t["tx_hash"], "pool": t["pool"]}
               for t in sorted(trades, key=lambda t: t["time"], reverse=True)[:100]]
-    return {"kpis": kpis, "monthly": monthly, "daily_90d": daily, "price_history": price_history,
+    labels = load_labels()
+    boards = {"30d": leaderboard(trades, d30, labels), "90d": leaderboard(trades, d90, labels)}
+    return {"kpis": kpis, "leaderboard": boards, "monthly": monthly, "daily_90d": daily, "price_history": price_history,
             "buckets_all": buckets(trades), "buckets_30d": buckets(last30), "recent_trades": recent}
 
 
