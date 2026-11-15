@@ -1,0 +1,1435 @@
+{
+ "updated_at": "2026-11-15T14:32:13+00:00",
+ "kpis": {
+  "large_30d": 6,
+  "large_30d_eqty": 31463079.26,
+  "large_all": 121,
+  "largest_30d": {
+   "time": "2026-10-29T12:08:03.000Z",
+   "tx_hash": "0xdf8b8ecab1fa8e39fbcc4c80cfde9836d1e5e3cb8e622526a03bba59b65edad3",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x32eef6c0ab7267e474051351e8c82066d93f4948",
+   "recipient_label": "",
+   "eqty": 21467831.26,
+   "pct_supply": 7.376,
+   "usd": 35989.19
+  },
+  "threshold_eqty": 727612.0
+ },
+ "latest": [
+  {
+   "time": "2026-11-10T16:20:54.000Z",
+   "tx_hash": "0x89d67d489d6a22ee7f236293a06ff1609ff49ac3040269c4d16ee6613cdfaf7d",
+   "sender": "0x3782ee596b94538c0a17926488e52098d15f51d3",
+   "sender_label": "",
+   "recipient": "0x7f15700f3ac0d5f7c445b99c5f8546d0f0552d3e",
+   "recipient_label": "",
+   "eqty": 1000000.0,
+   "pct_supply": 0.344,
+   "usd": 1264.75
+  },
+  {
+   "time": "2026-11-10T16:20:23.000Z",
+   "tx_hash": "0x0102716d3f018b11682e70fcd340a4b69801760d7ed55c603db90e2252dfaa66",
+   "sender": "0x3782ee596b94538c0a17926488e52098d15f51d3",
+   "sender_label": "",
+   "recipient": "0x7f15700f3ac0d5f7c445b99c5f8546d0f0552d3e",
+   "recipient_label": "",
+   "eqty": 1234624.0,
+   "pct_supply": 0.424,
+   "usd": 1561.49
+  },
+  {
+   "time": "2026-10-31T22:29:29.000Z",
+   "tx_hash": "0x6b8ca1708dd73dc766158de0c76efaa7d8d683ff5246c0887550b2b3e745eb4d",
+   "sender": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
+   "sender_label": "",
+   "recipient": "0x08843960ebb5780f605645ba4fe00dd926a1ca0e",
+   "recipient_label": "",
+   "eqty": 2060000.0,
+   "pct_supply": 0.708,
+   "usd": 3206.97
+  },
+  {
+   "time": "2026-10-30T17:06:57.000Z",
+   "tx_hash": "0x357ffca0f8e0f77383cb8bc0bb5bcb6d620a41332e48df9c4336667f29470137",
+   "sender": "0x34a3ec7219659201a1c11e83eb520ea5d6f6ed7f",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 2850312.0,
+   "pct_supply": 0.979,
+   "usd": 4560.67
+  },
+  {
+   "time": "2026-10-30T12:41:43.000Z",
+   "tx_hash": "0x472881a3b85ccd8ed47b1a3bba6c20b60a9cd6ffaa286c26864c768945292c22",
+   "sender": "0x4637ac1282a183dcc2e254543437fb6f95bf959e",
+   "sender_label": "",
+   "recipient": "0x34a3ec7219659201a1c11e83eb520ea5d6f6ed7f",
+   "recipient_label": "",
+   "eqty": 2850312.0,
+   "pct_supply": 0.979,
+   "usd": 4560.67
+  },
+  {
+   "time": "2026-10-29T12:08:03.000Z",
+   "tx_hash": "0xdf8b8ecab1fa8e39fbcc4c80cfde9836d1e5e3cb8e622526a03bba59b65edad3",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x32eef6c0ab7267e474051351e8c82066d93f4948",
+   "recipient_label": "",
+   "eqty": 21467831.26,
+   "pct_supply": 7.376,
+   "usd": 35989.19
+  },
+  {
+   "time": "2026-09-17T12:01:45.000Z",
+   "tx_hash": "0xada8ffb9702bf83e9e06762b3a1379d09ed10364bf822864b5a1a12b3132bc96",
+   "sender": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
+   "sender_label": "",
+   "recipient": "0xb9882c895cbecc7fc94eb5d02417c59f624be278",
+   "recipient_label": "",
+   "eqty": 2085000.0,
+   "pct_supply": 0.716,
+   "usd": 3088.99
+  },
+  {
+   "time": "2026-09-10T05:04:55.000Z",
+   "tx_hash": "0xe02807b7aa6ff6d879ea85846e2d0fc7790f47361e650065714e2427f7e29d5a",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 948297.41,
+   "pct_supply": 0.326,
+   "usd": 1444.36
+  },
+  {
+   "time": "2026-08-29T04:55:43.000Z",
+   "tx_hash": "0x18beff110c9ddb9d56357320e9f812fa1b9868124900fb9a217586d69ca8018f",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 785631.9,
+   "pct_supply": 0.27,
+   "usd": 1359.65
+  },
+  {
+   "time": "2026-08-18T04:59:45.000Z",
+   "tx_hash": "0x00c2adc3badebda5c8079b624e068ee99a68403891e379ffac0a6a7531504390",
+   "sender": "0x68bb822050da5a25d35ff31d7c86fffc39d1aaf9",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1210499.0,
+   "pct_supply": 0.416,
+   "usd": 1828.49
+  },
+  {
+   "time": "2026-08-18T04:55:31.000Z",
+   "tx_hash": "0x569c61938ee28281af17f4e59092cf9aac05f8da17059ef1a6c26708099444a2",
+   "sender": "0x13307b8854a95946b54a904100afd0767a7a577b",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 741435.5,
+   "pct_supply": 0.255,
+   "usd": 1119.96
+  },
+  {
+   "time": "2026-08-18T04:54:45.000Z",
+   "tx_hash": "0x3a84c7ab13e28ac40b40f99fbcf41c3544ce77f4ca6e642d22dcf6bd0f7ef7c1",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 799283.11,
+   "pct_supply": 0.275,
+   "usd": 1207.34
+  },
+  {
+   "time": "2026-08-17T02:44:53.000Z",
+   "tx_hash": "0xcc429305edb5d8258d2e3f28f4c4153605e355175ea97c76ca09e98028b4ba81",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x68bb822050da5a25d35ff31d7c86fffc39d1aaf9",
+   "recipient_label": "",
+   "eqty": 1210499.0,
+   "pct_supply": 0.416,
+   "usd": 2032.24
+  },
+  {
+   "time": "2026-08-16T04:58:33.000Z",
+   "tx_hash": "0x54b6519ff6c25eefc012e2031eb0df5c395654705b5201018aa6bce0fac1edd2",
+   "sender": "0xabc1071756710162547cb82c714b6fc01d465010",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 2001234.12,
+   "pct_supply": 0.688,
+   "usd": 3406.9
+  },
+  {
+   "time": "2026-08-15T04:55:37.000Z",
+   "tx_hash": "0x8d3f169c91d31f44787793d3ff97000dd7c3e8abeae2e9981622b74e5271b201",
+   "sender": "0x13307b8854a95946b54a904100afd0767a7a577b",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1016860.15,
+   "pct_supply": 0.349,
+   "usd": 1777.72
+  },
+  {
+   "time": "2026-08-14T21:52:21.000Z",
+   "tx_hash": "0x88c001af5411485eeffbe95da21d87ce4b46eaf2a9d1e4c18802d8fde7cc0d61",
+   "sender": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
+   "sender_label": "",
+   "recipient": "0xabc1071756710162547cb82c714b6fc01d465010",
+   "recipient_label": "",
+   "eqty": 2000000.0,
+   "pct_supply": 0.687,
+   "usd": 3504.84
+  },
+  {
+   "time": "2026-08-12T04:57:33.000Z",
+   "tx_hash": "0xb15f6d0f0d48c6d47388df327722bf8346f8b1e905e771a81af33f0f0f210c7d",
+   "sender": "0xfaace646ee2b59b08dbf1a4faa60d47cec1a92ec",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 5159811.0,
+   "pct_supply": 1.773,
+   "usd": 9868.83
+  },
+  {
+   "time": "2026-08-12T04:55:27.000Z",
+   "tx_hash": "0x7b60ee2144e55fea9f22de3c470a17d834f288d77bf59ef42b869c2767d98b3b",
+   "sender": "0x13307b8854a95946b54a904100afd0767a7a577b",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 864937.54,
+   "pct_supply": 0.297,
+   "usd": 1654.31
+  },
+  {
+   "time": "2026-08-10T23:10:33.000Z",
+   "tx_hash": "0xd6a38e00e106f8834550b816ea6db9a2041b279a1fd3a8863a3360e387653f6a",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0xfaace646ee2b59b08dbf1a4faa60d47cec1a92ec",
+   "recipient_label": "",
+   "eqty": 5159811.0,
+   "pct_supply": 1.773,
+   "usd": 10337.46
+  },
+  {
+   "time": "2026-08-07T04:55:59.000Z",
+   "tx_hash": "0x337c6d200a73ee97981529b1285a163b38002e4ee97918c2655e17982988765f",
+   "sender": "0x198510b7d7033cffb45d23d034ca946c8e5a072e",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 13215514.83,
+   "pct_supply": 4.541,
+   "usd": 25001.4
+  },
+  {
+   "time": "2026-08-05T07:45:53.000Z",
+   "tx_hash": "0x277e46d48e099e4a3018e0035094c1325f6fda3475a3565e23466d95d6199601",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0x198510b7d7033cffb45d23d034ca946c8e5a072e",
+   "recipient_label": "",
+   "eqty": 13215514.83,
+   "pct_supply": 4.541,
+   "usd": 25359.58
+  },
+  {
+   "time": "2026-08-03T11:36:53.000Z",
+   "tx_hash": "0xc61290277802de793d9010a7f7b8804bae197a5155de2a5f6287a3dcf6d4128f",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0xa9b04c15540a668ecde0b02d68d97f75d25917f6",
+   "recipient_label": "",
+   "eqty": 1968644.56,
+   "pct_supply": 0.676,
+   "usd": 3708.1
+  },
+  {
+   "time": "2026-08-02T04:56:53.000Z",
+   "tx_hash": "0xeea25102dbf2bbfc9086a6ece2ec7937a230d1a40aadaaab88f90fac2d65ee83",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1314860.51,
+   "pct_supply": 0.452,
+   "usd": 2420.51
+  },
+  {
+   "time": "2026-08-01T04:58:59.000Z",
+   "tx_hash": "0xf2efc97c24caf9aac9fe1980b6635b1b0505e6c694c6fe9d58e46476cacb7953",
+   "sender": "0x67053e9d7584974282801e76b0594ecafae11f84",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 837256.6,
+   "pct_supply": 0.288,
+   "usd": 1531.07
+  },
+  {
+   "time": "2026-07-31T05:01:43.000Z",
+   "tx_hash": "0x4eeb99fc5725a12116f50816bc70da7909603ffa4f0dacfec6dd6363269298a6",
+   "sender": "0xabc1071756710162547cb82c714b6fc01d465010",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 2009127.12,
+   "pct_supply": 0.69,
+   "usd": 3536.23
+  },
+  {
+   "time": "2026-07-31T01:03:53.000Z",
+   "tx_hash": "0xcf6417f318018b05f660315169c6b225644c237d521ba824250767f993b0d7b8",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x67053e9d7584974282801e76b0594ecafae11f84",
+   "recipient_label": "",
+   "eqty": 837256.6,
+   "pct_supply": 0.288,
+   "usd": 1473.64
+  },
+  {
+   "time": "2026-07-30T05:29:53.000Z",
+   "tx_hash": "0x5dd1da3a73c2973c26755866eeede933fbe84110a90f4ebc63569041f2c0190b",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
+   "recipient_label": "",
+   "eqty": 4308230.27,
+   "pct_supply": 1.48,
+   "usd": 7643.29
+  },
+  {
+   "time": "2026-07-30T04:56:53.000Z",
+   "tx_hash": "0x66e5b739b7e1f193064f5e7c736c6763ba0e40200258824758e1507982a2a3de",
+   "sender": "0x198510b7d7033cffb45d23d034ca946c8e5a072e",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 16636545.79,
+   "pct_supply": 5.716,
+   "usd": 29515.13
+  },
+  {
+   "time": "2026-07-30T04:52:53.000Z",
+   "tx_hash": "0xf08bf1f387fd9c7706152fe83ddd6b09091d9ceb10b826db43772c755ff785a7",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 2320131.03,
+   "pct_supply": 0.797,
+   "usd": 4116.18
+  },
+  {
+   "time": "2026-07-29T12:19:33.000Z",
+   "tx_hash": "0xab95fba6e78dba365eec82ea0fdcc1e48981fb78c1f85559275fd86062567b74",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0xabc1071756710162547cb82c714b6fc01d465010",
+   "recipient_label": "",
+   "eqty": 1999563.5,
+   "pct_supply": 0.687,
+   "usd": 3610.29
+  },
+  {
+   "time": "2026-07-29T04:37:53.000Z",
+   "tx_hash": "0x6407eb03294eb56212566f09b784a7c53699eac158621e69980e4ba08550acaa",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
+   "recipient_label": "",
+   "eqty": 5999563.5,
+   "pct_supply": 2.061,
+   "usd": 10832.46
+  },
+  {
+   "time": "2026-07-29T02:22:53.000Z",
+   "tx_hash": "0xe2dca7b85ccdee2301bbbc1d8d1410aa91682224f5620597ec40895f421bd30a",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
+   "recipient_label": "",
+   "eqty": 3999563.5,
+   "pct_supply": 1.374,
+   "usd": 7221.38
+  },
+  {
+   "time": "2026-07-28T10:46:33.000Z",
+   "tx_hash": "0x90447fcf0c8a0351936cbd7fe47553166bb6e71c68ede5d18ad37195e5562c08",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 13215514.83,
+   "pct_supply": 4.541,
+   "usd": 28206.51
+  },
+  {
+   "time": "2026-07-28T07:36:51.000Z",
+   "tx_hash": "0xf7e2a079b03477945e206839933e8e572a72543f3d1b1a1d7dabd669318a374f",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0x198510b7d7033cffb45d23d034ca946c8e5a072e",
+   "recipient_label": "",
+   "eqty": 16631819.05,
+   "pct_supply": 5.715,
+   "usd": 35498.09
+  },
+  {
+   "time": "2026-07-28T07:35:53.000Z",
+   "tx_hash": "0xf7e0177d23f8de949345c485c85923a29fd1c5b9c9cfae2e065d9eb1f036ac51",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 16631819.05,
+   "pct_supply": 5.715,
+   "usd": 35498.09
+  },
+  {
+   "time": "2026-07-26T04:59:11.000Z",
+   "tx_hash": "0x13e575534aae57d65938cce5463cd2444df7ceb0ff68e8d7d7b58d09a9412050",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 771992.01,
+   "pct_supply": 0.265,
+   "usd": 1527.94
+  },
+  {
+   "time": "2026-07-19T04:55:57.000Z",
+   "tx_hash": "0x696d353bb9c482aacc8f119b28a7194f36a98066981438076dd97aa7648eb551",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 821068.42,
+   "pct_supply": 0.282,
+   "usd": 1382.21
+  },
+  {
+   "time": "2026-07-16T04:59:31.000Z",
+   "tx_hash": "0x1afd3e5886f372ca66032e512745218998857aaf104b47a6d2b4fa44fec44ed8",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 929027.88,
+   "pct_supply": 0.319,
+   "usd": 1888.95
+  },
+  {
+   "time": "2026-07-12T04:57:27.000Z",
+   "tx_hash": "0x94f36cdc1e10139fdbe7340cb3b2f06ca5aab56615f8490fa6e73b9d486f22a8",
+   "sender": "0x09a3bf35590488f178e2fa0ce855b10db28cd64c",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 763550.1,
+   "pct_supply": 0.262,
+   "usd": 1377.21
+  },
+  {
+   "time": "2026-07-09T04:54:45.000Z",
+   "tx_hash": "0xfa8edaa8db328f748a4d8d8204d9c4fc7e6b4390ce34cd2052714d6fb9c309f1",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1269875.85,
+   "pct_supply": 0.436,
+   "usd": 2336.29
+  },
+  {
+   "time": "2026-07-08T04:55:49.000Z",
+   "tx_hash": "0x2bed8e56c8a83628eeace322c5d85b4390107d8ad4020b02e6c44255757c9baa",
+   "sender": "0x09a3bf35590488f178e2fa0ce855b10db28cd64c",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1432649.56,
+   "pct_supply": 0.492,
+   "usd": 2632.23
+  },
+  {
+   "time": "2026-07-04T04:56:41.000Z",
+   "tx_hash": "0xe223f1d805ef8f1dac807f51e17ad544d15e8c8f19131e4da81a4f5ca575242c",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 2255705.42,
+   "pct_supply": 0.775,
+   "usd": 3547.8
+  },
+  {
+   "time": "2026-07-03T04:55:29.000Z",
+   "tx_hash": "0x4f8f65a4a720206c036ce34cb4ef420cc70b6d8eedb8263d4b077ca100bfa223",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1991181.88,
+   "pct_supply": 0.684,
+   "usd": 2933.44
+  },
+  {
+   "time": "2026-06-30T04:57:25.000Z",
+   "tx_hash": "0x9be441104b4ee9bdd1120ffbd3fee8006e6f24784152114690218f0ba0b02ac4",
+   "sender": "0x09a3bf35590488f178e2fa0ce855b10db28cd64c",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1348010.02,
+   "pct_supply": 0.463,
+   "usd": 2280.48
+  },
+  {
+   "time": "2026-06-29T23:14:19.000Z",
+   "tx_hash": "0x405ee349b1328ea115a6054250224c70cd2e5ad8d90222bceaca240a08b77ccb",
+   "sender": "0x9021069ce6842ac73d824941f841810e7d73f4c5",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 967808.94,
+   "pct_supply": 0.333,
+   "usd": 2018.14
+  },
+  {
+   "time": "2026-06-29T23:08:59.000Z",
+   "tx_hash": "0xfc938737cccb577dd4b0a3aa8c9bed184122db27f54f49c6ed3e49a20bf1e9ef",
+   "sender": "0x9021069ce6842ac73d824941f841810e7d73f4c5",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 1143088.72,
+   "pct_supply": 0.393,
+   "usd": 2383.64
+  },
+  {
+   "time": "2026-06-29T14:55:49.000Z",
+   "tx_hash": "0x7e883ba2bc46fbbee7884c1d38f2a42f72ae7e194b2d198860033dcb68467e71",
+   "sender": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
+   "sender_label": "",
+   "recipient": "0xc98f51f7179953b01a4d7f5a2801b3f0ba87f77d",
+   "recipient_label": "",
+   "eqty": 1000000.0,
+   "pct_supply": 0.344,
+   "usd": 2085.26
+  },
+  {
+   "time": "2026-06-29T14:54:49.000Z",
+   "tx_hash": "0xa2bb1e306fa484babf1502138e5ae8a3d6a2fa9cc24a811ba399eade1bcad47b",
+   "sender": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
+   "sender_label": "",
+   "recipient": "0xc98f51f7179953b01a4d7f5a2801b3f0ba87f77d",
+   "recipient_label": "",
+   "eqty": 800000.0,
+   "pct_supply": 0.275,
+   "usd": 1668.21
+  },
+  {
+   "time": "2026-06-29T04:58:49.000Z",
+   "tx_hash": "0x2a3f353f6e0a81748a30d066bb7c074d71cbac0fc37ec0fc69e5023574b1c0cd",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 755126.91,
+   "pct_supply": 0.259,
+   "usd": 1574.64
+  },
+  {
+   "time": "2026-06-02T07:20:59.000Z",
+   "tx_hash": "0xfc4f890d9592099e49131cf3cbd0dc20f5c6e6b31a4c6fae27e072e1f1effb95",
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 17575554.12,
+   "pct_supply": 6.039,
+   "usd": 36271.52
+  },
+  {
+   "time": "2026-06-02T07:14:13.000Z",
+   "tx_hash": "0xd17dd302994a4307c5e178740c2b011b5eac265d0a184c7d776fffd6f33f200a",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0xb534add93db666fb76585338665b8278b364f009",
+   "recipient_label": "",
+   "eqty": 17575554.12,
+   "pct_supply": 6.039,
+   "usd": 36271.52
+  },
+  {
+   "time": "2026-05-17T04:53:09.000Z",
+   "tx_hash": "0xa49e59d3ba2417fe1c1473c0cbc90461b831c3cda97764326c63d92901350e8b",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1243068.33,
+   "pct_supply": 0.427,
+   "usd": 3165.28
+  },
+  {
+   "time": "2026-04-25T04:54:49.000Z",
+   "tx_hash": "0xfd07473438a98b278a83a4e7230fd8c7a506083c232f2570301c9191f1f4365d",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1293472.57,
+   "pct_supply": 0.444,
+   "usd": 3431.52
+  },
+  {
+   "time": "2026-04-05T09:54:55.000Z",
+   "tx_hash": "0x627fe38c24a56b52d79598254bd618a273495a5ab60d0a2729cbe6df4847a4a2",
+   "sender": "0x813f5edd317ed74e6397f37cb6c42c4950cc973e",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 900000.0,
+   "pct_supply": 0.309,
+   "usd": 2362.18
+  },
+  {
+   "time": "2026-04-05T09:48:51.000Z",
+   "tx_hash": "0xd82aebcf943a76e26ab7ae4d00c545d7edf1a60e8a7a8c8592b8778b97cd1e9d",
+   "sender": "0x2bc456799f3cf071b10ce7216269471e0a40381a",
+   "sender_label": "",
+   "recipient": "0x813f5edd317ed74e6397f37cb6c42c4950cc973e",
+   "recipient_label": "",
+   "eqty": 900000.0,
+   "pct_supply": 0.309,
+   "usd": 2362.18
+  },
+  {
+   "time": "2026-03-31T04:55:01.000Z",
+   "tx_hash": "0x4fdd243bd39da31326a983db7bb59a4d33557bbbe0fc0f62cce42c4827cacf79",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1081593.76,
+   "pct_supply": 0.372,
+   "usd": 2876.76
+  },
+  {
+   "time": "2026-03-27T05:02:25.000Z",
+   "tx_hash": "0x1be221d296ad47ac58587eee911e5dd4952f66d5ce39d225a1c87c6213f7bd40",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 769368.55,
+   "pct_supply": 0.264,
+   "usd": 1817.42
+  },
+  {
+   "time": "2026-03-16T10:38:53.000Z",
+   "tx_hash": "0xf273ca8256302f486e0166874e5d9b68ed1437d9c55dad9b1ce7a346ace26653",
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 1806723.9,
+   "pct_supply": 0.621,
+   "usd": 5139.02
+  },
+  {
+   "time": "2026-03-16T10:33:19.000Z",
+   "tx_hash": "0xb3793cc82174e41671884ba5585056921624b6c5179179dc190f339b176878f9",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0xb534add93db666fb76585338665b8278b364f009",
+   "recipient_label": "",
+   "eqty": 1806723.9,
+   "pct_supply": 0.621,
+   "usd": 5139.02
+  },
+  {
+   "time": "2026-03-16T07:54:53.000Z",
+   "tx_hash": "0xc10c2628ca912e0747121ec955fac7c108a8f85f4b422ebf381393e5370ef250",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 840715.87,
+   "pct_supply": 0.289,
+   "usd": 2391.32
+  },
+  {
+   "time": "2026-03-15T04:54:55.000Z",
+   "tx_hash": "0xeefd298cf3072a23783e0fddd826923dcc3bab0c0c19893d7fcd681d88e20390",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 898377.35,
+   "pct_supply": 0.309,
+   "usd": 2579.1
+  },
+  {
+   "time": "2026-03-05T16:01:41.000Z",
+   "tx_hash": "0x16293ae3915a99009158e933fbb4b6dcee3f8a13da01093449cf64d7b3b82a45",
+   "sender": "0x63382e8345e1b593a4b4fd60b66eb5e27329c4f2",
+   "sender_label": "",
+   "recipient": "0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a",
+   "recipient_label": "",
+   "eqty": 3298780.8,
+   "pct_supply": 1.133,
+   "usd": 9186.5
+  },
+  {
+   "time": "2026-03-05T15:59:35.000Z",
+   "tx_hash": "0x0785a6621a01c45e9fb746a9b5957083ba0a9663399635537cd6f182b2dbad7b",
+   "sender": "0x63382e8345e1b593a4b4fd60b66eb5e27329c4f2",
+   "sender_label": "",
+   "recipient": "0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a",
+   "recipient_label": "",
+   "eqty": 1000000.0,
+   "pct_supply": 0.344,
+   "usd": 2784.82
+  },
+  {
+   "time": "2026-03-05T03:33:01.000Z",
+   "tx_hash": "0x8cd4d05d7a8001e0db4e24fcfde5f429819f2f0cc8ce5e7747b8b891b1e84427",
+   "sender": "0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a",
+   "sender_label": "",
+   "recipient": "0x63382e8345e1b593a4b4fd60b66eb5e27329c4f2",
+   "recipient_label": "",
+   "eqty": 3133208.77,
+   "pct_supply": 1.077,
+   "usd": 8725.41
+  },
+  {
+   "time": "2026-03-05T03:30:31.000Z",
+   "tx_hash": "0x2cf54e9bb8594a391ab76fafe8e07f4740932b2d371debe664ddb72f2846c399",
+   "sender": "0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a",
+   "sender_label": "",
+   "recipient": "0x63382e8345e1b593a4b4fd60b66eb5e27329c4f2",
+   "recipient_label": "",
+   "eqty": 1040672.8,
+   "pct_supply": 0.358,
+   "usd": 2898.08
+  },
+  {
+   "time": "2026-02-18T11:42:53.000Z",
+   "tx_hash": "0x1d911484dc8a6a5faae2e54232e619ed25454adf5a2774e5db8ce523886edfd6",
+   "sender": "0xda6a787d936998cff2cb8692849c2bcb58f156cc",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 1073703.0,
+   "pct_supply": 0.369,
+   "usd": 4528.93
+  },
+  {
+   "time": "2026-02-18T11:33:21.000Z",
+   "tx_hash": "0x5ca8bd6012bbe95d85924daecee992547e3f498b35a5ea343aac876fa79a2a63",
+   "sender": "0x499b1fc4138eb595807fb8c1f70b538f4344420c",
+   "sender_label": "",
+   "recipient": "0xda6a787d936998cff2cb8692849c2bcb58f156cc",
+   "recipient_label": "",
+   "eqty": 1073703.0,
+   "pct_supply": 0.369,
+   "usd": 4528.93
+  },
+  {
+   "time": "2026-02-14T05:04:31.000Z",
+   "tx_hash": "0x6abb558353e7401800e8643cc43b2d27b9b03cb888a708103445ef4adfaf523b",
+   "sender": "0x375e142646dce6517cf5b135155f9d773b8fb662",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 4773810.99,
+   "pct_supply": 1.64,
+   "usd": 11806.66
+  },
+  {
+   "time": "2026-02-13T12:38:11.000Z",
+   "tx_hash": "0x4659f45515e8884dee1335ff4d95072ff0d996a4b0abf6b960c5e45d3f44f425",
+   "sender": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "sender_label": "",
+   "recipient": "0x4637ac1282a183dcc2e254543437fb6f95bf959e",
+   "recipient_label": "",
+   "eqty": 3999979.64,
+   "pct_supply": 1.374,
+   "usd": 9858.15
+  },
+  {
+   "time": "2026-02-11T13:04:39.000Z",
+   "tx_hash": "0x7bc41e60e6ba9f79e808b91c6646ca2a0706181f01d2b57c366377b4e26b7427",
+   "sender": "0xad762173b7bdd95301923d856cbdec6da295daaa",
+   "sender_label": "",
+   "recipient": "0x375e142646dce6517cf5b135155f9d773b8fb662",
+   "recipient_label": "",
+   "eqty": 4773810.99,
+   "pct_supply": 1.64,
+   "usd": 13461.68
+  },
+  {
+   "time": "2026-02-11T08:25:53.000Z",
+   "tx_hash": "0x7d159fa188c34fc77254c457a2a1e89bb008069e155b7d72e6a5cd474df64123",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 3311963.76,
+   "pct_supply": 1.138,
+   "usd": 9339.41
+  },
+  {
+   "time": "2026-02-10T13:34:53.000Z",
+   "tx_hash": "0x2c1156690ef68d9bb941d87c7077fab411f8fb0322e6837a6e79ea78ede5189e",
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 3315287.12,
+   "pct_supply": 1.139,
+   "usd": 9972.55
+  },
+  {
+   "time": "2026-02-10T13:25:11.000Z",
+   "tx_hash": "0xf5a71b9d997806c76f4de71f58532e63fce6447795be4fe83bcfc25d101a04f0",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0xb534add93db666fb76585338665b8278b364f009",
+   "recipient_label": "",
+   "eqty": 3315287.12,
+   "pct_supply": 1.139,
+   "usd": 9972.55
+  },
+  {
+   "time": "2026-01-23T04:54:41.000Z",
+   "tx_hash": "0xa676043f3cdd8f06711e3a514cdd5431a6d5da6776394168c16e39654b2cca0e",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1006942.29,
+   "pct_supply": 0.346,
+   "usd": 4026.79
+  },
+  {
+   "time": "2026-01-22T10:14:53.000Z",
+   "tx_hash": "0xb996bd6c992d02abec6819f9f7e1178686c18e7b0be8596bb552f93d8e1f1598",
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 1000000.0,
+   "pct_supply": 0.344,
+   "usd": 3696.03
+  },
+  {
+   "time": "2026-01-22T10:03:53.000Z",
+   "tx_hash": "0xd99d9d4a23c514676ffd83abd9337ba3a99b458b3614752c0f4949dd2c005ee6",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0xb534add93db666fb76585338665b8278b364f009",
+   "recipient_label": "",
+   "eqty": 1000000.0,
+   "pct_supply": 0.344,
+   "usd": 3696.03
+  },
+  {
+   "time": "2026-01-22T08:26:53.000Z",
+   "tx_hash": "0xa5bafc2382effedb4747d598b5ea1ef2ddef061039dd8befc3c70202f8650719",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 1311317.07,
+   "pct_supply": 0.451,
+   "usd": 4846.66
+  },
+  {
+   "time": "2026-01-20T22:33:13.000Z",
+   "tx_hash": "0x33883ead9a1250437efbc8406dd0d5330da36eee2e92556d72e0d6dbee211c8f",
+   "sender": "0x6c1fdfd566a0aa53e08ff5de0d064d301711dd78",
+   "sender_label": "",
+   "recipient": "0x65195244c6b4ceb477e32d923d501a7bcd41e769",
+   "recipient_label": "",
+   "eqty": 1066588.7,
+   "pct_supply": 0.366,
+   "usd": 3897.58
+  },
+  {
+   "time": "2026-01-16T15:32:53.000Z",
+   "tx_hash": "0xc956238d65ee3a98127627fd6f50e9efd3420d0a18109c3a518b8ba68df8ee51",
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 1040000.0,
+   "pct_supply": 0.357,
+   "usd": 4300.01
+  },
+  {
+   "time": "2026-01-16T15:23:01.000Z",
+   "tx_hash": "0x30a3f3f5aeb3b87d1bfe8eae5d27b0c009231a966de4e5cb76cc7aa303d5c88d",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0xb534add93db666fb76585338665b8278b364f009",
+   "recipient_label": "",
+   "eqty": 1040000.0,
+   "pct_supply": 0.357,
+   "usd": 4300.01
+  },
+  {
+   "time": "2026-01-15T13:28:53.000Z",
+   "tx_hash": "0xfb0a628ddd69f6ab546c42d951290cc883f3a3e938b860fb861d6a96ab114032",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 5932173.62,
+   "pct_supply": 2.038,
+   "usd": 25441.94
+  },
+  {
+   "time": "2026-01-14T16:40:53.000Z",
+   "tx_hash": "0x89e3ff391960f569c048367620321639f2726db35dcfd79c844a62ac706794fb",
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 6000000.0,
+   "pct_supply": 2.062,
+   "usd": 24706.42
+  },
+  {
+   "time": "2026-01-14T16:32:03.000Z",
+   "tx_hash": "0x6110fe96d0cbcd7bd0e208d99239e0e936bbf94d106bf2f4760f87fc88a62a13",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0xb534add93db666fb76585338665b8278b364f009",
+   "recipient_label": "",
+   "eqty": 6000000.0,
+   "pct_supply": 2.062,
+   "usd": 24706.42
+  },
+  {
+   "time": "2026-01-14T12:03:33.000Z",
+   "tx_hash": "0x44a865c67906710af0b0eaee8cb2e817df084bc47d9a998de279753c78518787",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 1717419.76,
+   "pct_supply": 0.59,
+   "usd": 7071.88
+  },
+  {
+   "time": "2026-01-10T16:19:31.000Z",
+   "tx_hash": "0x245ec38d0862200b3bdf641a230c5ce2060a23406169c58e2a8ab605bf60f80e",
+   "sender": "0xe99aa41497710d3d5b636be03a23cc721201e93f",
+   "sender_label": "",
+   "recipient": "0x568a29dfb227afeb2edbf3b0b7cffc4644e0e9a4",
+   "recipient_label": "",
+   "eqty": 4968965.11,
+   "pct_supply": 1.707,
+   "usd": 18775.97
+  },
+  {
+   "time": "2026-01-09T11:36:43.000Z",
+   "tx_hash": "0x8f10f36e6efa290b0dbec4c566a65616075a2eb7d7cf31f1f3a2d6b936e91642",
+   "sender": "0x236d77890fa2ee69a6fb89976d9da3b70257bd23",
+   "sender_label": "",
+   "recipient": "0x5f92bd1542660604a2a77a4a13a577254007d948",
+   "recipient_label": "",
+   "eqty": 1005740.0,
+   "pct_supply": 0.346,
+   "usd": 3922.32
+  },
+  {
+   "time": "2026-01-06T18:15:53.000Z",
+   "tx_hash": "0x97e5111db26509ce08aca1235081945481c60e91a32414d1a0c911a446710d40",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
+   "recipient_label": "",
+   "eqty": 1500000.0,
+   "pct_supply": 0.515,
+   "usd": 6002.51
+  },
+  {
+   "time": "2026-01-06T17:58:03.000Z",
+   "tx_hash": "0xdac801e93f2544daab57841f4a5c330678a8a83e8c8c3bff46659b2c5f9138df",
+   "sender": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
+   "sender_label": "",
+   "recipient": "0x2bc456799f3cf071b10ce7216269471e0a40381a",
+   "recipient_label": "",
+   "eqty": 18410772.0,
+   "pct_supply": 6.326,
+   "usd": 73673.86
+  },
+  {
+   "time": "2026-01-04T11:44:55.000Z",
+   "tx_hash": "0x0adaf43b2a95eed7540b7f67d59f500909a02e395bbc328e0d5235b8820003ef",
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 2000000.0,
+   "pct_supply": 0.687,
+   "usd": 8484.85
+  },
+  {
+   "time": "2026-01-04T11:34:45.000Z",
+   "tx_hash": "0xee7588a539fb3fabb5dddbf48e02e7f3002e7301818f218c766d8ee9cd25dfbe",
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "sender_label": "",
+   "recipient": "0xb534add93db666fb76585338665b8278b364f009",
+   "recipient_label": "",
+   "eqty": 2000000.0,
+   "pct_supply": 0.687,
+   "usd": 8484.85
+  },
+  {
+   "time": "2025-12-31T04:55:41.000Z",
+   "tx_hash": "0x4ad6509de4aad219d123df0f91ffa3eb265d7a563eefb975acb11a47d71c8ca9",
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1091248.66,
+   "pct_supply": 0.375,
+   "usd": 4777.54
+  },
+  {
+   "time": "2025-12-28T18:40:39.000Z",
+   "tx_hash": "0xbbf32a527c513292f87a012bf6865f167ac52b86fc89a7dff05f4b3b0ee9552b",
+   "sender": "0x0e259d68198ea9d8a41bf61ebaf4002cc46ee9f1",
+   "sender_label": "",
+   "recipient": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
+   "recipient_label": "",
+   "eqty": 841411.0,
+   "pct_supply": 0.289,
+   "usd": 2805.34
+  },
+  {
+   "time": "2025-12-28T18:36:13.000Z",
+   "tx_hash": "0xa68476e0ba65734662b56ce0b4d253109be10eed5b13545d5b47054a40291979",
+   "sender": "0x6da4a069472ae3d93de0dc17e60fa1f1d94229e7",
+   "sender_label": "",
+   "recipient": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
+   "recipient_label": "",
+   "eqty": 1168713.37,
+   "pct_supply": 0.402,
+   "usd": 3896.6
+  },
+  {
+   "time": "2025-12-28T18:25:25.000Z",
+   "tx_hash": "0x4cdbd72a867af0ae4fe87b12bfbec067d2bb51bd67509d1c1471dc6238d99059",
+   "sender": "0x852ba1a11318ff7919a04b8f2c57ead48c65a2b5",
+   "sender_label": "",
+   "recipient": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
+   "recipient_label": "",
+   "eqty": 3055495.18,
+   "pct_supply": 1.05,
+   "usd": 10187.3
+  },
+  {
+   "time": "2025-12-28T18:19:47.000Z",
+   "tx_hash": "0x8f83ae0ff1b6318ba5ce5f3c750798a72283c002780c985670e37e6ae6813fa5",
+   "sender": "0xd629e5a84aea1d4bcad67ee1780dd6c9d6540063",
+   "sender_label": "",
+   "recipient": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
+   "recipient_label": "",
+   "eqty": 13355152.64,
+   "pct_supply": 4.589,
+   "usd": 44527.32
+  },
+  {
+   "time": "2025-12-24T14:03:53.000Z",
+   "tx_hash": "0xd9011698cd2fb7c86aabb693aa5907dd0ce3775264b2a19f299b9c1b331e40f6",
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "sender_label": "",
+   "recipient": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "recipient_label": "",
+   "eqty": 20992400.21,
+   "pct_supply": 7.213,
+   "usd": 71592.38
+  },
+  {
+   "time": "2025-12-21T00:50:53.000Z",
+   "tx_hash": "0x7f1198d294e345b4f62b969f586d0059312ff5bfab8098c8532c1f0d6e916fd4",
+   "sender": "0x74ed0d2e128c819bdd55658dd2022ad2d7159de1",
+   "sender_label": "",
+   "recipient": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "recipient_label": "",
+   "eqty": 818331.8,
+   "pct_supply": 0.281,
+   "usd": 2832.56
+  },
+  {
+   "time": "2025-12-21T00:41:19.000Z",
+   "tx_hash": "0xb232db96380cf2fc82aee8867fba9b24c5e8ee12a107b8038e1c3cd52f161b5f",
+   "sender": "0xabec1b4b9333df1b5fca1b4330a92de602571b54",
+   "sender_label": "",
+   "recipient": "0x74ed0d2e128c819bdd55658dd2022ad2d7159de1",
+   "recipient_label": "",
+   "eqty": 818331.8,
+   "pct_supply": 0.281,
+   "usd": 2832.56
+  },
+  {
+   "time": "2025-12-12T05:14:25.000Z",
+   "tx_hash": "0x659db1a996136c215ec675e1e463400a89879085544e9baabe4113334d481ab9",
+   "sender": "0x07be1254c2933a6a1407f99090cdfa6b581bc8d6",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 766516.0,
+   "pct_supply": 0.263,
+   "usd": 2848.56
+  },
+  {
+   "time": "2025-12-12T05:03:09.000Z",
+   "tx_hash": "0x222e7bd9202e8fc89f0f41552410cd482a2d0ce59959a9b54a95a3adf07cccb2",
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "",
+   "eqty": 1157042.98,
+   "pct_supply": 0.398,
+   "usd": 4299.85
+  }
+ ],
+ "monthly": [
+  {
+   "month": "2025-10",
+   "count": 2,
+   "eqty": 10984648.0
+  },
+  {
+   "month": "2025-11",
+   "count": 12,
+   "eqty": 104608882.79
+  },
+  {
+   "month": "2025-12",
+   "count": 17,
+   "eqty": 54314957.8
+  },
+  {
+   "month": "2026-01",
+   "count": 17,
+   "eqty": 56999918.55
+  },
+  {
+   "month": "2026-02",
+   "count": 8,
+   "eqty": 25637545.62
+  },
+  {
+   "month": "2026-03",
+   "count": 10,
+   "eqty": 15676165.7
+  },
+  {
+   "month": "2026-04",
+   "count": 3,
+   "eqty": 3093472.57
+  },
+  {
+   "month": "2026-05",
+   "count": 1,
+   "eqty": 1243068.33
+  },
+  {
+   "month": "2026-06",
+   "count": 8,
+   "eqty": 41165142.83
+  },
+  {
+   "month": "2026-07",
+   "count": 19,
+   "eqty": 94824185.36
+  },
+  {
+   "month": "2026-08",
+   "count": 16,
+   "eqty": 51501793.65
+  },
+  {
+   "month": "2026-09",
+   "count": 2,
+   "eqty": 3033297.41
+  },
+  {
+   "month": "2026-10",
+   "count": 4,
+   "eqty": 29228455.26
+  },
+  {
+   "month": "2026-11",
+   "count": 2,
+   "eqty": 2234624.0
+  }
+ ],
+ "pivot": [
+  {
+   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
+   "label": "",
+   "count": 14,
+   "total_eqty": 108204498.82,
+   "avg_eqty": 7728892.77,
+   "recipients": 7,
+   "last": "2026-10-29T12:08:03.000Z"
+  },
+  {
+   "sender": "0x636858d62f2e81deb7fd563621faef1a6a14d6c5",
+   "label": "",
+   "count": 7,
+   "total_eqty": 60544899.02,
+   "avg_eqty": 8649271.29,
+   "recipients": 2,
+   "last": "2026-08-05T07:45:53.000Z"
+  },
+  {
+   "sender": "0xb534add93db666fb76585338665b8278b364f009",
+   "label": "",
+   "count": 5,
+   "total_eqty": 30697565.14,
+   "avg_eqty": 6139513.03,
+   "recipients": 1,
+   "last": "2026-06-02T07:20:59.000Z"
+  },
+  {
+   "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
+   "label": "",
+   "count": 3,
+   "total_eqty": 6551386.72,
+   "avg_eqty": 2183795.57,
+   "recipients": 1,
+   "last": "2026-07-30T04:52:53.000Z"
+  },
+  {
+   "sender": "0x198510b7d7033cffb45d23d034ca946c8e5a072e",
+   "label": "",
+   "count": 2,
+   "total_eqty": 29852060.62,
+   "avg_eqty": 14926030.31,
+   "recipients": 1,
+   "last": "2026-08-07T04:55:59.000Z"
+  },
+  {
+   "sender": "0xd629e5a84aea1d4bcad67ee1780dd6c9d6540063",
+   "label": "",
+   "count": 2,
+   "total_eqty": 19399639.64,
+   "avg_eqty": 9699819.82,
+   "recipients": 2,
+   "last": "2025-12-28T18:19:47.000Z"
+  },
+  {
+   "sender": "0x556052af8b4f001b659066e061836b174e39c539",
+   "label": "",
+   "count": 2,
+   "total_eqty": 6777855.56,
+   "avg_eqty": 3388927.78,
+   "recipients": 2,
+   "last": "2025-12-12T02:50:33.000Z"
+  },
+  {
+   "sender": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "label": "",
+   "count": 2,
+   "total_eqty": 5861333.84,
+   "avg_eqty": 2930666.92,
+   "recipients": 2,
+   "last": "2026-02-13T12:38:11.000Z"
+  },
+  {
+   "sender": "0x0a7c1dc216264437a8986a3301cef56c01802c0d",
+   "label": "",
+   "count": 2,
+   "total_eqty": 4940261.0,
+   "avg_eqty": 2470130.5,
+   "recipients": 1,
+   "last": "2025-11-26T05:07:25.000Z"
+  },
+  {
+   "sender": "0xd367e507282cd1b461891bd86051f4cb6d10069b",
+   "label": "",
+   "count": 2,
+   "total_eqty": 4940261.0,
+   "avg_eqty": 2470130.5,
+   "recipients": 1,
+   "last": "2025-11-26T01:00:49.000Z"
+  },
+  {
+   "sender": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
+   "label": "",
+   "count": 2,
+   "total_eqty": 4145000.0,
+   "avg_eqty": 2072500.0,
+   "recipients": 2,
+   "last": "2026-10-31T22:29:29.000Z"
+  },
+  {
+   "sender": "0xabc1071756710162547cb82c714b6fc01d465010",
+   "label": "",
+   "count": 2,
+   "total_eqty": 4010361.24,
+   "avg_eqty": 2005180.62,
+   "recipients": 1,
+   "last": "2026-08-16T04:58:33.000Z"
+  },
+  {
+   "sender": "0xd0113e9c698393b25c18899d5fe74257a5644298",
+   "label": "",
+   "count": 1,
+   "total_eqty": 83867240.09,
+   "avg_eqty": 83867240.09,
+   "recipients": 1,
+   "last": "2025-11-08T06:42:15.000Z"
+  },
+  {
+   "sender": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
+   "label": "",
+   "count": 1,
+   "total_eqty": 18410772.0,
+   "avg_eqty": 18410772.0,
+   "recipients": 1,
+   "last": "2026-01-06T17:58:03.000Z"
+  },
+  {
+   "sender": "0xfaace646ee2b59b08dbf1a4faa60d47cec1a92ec",
+   "label": "",
+   "count": 1,
+   "total_eqty": 5159811.0,
+   "avg_eqty": 5159811.0,
+   "recipients": 1,
+   "last": "2026-08-12T04:57:33.000Z"
+  },
+  {
+   "sender": "0xe99aa41497710d3d5b636be03a23cc721201e93f",
+   "label": "",
+   "count": 1,
+   "total_eqty": 4968965.11,
+   "avg_eqty": 4968965.11,
+   "recipients": 1,
+   "last": "2026-01-10T16:19:31.000Z"
+  },
+  {
+   "sender": "0xaec6b0c817ef47d9f0dd34001afd039eb46b6e8c",
+   "label": "",
+   "count": 1,
+   "total_eqty": 4940161.0,
+   "avg_eqty": 4940161.0,
+   "recipients": 1,
+   "last": "2025-10-29T07:28:03.000Z"
+  },
+  {
+   "sender": "0x375e142646dce6517cf5b135155f9d773b8fb662",
+   "label": "",
+   "count": 1,
+   "total_eqty": 4773810.99,
+   "avg_eqty": 4773810.99,
+   "recipients": 1,
+   "last": "2026-02-14T05:04:31.000Z"
+  },
+  {
+   "sender": "0xad762173b7bdd95301923d856cbdec6da295daaa",
+   "label": "",
+   "count": 1,
+   "total_eqty": 4773810.99,
+   "avg_eqty": 4773810.99,
+   "recipients": 1,
+   "last": "2026-02-11T13:04:39.000Z"
+  },
+  {
+   "sender": "0x63382e8345e1b593a4b4fd60b66eb5e27329c4f2",
+   "label": "",
+   "count": 1,
+   "total_eqty": 3298780.8,
+   "avg_eqty": 3298780.8,
+   "recipients": 1,
+   "last": "2026-03-05T16:01:41.000Z"
+  },
+  {
+   "sender": "0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a",
+   "label": "",
+   "count": 1,
+   "total_eqty": 3133208.77,
+   "avg_eqty": 3133208.77,
+   "recipients": 1,
+   "last": "2026-03-05T03:33:01.000Z"
+  },
+  {
+   "sender": "0x852ba1a11318ff7919a04b8f2c57ead48c65a2b5",
+   "label": "",
+   "count": 1,
+   "total_eqty": 3055495.18,
+   "avg_eqty": 3055495.18,
+   "recipients": 1,
+   "last": "2025-12-28T18:25:25.000Z"
+  },
+  {
+   "sender": "0x34a3ec7219659201a1c11e83eb520ea5d6f6ed7f",
+   "label": "",
+   "count": 1,
+   "total_eqty": 2850312.0,
+   "avg_eqty": 2850312.0,
+   "recipients": 1,
+   "last": "2026-10-30T17:06:57.000Z"
+  },
+  {
+   "sender": "0x4637ac1282a183dcc2e254543437fb6f95bf959e",
+   "label": "",
+   "count": 1,
+   "total_eqty": 2850312.0,
+   "avg_eqty": 2850312.0,
+   "recipients": 1,
+   "last": "2026-10-30T12:41:43.000Z"
+  },
+  {
+   "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
+   "label": "",
+   "count": 1,
+   "total_eqty": 2255705.42,
+   "avg_eqty": 2255705.42,
+   "recipients": 1,
+   "last": "2026-07-04T04:56:41.000Z"
+  },
+  {
+   "sender": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
+   "label": "",
+   "count": 1,
+   "total_eqty": 2000000.0,
+   "avg_eqty": 2000000.0,
+   "recipients": 1,
+   "last": "2026-08-14T21:52:21.000Z"
+  }
+ ],
+ "rules": {
+  "large_pct": 0.25,
+  "pivot_pct": 0.5,
+  "usd_min": 10000
+ }
+}
