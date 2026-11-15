@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-15T14:32:13+00:00",
+ "updated_at": "2026-11-15T14:42:00+00:00",
  "rows": [
   {
    "cohort_year": 2026,
    "lifecycle_status": "1. Active (0-30d)",
-   "total_token_balance": 52124914.61,
+   "total_token_balance": 52154914.61,
    "unique_holders": 44
   },
   {
@@ -22,7 +22,7 @@
   {
    "cohort_year": 2025,
    "lifecycle_status": "1. Active (0-30d)",
-   "total_token_balance": 89543671.2,
+   "total_token_balance": 89513671.2,
    "unique_holders": 12
   },
   {
@@ -34,14 +34,14 @@
   {
    "cohort_year": 2025,
    "lifecycle_status": "3. Diamond hands (90d-1yr)",
-   "total_token_balance": 27774210.08,
-   "unique_holders": 168
+   "total_token_balance": 27774102.83,
+   "unique_holders": 167
   },
   {
    "cohort_year": 2025,
    "lifecycle_status": "4. Long-term sleeping (>1yr)",
-   "total_token_balance": 78139203.25,
-   "unique_holders": 892
+   "total_token_balance": 78139310.5,
+   "unique_holders": 893
   }
  ]
 }
