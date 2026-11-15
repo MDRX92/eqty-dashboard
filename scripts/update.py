@@ -68,6 +68,14 @@ def main() -> int:
         print(f"[FAIL] market: {exc}", file=sys.stderr)
         failures.append("market")
 
+    # Wallet labels (manual + automatic) for every address shown on the page.
+    try:
+        import labels
+        labels.update(now)
+    except Exception as exc:
+        print(f"[FAIL] labels: {exc}", file=sys.stderr)
+        failures.append("labels")
+
     (OUT / "meta.json").write_text(
         json.dumps({"updated_at": now, "failed": failures}, indent=1)
     )

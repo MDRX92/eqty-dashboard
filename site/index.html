@@ -79,6 +79,10 @@
   .tabs button.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
   .side-buy { color: var(--up); font-weight: 600; } .side-sell { color: var(--down); font-weight: 600; }
   svg.dual rect.buy { fill: var(--up); } svg.dual rect.sell { fill: var(--down); }
+  .tag.est { background: none; border: 1px dashed var(--muted); color: var(--muted); }
+  .tag[title] { cursor: help; }
+  .label-key { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
+  .label-key .tag { margin: 0 2px; }
   .sectext { color: var(--muted); font-size: 14px; margin: -6px 0 14px; max-width: 760px; }
   details.about { margin-bottom: 20px; }
   details.about summary { cursor: pointer; font-weight: 600; }
@@ -118,6 +122,7 @@
       <li><b>Market</b> – price (USD/EUR), Uniswap buy/sell volume, trade sizes, the latest trades and a trader leaderboard.</li>
       <li><b>Whale tracker</b> – large wallet-to-wallet transfers and the most active large senders.</li>
     </ul>
+    <p><b>Wallet labels.</b> Some wallets carry a label so you can see who is who. Labels without a mark are verified (detected from the contract itself, or a well-known address). Labels marked <b>≈</b> are an estimate based on on-chain behaviour – useful context, but not yet confirmed. Community input is very welcome: suggest or correct a label via GitHub.</p>
     <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. Supply = minted − burned. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Spam pools with 88–99% fees are ignored. Suggestions and address labels are welcome via GitHub.</p>
   </details>
 
@@ -181,6 +186,7 @@
   <section class="card" style="margin-top:16px">
     <h2>Trader leaderboard</h2>
     <p class="note">Wallets that traded the most on Uniswap, with their net position change. Net = buys − sells (green = accumulating, red = reducing). One wallet doing a large share of the volume often points to a bot or market maker.</p>
+<p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
     <div class="tabs" id="lb-tabs"><button data-k="30d" class="on">30 days</button><button data-k="90d">90 days</button></div>
     <span class="note" id="lb-summary" style="margin-left:10px"></span>
     <div class="tablebox" style="max-height:340px">
@@ -256,9 +262,10 @@
 
   <section class="card">
     <h2>Top 50 holders</h2>
-    <p class="note">Labelled addresses are contracts or known entities (pool, bridge…). Add labels via pull request. Scroll the table to see all 50.</p>
+    <p class="note">Scroll the table to see all 50.</p>
+<p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
     <div id="top50-chart"></div>
-    <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>labelled contract</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
+    <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>contract or service wallet</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
     <div class="tablebox">
       <table>
         <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
@@ -285,6 +292,7 @@
   <section class="card">
     <h2>Latest large transfers</h2>
     <p class="note">Most recent 100. Click a time to open the transaction on Basescan.</p>
+    <p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
     <div class="tablebox">
       <table>
         <thead><tr><th>Time (UTC)</th><th>From</th><th>To</th><th class="num">EQTY</th><th class="num">% supply</th><th class="num">USD</th></tr></thead>
@@ -312,6 +320,18 @@
 
 <script>
 const $ = id => document.getElementById(id);
+let LABELS = {};
+const EST_NOTE = "Estimated from on-chain behaviour – our best guess, not yet confirmed. Know more about this wallet? Suggest a label on GitHub.";
+const labelOf = (addr, fallback) => LABELS[String(addr || "").toLowerCase()] || (fallback ? { label: fallback, confidence: "verified" } : null);
+const badge = (addr, fallback) => {
+  const l = labelOf(addr, fallback);
+  if (!l) return "";
+  const est = l.confidence === "estimated";
+  const tip = [l.note, est ? EST_NOTE : "Verified label"].filter(Boolean).join(" · ");
+  return `<span class="tag${est ? " est" : ""}" title="${esc(tip)}">${est ? "≈ " : ""}${esc(l.label)}</span>`;
+};
+const labelText = (addr, fallback) => { const l = labelOf(addr, fallback); return l ? ` (${l.confidence === "estimated" ? "≈ " : ""}${l.label})` : ""; };
+const CONTRACT_TYPES = new Set(["dex", "bridge", "system", "contract", "multisig", "service"]);
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d });
 const compact = n => Number(n).toLocaleString("en-US", { notation: "compact", maximumFractionDigits: 1 });
@@ -352,7 +372,8 @@ function comboChart(el, rows) {          // bars = balance, line = cumulative %
     `<text x="${W - P.r + 6}" y="${yp(100 * f) + 4}">${100 * f}%</text>`).join("");
   const barsSvg = rows.map((r, i) => {
     const y = yb(r.balance);
-    return `<rect class="${r.label ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${r.label ? " (" + esc(r.label) + ")" : ""}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
+    const lb = labelOf(r.address, r.label);
+    return `<rect class="${lb && CONTRACT_TYPES.has(lb.type) ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${esc(labelText(r.address, r.label))}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
   }).join("");
   const d = rows.map((r, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${yp(r.cumulative_pct).toFixed(1)}`).join("");
   const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yp(r.cumulative_pct).toFixed(1)}" r="2.5"><title>Top ${r.rank}: ${fmt(r.cumulative_pct, 1)}% of supply</title></circle>`).join("");
@@ -434,6 +455,8 @@ function bars(el, rows, value, title) {
   const [supply, holders, daily, growth, life, monthly, market, whales, dist] = await Promise.all(
     ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales", "holder_distribution"].map(get));
 
+  const lab = await get("labels");
+  LABELS = (lab && lab.labels) || {};
   if (!supply) { $("updated").textContent = "no data yet – run the workflow first"; return; }
   const meta = await get("meta");
   const ageH = (Date.now() - new Date(supply.updated_at)) / 36e5;
@@ -498,7 +521,7 @@ function bars(el, rows, value, title) {
         <td class="side-${t.side}">${t.side}</td>
         <td class="num">${fmt(t.eqty)}</td>
         <td class="num">$${fmt(t.usd, t.usd < 10 ? 2 : 0)}</td>
-        <td><a href="https://basescan.org/address/${t.taker}">${short(t.taker)}</a></td>
+        <td><a href="https://basescan.org/address/${esc(t.taker)}">${short(t.taker)}</a>${badge(t.taker)}</td>
       </tr>`).join("");
   }
 
@@ -512,7 +535,7 @@ function bars(el, rows, value, title) {
       $("lb-body").innerHTML = b.rows.map((r, i) => `
         <tr>
           <td>${i + 1}</td>
-          <td><a href="https://basescan.org/address/${esc(r.trader)}">${short(r.trader)}</a>${r.label ? `<span class="tag">${esc(r.label)}</span>` : ""}</td>
+          <td><a href="https://basescan.org/address/${esc(r.trader)}">${short(r.trader)}</a>${badge(r.trader, r.label)}</td>
           <td class="num">${fmt(r.trades)}</td>
           <td class="num">$${fmt(r.volume_usd)}</td>
           <td class="num">$${fmt(r.buy_usd)}</td>
@@ -610,7 +633,7 @@ function bars(el, rows, value, title) {
   // Whale tracker
   if (whales) {
     const k = whales.kpis;
-    const addr = (a, label) => `<a href="https://basescan.org/address/${a}">${short(a)}</a>${label ? `<span class="tag">${esc(label)}</span>` : ""}`;
+    const addr = (a, label) => `<a href="https://basescan.org/address/${esc(a)}">${short(a)}</a>${badge(a, label)}`;
     $("w-30").textContent = fmt(k.large_30d);
     $("w-30e").textContent = compact(k.large_30d_eqty) + " EQTY moved";
     if (k.largest_30d) {
@@ -649,7 +672,7 @@ function bars(el, rows, value, title) {
   $("holders").innerHTML = h.map(r => `
     <tr>
       <td>${r.rank}</td>
-      <td><a href="https://basescan.org/address/${r.address}">${short(r.address)}</a>${r.label ? `<span class="tag">${esc(r.label)}</span>` : ""}</td>
+      <td><a href="https://basescan.org/address/${esc(r.address)}">${short(r.address)}</a>${badge(r.address, r.label)}</td>
       <td class="num">${fmt(r.balance)}</td>
       <td class="num">${fmt(r.pct_of_supply, 2)}%</td>
       <td class="num">${fmt(r.cumulative_pct, 1)}%</td>

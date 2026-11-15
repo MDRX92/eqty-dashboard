@@ -1,4 +1,13 @@
-address,label,type
-0x498581ff718922c3f8e6a244956af099b2652b2b,Uniswap v4 PoolManager,dex
-0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae,LI.FI Diamond,bridge/aggregator
-0x0000000000000000000000000000000000000000,Mint/Burn (zero address),system
+address,label,type,confidence,note
+0x498581ff718922c3f8e6a244956af099b2652b2b,Uniswap v4 PoolManager,dex,verified,Holds the liquidity of all Uniswap v4 pools
+0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae,LI.FI Diamond,bridge,verified,Cross-chain bridge/aggregator contract
+0x1111111254eeb25477b68fb85ed929f73a960582,1inch Router,dex,verified,1inch aggregation router
+0x0000000000000000000000000000000000000000,Mint/Burn (zero address),system,verified,
+0x2bc456799f3cf071b10ce7216269471e0a40381a,Safe multisig,multisig,verified,Safe smart account (detected from SafeSetup event)
+0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a,Coinbase Smart Wallet,wallet,verified,Detected from AddOwner/Upgraded events
+0x66b277092e8ad5c0f136e299265826b4f1539283,Coinbase Smart Wallet,wallet,verified,Detected from AddOwner/Upgraded events
+0x0d0707963952f2fba59dd06f2b425ace40b492fe,Service hub,service,estimated,Receives from and sends to many wallets on a daily schedule – typical for an exchange custodian or rewards service
+0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f,Distribution wallet,distribution,estimated,Received 83.9M EQTY in one transfer and passed large amounts on to other top wallets
+0x2b253a24600ccd524a7264c2360cae49679a9495,Automated trader,trader,estimated,Very frequent trades of similar size – likely a market-making or trading bot
+0x802b65b5d9016621e66003aed0b16615093f328b,Automated trader,trader,estimated,Thousands of small pool trades
+0x278d858f05b94576c1e6f73285886876ff6ef8d2,Automated trader,trader,estimated,Receives many small transfers from an automated trader
