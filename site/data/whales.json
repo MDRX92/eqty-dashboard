@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T17:05:18+00:00",
+ "updated_at": "2026-11-15T17:11:18+00:00",
  "kpis": {
   "large_30d": 6,
   "large_30d_eqty": 31463079.26,
@@ -57,7 +57,7 @@
    "sender": "0x34a3ec7219659201a1c11e83eb520ea5d6f6ed7f",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 2850312.0,
    "pct_supply": 0.979,
    "usd": 4560.67
@@ -101,7 +101,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 948297.41,
    "pct_supply": 0.326,
    "usd": 1444.36
@@ -112,7 +112,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 785631.9,
    "pct_supply": 0.27,
    "usd": 1359.65
@@ -123,7 +123,7 @@
    "sender": "0x68bb822050da5a25d35ff31d7c86fffc39d1aaf9",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1210499.0,
    "pct_supply": 0.416,
    "usd": 1828.49
@@ -134,7 +134,7 @@
    "sender": "0x13307b8854a95946b54a904100afd0767a7a577b",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 741435.5,
    "pct_supply": 0.255,
    "usd": 1119.96
@@ -145,7 +145,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 799283.11,
    "pct_supply": 0.275,
    "usd": 1207.34
@@ -167,7 +167,7 @@
    "sender": "0xabc1071756710162547cb82c714b6fc01d465010",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 2001234.12,
    "pct_supply": 0.688,
    "usd": 3406.9
@@ -178,7 +178,7 @@
    "sender": "0x13307b8854a95946b54a904100afd0767a7a577b",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1016860.15,
    "pct_supply": 0.349,
    "usd": 1777.72
@@ -187,7 +187,7 @@
    "time": "2026-08-14T21:52:21.000Z",
    "tx_hash": "0x88c001af5411485eeffbe95da21d87ce4b46eaf2a9d1e4c18802d8fde7cc0d61",
    "sender": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
-   "sender_label": "",
+   "sender_label": "CoinSpot (exchange)",
    "recipient": "0xabc1071756710162547cb82c714b6fc01d465010",
    "recipient_label": "",
    "eqty": 2000000.0,
@@ -200,7 +200,7 @@
    "sender": "0xfaace646ee2b59b08dbf1a4faa60d47cec1a92ec",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 5159811.0,
    "pct_supply": 1.773,
    "usd": 9868.83
@@ -211,7 +211,7 @@
    "sender": "0x13307b8854a95946b54a904100afd0767a7a577b",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 864937.54,
    "pct_supply": 0.297,
    "usd": 1654.31
@@ -233,7 +233,7 @@
    "sender": "0x198510b7d7033cffb45d23d034ca946c8e5a072e",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 13215514.83,
    "pct_supply": 4.541,
    "usd": 25001.4
@@ -266,7 +266,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1314860.51,
    "pct_supply": 0.452,
    "usd": 2420.51
@@ -277,7 +277,7 @@
    "sender": "0x67053e9d7584974282801e76b0594ecafae11f84",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 837256.6,
    "pct_supply": 0.288,
    "usd": 1531.07
@@ -288,7 +288,7 @@
    "sender": "0xabc1071756710162547cb82c714b6fc01d465010",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 2009127.12,
    "pct_supply": 0.69,
    "usd": 3536.23
@@ -310,7 +310,7 @@
    "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
    "sender_label": "Distribution wallet",
    "recipient": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
-   "recipient_label": "",
+   "recipient_label": "CoinSpot (exchange)",
    "eqty": 4308230.27,
    "pct_supply": 1.48,
    "usd": 7643.29
@@ -321,7 +321,7 @@
    "sender": "0x198510b7d7033cffb45d23d034ca946c8e5a072e",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 16636545.79,
    "pct_supply": 5.716,
    "usd": 29515.13
@@ -332,7 +332,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 2320131.03,
    "pct_supply": 0.797,
    "usd": 4116.18
@@ -354,7 +354,7 @@
    "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
    "sender_label": "Distribution wallet",
    "recipient": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
-   "recipient_label": "",
+   "recipient_label": "CoinSpot (exchange)",
    "eqty": 5999563.5,
    "pct_supply": 2.061,
    "usd": 10832.46
@@ -365,7 +365,7 @@
    "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
    "sender_label": "Distribution wallet",
    "recipient": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
-   "recipient_label": "",
+   "recipient_label": "CoinSpot (exchange)",
    "eqty": 3999563.5,
    "pct_supply": 1.374,
    "usd": 7221.38
@@ -409,7 +409,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 771992.01,
    "pct_supply": 0.265,
    "usd": 1527.94
@@ -420,7 +420,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 821068.42,
    "pct_supply": 0.282,
    "usd": 1382.21
@@ -431,7 +431,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 929027.88,
    "pct_supply": 0.319,
    "usd": 1888.95
@@ -442,7 +442,7 @@
    "sender": "0x09a3bf35590488f178e2fa0ce855b10db28cd64c",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 763550.1,
    "pct_supply": 0.262,
    "usd": 1377.21
@@ -453,7 +453,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1269875.85,
    "pct_supply": 0.436,
    "usd": 2336.29
@@ -464,7 +464,7 @@
    "sender": "0x09a3bf35590488f178e2fa0ce855b10db28cd64c",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1432649.56,
    "pct_supply": 0.492,
    "usd": 2632.23
@@ -475,7 +475,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 2255705.42,
    "pct_supply": 0.775,
    "usd": 3547.8
@@ -486,7 +486,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1991181.88,
    "pct_supply": 0.684,
    "usd": 2933.44
@@ -497,7 +497,7 @@
    "sender": "0x09a3bf35590488f178e2fa0ce855b10db28cd64c",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1348010.02,
    "pct_supply": 0.463,
    "usd": 2280.48
@@ -552,7 +552,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 755126.91,
    "pct_supply": 0.259,
    "usd": 1574.64
@@ -585,7 +585,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1243068.33,
    "pct_supply": 0.427,
    "usd": 3165.28
@@ -596,7 +596,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1293472.57,
    "pct_supply": 0.444,
    "usd": 3431.52
@@ -629,7 +629,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1081593.76,
    "pct_supply": 0.372,
    "usd": 2876.76
@@ -640,7 +640,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 769368.55,
    "pct_supply": 0.264,
    "usd": 1817.42
@@ -684,7 +684,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 898377.35,
    "pct_supply": 0.309,
    "usd": 2579.1
@@ -761,7 +761,7 @@
    "sender": "0x375e142646dce6517cf5b135155f9d773b8fb662",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 4773810.99,
    "pct_supply": 1.64,
    "usd": 11806.66
@@ -770,7 +770,7 @@
    "time": "2026-02-13T12:38:11.000Z",
    "tx_hash": "0x4659f45515e8884dee1335ff4d95072ff0d996a4b0abf6b960c5e45d3f44f425",
    "sender": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "sender_label": "Service hub",
+   "sender_label": "Gate.io (exchange)",
    "recipient": "0x4637ac1282a183dcc2e254543437fb6f95bf959e",
    "recipient_label": "",
    "eqty": 3999979.64,
@@ -827,7 +827,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1006942.29,
    "pct_supply": 0.346,
    "usd": 4026.79
@@ -1014,7 +1014,7 @@
    "sender": "0x039ac6fbcebf02b54259bc690e13540693d9eb8d",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1091248.66,
    "pct_supply": 0.375,
    "usd": 4777.54
@@ -1102,7 +1102,7 @@
    "sender": "0x07be1254c2933a6a1407f99090cdfa6b581bc8d6",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 766516.0,
    "pct_supply": 0.263,
    "usd": 2848.56
@@ -1113,7 +1113,7 @@
    "sender": "0xfec3a995588a4bc72bed6a47f6c3a61946030001",
    "sender_label": "",
    "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "recipient_label": "Service hub",
+   "recipient_label": "Gate.io (exchange)",
    "eqty": 1157042.98,
    "pct_supply": 0.398,
    "usd": 4299.85
@@ -1257,7 +1257,7 @@
   },
   {
    "sender": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
-   "label": "Service hub",
+   "label": "Gate.io (exchange)",
    "count": 2,
    "total_eqty": 5861333.84,
    "avg_eqty": 2930666.92,
@@ -1419,7 +1419,7 @@
   },
   {
    "sender": "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9",
-   "label": "",
+   "label": "CoinSpot (exchange)",
    "count": 1,
    "total_eqty": 2000000.0,
    "avg_eqty": 2000000.0,

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T17:05:18+00:00",
+ "updated_at": "2026-11-15T17:11:18+00:00",
  "labels": {
   "0x2b253a24600ccd524a7264c2360cae49679a9495": {
    "label": "Automated trader",
@@ -100,10 +100,17 @@
    "source": "manual"
   },
   "0x0d0707963952f2fba59dd06f2b425ace40b492fe": {
-   "label": "Service hub",
-   "type": "service",
-   "confidence": "estimated",
-   "note": "Receives from and sends to many wallets on a daily schedule \u2013 typical for an exchange custodian or rewards service",
+   "label": "Gate.io (exchange)",
+   "type": "exchange",
+   "confidence": "verified",
+   "note": "Gate.io hot wallet \u2013 tagged \"Gate 1\" on Etherscan-family explorers; holds EQTY deposited by Gate.io users",
+   "source": "manual"
+  },
+  "0x4207837d4cd914467eb76bf88c4d6e7ba11ccdf9": {
+   "label": "CoinSpot (exchange)",
+   "type": "exchange",
+   "confidence": "verified",
+   "note": "CoinSpot exchange wallet \u2013 tagged \"CoinSpot 17\" on BscScan; holds EQTY deposited by CoinSpot users",
    "source": "manual"
   },
   "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f": {

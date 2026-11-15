@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T17:05:18+00:00",
+ "updated_at": "2026-11-15T17:11:18+00:00",
  "rows": [
   {
    "address": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
@@ -8,8 +8,8 @@
    "pct_of_supply": 27.07,
    "rank": 1,
    "total_holders": 1415,
-   "label": "Service hub",
-   "type": "service"
+   "label": "Gate.io (exchange)",
+   "type": "exchange"
   },
   {
    "address": "0x32eef6c0ab7267e474051351e8c82066d93f4948",
@@ -38,8 +38,8 @@
    "pct_of_supply": 4.14,
    "rank": 4,
    "total_holders": 1415,
-   "label": "",
-   "type": ""
+   "label": "CoinSpot (exchange)",
+   "type": "exchange"
   },
   {
    "address": "0xf89c5af7fb1c3b8409aa1cf2e1a1841295f7158a",
