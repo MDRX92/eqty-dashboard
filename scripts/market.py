@@ -168,15 +168,17 @@ def enrich(swaps: list[dict], eth_usd: dict[str, float], pools: dict[str, dict])
         else:
             usd = None  # e.g. AERO pool: valued at the day's EQTY price below
         row = {"time": s["time"], "day": day, "tx_hash": s["tx_hash"], "taker": s["taker"],
-               "pool": pool["note"], "side": "buy" if eqty > 0 else "sell", "eqty": abs(eqty), "usd": usd}
+               "pool": pool["note"], "main": s["pool_id"] == MAIN_POOL,
+               "side": "buy" if eqty > 0 else "sell", "eqty": abs(eqty), "usd": usd}
         out.append(row)
         if usd is None:
             pending.append(row)
 
-    # daily VWAP from ETH/USDC pools, then value the remaining swaps with it
+    # Daily VWAP from the main ETH/EQTY pool only: the small USDC pools traded at
+    # off-market prices (e.g. ~$1 at launch) and would distort the price series.
     vw = defaultdict(lambda: [0.0, 0.0])
     for r in out:
-        if r["usd"] is not None and r["eqty"] > 0:
+        if r["main"] and r["usd"] is not None and r["eqty"] > 0:
             vw[r["day"]][0] += r["usd"]
             vw[r["day"]][1] += r["eqty"]
     vwap = {d: u / q for d, (u, q) in vw.items() if q}
@@ -198,17 +200,20 @@ def aggregate(trades, vwap, live, total_supply):
 
     # monthly buy/sell
     mon = defaultdict(lambda: {"buy_usd": 0.0, "sell_usd": 0.0, "buy_eqty": 0.0, "sell_eqty": 0.0, "trades": 0})
+    main_px = defaultdict(lambda: [0.0, 0.0])
     for t in trades:
         m = mon[t["day"][:7]]
         m[f"{t['side']}_usd"] += t["usd"]
         m[f"{t['side']}_eqty"] += t["eqty"]
         m["trades"] += 1
+        if t["main"]:
+            main_px[t["day"][:7]][0] += t["usd"]
+            main_px[t["day"][:7]][1] += t["eqty"]
     monthly = []
     for k in sorted(mon):
-        m = mon[k]
-        q = m["buy_eqty"] + m["sell_eqty"]
-        monthly.append({"month": k, **{x: round(y, 2) for x, y in m.items()},
-                        "avg_price": round((m["buy_usd"] + m["sell_usd"]) / q, 8) if q else None})
+        u, q = main_px.get(k, (0.0, 0.0))
+        monthly.append({"month": k, **{x: round(y, 2) for x, y in mon[k].items()},
+                        "avg_price": round(u / q, 8) if q else None})
 
     # daily (last 90 days, every day present; price forward-filled)
     day_agg = defaultdict(lambda: {"buy_usd": 0.0, "sell_usd": 0.0, "trades": 0})
