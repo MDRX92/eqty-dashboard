@@ -95,7 +95,7 @@ def run_query(sql: str, retries: int = 3) -> list[dict]:
             timeout=60,
         )
         if resp.status_code == 200:
-            rows = resp.json().get("result", [])
+            rows = resp.json().get("result") or []   # CDP returns null for an empty result
             return [
                 {_CAMEL.sub("_", k).lower(): _normalise(v) for k, v in row.items()} for row in rows
             ]
