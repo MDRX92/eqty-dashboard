@@ -19,6 +19,8 @@ from cdp_client import run_query
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "site" / "data"
 MAX_ADDRESSES = 150
+BATCH = 25
+CACHE = ROOT / "data" / "wallet_types.json"   # address -> detected label or null (no contract events)
 
 # event signature (prefix) -> label
 CONTRACT_RULES = [
@@ -70,21 +72,48 @@ def candidate_addresses() -> list[str]:
     return seen[:MAX_ADDRESSES]
 
 
-def detect_contracts(addresses: list[str]) -> dict[str, dict]:
-    if not addresses:
-        return {}
+def _query_types(addresses: list[str]) -> dict[str, set]:
+    """Event signatures per address; splits the batch if CDP's scan limit is hit."""
     sql = (ROOT / "queries" / "11_wallet_types.sql").read_text()
     sql = sql.replace("{addresses}", ", ".join(f"'{a}'" for a in addresses))
+    try:
+        rows = run_query(sql)
+    except RuntimeError as exc:
+        if "scanned more data" in str(exc) and len(addresses) > 1:
+            half = len(addresses) // 2
+            a, b = _query_types(addresses[:half]), _query_types(addresses[half:])
+            return {**a, **b}
+        if "scanned more data" in str(exc):
+            print(f"[labels] skipped {addresses[0]} (too many events to scan)", file=sys.stderr)
+            return {}
+        raise
     sigs = defaultdict(set)
-    for r in run_query(sql):
+    for r in rows:
         sigs[str(r["address"]).lower()].add(str(r["event_signature"]))
-    out = {}
-    for addr, s in sigs.items():
-        label = next((lab for prefix, lab in CONTRACT_RULES if any(x.startswith(prefix) for x in s)),
-                     ("Smart contract", "contract"))
-        out[addr] = {"label": label[0], "type": label[1], "confidence": "verified",
-                     "note": "Detected from the contract's on-chain events", "source": "auto"}
-    return out
+    return sigs
+
+
+def detect_contracts(addresses: list[str], skip: set[str]) -> dict[str, dict]:
+    """Contract type per address. Results are cached: a wallet's type does not change,
+    so after the first run only new addresses are queried (usually 0-1 queries/day)."""
+    cache = json.loads(CACHE.read_text()) if CACHE.exists() else {}
+    todo = [a for a in addresses if a not in cache and a not in skip]
+    for i in range(0, len(todo), BATCH):
+        batch = todo[i:i + BATCH]
+        sigs = _query_types(batch)
+        for addr in batch:
+            s = sigs.get(addr)
+            if not s:
+                cache[addr] = None            # no contract events: regular wallet
+                continue
+            label = next((lab for prefix, lab in CONTRACT_RULES if any(x.startswith(prefix) for x in s)),
+                         ("Smart contract", "contract"))
+            cache[addr] = {"label": label[0], "type": label[1], "confidence": "verified",
+                           "note": "Detected from the contract's on-chain events", "source": "auto"}
+    CACHE.parent.mkdir(parents=True, exist_ok=True)
+    CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True))
+    print(f"[labels] checked {len(todo)} new addresses ({-(-len(todo) // BATCH)} queries)")
+    return {a: v for a, v in cache.items() if v}
 
 
 def detect_traders() -> dict[str, dict]:
@@ -104,12 +133,13 @@ def detect_traders() -> dict[str, dict]:
 
 def update(now_iso: str) -> None:
     labels = {}
+    manual = manual_labels()
     labels.update(detect_traders())
     try:
-        labels.update(detect_contracts(candidate_addresses()))
+        labels.update(detect_contracts(candidate_addresses(), skip=set(manual)))
     except Exception as exc:  # detection is optional; manual labels still work
         print(f"[FAIL] labels (contract detection): {exc}", file=sys.stderr)
-    labels.update(manual_labels())  # manual always wins
+    labels.update(manual)  # manual always wins
     (OUT / "labels.json").write_text(json.dumps({"updated_at": now_iso, "labels": labels}, indent=1))
     counts = defaultdict(int)
     for v in labels.values():

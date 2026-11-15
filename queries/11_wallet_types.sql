@@ -1,6 +1,6 @@
 -- Which events do these addresses emit? Used to recognise Safe multisigs, Coinbase Smart Wallets
 -- and other contracts among the top holders, traders and whales.
--- Placeholder {addresses} = comma-separated, quoted, lowercase addresses (filled in by scripts/labels.py).
+-- The address list placeholder is filled in by scripts/labels.py (batches of 25, quoted, lowercase).
 SELECT address, event_signature, count() AS n
 FROM base.events
 WHERE address IN ({addresses})
