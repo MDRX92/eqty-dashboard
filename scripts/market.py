@@ -1,7 +1,8 @@
 """Market data: Uniswap v4 swaps + ETH/USD, stored incrementally, aggregated to site/data/market.json.
 
 Storage (committed to the repo so history survives between runs):
-  data/swaps.csv       one row per swap (deduplicated on tx_hash + log_index)
+  data/swaps/YYYY-MM.csv  one row per swap, one file per month (deduplicated on tx_hash + log_index);
+                          old months never change, so each daily commit only touches the current month
   data/eth_usd.csv     daily ETH/USD (average pool price, on-chain)
 
 First run backfills month by month from 2025-09-01 (~30 queries, once).
@@ -75,10 +76,46 @@ def load_pools() -> dict[str, dict]:
         return {r["pool_id"]: r for r in csv.DictReader(f) if r["include"] == "1"}
 
 
+# ---------------------------------------------------------------- swap storage
+SWAP_DIR = DATA / "swaps"
+LEGACY_SWAPS = DATA / "swaps.csv"   # single-file format used before Nov 2026
+
+
+def load_swaps() -> list[dict]:
+    rows = []
+    for f in sorted(SWAP_DIR.glob("*.csv")):
+        rows += read_csv(f)
+    if LEGACY_SWAPS.exists():          # one-time migration
+        rows += read_csv(LEGACY_SWAPS)
+    seen, out = set(), []
+    for r in rows:
+        key = (r["tx_hash"], str(r["log_index"]))
+        if key not in seen:
+            seen.add(key)
+            out.append(r)
+    return out
+
+
+def save_swaps(rows: list[dict]) -> None:
+    by_month: dict[str, list[dict]] = {}
+    for r in rows:
+        by_month.setdefault(r["time"][:7], []).append(r)
+    SWAP_DIR.mkdir(parents=True, exist_ok=True)
+    for month, rs in by_month.items():
+        path = SWAP_DIR / f"{month}.csv"
+        tmp = path.with_suffix(".tmp")
+        write_csv(tmp, rs, SWAP_FIELDS)
+        if path.exists() and path.read_bytes() == tmp.read_bytes():
+            tmp.unlink()               # unchanged month: leave the file untouched
+        else:
+            tmp.replace(path)
+    if LEGACY_SWAPS.exists():
+        LEGACY_SWAPS.unlink()
+
+
 # ---------------------------------------------------------------- sync
 def sync_swaps(today: date) -> list[dict]:
-    path = DATA / "swaps.csv"
-    rows = read_csv(path)
+    rows = load_swaps()
     tmpl = (QUERIES / "07_swaps.sql").read_text()
     if rows:
         last = max(r["time"] for r in rows)[:10]
@@ -96,7 +133,7 @@ def sync_swaps(today: date) -> list[dict]:
                 rows.append({k: r.get(k) for k in SWAP_FIELDS})
                 added += 1
     rows.sort(key=lambda r: (r["time"], int(float(r["log_index"]))))
-    write_csv(path, rows, SWAP_FIELDS)
+    save_swaps(rows)
     print(f"[market] swaps: +{added}, total {len(rows)}")
     return rows
 
