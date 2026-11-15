@@ -1,0 +1,70 @@
+{
+ "updated_at": "2026-11-15T12:04:54+00:00",
+ "rows": [
+  {
+   "month": "2025-11-01",
+   "monthly_transfers": 13398,
+   "monthly_volume_tokens": 291067880.63
+  },
+  {
+   "month": "2025-12-01",
+   "monthly_transfers": 14118,
+   "monthly_volume_tokens": 228268179.29
+  },
+  {
+   "month": "2026-01-01",
+   "monthly_transfers": 7320,
+   "monthly_volume_tokens": 146981669.08
+  },
+  {
+   "month": "2026-02-01",
+   "monthly_transfers": 9002,
+   "monthly_volume_tokens": 163946723.33
+  },
+  {
+   "month": "2026-03-01",
+   "monthly_transfers": 7563,
+   "monthly_volume_tokens": 155889393.24
+  },
+  {
+   "month": "2026-04-01",
+   "monthly_transfers": 8333,
+   "monthly_volume_tokens": 140777634.58
+  },
+  {
+   "month": "2026-05-01",
+   "monthly_transfers": 5232,
+   "monthly_volume_tokens": 101212647.88
+  },
+  {
+   "month": "2026-06-01",
+   "monthly_transfers": 10610,
+   "monthly_volume_tokens": 212250715.97
+  },
+  {
+   "month": "2026-07-01",
+   "monthly_transfers": 20227,
+   "monthly_volume_tokens": 314998307.96
+  },
+  {
+   "month": "2026-08-01",
+   "monthly_transfers": 3342,
+   "monthly_volume_tokens": 177115889.11
+  },
+  {
+   "month": "2026-09-01",
+   "monthly_transfers": 1157,
+   "monthly_volume_tokens": 52576284.95
+  },
+  {
+   "month": "2026-10-01",
+   "monthly_transfers": 908,
+   "monthly_volume_tokens": 59485372.51
+  },
+  {
+   "month": "2026-11-01",
+   "monthly_transfers": 347,
+   "monthly_volume_tokens": 20218285.1
+  }
+ ]
+}
