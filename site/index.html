@@ -270,7 +270,7 @@
     <p class="note">Scroll the table to see all 50.</p>
 <p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details or open the <a class="guide-link" href="#label-guide" onclick="openGuide()">label guide</a> – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
     <div id="top50-chart"></div>
-    <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>contract or service wallet</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
+    <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>contract, exchange or service wallet</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
     <div class="tablebox">
       <table>
         <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
@@ -352,6 +352,8 @@ const GUIDE = {
   "Coinbase Smart Wallet": "A smart-contract wallet created through Coinbase's wallet onboarding, typically used by an individual. Detected automatically from its on-chain events.",
   "DEX contract": "A contract that emits swap events, such as another liquidity pool or trading router. Detected automatically.",
   "Smart contract": "A contract address that doesn't match one of the known types above. Detected automatically; the exact purpose is not yet identified.",
+  "Gate.io (exchange)": "Hot wallet of the Gate.io exchange (Gate.io's own \"Gate 1\" wallet, labelled on block explorers). The EQTY here belongs to many Gate.io customers who trade EQTY on the exchange – it is not one investor's position.",
+  "CoinSpot (exchange)": "Wallet of CoinSpot, an Australian crypto exchange (labelled \"CoinSpot 17\" on BscScan). The EQTY here belongs to CoinSpot customers – it is not one investor's position.",
   "Service hub": "A wallet with a large, steady flow of tokens in and out, often in a daily rhythm. That pattern fits an exchange, custodian or rewards distributor – which one is still to be confirmed.",
   "Distribution wallet": "A wallet that received a large block of EQTY and then passed it on to several large holders – it looks like an allocation or hand-out wallet.",
   "Automated trader": "A wallet that trades very often (50+ trades in 30 days or 150+ in 90 days). That usually points to a bot, arbitrage or market-making setup rather than someone trading by hand."
@@ -387,7 +389,7 @@ function renderGuide() {
 }
 function openGuide() { const g = $("label-guide"); if (g) g.open = true; }
 const labelText = (addr, fallback) => { const l = labelOf(addr, fallback); return l ? ` (${l.confidence === "estimated" ? "≈ " : ""}${l.label})` : ""; };
-const CONTRACT_TYPES = new Set(["dex", "bridge", "system", "contract", "multisig", "service"]);
+const CONTRACT_TYPES = new Set(["dex", "bridge", "system", "contract", "multisig", "service", "exchange"]);
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d });
 const compact = n => Number(n).toLocaleString("en-US", { notation: "compact", maximumFractionDigits: 1 });
