@@ -60,6 +60,14 @@
   svg.line text { fill: var(--muted); font-size: 11px; }
   svg.line line { stroke: var(--line); }
   .scroll { overflow-x: auto; }
+  svg.combo { width: 100%; height: 240px; display: block; overflow: visible; margin-bottom: 14px; }
+  svg.combo rect { fill: var(--accent); opacity: .85; }
+  svg.combo rect.lab { fill: var(--muted); opacity: .6; }
+  svg.combo rect:hover { opacity: 1; }
+  svg.combo path.cum { fill: none; stroke: var(--down); stroke-width: 2; }
+  svg.combo circle { fill: var(--down); }
+  svg.combo text { fill: var(--muted); font-size: 11px; }
+  svg.combo line { stroke: var(--line); }
   .tablebox { max-height: 380px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
   .tablebox thead th { position: sticky; top: 0; background: var(--card); z-index: 1; box-shadow: 0 1px 0 var(--line); }
   .tablebox tbody tr:last-child td { border-bottom: none; }
@@ -130,6 +138,8 @@
   <section class="card">
     <h2>Top 50 holders</h2>
     <p class="note">Labelled addresses are contracts or known entities (pool, bridge…). Add labels via pull request. Scroll the table to see all 50.</p>
+    <div id="top50-chart"></div>
+    <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>labelled contract</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
     <div class="tablebox">
       <table>
         <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
@@ -170,6 +180,28 @@ function lineChart(el, points) {           // points: [{x: "YYYY-MM-DD", y: numb
   const xl = [0, Math.floor(points.length / 2), points.length - 1].map((i, k) =>
     `<text x="${sx(i)}" y="${H - 4}" text-anchor="${["start", "middle", "end"][k]}">${points[i].x}</text>`).join("");
   el.innerHTML = `<svg class="line" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${ticks}<path class="a" d="${area}"/><path class="l" d="${d}" vector-effect="non-scaling-stroke"/>${xl}</svg>`;
+}
+
+function comboChart(el, rows) {          // bars = balance, line = cumulative %
+  if (!rows.length) return;
+  const W = 1000, H = 240, P = { l: 48, r: 40, t: 10, b: 22 };
+  const n = rows.length, cw = (W - P.l - P.r) / n, maxB = Math.max(...rows.map(r => r.balance));
+  const yb = v => P.t + (1 - v / maxB) * (H - P.t - P.b);
+  const yp = v => P.t + (1 - v / 100) * (H - P.t - P.b);
+  const cx = i => P.l + cw * i + cw / 2;
+  const grid = [0, .25, .5, .75, 1].map(f =>
+    `<line x1="${P.l}" x2="${W - P.r}" y1="${yb(maxB * f)}" y2="${yb(maxB * f)}"/>` +
+    `<text x="${P.l - 6}" y="${yb(maxB * f) + 4}" text-anchor="end">${compact(maxB * f)}</text>` +
+    `<text x="${W - P.r + 6}" y="${yp(100 * f) + 4}">${100 * f}%</text>`).join("");
+  const barsSvg = rows.map((r, i) => {
+    const y = yb(r.balance);
+    return `<rect class="${r.label ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${r.label ? " (" + r.label + ")" : ""}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
+  }).join("");
+  const d = rows.map((r, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${yp(r.cumulative_pct).toFixed(1)}`).join("");
+  const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yp(r.cumulative_pct).toFixed(1)}" r="2.5"><title>Top ${r.rank}: ${fmt(r.cumulative_pct, 1)}% of supply</title></circle>`).join("");
+  const xl = [1, 10, 20, 30, 40, 50].filter(k => k <= n).map(k =>
+    `<text x="${cx(k - 1)}" y="${H - 6}" text-anchor="middle">#${k}</text>`).join("");
+  el.innerHTML = `<svg class="combo" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${barsSvg}<path class="cum" d="${d}" vector-effect="non-scaling-stroke"/>${dots}${xl}</svg>`;
 }
 
 function bars(el, rows, value, title) {
@@ -253,6 +285,7 @@ function bars(el, rows, value, title) {
   }
 
   // Top 50
+  comboChart($("top50-chart"), h);
   $("holders").innerHTML = h.map(r => `
     <tr>
       <td>${r.rank}</td>
