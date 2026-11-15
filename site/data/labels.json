@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T16:40:06+00:00",
+ "updated_at": "2026-11-15T17:05:18+00:00",
  "labels": {
   "0x2b253a24600ccd524a7264c2360cae49679a9495": {
    "label": "Automated trader",
@@ -79,10 +79,10 @@
    "source": "manual"
   },
   "0x2bc456799f3cf071b10ce7216269471e0a40381a": {
-   "label": "Safe multisig",
+   "label": "EQTY DAO Treasury",
    "type": "multisig",
    "confidence": "verified",
-   "note": "Safe smart account (detected from SafeSetup event)",
+   "note": "Safe multisig of the EQTY DAO treasury \u2013 listed as Treasury in the eqty-dao/eqty-contracts README",
    "source": "manual"
   },
   "0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a": {

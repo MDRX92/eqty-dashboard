@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T16:40:06+00:00",
+ "updated_at": "2026-11-15T17:05:18+00:00",
  "kpis": {
   "large_30d": 6,
   "large_30d_eqty": 31463079.26,
@@ -616,7 +616,7 @@
    "time": "2026-04-05T09:48:51.000Z",
    "tx_hash": "0xd82aebcf943a76e26ab7ae4d00c545d7edf1a60e8a7a8c8592b8778b97cd1e9d",
    "sender": "0x2bc456799f3cf071b10ce7216269471e0a40381a",
-   "sender_label": "Safe multisig",
+   "sender_label": "EQTY DAO Treasury",
    "recipient": "0x813f5edd317ed74e6397f37cb6c42c4950cc973e",
    "recipient_label": "",
    "eqty": 900000.0,
@@ -981,7 +981,7 @@
    "sender": "0xc4e597f76e60a0e6a2aa4368306ce98a47a6812e",
    "sender_label": "",
    "recipient": "0x2bc456799f3cf071b10ce7216269471e0a40381a",
-   "recipient_label": "Safe multisig",
+   "recipient_label": "EQTY DAO Treasury",
    "eqty": 18410772.0,
    "pct_supply": 6.326,
    "usd": 73673.86
