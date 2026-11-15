@@ -83,6 +83,11 @@
   .tag[title] { cursor: help; }
   .label-key { font-size: 12px; color: var(--muted); margin: 0 0 10px; }
   .label-key .tag { margin: 0 2px; }
+  details.guide dl { margin: 8px 0 0; }
+  details.guide dt { margin-top: 12px; font-size: 14px; }
+  details.guide dt .n { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: 6px; }
+  details.guide dd { margin: 4px 0 0; color: var(--muted); font-size: 14px; max-width: 760px; }
+  .label-key a.guide-link { white-space: nowrap; }
   .sectext { color: var(--muted); font-size: 14px; margin: -6px 0 14px; max-width: 760px; }
   details.about { margin-bottom: 20px; }
   details.about summary { cursor: pointer; font-weight: 600; }
@@ -124,6 +129,12 @@
     </ul>
     <p><b>Wallet labels.</b> Some wallets carry a label so you can see who is who. Labels without a mark are verified (detected from the contract itself, or a well-known address). Labels marked <b>≈</b> are an estimate based on on-chain behaviour – useful context, but not yet confirmed. Community input is very welcome: suggest or correct a label via GitHub.</p>
     <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. Supply = minted − burned. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Spam pools with 88–99% fees are ignored. Suggestions and address labels are welcome via GitHub.</p>
+  </details>
+
+  <details class="card about guide" id="label-guide" style="display:none">
+    <summary>Wallet label guide</summary>
+    <p class="note">What each label on this dashboard means. Labels without a mark are verified; labels marked <b>≈</b> are an estimate from on-chain behaviour – helpful context while we wait for confirmation. Know who is behind a wallet? You are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
+    <dl id="guide-list"></dl>
   </details>
 
   <div class="kpis">
@@ -186,7 +197,7 @@
   <section class="card" style="margin-top:16px">
     <h2>Trader leaderboard</h2>
     <p class="note">Wallets that traded the most on Uniswap, with their net position change. Net = buys − sells (green = accumulating, red = reducing). One wallet doing a large share of the volume often points to a bot or market maker.</p>
-<p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
+<p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details or open the <a class="guide-link" href="#label-guide" onclick="openGuide()">label guide</a> – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
     <div class="tabs" id="lb-tabs"><button data-k="30d" class="on">30 days</button><button data-k="90d">90 days</button></div>
     <span class="note" id="lb-summary" style="margin-left:10px"></span>
     <div class="tablebox" style="max-height:340px">
@@ -263,7 +274,7 @@
   <section class="card">
     <h2>Top 50 holders</h2>
     <p class="note">Scroll the table to see all 50.</p>
-<p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
+<p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details or open the <a class="guide-link" href="#label-guide" onclick="openGuide()">label guide</a> – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
     <div id="top50-chart"></div>
     <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>contract or service wallet</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
     <div class="tablebox">
@@ -292,7 +303,7 @@
   <section class="card">
     <h2>Latest large transfers</h2>
     <p class="note">Most recent 100. Click a time to open the transaction on Basescan.</p>
-    <p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
+    <p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details or open the <a class="guide-link" href="#label-guide" onclick="openGuide()">label guide</a> – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
     <div class="tablebox">
       <table>
         <thead><tr><th>Time (UTC)</th><th>From</th><th>To</th><th class="num">EQTY</th><th class="num">% supply</th><th class="num">USD</th></tr></thead>
@@ -326,10 +337,54 @@ const labelOf = (addr, fallback) => LABELS[String(addr || "").toLowerCase()] || 
 const badge = (addr, fallback) => {
   const l = labelOf(addr, fallback);
   if (!l) return "";
+  noteUse(addr, l);
   const est = l.confidence === "estimated";
   const tip = [l.note, est ? EST_NOTE : "Verified label"].filter(Boolean).join(" · ");
   return `<span class="tag${est ? " est" : ""}" title="${esc(tip)}">${est ? "≈ " : ""}${esc(l.label)}</span>`;
 };
+const GUIDE = {
+  "Uniswap v4 PoolManager": "The Uniswap v4 contract that holds the liquidity of all v4 pools, including the main ETH/EQTY pool. EQTY held here is pool liquidity that traders buy from and sell into – not one person's position.",
+  "LI.FI Diamond": "Contract of LI.FI, a bridge and swap aggregator used by many wallets and apps. Tokens pass through it when someone swaps or bridges via LI.FI; it doesn't own them.",
+  "1inch Router": "Contract of 1inch, a swap aggregator that finds the best route across DEXes. Tokens only pass through it during a trade.",
+  "Mint/Burn (zero address)": "Not a real wallet. Transfers from the zero address are newly minted tokens; transfers to it are burned (removed from supply). All EQTY originally came from here.",
+  "Safe multisig": "A Safe wallet that needs several signers to approve each transaction – the usual setup for treasuries, teams and DAOs. Detected automatically from its on-chain events.",
+  "Coinbase Smart Wallet": "A smart-contract wallet created through Coinbase's wallet onboarding, typically used by an individual. Detected automatically from its on-chain events.",
+  "DEX contract": "A contract that emits swap events, such as another liquidity pool or trading router. Detected automatically.",
+  "Smart contract": "A contract address that doesn't match one of the known types above. Detected automatically; the exact purpose is not yet identified.",
+  "Service hub": "A wallet with a large, steady flow of tokens in and out, often in a daily rhythm. That pattern fits an exchange, custodian or rewards distributor – which one is still to be confirmed.",
+  "Distribution wallet": "A wallet that received a large block of EQTY and then passed it on to several large holders – it looks like an allocation or hand-out wallet.",
+  "Automated trader": "A wallet that trades very often (50+ trades in 30 days or 150+ in 90 days). That usually points to a bot, arbitrage or market-making setup rather than someone trading by hand."
+};
+const USED = new Map();   // label -> {est, addrs:Set}
+const noteUse = (addr, l) => {
+  if (!l || !l.label) return;
+  const u = USED.get(l.label) || { est: false, addrs: new Set() };
+  if (l.confidence === "estimated") u.est = true;
+  if (addr) u.addrs.add(String(addr).toLowerCase());
+  USED.set(l.label, u);
+};
+// collect every labelled address that appears in the dashboard data
+const ADDR_RE = /^0x[0-9a-fA-F]{40}$/;
+const scanLabels = (v, parent) => {
+  if (Array.isArray(v)) return v.forEach(x => scanLabels(x));
+  if (v && typeof v === "object") {
+    for (const [k, x] of Object.entries(v)) {
+      if (typeof x === "string" && ADDR_RE.test(x)) noteUse(x, labelOf(x, k === "address" ? v.label : null));
+      else scanLabels(x);
+    }
+  }
+};
+function renderGuide() {
+  const names = [...USED.keys()].sort((a, b) => (USED.get(a).est - USED.get(b).est) || a.localeCompare(b));
+  if (!names.length) return;
+  $("guide-list").innerHTML = names.map(n => {
+    const u = USED.get(n), cnt = u.addrs.size;
+    const desc = GUIDE[n] || [...Object.values(LABELS)].find(l => l.label === n && l.note)?.note || "";
+    return `<dt><span class="tag${u.est ? " est" : ""}">${u.est ? "≈ " : ""}${esc(n)}</span><span class="n">${u.est ? "estimated" : "verified"} · ${cnt} wallet${cnt === 1 ? "" : "s"}</span></dt><dd>${esc(desc)}</dd>`;
+  }).join("");
+  $("label-guide").style.display = "";
+}
+function openGuide() { const g = $("label-guide"); if (g) g.open = true; }
 const labelText = (addr, fallback) => { const l = labelOf(addr, fallback); return l ? ` (${l.confidence === "estimated" ? "≈ " : ""}${l.label})` : ""; };
 const CONTRACT_TYPES = new Set(["dex", "bridge", "system", "contract", "multisig", "service"]);
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -677,6 +732,8 @@ function bars(el, rows, value, title) {
       <td class="num">${fmt(r.pct_of_supply, 2)}%</td>
       <td class="num">${fmt(r.cumulative_pct, 1)}%</td>
     </tr>`).join("");
+  [holders, market, whales].forEach(d => d && scanLabels(d));
+  renderGuide();
 })();
 </script>
 </body>
