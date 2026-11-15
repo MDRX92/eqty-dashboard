@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EQTY on Base – Dashboard</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1b; --muted: #6b6b66;
+    --line: #e4e4df; --accent: #2f5bea; --accent-soft: #dfe7fd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141413; --card: #1e1e1c; --text: #ededea; --muted: #9b9b95;
+            --line: #2e2e2b; --accent: #7c9cff; --accent-soft: #2a3354; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); }
+  main { max-width: 1040px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 17px; margin: 0 0 12px; }
+  .sub { color: var(--muted); margin: 0 0 28px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .kpi .label { color: var(--muted); font-size: 13px; }
+  .kpi .value { font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 2px; }
+  section.card { margin-bottom: 20px; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { color: var(--muted); font-weight: 500; font-size: 13px; }
+  td.num, th.num { text-align: right; }
+  .tag { font-size: 12px; padding: 1px 7px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); margin-left: 6px; }
+  a { color: var(--accent); text-decoration: none; }
+  .bars { display: flex; align-items: flex-end; gap: 3px; height: 160px; }
+  .bar { flex: 1; background: var(--accent); border-radius: 3px 3px 0 0; min-height: 2px; opacity: .85; }
+  .bar:hover { opacity: 1; }
+  .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 6px; }
+  .scroll { overflow-x: auto; }
+  footer { color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>EQTY on Base</h1>
+  <p class="sub">Community dashboard for the EQTY DAO · data: Coinbase CDP SQL API · <span id="updated">loading…</span></p>
+
+  <div class="kpis">
+    <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div></div>
+    <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div></div>
+    <div class="card kpi"><div class="label">Top 50 share of supply</div><div class="value" id="k-top50">–</div></div>
+    <div class="card kpi"><div class="label">Transfers (last 30 days)</div><div class="value" id="k-tx30">–</div></div>
+  </div>
+
+  <section class="card">
+    <h2>Daily transfers – last 30 days</h2>
+    <div class="bars" id="bars"></div>
+    <div class="axis"><span id="ax-start"></span><span id="ax-end"></span></div>
+  </section>
+
+  <section class="card">
+    <h2>Top 50 holders</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
+        <tbody id="holders"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Token <a href="https://basescan.org/token/0xc71f37d9bf4c5d1e7fe4bccb97e6f30b11b37d29">0xc71f…7d29</a> ·
+    Open source – contributions and address labels welcome via pull request.
+  </footer>
+</main>
+
+<script>
+const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d });
+const short = a => a.slice(0, 6) + "…" + a.slice(-4);
+const get = async name => (await fetch(`data/${name}.json?t=${Date.now()}`)).json();
+
+(async () => {
+  try {
+    const [supply, holders, daily] = await Promise.all([get("supply"), get("top_holders"), get("daily_transfers")]);
+
+    document.getElementById("updated").textContent =
+      "updated " + new Date(supply.updated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" });
+
+    const s = supply.rows[0] || {};
+    document.getElementById("k-supply").textContent = fmt(s.total_supply);
+
+    const h = holders.rows;
+    if (h.length) {
+      document.getElementById("k-holders").textContent = fmt(h[0].total_holders);
+      document.getElementById("k-top50").textContent = fmt(h[h.length - 1].cumulative_pct, 1) + "%";
+    }
+    document.getElementById("holders").innerHTML = h.map(r => `
+      <tr>
+        <td>${r.rank}</td>
+        <td><a href="https://basescan.org/address/${r.address}">${short(r.address)}</a>${r.label ? `<span class="tag">${r.label}</span>` : ""}</td>
+        <td class="num">${fmt(r.balance)}</td>
+        <td class="num">${fmt(r.pct_of_supply, 2)}%</td>
+        <td class="num">${fmt(r.cumulative_pct, 1)}%</td>
+      </tr>`).join("");
+
+    const d = [...daily.rows].sort((a, b) => a.date.localeCompare(b.date));
+    document.getElementById("k-tx30").textContent = fmt(d.reduce((t, r) => t + r.total_transfers, 0));
+    const max = Math.max(...d.map(r => r.total_transfers), 1);
+    document.getElementById("bars").innerHTML = d.map(r =>
+      `<div class="bar" style="height:${(r.total_transfers / max) * 100}%" title="${r.date}: ${fmt(r.total_transfers)} transfers, ${fmt(r.total_volume_tokens)} EQTY"></div>`
+    ).join("");
+    if (d.length) {
+      document.getElementById("ax-start").textContent = d[0].date;
+      document.getElementById("ax-end").textContent = d[d.length - 1].date;
+    }
+  } catch (e) {
+    document.getElementById("updated").textContent = "no data yet – run the workflow first";
+  }
+})();
+</script>
+</body>
+</html>

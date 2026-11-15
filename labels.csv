@@ -1,0 +1,4 @@
+address,label,type
+0x498581ff718922c3f8e6a244956af099b2652b2b,Uniswap v4 PoolManager,dex
+0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae,LI.FI Diamond,bridge/aggregator
+0x0000000000000000000000000000000000000000,Mint/Burn (zero address),system

@@ -1,0 +1,160 @@
+{
+ "updated_at": "2026-11-15T11:47:49+00:00",
+ "rows": [
+  {
+   "date": "2026-11-15",
+   "total_transfers": 8,
+   "total_volume_tokens": 333876.86
+  },
+  {
+   "date": "2026-11-14",
+   "total_transfers": 21,
+   "total_volume_tokens": 1397626.93
+  },
+  {
+   "date": "2026-11-13",
+   "total_transfers": 18,
+   "total_volume_tokens": 891054.79
+  },
+  {
+   "date": "2026-11-12",
+   "total_transfers": 13,
+   "total_volume_tokens": 725182.56
+  },
+  {
+   "date": "2026-11-11",
+   "total_transfers": 26,
+   "total_volume_tokens": 914124.27
+  },
+  {
+   "date": "2026-11-10",
+   "total_transfers": 28,
+   "total_volume_tokens": 3559998.59
+  },
+  {
+   "date": "2026-11-09",
+   "total_transfers": 14,
+   "total_volume_tokens": 925420.12
+  },
+  {
+   "date": "2026-11-08",
+   "total_transfers": 2,
+   "total_volume_tokens": 57203
+  },
+  {
+   "date": "2026-11-07",
+   "total_transfers": 3,
+   "total_volume_tokens": 69152.9
+  },
+  {
+   "date": "2026-11-06",
+   "total_transfers": 19,
+   "total_volume_tokens": 1193971.26
+  },
+  {
+   "date": "2026-11-05",
+   "total_transfers": 36,
+   "total_volume_tokens": 956854.48
+  },
+  {
+   "date": "2026-11-04",
+   "total_transfers": 45,
+   "total_volume_tokens": 2213308.67
+  },
+  {
+   "date": "2026-11-03",
+   "total_transfers": 68,
+   "total_volume_tokens": 3733204.14
+  },
+  {
+   "date": "2026-11-02",
+   "total_transfers": 32,
+   "total_volume_tokens": 2560179.53
+  },
+  {
+   "date": "2026-11-01",
+   "total_transfers": 14,
+   "total_volume_tokens": 687127
+  },
+  {
+   "date": "2026-10-31",
+   "total_transfers": 57,
+   "total_volume_tokens": 4787340.12
+  },
+  {
+   "date": "2026-10-30",
+   "total_transfers": 28,
+   "total_volume_tokens": 6710342.34
+  },
+  {
+   "date": "2026-10-29",
+   "total_transfers": 44,
+   "total_volume_tokens": 22862207.48
+  },
+  {
+   "date": "2026-10-28",
+   "total_transfers": 49,
+   "total_volume_tokens": 1579658.83
+  },
+  {
+   "date": "2026-10-27",
+   "total_transfers": 22,
+   "total_volume_tokens": 556553.56
+  },
+  {
+   "date": "2026-10-26",
+   "total_transfers": 9,
+   "total_volume_tokens": 605875.17
+  },
+  {
+   "date": "2026-10-25",
+   "total_transfers": 10,
+   "total_volume_tokens": 207574.48
+  },
+  {
+   "date": "2026-10-24",
+   "total_transfers": 27,
+   "total_volume_tokens": 906010.97
+  },
+  {
+   "date": "2026-10-23",
+   "total_transfers": 2,
+   "total_volume_tokens": 1904.14
+  },
+  {
+   "date": "2026-10-22",
+   "total_transfers": 18,
+   "total_volume_tokens": 253117.78
+  },
+  {
+   "date": "2026-10-21",
+   "total_transfers": 20,
+   "total_volume_tokens": 1429738.42
+  },
+  {
+   "date": "2026-10-20",
+   "total_transfers": 26,
+   "total_volume_tokens": 743613.62
+  },
+  {
+   "date": "2026-10-19",
+   "total_transfers": 24,
+   "total_volume_tokens": 438800.26
+  },
+  {
+   "date": "2026-10-18",
+   "total_transfers": 23,
+   "total_volume_tokens": 596745.19
+  },
+  {
+   "date": "2026-10-17",
+   "total_transfers": 30,
+   "total_volume_tokens": 1153018.58
+  },
+  {
+   "date": "2026-10-16",
+   "total_transfers": 6,
+   "total_volume_tokens": 50761.95
+  }
+ ]
+}
