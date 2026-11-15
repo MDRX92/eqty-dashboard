@@ -162,7 +162,7 @@ function lineChart(el, points) {           // points: [{x: "YYYY-MM-DD", y: numb
   const sy = v => P.t + (1 - (v - lo) / (hi - lo)) * (H - P.t - P.b);
   const d = points.map((p, i) => `${i ? "L" : "M"}${sx(i).toFixed(1)},${sy(p.y).toFixed(1)}`).join("");
   const area = `${d}L${sx(points.length - 1)},${H - P.b}L${sx(0)},${H - P.b}Z`;
-  const ticks = [lo, (lo + hi) / 2, hi].map(v =>
+  const ticks = [lo, (lo + hi) / 2, hi].map(Math.round).map(v =>
     `<line x1="${P.l}" x2="${W - P.r}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${P.l - 6}" y="${sy(v) + 4}" text-anchor="end">${compact(v)}</text>`).join("");
   const xl = [0, Math.floor(points.length / 2), points.length - 1].map((i, k) =>
     `<text x="${sx(i)}" y="${H - 4}" text-anchor="${["start", "middle", "end"][k]}">${points[i].x}</text>`).join("");
