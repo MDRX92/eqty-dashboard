@@ -128,7 +128,7 @@
       <li><b>Whale tracker</b> – large wallet-to-wallet transfers and the most active large senders.</li>
     </ul>
     <p><b>Wallet labels.</b> Some wallets carry a label so you can see who is who. Labels without a mark are verified (detected from the contract itself, or a well-known address). Labels marked <b>≈</b> are an estimate based on on-chain behaviour – useful context, but not yet confirmed. Community input is very welcome: suggest or correct a label via GitHub.</p>
-    <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. Supply = minted − burned. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Spam pools with 88–99% fees are ignored. Suggestions and address labels are welcome via GitHub.</p>
+    <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Suggestions and address labels are welcome via GitHub.</p>
   </details>
 
   <details class="card about guide" id="label-guide" style="display:none">
@@ -138,14 +138,14 @@
   </details>
 
   <div class="kpis">
-    <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div><div class="delta" id="k-burned"></div></div>
+    <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div></div>
     <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div><div class="delta" id="k-holders-d"></div></div>
     <div class="card kpi"><div class="label">Top 50 share of supply</div><div class="value" id="k-top50">–</div><div class="delta">incl. pool &amp; contracts (see labels)</div></div>
     <div class="card kpi"><div class="label">Transfers (last 30 days)</div><div class="value" id="k-tx30">–</div><div class="delta" id="k-vol30"></div></div>
   </div>
 
   <h3>Market</h3>
-  <p class="sectext">EQTY trading on Uniswap v4 (mainly the ETH/EQTY 0.3% pool). USD values use the ETH price of that day; spam pools with 88–99% fees are ignored.</p>
+  <p class="sectext">Price, volume and trades of EQTY on Uniswap.</p>
   <div class="kpis">
     <div class="card kpi"><div class="label">Price (USD)</div><div class="value" id="m-price">–</div><div class="delta" id="m-price-d"></div></div>
     <div class="card kpi"><div class="label">Fully diluted value</div><div class="value" id="m-fdv">–</div><div class="delta" id="m-liq"></div></div>
@@ -526,7 +526,6 @@ function bars(el, rows, value, title) {
   // KPIs
   const s = supply.rows[0] || {};
   $("k-supply").textContent = fmt(s.total_supply);
-  if (s.burned) $("k-burned").textContent = `${fmt(s.burned)} burned`;
 
   const h = holders ? holders.rows : [];
   if (h.length) {
