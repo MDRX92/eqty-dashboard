@@ -105,6 +105,7 @@
 <body>
 <main>
   <h1>EQTY on Base</h1>
+  <div id="stale" class="card" style="display:none;border-color:var(--down);color:var(--down);margin-bottom:16px"></div>
   <p class="sub">Community dashboard for the EQTY DAO · data: Coinbase CDP SQL API · <span id="updated">loading…</span></p>
 
   <details class="card about">
@@ -285,6 +286,7 @@
 
 <script>
 const $ = id => document.getElementById(id);
+const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d });
 const compact = n => Number(n).toLocaleString("en-US", { notation: "compact", maximumFractionDigits: 1 });
 const short = a => a.slice(0, 6) + "…" + a.slice(-4);
@@ -324,7 +326,7 @@ function comboChart(el, rows) {          // bars = balance, line = cumulative %
     `<text x="${W - P.r + 6}" y="${yp(100 * f) + 4}">${100 * f}%</text>`).join("");
   const barsSvg = rows.map((r, i) => {
     const y = yb(r.balance);
-    return `<rect class="${r.label ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${r.label ? " (" + r.label + ")" : ""}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
+    return `<rect class="${r.label ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${r.label ? " (" + esc(r.label) + ")" : ""}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
   }).join("");
   const d = rows.map((r, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${yp(r.cumulative_pct).toFixed(1)}`).join("");
   const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yp(r.cumulative_pct).toFixed(1)}" r="2.5"><title>Top ${r.rank}: ${fmt(r.cumulative_pct, 1)}% of supply</title></circle>`).join("");
@@ -407,6 +409,14 @@ function bars(el, rows, value, title) {
     ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales"].map(get));
 
   if (!supply) { $("updated").textContent = "no data yet – run the workflow first"; return; }
+  const meta = await get("meta");
+  const ageH = (Date.now() - new Date(supply.updated_at)) / 36e5;
+  if (ageH > 36 || (meta && meta.failed && meta.failed.length)) {
+    $("stale").style.display = "block";
+    $("stale").textContent = ageH > 36
+      ? `Data may be out of date: last refresh ${Math.round(ageH)} hours ago.`
+      : `Last refresh partly failed (${meta.failed.join(", ")}); those sections show the previous data.`;
+  }
   $("updated").textContent = "updated " + new Date(supply.updated_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" });
 
   // KPIs
@@ -531,7 +541,7 @@ function bars(el, rows, value, title) {
   // Whale tracker
   if (whales) {
     const k = whales.kpis;
-    const addr = (a, label) => `<a href="https://basescan.org/address/${a}">${short(a)}</a>${label ? `<span class="tag">${label}</span>` : ""}`;
+    const addr = (a, label) => `<a href="https://basescan.org/address/${a}">${short(a)}</a>${label ? `<span class="tag">${esc(label)}</span>` : ""}`;
     $("w-30").textContent = fmt(k.large_30d);
     $("w-30e").textContent = compact(k.large_30d_eqty) + " EQTY moved";
     if (k.largest_30d) {
@@ -570,7 +580,7 @@ function bars(el, rows, value, title) {
   $("holders").innerHTML = h.map(r => `
     <tr>
       <td>${r.rank}</td>
-      <td><a href="https://basescan.org/address/${r.address}">${short(r.address)}</a>${r.label ? `<span class="tag">${r.label}</span>` : ""}</td>
+      <td><a href="https://basescan.org/address/${r.address}">${short(r.address)}</a>${r.label ? `<span class="tag">${esc(r.label)}</span>` : ""}</td>
       <td class="num">${fmt(r.balance)}</td>
       <td class="num">${fmt(r.pct_of_supply, 2)}%</td>
       <td class="num">${fmt(r.cumulative_pct, 1)}%</td>

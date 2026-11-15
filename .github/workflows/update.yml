@@ -2,16 +2,14 @@ name: Update dashboard
 
 on:
   schedule:
-    - cron: "17 5 * * *"   # daily at 05:17 UTC
+    - cron: "17 5 * * *"   # daily at 05:17 UTC (GitHub may start it a few minutes late)
   workflow_dispatch:         # manual "Run workflow" button
   push:
     branches: [main]
     paths: ["site/**", "scripts/**", "queries/**", "labels.csv", "pools.csv", ".github/workflows/**"]
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+# Least privilege: nothing by default, each job asks only for what it needs.
+permissions: {}
 
 concurrency:
   group: dashboard
@@ -20,10 +18,13 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write        # commit the refreshed data
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -42,19 +43,26 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/data data
-          git diff --cached --quiet || (git commit -m "data: daily update" && git push)
+          if ! git diff --cached --quiet; then
+            git commit -m "data: daily update"
+            git pull --rebase origin main   # in case something was pushed during the run
+            git push
+          fi
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write           # publish to GitHub Pages
+      id-token: write        # verify the deployment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
