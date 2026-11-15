@@ -8,12 +8,14 @@
   :root {
     --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1b; --muted: #6b6b66;
     --line: #e4e4df; --accent: #2f5bea; --accent-soft: #dfe7fd;
-    --up: #1f9d6b; --down: #d9534f;
+    --up: #1f9d6b; --down: #d9534f; --vol: #e8833a;
+    --c1: #2f5bea; --c2: #6f8ff0; --c3: #a9bcf5; --c4: #c9c9c3;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg: #141413; --card: #1e1e1c; --text: #ededea; --muted: #9b9b95;
             --line: #2e2e2b; --accent: #7c9cff; --accent-soft: #2a3354;
-            --up: #3ecf8e; --down: #f07470; }
+            --up: #3ecf8e; --down: #f07470; --vol: #f2a35e;
+            --c1: #7c9cff; --c2: #5a74c4; --c3: #3e4f86; --c4: #4a4a46; }
   }
   * { box-sizing: border-box; }
   body { margin: 0; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -60,6 +62,24 @@
   svg.line text { fill: var(--muted); font-size: 11px; }
   svg.line line { stroke: var(--line); }
   .scroll { overflow-x: auto; }
+  svg.dual { width: 100%; height: 190px; display: block; overflow: visible; }
+  svg.dual rect { fill: var(--accent); opacity: .85; }
+  svg.dual rect:hover { opacity: 1; }
+  svg.dual path.v { fill: none; stroke: var(--vol); stroke-width: 2; }
+  svg.dual circle { fill: var(--vol); }
+  svg.dual text { fill: var(--muted); font-size: 11px; }
+  svg.dual line { stroke: var(--line); }
+  .donut-wrap { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-bottom: 14px; }
+  .donut-wrap svg { width: 150px; height: 150px; flex: none; }
+  .donut-legend { display: grid; gap: 6px; font-size: 13px; }
+  .donut-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 7px; vertical-align: -1px; }
+  .donut-legend b { font-variant-numeric: tabular-nums; }
+  .sectext { color: var(--muted); font-size: 14px; margin: -6px 0 14px; max-width: 760px; }
+  details.about { margin-bottom: 20px; }
+  details.about summary { cursor: pointer; font-weight: 600; }
+  details.about ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+  details.about li { margin: 3px 0; }
+  details.about p { color: var(--muted); margin: 10px 0 0; }
   svg.combo { width: 100%; height: 240px; display: block; overflow: visible; margin-bottom: 14px; }
   svg.combo rect { fill: var(--accent); opacity: .85; }
   svg.combo rect.lab { fill: var(--muted); opacity: .6; }
@@ -82,6 +102,18 @@
   <h1>EQTY on Base</h1>
   <p class="sub">Community dashboard for the EQTY DAO · data: Coinbase CDP SQL API · <span id="updated">loading…</span></p>
 
+  <details class="card about">
+    <summary>About this dashboard</summary>
+    <p>A free, open-source view of EQTY's on-chain activity on Base, built for the EQTY DAO community. Data is pulled directly from the Base blockchain via the Coinbase CDP SQL API and refreshed once a day (around 05:20 UTC).</p>
+    <ul>
+      <li><b>Holders</b> – how many wallets hold EQTY, how that changed over time, who joined or left, and how active holders are.</li>
+      <li><b>Activity</b> – daily and monthly transfer counts and the amount of EQTY moved.</li>
+      <li><b>Distribution</b> – how concentrated the supply is across the 50 largest wallets.</li>
+      <li><i>Coming next:</i> price (USD/EUR), Uniswap buy/sell volume and trade sizes, and large wallet transfers.</li>
+    </ul>
+    <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. Supply = minted − burned. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Spam pools with 88–99% fees are ignored. Suggestions and address labels are welcome via GitHub.</p>
+  </details>
+
   <div class="kpis">
     <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div><div class="delta" id="k-burned"></div></div>
     <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div><div class="delta" id="k-holders-d"></div></div>
@@ -90,6 +122,7 @@
   </div>
 
   <h3>Holders</h3>
+  <p class="sectext">Community growth and retention since launch (30 Aug 2025). A steady upward line means organic adoption; spikes in exits can signal sell-offs or wallet consolidation.</p>
   <section class="card">
     <h2>Holders over time</h2>
     <p class="note">Wallets holding more than 0.0001 EQTY at the end of each day (historically reconstructed from all transfers).</p>
@@ -108,6 +141,7 @@
     <section class="card">
       <h2>Holder lifecycle</h2>
       <p class="note">By year of first transfer and time since last activity.</p>
+      <div class="donut-wrap"><div id="life-donut"></div><div class="donut-legend" id="life-legend"></div></div>
       <div class="scroll">
         <table>
           <thead><tr><th>Cohort</th><th>Status</th><th class="num">Holders</th><th class="num">Balance (EQTY)</th><th>Share of holders</th></tr></thead>
@@ -118,23 +152,25 @@
   </div>
 
   <h3>Activity</h3>
+  <p class="sectext">Core transfer activity: short-term momentum (last 30 days) and long-term trends (last 12 months). Bars show the number of transfers, the orange line the amount of EQTY moved.</p>
   <div class="grid2">
     <section class="card">
       <h2>Daily transfers – last 30 days</h2>
-      <p class="note">All EQTY transfers, including swaps.</p>
-      <div class="bars" id="bars"></div>
-      <div class="axis"><span id="ax-start"></span><span id="ax-end"></span></div>
+      <p class="note">All EQTY transfers, including swaps. Hover for details.</p>
+      <div id="daily-chart"></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>transfers (left)</span><span><i style="background:var(--vol)"></i>EQTY moved (right)</span></div>
     </section>
 
     <section class="card">
       <h2>Monthly transfers – last 12 months</h2>
-      <p class="note">Hover a bar for the transferred volume.</p>
-      <div class="bars" id="mbars"></div>
-      <div class="axis"><span id="mx-start"></span><span id="mx-end"></span></div>
+      <p class="note">Hover for details.</p>
+      <div id="monthly-chart"></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>transfers (left)</span><span><i style="background:var(--vol)"></i>EQTY moved (right)</span></div>
     </section>
   </div>
 
   <h3>Distribution</h3>
+  <p class="sectext">Supply concentration among the largest wallets. High concentration means a few wallets can move the market – some of these are contracts (pools, bridges) rather than people.</p>
   <section class="card">
     <h2>Top 50 holders</h2>
     <p class="note">Labelled addresses are contracts or known entities (pool, bridge…). Add labels via pull request. Scroll the table to see all 50.</p>
@@ -204,6 +240,41 @@ function comboChart(el, rows) {          // bars = balance, line = cumulative %
   el.innerHTML = `<svg class="combo" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${barsSvg}<path class="cum" d="${d}" vector-effect="non-scaling-stroke"/>${dots}${xl}</svg>`;
 }
 
+function dualChart(el, rows, { x, bar, line, xLabel, tip }) {   // bars + line on a second axis
+  if (!rows.length) return;
+  const W = 1000, H = 190, P = { l: 40, r: 46, t: 8, b: 22 };
+  const n = rows.length, cw = (W - P.l - P.r) / n;
+  const mb = Math.max(...rows.map(bar), 1), ml = Math.max(...rows.map(line), 1);
+  const yb = v => P.t + (1 - v / mb) * (H - P.t - P.b), yl = v => P.t + (1 - v / ml) * (H - P.t - P.b);
+  const cx = i => P.l + cw * i + cw / 2;
+  const grid = [0, .5, 1].map(f =>
+    `<line x1="${P.l}" x2="${W - P.r}" y1="${yb(mb * f)}" y2="${yb(mb * f)}"/>` +
+    `<text x="${P.l - 6}" y="${yb(mb * f) + 4}" text-anchor="end">${compact(Math.round(mb * f))}</text>` +
+    `<text x="${W - P.r + 6}" y="${yl(ml * f) + 4}">${compact(ml * f)}</text>`).join("");
+  const rects = rows.map((r, i) => { const y = yb(bar(r));
+    return `<rect x="${(P.l + cw * i + cw * .12).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * .76).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>${tip(r)}</title></rect>`; }).join("");
+  const d = rows.map((r, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${yl(line(r)).toFixed(1)}`).join("");
+  const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yl(line(r)).toFixed(1)}" r="2.5"><title>${tip(r)}</title></circle>`).join("");
+  const idx = n <= 13 ? [...Array(n).keys()].filter(i => i % 2 === 0 || i === n - 1) : [0, Math.floor(n / 2), n - 1];
+  const xl = idx.map(i => `<text x="${cx(i)}" y="${H - 6}" text-anchor="middle">${xLabel(rows[i])}</text>`).join("");
+  el.innerHTML = `<svg class="dual" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${rects}<path class="v" d="${d}" vector-effect="non-scaling-stroke"/>${dots}${xl}</svg>`;
+}
+
+function donut(el, legendEl, parts) {       // parts: [{label, value, color, extra}]
+  const total = parts.reduce((t, p) => t + p.value, 0) || 1;
+  let a0 = -Math.PI / 2;
+  const R = 70, r = 44, C = 75;
+  const pt = (a, rad) => `${(C + rad * Math.cos(a)).toFixed(2)},${(C + rad * Math.sin(a)).toFixed(2)}`;
+  const arcs = parts.filter(p => p.value > 0).map(p => {
+    const a1 = a0 + (p.value / total) * Math.PI * 2 - 1e-4, big = a1 - a0 > Math.PI ? 1 : 0;
+    const path = `M${pt(a0, R)}A${R},${R} 0 ${big} 1 ${pt(a1, R)}L${pt(a1, r)}A${r},${r} 0 ${big} 0 ${pt(a0, r)}Z`;
+    a0 = a1 + 1e-4;
+    return `<path d="${path}" fill="${p.color}"><title>${p.label}: ${fmt(p.value)} holders (${fmt(p.value / total * 100, 1)}%)</title></path>`;
+  }).join("");
+  el.innerHTML = `<svg viewBox="0 0 150 150">${arcs}<text x="75" y="72" text-anchor="middle" style="font-size:20px;font-weight:600;fill:var(--text)">${fmt(total)}</text><text x="75" y="90" text-anchor="middle" style="font-size:11px;fill:var(--muted)">holders</text></svg>`;
+  legendEl.innerHTML = parts.map(p => `<div><i style="background:${p.color}"></i>${p.label} · <b>${fmt(p.value / total * 100, 1)}%</b> <span style="color:var(--muted)">(${fmt(p.value)}, ${compact(p.extra)} EQTY)</span></div>`).join("");
+}
+
 function bars(el, rows, value, title) {
   const max = Math.max(...rows.map(value), 1);
   el.innerHTML = rows.map(r => `<div class="bar" style="height:${(value(r) / max) * 100}%" title="${title(r)}"></div>`).join("");
@@ -257,6 +328,12 @@ function bars(el, rows, value, title) {
   // Lifecycle
   if (life) {
     const total = life.rows.reduce((t, r) => t + r.unique_holders, 0) || 1;
+    const statuses = [["1.", "Active (0–30d)", "var(--c1)"], ["2.", "Steady (30–90d)", "var(--c2)"],
+                      ["3.", "Diamond hands (90d–1yr)", "var(--c3)"], ["4.", "Sleeping (>1yr)", "var(--c4)"]];
+    donut($("life-donut"), $("life-legend"), statuses.map(([k, label, color]) => {
+      const rs = life.rows.filter(r => String(r.lifecycle_status).startsWith(k));
+      return { label, color, value: rs.reduce((t, r) => t + r.unique_holders, 0), extra: rs.reduce((t, r) => t + r.total_token_balance, 0) };
+    }));
     $("lifecycle").innerHTML = life.rows.map(r => `
       <tr>
         <td>${r.cohort_year}</td>
@@ -272,16 +349,15 @@ function bars(el, rows, value, title) {
     const d = [...daily.rows].sort(byDate("date"));
     $("k-tx30").textContent = fmt(d.reduce((t, r) => t + r.total_transfers, 0));
     $("k-vol30").textContent = compact(d.reduce((t, r) => t + r.total_volume_tokens, 0)) + " EQTY moved";
-    bars($("bars"), d, r => r.total_transfers, r => `${r.date}: ${fmt(r.total_transfers)} transfers, ${fmt(r.total_volume_tokens)} EQTY`);
-    if (d.length) { $("ax-start").textContent = d[0].date; $("ax-end").textContent = d[d.length - 1].date; }
+    dualChart($("daily-chart"), d, { x: r => r.date, bar: r => r.total_transfers, line: r => r.total_volume_tokens,
+      xLabel: r => r.date.slice(5), tip: r => `${r.date}: ${fmt(r.total_transfers)} transfers · ${fmt(r.total_volume_tokens)} EQTY` });
   }
 
   // Monthly
   if (monthly) {
     const mo = [...monthly.rows].sort(byDate("month"));
-    bars($("mbars"), mo, r => r.monthly_transfers,
-      r => `${String(r.month).slice(0, 7)}: ${fmt(r.monthly_transfers)} transfers, ${fmt(r.monthly_volume_tokens)} EQTY`);
-    if (mo.length) { $("mx-start").textContent = String(mo[0].month).slice(0, 7); $("mx-end").textContent = String(mo[mo.length - 1].month).slice(0, 7); }
+    dualChart($("monthly-chart"), mo, { x: r => r.month, bar: r => r.monthly_transfers, line: r => r.monthly_volume_tokens,
+      xLabel: r => String(r.month).slice(2, 7), tip: r => `${String(r.month).slice(0, 7)}: ${fmt(r.monthly_transfers)} transfers · ${fmt(r.monthly_volume_tokens)} EQTY` });
   }
 
   // Top 50
