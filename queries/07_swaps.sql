@@ -5,6 +5,7 @@
 SELECT
     block_timestamp AS time,
     transaction_hash AS tx_hash,
+    log_index,
     transaction_from AS taker,
     lower(hex(variantElement(parameters['id'], 'String'))) AS pool_id,
     toFloat64(variantElement(parameters['amount1'], 'Int256')) / 1e18 AS eqty_amount,

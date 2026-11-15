@@ -2,7 +2,8 @@
 
 Phase 1: supply, top holders, daily transfers.
 Phase 2: holder growth (new / exited / total), cohorts × lifecycle, monthly volume.
-Next phases: swaps + price, whale transfers.
+Phase 3: market (swaps, price, buy/sell volume, trade sizes) via market.py.
+Next: whale transfers.
 """
 import csv
 import json
@@ -11,6 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from cdp_client import run_query
+import market
 
 ROOT = Path(__file__).resolve().parent.parent
 QUERIES = ROOT / "queries"
@@ -58,11 +60,18 @@ def main() -> int:
         )
         print(f"[OK] {query_file}: {len(rows)} rows -> {name}.json")
 
+    # Phase 3: market data (swaps, price). Isolated so a failure never blocks the rest.
+    try:
+        market.update(now)
+    except Exception as exc:
+        print(f"[FAIL] market: {exc}", file=sys.stderr)
+        failures.append("market")
+
     (OUT / "meta.json").write_text(
         json.dumps({"updated_at": now, "failed": failures}, indent=1)
     )
     # Fail the workflow only if everything failed (e.g. wrong API key).
-    return 1 if len(failures) == len(DAILY_QUERIES) else 0
+    return 1 if len(failures) >= len(DAILY_QUERIES) else 0
 
 
 if __name__ == "__main__":
