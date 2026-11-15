@@ -1,0 +1,89 @@
+{
+ "updated_at": "2026-11-15T15:10:28+00:00",
+ "labels": {
+  "0x2b253a24600ccd524a7264c2360cae49679a9495": {
+   "label": "Automated trader",
+   "type": "trader",
+   "confidence": "estimated",
+   "note": "Very frequent trades of similar size \u2013 likely a market-making or trading bot",
+   "source": "manual"
+  },
+  "0x498581ff718922c3f8e6a244956af099b2652b2b": {
+   "label": "Uniswap v4 PoolManager",
+   "type": "dex",
+   "confidence": "verified",
+   "note": "Holds the liquidity of all Uniswap v4 pools",
+   "source": "manual"
+  },
+  "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae": {
+   "label": "LI.FI Diamond",
+   "type": "bridge",
+   "confidence": "verified",
+   "note": "Cross-chain bridge/aggregator contract",
+   "source": "manual"
+  },
+  "0x1111111254eeb25477b68fb85ed929f73a960582": {
+   "label": "1inch Router",
+   "type": "dex",
+   "confidence": "verified",
+   "note": "1inch aggregation router",
+   "source": "manual"
+  },
+  "0x0000000000000000000000000000000000000000": {
+   "label": "Mint/Burn (zero address)",
+   "type": "system",
+   "confidence": "verified",
+   "note": "",
+   "source": "manual"
+  },
+  "0x2bc456799f3cf071b10ce7216269471e0a40381a": {
+   "label": "Safe multisig",
+   "type": "multisig",
+   "confidence": "verified",
+   "note": "Safe smart account (detected from SafeSetup event)",
+   "source": "manual"
+  },
+  "0x31722ae60fcba067529d9ff7cf3e4fc6cc2fb04a": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from AddOwner/Upgraded events",
+   "source": "manual"
+  },
+  "0x66b277092e8ad5c0f136e299265826b4f1539283": {
+   "label": "Coinbase Smart Wallet",
+   "type": "wallet",
+   "confidence": "verified",
+   "note": "Detected from AddOwner/Upgraded events",
+   "source": "manual"
+  },
+  "0x0d0707963952f2fba59dd06f2b425ace40b492fe": {
+   "label": "Service hub",
+   "type": "service",
+   "confidence": "estimated",
+   "note": "Receives from and sends to many wallets on a daily schedule \u2013 typical for an exchange custodian or rewards service",
+   "source": "manual"
+  },
+  "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f": {
+   "label": "Distribution wallet",
+   "type": "distribution",
+   "confidence": "estimated",
+   "note": "Received 83.9M EQTY in one transfer and passed large amounts on to other top wallets",
+   "source": "manual"
+  },
+  "0x802b65b5d9016621e66003aed0b16615093f328b": {
+   "label": "Automated trader",
+   "type": "trader",
+   "confidence": "estimated",
+   "note": "Thousands of small pool trades",
+   "source": "manual"
+  },
+  "0x278d858f05b94576c1e6f73285886876ff6ef8d2": {
+   "label": "Automated trader",
+   "type": "trader",
+   "confidence": "estimated",
+   "note": "Receives many small transfers from an automated trader",
+   "source": "manual"
+  }
+ }
+}
