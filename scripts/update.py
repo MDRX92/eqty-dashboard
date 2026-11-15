@@ -76,8 +76,14 @@ def main() -> int:
         print(f"[FAIL] labels: {exc}", file=sys.stderr)
         failures.append("labels")
 
+    warnings = []
+    try:
+        import labels as _labels
+        warnings = _labels.WARNINGS[:20]
+    except Exception:
+        pass
     (OUT / "meta.json").write_text(
-        json.dumps({"updated_at": now, "failed": failures}, indent=1)
+        json.dumps({"updated_at": now, "failed": failures, "warnings": warnings}, indent=1)
     )
     # Fail the workflow only if everything failed (e.g. wrong API key).
     return 1 if len(failures) >= len(DAILY_QUERIES) else 0

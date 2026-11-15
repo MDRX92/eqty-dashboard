@@ -21,6 +21,7 @@ OUT = ROOT / "site" / "data"
 MAX_ADDRESSES = 150
 BATCH = 25
 CACHE = ROOT / "data" / "wallet_types.json"   # address -> detected label or null (no contract events)
+WARNINGS: list[str] = []                       # surfaced in site/data/meta.json
 
 # event signature (prefix) -> label
 CONTRACT_RULES = [
@@ -78,15 +79,15 @@ def _query_types(addresses: list[str]) -> dict[str, set]:
     sql = sql.replace("{addresses}", ", ".join(f"'{a}'" for a in addresses))
     try:
         rows = run_query(sql)
-    except RuntimeError as exc:
-        if "scanned more data" in str(exc) and len(addresses) > 1:
+    except Exception as exc:  # scan limit, timeout, rate limit...: split the batch, skip what keeps failing
+        if len(addresses) > 1:
             half = len(addresses) // 2
             a, b = _query_types(addresses[:half]), _query_types(addresses[half:])
             return {**a, **b}
-        if "scanned more data" in str(exc):
-            print(f"[labels] skipped {addresses[0]} (too many events to scan)", file=sys.stderr)
-            return {}
-        raise
+        msg = f"wallet type check skipped for {addresses[0]}: {str(exc)[:160]}"
+        print(f"[labels] {msg}", file=sys.stderr)
+        WARNINGS.append(msg)
+        return {}     # unknown: not cached (see WARNINGS), retried next run
     sigs = defaultdict(set)
     for r in rows:
         sigs[str(r["address"]).lower()].add(str(r["event_signature"]))
@@ -100,8 +101,11 @@ def detect_contracts(addresses: list[str], skip: set[str]) -> dict[str, dict]:
     todo = [a for a in addresses if a not in cache and a not in skip]
     for i in range(0, len(todo), BATCH):
         batch = todo[i:i + BATCH]
-        sigs = _query_types(batch)
+        sigs = _query_types(batch) or {}
+        failed = {w.split(" for ")[1].split(":")[0] for w in WARNINGS if " for " in w}
         for addr in batch:
+            if addr in failed:
+                continue                      # not cached: try again next run
             s = sigs.get(addr)
             if not s:
                 cache[addr] = None            # no contract events: regular wallet
@@ -110,8 +114,8 @@ def detect_contracts(addresses: list[str], skip: set[str]) -> dict[str, dict]:
                          ("Smart contract", "contract"))
             cache[addr] = {"label": label[0], "type": label[1], "confidence": "verified",
                            "note": "Detected from the contract's on-chain events", "source": "auto"}
-    CACHE.parent.mkdir(parents=True, exist_ok=True)
-    CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True))
+        CACHE.parent.mkdir(parents=True, exist_ok=True)
+        CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True))   # save progress per batch
     print(f"[labels] checked {len(todo)} new addresses ({-(-len(todo) // BATCH)} queries)")
     return {a: v for a, v in cache.items() if v}
 
@@ -139,6 +143,7 @@ def update(now_iso: str) -> None:
         labels.update(detect_contracts(candidate_addresses(), skip=set(manual)))
     except Exception as exc:  # detection is optional; manual labels still work
         print(f"[FAIL] labels (contract detection): {exc}", file=sys.stderr)
+        WARNINGS.append(f"contract detection failed: {str(exc)[:200]}")
     labels.update(manual)  # manual always wins
     (OUT / "labels.json").write_text(json.dumps({"updated_at": now_iso, "labels": labels}, indent=1))
     counts = defaultdict(int)
