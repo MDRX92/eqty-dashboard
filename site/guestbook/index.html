@@ -31,6 +31,10 @@
   .testnet > b { color: var(--warn); font-size: 16px; }
   .testnet p { margin: 8px 0 0; }
   #review ul { padding-left: 20px; }
+  .intro h2 { font-size: 17px; margin: 0 0 6px; }
+  .intro p { margin: 0 0 8px; }
+  .intro ul { margin: 0 0 8px; padding-left: 20px; }
+  .intro li { margin: 5px 0; }
   #review h4 { margin: 16px 0 4px; font-size: 14px; }
   .ok { color: var(--up); font-weight: 600; } .todo { color: var(--warn); font-weight: 600; }
   .stats { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
@@ -78,6 +82,22 @@
     <p>It is a <b>community proposal</b>, not an official EQTY DAO product. It will only go live on Base mainnet <b>if the EQTY DAO reviews it and decides to proceed</b>. Until then there is nothing to buy, nothing to claim and no real tokens are involved. Anyone asking you to use real EQTY here is not us.</p>
     <p>Reviewing for the DAO? See <a href="#review">For reviewers</a> below. Just trying it? Get free Base Sepolia test ETH from a faucet, connect, then use “Get 1,000 test tokens”.</p>
   </div>
+
+  <section class="card intro">
+    <h2>What is this?</h2>
+    <p>A public guestbook for the EQTY community, written on the Base blockchain. Leave a short message, and to post it you burn a little EQTY. Your words stay on-chain for good, next to everyone else who stopped by.</p>
+    <ul>
+      <li><b>Put your EQTY to use.</b> Do something with the token besides holding or trading it. Each message is a small, real on-chain use of EQTY.</li>
+      <li><b>Show your support.</b> Say hi, cheer on the EQTY DAO, share why you hold EQTY or what you hope for from Ownables. A visible sign that the community is alive.</li>
+      <li><b>Make it permanent.</b> Your message is stored on Base with a timestamp and your wallet address. Nobody can edit or delete it, not even us. Proof that you were here.</li>
+      <li><b>Every message burns EQTY.</b> The fee is destroyed, not paid to anyone: it permanently leaves the total supply, and the running total is shown in the counter below.</li>
+      <li><b>Be early.</b> Messages are numbered from #0. The first ones will always be the first.</li>
+      <li><b>A taste of Ownables.</b> Paying EQTY to record something on-chain is the same idea behind Ownables' anchoring. This is a simple way to try it.</li>
+      <li><b>Cheap and open.</b> Besides the fee, a post costs less than a cent in network fees. The code is open source and the contract is verified, so anyone can check how it works.</li>
+    </ul>
+    <p class="note">Ideas: a greeting from your city · why you hold EQTY · a wish for the DAO · a milestone you want to remember · a shout-out to the builders.<br>
+    Not financial advice: burning reduces supply, but that doesn't promise anything about the price. Post because it's fun, not as an investment.</p>
+  </section>
 
   <div class="card">
     <div class="stats">
