@@ -28,10 +28,11 @@
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   .testnet { border: 2px solid var(--warn); font-size: 14px; }
-  .testnet > b { color: var(--warn); font-size: 16px; }
+  .testnet > summary { color: var(--warn); font-size: 16px; }
+  .testnet[open] > summary, .intro[open] > summary { margin-bottom: 8px; }
   .testnet p { margin: 8px 0 0; }
   #review ul { padding-left: 20px; }
-  .intro h2 { font-size: 17px; margin: 0 0 6px; }
+  .intro > summary { font-size: 16px; }
   .intro p { margin: 0 0 8px; }
   .intro ul { margin: 0 0 8px; padding-left: 20px; }
   .intro li { margin: 5px 0; }
@@ -76,15 +77,15 @@
   <h1>EQTY Guestbook</h1>
   <p class="sub">Burn a little EQTY to leave a short, permanent message on Base. · <a href="../">← Dashboard</a></p>
 
-  <div id="testnet" class="card testnet" style="display:none">
-    <b>Test version – not live on Base mainnet.</b>
+  <details id="testnet" class="card testnet" style="display:none">
+    <summary>Test version – not live on Base mainnet.</summary>
     <p>This guestbook runs on <b>Base Sepolia</b>, Base's test network. The test tokens (tEQTY) and test ETH have <b>no value</b>, and no real EQTY is used or burned.</p>
     <p>It is a <b>community proposal</b>, not an official EQTY DAO product. It will only go live on Base mainnet <b>if the EQTY DAO reviews it and decides to proceed</b>. Until then there is nothing to buy, nothing to claim and no real tokens are involved. Anyone asking you to use real EQTY here is not us.</p>
     <p>Reviewing for the DAO? See <a href="#review">For reviewers</a> below. Just trying it? Get free Base Sepolia test ETH from a faucet, connect, then use “Get 1,000 test tokens”.</p>
-  </div>
+  </details>
 
-  <section class="card intro">
-    <h2>What is this?</h2>
+  <details class="card intro">
+    <summary>What is this?</summary>
     <p>A public guestbook for the EQTY community, written on the Base blockchain. Leave a short message, and to post it you burn a little EQTY. Your words stay on-chain for good, next to everyone else who stopped by.</p>
     <ul>
       <li><b>Put your EQTY to use.</b> Do something with the token besides holding or trading it. Each message is a small, real on-chain use of EQTY.</li>
@@ -97,7 +98,7 @@
     </ul>
     <p class="note">Ideas: a greeting from your city · why you hold EQTY · a wish for the DAO · a milestone you want to remember · a shout-out to the builders.<br>
     Not financial advice: burning reduces supply, but that doesn't promise anything about the price. Post because it's fun, not as an investment.</p>
-  </section>
+  </details>
 
   <div class="card">
     <div class="stats">
