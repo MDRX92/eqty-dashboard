@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-16T20:46:41+00:00",
+ "updated_at": "2026-11-16T20:50:50+00:00",
  "kpis": {
   "price_usd": 0.00105788223663146,
-  "price_eur": 0.00096145,
+  "price_eur": 0.00096146,
   "price_source": "GeckoTerminal",
   "change_24h_pct": 0.863,
   "liquidity_usd": 14937.2106,
@@ -1342,7 +1342,7 @@
   },
   {
    "date": "2026-11-16",
-   "price": 0.00104313,
+   "price": 0.00104314,
    "buy_usd": 13.95,
    "sell_usd": 24.74,
    "trades": 4
@@ -2959,7 +2959,7 @@
   },
   {
    "date": "2026-11-16",
-   "price": 0.00104313
+   "price": 0.00104314
   }
  ],
  "buckets_all": [
@@ -3022,7 +3022,7 @@
    "side": "sell",
    "eqty": 23794.0,
    "usd": 24.74,
-   "price": 0.00103996,
+   "price": 0.00103997,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xd9af736a772977da4de75f8b7b985e342b4916d078027ed61dd13465b295512e",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3052,7 +3052,7 @@
    "side": "buy",
    "eqty": 3610.14,
    "usd": 3.78,
-   "price": 0.00104738,
+   "price": 0.00104739,
    "taker": "0x39aaafb7e5ca372e79983fd30fa87ec3078385a6",
    "tx_hash": "0x03c9f2a47f672fe4f133f31790b94541d7b75991d722eda64b2be7138bd760e7",
    "pool": "ETH/EQTY (Dune pool)"
