@@ -2,3 +2,6 @@ __pycache__/
 .env
 *.pem
 cdp_api_key*.json
+contracts/out/
+contracts/cache/
+contracts/lib/

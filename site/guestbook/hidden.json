@@ -1,0 +1,5 @@
+{
+  "_readme": "Messages hidden from the guestbook page, per network: { \"<message id>\": \"reason\" }. Reasons: scam, abuse, hate, personal data, spam. Never hide criticism.",
+  "base": {},
+  "sepolia": {}
+}
