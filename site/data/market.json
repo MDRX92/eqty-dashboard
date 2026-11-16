@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-16T20:20:52+00:00",
+ "updated_at": "2026-11-16T20:42:33+00:00",
  "kpis": {
   "price_usd": 0.00105788223663146,
-  "price_eur": 0.00096104,
+  "price_eur": 0.0009615,
   "price_source": "GeckoTerminal",
   "change_24h_pct": 0.863,
-  "liquidity_usd": 14961.1279,
+  "liquidity_usd": 14937.2106,
   "fdv_usd": 307891.0,
   "volume_30d_usd": 19214.1,
   "buy_30d_usd": 8988.15,
@@ -27,7 +27,7 @@
      "volume_usd": 4222.12,
      "buy_usd": 1470.44,
      "sell_usd": 2751.68,
-     "net_usd": -1281.24,
+     "net_usd": -1281.25,
      "net_eqty": -855239.0,
      "share_pct": 21.97
     },
@@ -1342,7 +1342,7 @@
   },
   {
    "date": "2026-11-16",
-   "price": 0.00104311,
+   "price": 0.00104313,
    "buy_usd": 13.95,
    "sell_usd": 24.74,
    "trades": 4
@@ -2959,7 +2959,7 @@
   },
   {
    "date": "2026-11-16",
-   "price": 0.00104311
+   "price": 0.00104313
   }
  ],
  "buckets_all": [
@@ -3022,7 +3022,7 @@
    "side": "sell",
    "eqty": 23794.0,
    "usd": 24.74,
-   "price": 0.00103994,
+   "price": 0.00103996,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xd9af736a772977da4de75f8b7b985e342b4916d078027ed61dd13465b295512e",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3032,7 +3032,7 @@
    "side": "buy",
    "eqty": 9686.0,
    "usd": 10.16,
-   "price": 0.00104931,
+   "price": 0.00104933,
    "taker": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
    "tx_hash": "0xb38ce20d51b338e00423cc5405212f2e1593ab8157973463eeba174e3c2e87d8",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3042,7 +3042,7 @@
    "side": "buy",
    "eqty": 1.75,
    "usd": 0.0,
-   "price": 0.00104789,
+   "price": 0.00104791,
    "taker": "0x39aaafb7e5ca372e79983fd30fa87ec3078385a6",
    "tx_hash": "0xd689341e11566a378ec8fae34407d6094c0460e4c356b83d5e5766fbb4c5321d",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3052,7 +3052,7 @@
    "side": "buy",
    "eqty": 3610.14,
    "usd": 3.78,
-   "price": 0.00104736,
+   "price": 0.00104738,
    "taker": "0x39aaafb7e5ca372e79983fd30fa87ec3078385a6",
    "tx_hash": "0x03c9f2a47f672fe4f133f31790b94541d7b75991d722eda64b2be7138bd760e7",
    "pool": "ETH/EQTY (Dune pool)"
