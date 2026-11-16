@@ -1,8 +1,8 @@
 {
- "updated_at": "2026-11-16T20:42:33+00:00",
+ "updated_at": "2026-11-16T20:46:41+00:00",
  "kpis": {
   "price_usd": 0.00105788223663146,
-  "price_eur": 0.0009615,
+  "price_eur": 0.00096145,
   "price_source": "GeckoTerminal",
   "change_24h_pct": 0.863,
   "liquidity_usd": 14937.2106,
