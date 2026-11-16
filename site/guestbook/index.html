@@ -27,7 +27,12 @@
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .testnet { border-color: var(--warn); color: var(--warn); font-size: 14px; }
+  .testnet { border: 2px solid var(--warn); font-size: 14px; }
+  .testnet > b { color: var(--warn); font-size: 16px; }
+  .testnet p { margin: 8px 0 0; }
+  #review ul { padding-left: 20px; }
+  #review h4 { margin: 16px 0 4px; font-size: 14px; }
+  .ok { color: var(--up); font-weight: 600; } .todo { color: var(--warn); font-weight: 600; }
   .stats { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
   .stats b { color: var(--text); font-variant-numeric: tabular-nums; font-size: 18px; display: block; }
   textarea { width: 100%; min-height: 84px; resize: vertical; font: inherit; color: var(--text); background: var(--bg);
@@ -67,7 +72,12 @@
   <h1>EQTY Guestbook</h1>
   <p class="sub">Burn a little EQTY to leave a short, permanent message on Base. · <a href="../">← Dashboard</a></p>
 
-  <div id="testnet" class="card testnet" style="display:none"></div>
+  <div id="testnet" class="card testnet" style="display:none">
+    <b>Test version – not live on Base mainnet.</b>
+    <p>This guestbook runs on <b>Base Sepolia</b>, Base's test network. The test tokens (tEQTY) and test ETH have <b>no value</b>, and no real EQTY is used or burned.</p>
+    <p>It is a <b>community proposal</b>, not an official EQTY DAO product. It will only go live on Base mainnet <b>if the EQTY DAO reviews it and decides to proceed</b>. Until then there is nothing to buy, nothing to claim and no real tokens are involved. Anyone asking you to use real EQTY here is not us.</p>
+    <p>Reviewing for the DAO? See <a href="#review">For reviewers</a> below. Just trying it? Get free Base Sepolia test ETH from a faucet, connect, then use “Get 1,000 test tokens”.</p>
+  </div>
 
   <div class="card">
     <div class="stats">
@@ -124,6 +134,53 @@
   <details class="card" id="moderation">
     <summary>Moderation</summary>
     <p>Messages live on the blockchain and can't be deleted. This page can hide a message: it then shows "hidden" with the reason instead of the text. The list of hidden messages is public: <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/site/guestbook/hidden.json">hidden.json</a>. We only hide scams, abuse, hate and personal data – never criticism. See something that should be hidden? <a href="https://github.com/mdrx92/eqty-dashboard/issues/new?title=Guestbook%20report">Report it on GitHub</a> with the message number.</p>
+  </details>
+
+  <details class="card" id="review">
+    <summary>For reviewers (EQTY DAO)</summary>
+    <p>Everything needed to review this proposal. Summary and checklist: <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/contracts/REVIEW.md">REVIEW.md</a>.</p>
+
+    <h4>What it is</h4>
+    <ul>
+      <li>A guestbook where a message (max 140 characters) costs a fixed amount of EQTY, which is <b>burned</b> (total supply goes down; nobody receives it).</li>
+      <li>Same idea as Ownables' Anchor contract: pay EQTY to put something on-chain. Could be launched on its own or alongside Ownables.</li>
+      <li>Proposed fee: 100 EQTY per message. To be decided by the DAO.</li>
+    </ul>
+
+    <h4>Contracts – Base Sepolia (testnet), source verified on Basescan</h4>
+    <ul>
+      <li>EQTYGuestbook: <a href="https://sepolia.basescan.org/address/0x01652D8Eff1605c0F446a67d7047deE59723E2b5#code">0x0165…E2b5</a> (token = TestEQTY, fee = 100 tokens)</li>
+      <li>TestEQTY (test token with faucet, testnet only): <a href="https://sepolia.basescan.org/address/0x6E937bB123bFd626a05686f16466c57f2210e7b7#code">0x6E93…e7b7</a></li>
+      <li>Source: <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/contracts/src/EQTYGuestbook.sol">EQTYGuestbook.sol</a> (~90 lines) · <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/contracts/src/TestEQTY.sol">TestEQTY.sol</a> · compiler 0.8.28, optimizer 200, EVM cancun.</li>
+      <li>Mainnet: <b>not deployed</b>. The mainnet version would use the real EQTY token <code>0xc71f…7d29</code>, which supports <code>burnFrom</code>.</li>
+    </ul>
+
+    <h4>Security design</h4>
+    <ul>
+      <li>No owner, no admin functions, not upgradeable: the fee and token are fixed at deployment and nobody can change them.</li>
+      <li>Never holds tokens or ETH: all functions are non-payable; the fee is burned straight from the poster's wallet.</li>
+      <li>The website asks for an approval of <b>exactly</b> the fee (never unlimited), then the post. No signature requests. Smart wallets can do both in one confirmation.</li>
+      <li>Rules enforced on-chain: no links (<code>http</code>, <code>www.</code>, <code>://</code>), no control characters, max 560 bytes. The website also blocks domain names and hidden characters, and shows text as plain text only.</li>
+      <li>Moderation is transparent: messages can't be deleted on-chain; the page hides abuse via a public <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/site/guestbook/hidden.json">hide list</a> with reasons.</li>
+    </ul>
+
+    <h4>Testing</h4>
+    <ul>
+      <li><span class="ok">✓</span> 18 contract tests incl. fuzzing (Foundry), run automatically on every change: <a href="https://github.com/mdrx92/eqty-dashboard/actions/workflows/contracts.yml">Contracts workflow</a> · <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/contracts/test/EQTYGuestbook.t.sol">tests</a>.</li>
+      <li><span class="ok">✓</span> 56 browser tests of this page in Chrome with a simulated wallet and chain (approve amount, rejections, low balance, input rules, unsafe text): <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/tests/guestbook.browser.mjs">guestbook.browser.mjs</a>.</li>
+      <li><span class="ok">✓</span> Deployed bytecode checked against the CI build; both contracts verified on Basescan.</li>
+      <li><span class="ok">✓</span> End-to-end test with MetaMask on Base Sepolia: approve of exactly 100 tEQTY, message posted, fee burned.</li>
+    </ul>
+
+    <h4>Open points for the DAO</h4>
+    <ul>
+      <li><span class="todo">•</span> Go / no-go, and timing: soft launch now, or together with the Ownables launch.</li>
+      <li><span class="todo">•</span> Fee amount (fixed forever once deployed; a new contract is needed to change it).</li>
+      <li><span class="todo">•</span> Who may hide messages (moderation).</li>
+      <li><span class="todo">•</span> Not professionally audited. A short review by a Solidity developer is recommended before mainnet.</li>
+      <li><span class="todo">•</span> MetaMask may show a phishing warning when connecting to this new page (an automated check on new sites). This is a false positive that can be reported to MetaMask support; an announcement or link from official EQTY channels would also help.</li>
+      <li><span class="todo">•</span> Hosting: currently on GitHub Pages under a community account; could move to a DAO-controlled domain or repository.</li>
+    </ul>
   </details>
 
   <footer>A community project for the EQTY DAO · not an official DAO product · <a href="https://github.com/mdrx92/eqty-dashboard">open source</a></footer>
@@ -524,9 +581,10 @@ async function doPost() {
     }
     setSteps([], 0);
     $("text").value = "";
+    showStatus("Posted! Loading your message…");
+    await loadMessages().catch(() => {});
+    await refreshAccount().catch(() => {});
     showStatus("Posted! Your message is now on Base.", "ok");
-    await loadMessages();
-    await refreshAccount();
   } catch (e) {
     setSteps([], 0);
     showError(e);
@@ -544,8 +602,8 @@ $("faucet").addEventListener("click", async () => {
     const h = await P.request({ method: "eth_sendTransaction", params: [{ from: ACCOUNT, to: TOKEN, data: "0x" + SEL.faucet }] });
     showStatus("Waiting for Base…");
     await waitForTx(h);
+    await refreshAccount().catch(() => {});
     showStatus("You received 1,000 test tokens.", "ok");
-    await refreshAccount();
   } catch (e) { showError(e); }
 });
 
@@ -554,7 +612,6 @@ $("faucet").addEventListener("click", async () => {
   document.querySelectorAll(".sym").forEach(e => e.textContent = NET.symbol);
   if (NET.testnet) {
     $("testnet").style.display = "";
-    $("testnet").textContent = `Test version on ${NET.name}: test tokens have no value. Get free test ETH from a Base Sepolia faucet, then use “Get 1,000 test tokens”.`;
   }
   updateButton();
   if (!isAddr(NET.guestbook)) {

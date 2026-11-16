@@ -2,6 +2,8 @@
 
 `src/EQTYGuestbook.sol` – burn a fixed amount of EQTY to post a short message (≤ 560 bytes; the website limits it to 140 characters). No owner, no admin functions, not upgradeable, never holds tokens or ETH. Rejects links (`http`, `www.`, `://`) and control characters.
 
+Review pack for the EQTY DAO (design, risks, tests, decisions): [REVIEW.md](REVIEW.md).
+
 `src/TestEQTY.sol` – worthless test token with a public `faucet()` (1,000 tEQTY per call). **Base Sepolia only.**
 
 Tests run automatically on GitHub (workflow *Contracts*, Foundry). Locally:
