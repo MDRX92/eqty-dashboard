@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EQTY at a glance</title>
+<meta name="description" content="EQTY on Base in one screen: price, holders, volume and whale moves. Updated daily.">
+<meta property="og:title" content="EQTY at a glance">
+<meta property="og:description" content="Price, holders, volume and whale moves of EQTY on Base. Updated daily.">
+<meta property="og:image" content="https://mdrx92.github.io/eqty-dashboard/mini/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1b; --muted: #6b6b66;
+    --line: #e4e4df; --accent: #2f5bea; --accent-soft: #dfe7fd;
+    --up: #1f9d6b; --down: #d9534f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141413; --card: #1e1e1c; --text: #ededea; --muted: #9b9b95;
+            --line: #2e2e2b; --accent: #7c9cff; --accent-soft: #2a3354;
+            --up: #3ecf8e; --down: #f07470; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); -webkit-text-size-adjust: 100%; }
+  main { max-width: 440px; margin: 0 auto;
+         padding: max(16px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom)); }
+  header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  h1 { font-size: 18px; margin: 0; }
+  .muted { color: var(--muted); }
+  .small { font-size: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+  .price { font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+  .row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .pos { color: var(--up); } .neg { color: var(--down); }
+  svg.spark { width: 100%; height: 56px; display: block; margin-top: 8px; overflow: visible; }
+  svg.spark path.l { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; }
+  svg.spark path.a { fill: var(--accent-soft); opacity: .7; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .grid .card { margin: 0; padding: 12px 14px; }
+  .label { color: var(--muted); font-size: 12.5px; }
+  .value { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 1px; }
+  .sub { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .whale .amt { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .flow { margin-top: 2px; font-size: 14px; word-break: break-word; }
+  .tag { font-size: 11.5px; padding: 1px 7px; border-radius: 99px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  a { color: var(--accent); text-decoration: none; }
+  .btn { display: block; text-align: center; padding: 12px; border-radius: 12px; background: var(--accent);
+         color: #fff; font-weight: 600; margin: 14px 0 12px; }
+  @media (prefers-color-scheme: dark) { .btn { color: #141413; } }
+  #stale { display: none; border-color: var(--down); color: var(--down); font-size: 13px; }
+  footer { text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>EQTY at a glance</h1>
+    <span id="updated" class="muted small">loading…</span>
+  </header>
+
+  <div id="stale" class="card"></div>
+
+  <section class="card">
+    <div class="label">Price</div>
+    <div class="row">
+      <span class="price" id="price">–</span>
+      <span id="chg24" class="small"></span>
+    </div>
+    <div class="sub" id="price-sub"></div>
+    <svg class="spark" id="spark" viewBox="0 0 300 56" preserveAspectRatio="none" role="img" aria-label="Price over the last 30 days"></svg>
+    <div class="row small muted" style="justify-content:space-between;margin-top:4px">
+      <span>30 days</span><span id="chg30"></span>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <div class="label">Holders</div>
+      <div class="value" id="holders">–</div>
+      <div class="sub" id="holders-sub"></div>
+    </section>
+    <section class="card">
+      <div class="label">Top-50 share</div>
+      <div class="value" id="top50">–</div>
+      <div class="sub">of total supply</div>
+    </section>
+    <section class="card">
+      <div class="label">DEX volume 30d</div>
+      <div class="value" id="vol">–</div>
+      <div class="sub" id="vol-sub"></div>
+    </section>
+    <section class="card">
+      <div class="label">Trades 30d</div>
+      <div class="value" id="trades">–</div>
+      <div class="sub" id="trades-sub"></div>
+    </section>
+  </div>
+
+  <section class="card whale">
+    <div class="label">Latest whale transfer</div>
+    <div id="whale" class="flow muted">–</div>
+    <div class="sub" id="whale-sub"></div>
+  </section>
+
+  <a class="btn" href="../" target="_top">Open full dashboard</a>
+
+  <footer class="muted small">
+    Uniswap trades on Base only; exchange (CEX) trading not included.<br>
+    Data: Coinbase CDP, GeckoTerminal · Not financial advice.
+  </footer>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (n, d = 0) => n == null || isNaN(n) ? "–" : Number(n).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+const compact = n => n == null || isNaN(n) ? "–" : Number(n).toLocaleString("en-US", { notation: "compact", maximumFractionDigits: 1 });
+const usd = n => n == null || isNaN(n) ? "–" : "$" + (Math.abs(n) >= 1000 ? compact(n) : fmt(n, 0));
+const price = n => n == null || isNaN(n) ? "–" : Number(n).toPrecision(3).replace(/0+$/, "").replace(/\.$/, "");
+const pct = (n, d = 1) => n == null || isNaN(n) ? "" : (n > 0 ? "+" : n < 0 ? "−" : "") + fmt(Math.abs(n), d) + "%";
+const cls = n => n > 0 ? "pos" : n < 0 ? "neg" : "muted";
+const short = a => a ? a.slice(0, 6) + "…" + a.slice(-4) : "";
+const ago = t => {
+  const h = (Date.now() - new Date(t)) / 36e5;
+  if (h < 1) return "just now";
+  if (h < 48) return Math.round(h) + " h ago";
+  return Math.round(h / 24) + " days ago";
+};
+const get = name => fetch(`../data/${name}.json`, { cache: "no-cache" }).then(r => r.ok ? r.json() : null).catch(() => null);
+
+let LABELS = {};
+const who = (addr, label) => {
+  const l = label || (LABELS[(addr || "").toLowerCase()] || {}).label;
+  return l ? `<span class="tag">${esc(l)}</span>` : esc(short(addr));
+};
+
+function spark(el, pts) {
+  if (pts.length < 2) return;
+  const W = 300, H = 56, ys = pts.map(p => p.price);
+  const min = Math.min(...ys), max = Math.max(...ys), span = (max - min) || max || 1;
+  const xy = pts.map((p, i) => [i / (pts.length - 1) * W, H - 4 - (p.price - min) / span * (H - 8)]);
+  const line = xy.map((p, i) => (i ? "L" : "M") + p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" ");
+  el.innerHTML = `<path class="a" d="${line} L${W} ${H} L0 ${H} Z"/><path class="l" d="${line}"/>`;
+}
+
+(async () => {
+  const [market, top, growth, whales, meta, labels] = await Promise.all(
+    ["market", "top_holders", "holder_growth", "whales", "meta", "labels"].map(get));
+  LABELS = (labels && labels.labels) || {};
+
+  const stamp = (market || top || {}).updated_at;
+  if (!stamp) { $("updated").textContent = "no data"; return; }
+  $("updated").textContent = "updated " + new Date(stamp).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const ageH = (Date.now() - new Date(stamp)) / 36e5;
+  if (ageH > 36 || (meta && meta.failed && meta.failed.length)) {
+    $("stale").style.display = "block";
+    $("stale").textContent = ageH > 36
+      ? `Data may be out of date: last refresh ${Math.round(ageH)} hours ago.`
+      : "Last refresh partly failed; some numbers may be from the previous day.";
+  }
+
+  if (market) {
+    const k = market.kpis || {};
+    $("price").textContent = "$" + price(k.price_usd);
+    $("chg24").innerHTML = k.change_24h_pct == null ? "" : `<span class="${cls(k.change_24h_pct)}">${pct(k.change_24h_pct, 1)}</span> <span class="muted">24h</span>`;
+    $("price-sub").textContent = [k.price_eur != null ? "€" + price(k.price_eur) : null,
+      k.fdv_usd != null ? "FDV " + usd(k.fdv_usd) : null,
+      k.liquidity_usd != null ? "liquidity " + usd(k.liquidity_usd) : null].filter(Boolean).join(" · ");
+
+    const hist = (market.price_history || []).filter(p => p.price > 0).slice(-31);
+    spark($("spark"), hist);
+    if (hist.length > 1) {
+      const c = (hist[hist.length - 1].price / hist[0].price - 1) * 100;
+      $("chg30").innerHTML = `<span class="${cls(c)}">${pct(c, 1)}</span>`;
+    }
+
+    $("vol").textContent = usd(k.volume_30d_usd);
+    if (k.volume_30d_usd) $("vol-sub").textContent = fmt(k.buy_30d_usd / k.volume_30d_usd * 100, 0) + "% buys";
+    $("trades").textContent = fmt(k.trades_30d);
+    $("trades-sub").textContent = fmt(k.traders_30d) + " unique traders";
+  }
+
+  if (top && top.rows && top.rows.length) {
+    const r = top.rows;
+    $("top50").textContent = fmt(r[r.length - 1].cumulative_pct, 1) + "%";
+    $("holders").textContent = fmt(r[0].total_holders);
+  }
+
+  if (growth && growth.rows && growth.rows.length) {
+    const rows = [...growth.rows].sort((a, b) => a.date < b.date ? 1 : -1);
+    const now = rows[0];
+    const cut = new Date(new Date(now.date) - 30 * 864e5).toISOString().slice(0, 10);
+    const then = rows.find(x => x.date <= cut);
+    if ($("holders").textContent === "–") $("holders").textContent = fmt(now.total_holders);
+    if (then) {
+      const d = now.total_holders - then.total_holders;
+      $("holders-sub").innerHTML = `<span class="${cls(d)}">${d > 0 ? "+" : d < 0 ? "−" : "±"}${fmt(Math.abs(d))}</span> in 30 days`;
+    }
+  }
+
+  if (whales && whales.latest && whales.latest.length) {
+    const w = whales.latest[0];
+    $("whale").classList.remove("muted");
+    $("whale").innerHTML = `<span class="amt">${compact(w.eqty)} EQTY</span> · ${who(w.sender, w.sender_label)} → ${who(w.recipient, w.recipient_label)}`;
+    const n30 = whales.kpis && whales.kpis.large_30d;
+    $("whale-sub").innerHTML = `${ago(w.time)} · ≈ ${usd(w.usd)} · <a href="https://basescan.org/tx/${esc(w.tx_hash)}" target="_blank" rel="noopener">view tx</a>`
+      + (n30 != null ? `<br>${fmt(n30)} large transfers in the last 30 days` : "");
+  }
+})();
+
+// Inside a Farcaster client: tell it the app is ready (hides the splash screen).
+// Skipped in a normal browser and in the Base App, so it costs nothing there.
+if (window.parent !== window || window.ReactNativeWebView) {
+  import("https://esm.sh/@farcaster/miniapp-sdk")
+    .then(m => m.sdk.actions.ready())
+    .catch(() => {});
+}
+</script>
+</body>
+</html>
