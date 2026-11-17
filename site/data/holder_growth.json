@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-17T06:10:46+00:00",
+ "updated_at": "2026-11-17T17:53:43+00:00",
  "rows": [
   {
    "date": "2026-11-17",
    "exited_holders": 1,
-   "new_holders": 0,
-   "total_holders": 1415
+   "new_holders": 2,
+   "total_holders": 1417
   },
   {
    "date": "2026-11-16",
