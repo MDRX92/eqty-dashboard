@@ -1,10 +1,15 @@
 {
- "updated_at": "2026-11-22T06:06:11+00:00",
+ "updated_at": "2026-11-23T06:17:04+00:00",
  "rows": [
   {
+   "date": "2026-11-23",
+   "total_transfers": 4,
+   "total_volume_tokens": 136691.1
+  },
+  {
    "date": "2026-11-22",
-   "total_transfers": 1,
-   "total_volume_tokens": 27695
+   "total_transfers": 17,
+   "total_volume_tokens": 940712.6
   },
   {
    "date": "2026-11-21",
@@ -148,13 +153,8 @@
   },
   {
    "date": "2026-10-24",
-   "total_transfers": 27,
-   "total_volume_tokens": 906010.97
-  },
-  {
-   "date": "2026-10-23",
-   "total_transfers": 2,
-   "total_volume_tokens": 1904.14
+   "total_transfers": 19,
+   "total_volume_tokens": 452657.01
   }
  ]
 }

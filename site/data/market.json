@@ -1,35 +1,35 @@
 {
- "updated_at": "2026-11-22T06:06:11+00:00",
+ "updated_at": "2026-11-23T06:17:04+00:00",
  "kpis": {
-  "price_usd": 0.000972628805604124,
-  "price_eur": 0.0008861,
+  "price_usd": 0.000936625788931958,
+  "price_eur": 0.00085127,
   "price_source": "GeckoTerminal",
-  "change_24h_pct": -3.38,
-  "liquidity_usd": 13768.2485,
-  "fdv_usd": 283078.0,
-  "volume_30d_usd": 18162.22,
-  "buy_30d_usd": 8581.95,
-  "sell_30d_usd": 9580.27,
-  "trades_30d": 351,
-  "traders_30d": 58,
-  "trades_all": 72900,
-  "volume_all_usd": 1941057.96
+  "change_24h_pct": -3.283,
+  "liquidity_usd": 13828.1862,
+  "fdv_usd": 272600.0,
+  "volume_30d_usd": 18665.16,
+  "buy_30d_usd": 8696.28,
+  "sell_30d_usd": 9968.88,
+  "trades_30d": 359,
+  "traders_30d": 60,
+  "trades_all": 72909,
+  "volume_all_usd": 1941562.56
  },
  "leaderboard": {
   "30d": {
-   "traders": 58,
-   "top5_share_pct": 58.8,
+   "traders": 60,
+   "top5_share_pct": 57.8,
    "rows": [
     {
      "trader": "0x2b253a24600ccd524a7264c2360cae49679a9495",
      "label": "Automated trader",
-     "trades": 139,
-     "volume_usd": 5052.97,
+     "trades": 140,
+     "volume_usd": 5081.39,
      "buy_usd": 1936.63,
-     "sell_usd": 3116.34,
-     "net_usd": -1179.71,
-     "net_eqty": -762340.0,
-     "share_pct": 27.82
+     "sell_usd": 3144.76,
+     "net_usd": -1208.13,
+     "net_eqty": -792340.0,
+     "share_pct": 27.22
     },
     {
      "trader": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
@@ -40,7 +40,7 @@
      "sell_usd": 0.0,
      "net_usd": 2459.92,
      "net_eqty": 1539367.13,
-     "share_pct": 13.54
+     "share_pct": 13.18
     },
     {
      "trader": "0xf8d7467c822e53209bdba7fe6a35adbe54129f7e",
@@ -51,18 +51,29 @@
      "sell_usd": 1073.84,
      "net_usd": -870.27,
      "net_eqty": -543039.67,
-     "share_pct": 7.03
+     "share_pct": 6.84
     },
     {
      "trader": "0x0216de0aff9ed847375a76cfcde5a83bd8ea99c2",
      "label": "",
-     "trades": 14,
-     "volume_usd": 1044.33,
-     "buy_usd": 738.38,
+     "trades": 15,
+     "volume_usd": 1089.77,
+     "buy_usd": 783.82,
      "sell_usd": 305.94,
-     "net_usd": 432.44,
-     "net_eqty": 344860.71,
-     "share_pct": 5.75
+     "net_usd": 477.88,
+     "net_eqty": 394748.28,
+     "share_pct": 5.84
+    },
+    {
+     "trader": "0x4b5c33c3c7a31bd108f5a99b64683b0056a62226",
+     "label": "",
+     "trades": 7,
+     "volume_usd": 885.28,
+     "buy_usd": 273.61,
+     "sell_usd": 611.67,
+     "net_usd": -338.06,
+     "net_eqty": -304858.38,
+     "share_pct": 4.74
     },
     {
      "trader": "0xbdbebd58cc8153ce74530bb342427579315915b2",
@@ -73,7 +84,7 @@
      "sell_usd": 836.9,
      "net_usd": -836.9,
      "net_eqty": -738370.56,
-     "share_pct": 4.61
+     "share_pct": 4.48
     },
     {
      "trader": "0xf89c5af7fb1c3b8409aa1cf2e1a1841295f7158a",
@@ -84,18 +95,7 @@
      "sell_usd": 682.3,
      "net_usd": -682.3,
      "net_eqty": -473724.29,
-     "share_pct": 3.76
-    },
-    {
-     "trader": "0x4b5c33c3c7a31bd108f5a99b64683b0056a62226",
-     "label": "",
-     "trades": 6,
-     "volume_usd": 660.61,
-     "buy_usd": 273.61,
-     "sell_usd": 387.0,
-     "net_usd": -113.39,
-     "net_eqty": -60746.75,
-     "share_pct": 3.64
+     "share_pct": 3.66
     },
     {
      "trader": "0x1bcab26a921918e8c44a805ff95017ba69e1be18",
@@ -106,7 +106,7 @@
      "sell_usd": 209.22,
      "net_usd": 231.0,
      "net_eqty": 193867.47,
-     "share_pct": 3.58
+     "share_pct": 3.48
     },
     {
      "trader": "0x8d47ba07ff9ccccf58c7e8810ee42c0dc8b8b123",
@@ -117,7 +117,7 @@
      "sell_usd": 602.43,
      "net_usd": -602.43,
      "net_eqty": -433065.81,
-     "share_pct": 3.32
+     "share_pct": 3.23
     },
     {
      "trader": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
@@ -128,7 +128,7 @@
      "sell_usd": 119.23,
      "net_usd": 262.93,
      "net_eqty": 225540.64,
-     "share_pct": 2.76
+     "share_pct": 2.69
     },
     {
      "trader": "0xb80d90fcf2ed0e4febe02d2a209109bf1f62df95",
@@ -139,7 +139,7 @@
      "sell_usd": 494.09,
      "net_usd": -494.09,
      "net_eqty": -310163.93,
-     "share_pct": 2.72
+     "share_pct": 2.65
     },
     {
      "trader": "0x54e2acab04c89a3fe02852bf8dd69ee8f526bc75",
@@ -150,7 +150,7 @@
      "sell_usd": 426.8,
      "net_usd": -426.8,
      "net_eqty": -281521.05,
-     "share_pct": 2.35
+     "share_pct": 2.29
     },
     {
      "trader": "0xc8d44c99b775bfd628cf8dcb6e6fdbd3d5170ba4",
@@ -161,7 +161,7 @@
      "sell_usd": 399.92,
      "net_usd": -399.92,
      "net_eqty": -244878.52,
-     "share_pct": 2.2
+     "share_pct": 2.14
     },
     {
      "trader": "0x7bda8d479d16d8a1a6ab6d9b1417c03243da0288",
@@ -172,7 +172,7 @@
      "sell_usd": 0.0,
      "net_usd": 348.29,
      "net_eqty": 245868.88,
-     "share_pct": 1.92
+     "share_pct": 1.87
     },
     {
      "trader": "0x04d9634df20aa66b23f114d37c45fa6c6ab76d56",
@@ -183,7 +183,7 @@
      "sell_usd": 0.0,
      "net_usd": 333.61,
      "net_eqty": 214691.1,
-     "share_pct": 1.84
+     "share_pct": 1.79
     },
     {
      "trader": "0xbb69fd5e640ce9e053d3c073867ac6cac74ba10c",
@@ -194,7 +194,18 @@
      "sell_usd": 0.0,
      "net_usd": 290.9,
      "net_eqty": 198809.88,
-     "share_pct": 1.6
+     "share_pct": 1.56
+    },
+    {
+     "trader": "0x501ef174b66883ba40f92e6fb24bfb49331d4d4c",
+     "label": "",
+     "trades": 3,
+     "volume_usd": 230.75,
+     "buy_usd": 109.2,
+     "sell_usd": 121.55,
+     "net_usd": -12.36,
+     "net_eqty": -18340.78,
+     "share_pct": 1.24
     },
     {
      "trader": "0x048ef1062cbb39b338ac2685da72adf104b4cef5",
@@ -205,7 +216,7 @@
      "sell_usd": 228.9,
      "net_usd": -228.9,
      "net_eqty": -162950.82,
-     "share_pct": 1.26
+     "share_pct": 1.23
     },
     {
      "trader": "0xd05078f410d92b6b3ef08a789d1b1c624703df7d",
@@ -216,7 +227,7 @@
      "sell_usd": 0.0,
      "net_usd": 224.17,
      "net_eqty": 145006.72,
-     "share_pct": 1.23
+     "share_pct": 1.2
     },
     {
      "trader": "0x0392b4cc79fbb0f38d8942866c0302ae01c2b194",
@@ -227,7 +238,7 @@
      "sell_usd": 199.63,
      "net_usd": -199.63,
      "net_eqty": -198920.78,
-     "share_pct": 1.1
+     "share_pct": 1.07
     },
     {
      "trader": "0xd068d5abd7bb3320d0afbb786d4c65b066a89b91",
@@ -238,18 +249,7 @@
      "sell_usd": 197.4,
      "net_usd": -197.4,
      "net_eqty": -118890.52,
-     "share_pct": 1.09
-    },
-    {
-     "trader": "0x501ef174b66883ba40f92e6fb24bfb49331d4d4c",
-     "label": "",
-     "trades": 2,
-     "volume_usd": 169.63,
-     "buy_usd": 109.2,
-     "sell_usd": 60.43,
-     "net_usd": 48.77,
-     "net_eqty": 44008.93,
-     "share_pct": 0.93
+     "share_pct": 1.06
     },
     {
      "trader": "0x8a937bd654599aff2e8757074584f4da93b5a844",
@@ -260,7 +260,7 @@
      "sell_usd": 162.74,
      "net_usd": -162.74,
      "net_eqty": -101945.64,
-     "share_pct": 0.9
+     "share_pct": 0.87
     },
     {
      "trader": "0x912ccbce20f38d9121170a5339dfa482530ca317",
@@ -271,7 +271,7 @@
      "sell_usd": 0.0,
      "net_usd": 141.03,
      "net_eqty": 101273.44,
-     "share_pct": 0.78
+     "share_pct": 0.76
     },
     {
      "trader": "0x919968a4238a54b381f022a360260ef5d7e015ac",
@@ -282,7 +282,7 @@
      "sell_usd": 0.0,
      "net_usd": 123.84,
      "net_eqty": 81620.52,
-     "share_pct": 0.68
+     "share_pct": 0.66
     },
     {
      "trader": "0x2d3faeac23567d32b249b2325689f6f76dda4a28",
@@ -293,24 +293,24 @@
      "sell_usd": 0.0,
      "net_usd": 114.56,
      "net_eqty": 68794.43,
-     "share_pct": 0.63
+     "share_pct": 0.61
     }
    ]
   },
   "90d": {
-   "traders": 166,
-   "top5_share_pct": 52.8,
+   "traders": 167,
+   "top5_share_pct": 52.4,
    "rows": [
     {
      "trader": "0x2b253a24600ccd524a7264c2360cae49679a9495",
      "label": "Automated trader",
-     "trades": 506,
-     "volume_usd": 22598.14,
-     "buy_usd": 8873.88,
-     "sell_usd": 13724.26,
-     "net_usd": -4850.38,
+     "trades": 502,
+     "volume_usd": 22365.2,
+     "buy_usd": 8769.01,
+     "sell_usd": 13596.19,
+     "net_usd": -4827.18,
      "net_eqty": -2837951.32,
-     "share_pct": 29.61
+     "share_pct": 29.25
     },
     {
      "trader": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
@@ -321,7 +321,7 @@
      "sell_usd": 0.0,
      "net_usd": 8078.3,
      "net_eqty": 4660378.55,
-     "share_pct": 10.59
+     "share_pct": 10.56
     },
     {
      "trader": "0xb80d90fcf2ed0e4febe02d2a209109bf1f62df95",
@@ -332,18 +332,18 @@
      "sell_usd": 4186.69,
      "net_usd": -4186.69,
      "net_eqty": -2336201.24,
-     "share_pct": 5.49
+     "share_pct": 5.47
     },
     {
      "trader": "0x0216de0aff9ed847375a76cfcde5a83bd8ea99c2",
      "label": "",
-     "trades": 41,
-     "volume_usd": 3012.53,
-     "buy_usd": 2031.49,
+     "trades": 42,
+     "volume_usd": 3057.97,
+     "buy_usd": 2076.93,
      "sell_usd": 981.03,
-     "net_usd": 1050.46,
-     "net_eqty": 679425.55,
-     "share_pct": 3.95
+     "net_usd": 1095.9,
+     "net_eqty": 729313.12,
+     "share_pct": 4.0
     },
     {
      "trader": "0x1bcab26a921918e8c44a805ff95017ba69e1be18",
@@ -354,7 +354,7 @@
      "sell_usd": 310.68,
      "net_usd": 1790.79,
      "net_eqty": 1132852.78,
-     "share_pct": 3.16
+     "share_pct": 3.15
     },
     {
      "trader": "0xf89c5af7fb1c3b8409aa1cf2e1a1841295f7158a",
@@ -365,7 +365,7 @@
      "sell_usd": 2056.85,
      "net_usd": -2056.85,
      "net_eqty": -1221585.38,
-     "share_pct": 2.7
+     "share_pct": 2.69
     },
     {
      "trader": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
@@ -376,7 +376,7 @@
      "sell_usd": 1029.96,
      "net_usd": -56.3,
      "net_eqty": 46204.01,
-     "share_pct": 2.63
+     "share_pct": 2.62
     },
     {
      "trader": "0xbdbebd58cc8153ce74530bb342427579315915b2",
@@ -387,7 +387,7 @@
      "sell_usd": 1692.64,
      "net_usd": -1418.51,
      "net_eqty": -1104783.6,
-     "share_pct": 2.58
+     "share_pct": 2.57
     },
     {
      "trader": "0xf8d7467c822e53209bdba7fe6a35adbe54129f7e",
@@ -399,6 +399,17 @@
      "net_usd": -663.52,
      "net_eqty": -430944.63,
      "share_pct": 2.4
+    },
+    {
+     "trader": "0x4b5c33c3c7a31bd108f5a99b64683b0056a62226",
+     "label": "",
+     "trades": 14,
+     "volume_usd": 1535.32,
+     "buy_usd": 497.2,
+     "sell_usd": 1038.12,
+     "net_usd": -540.93,
+     "net_eqty": -416231.23,
+     "share_pct": 2.01
     },
     {
      "trader": "0xbb69fd5e640ce9e053d3c073867ac6cac74ba10c",
@@ -420,7 +431,7 @@
      "sell_usd": 0.0,
      "net_usd": 1418.34,
      "net_eqty": 665437.75,
-     "share_pct": 1.86
+     "share_pct": 1.85
     },
     {
      "trader": "0x54e2acab04c89a3fe02852bf8dd69ee8f526bc75",
@@ -431,18 +442,7 @@
      "sell_usd": 991.03,
      "net_usd": -642.28,
      "net_eqty": -441023.28,
-     "share_pct": 1.76
-    },
-    {
-     "trader": "0x4b5c33c3c7a31bd108f5a99b64683b0056a62226",
-     "label": "",
-     "trades": 13,
-     "volume_usd": 1310.66,
-     "buy_usd": 497.2,
-     "sell_usd": 813.46,
-     "net_usd": -316.26,
-     "net_eqty": -172119.61,
-     "share_pct": 1.72
+     "share_pct": 1.75
     },
     {
      "trader": "0x66b277092e8ad5c0f136e299265826b4f1539283",
@@ -480,13 +480,13 @@
     {
      "trader": "0x768fb85fe1c89502e49440c54ade996930c49604",
      "label": "",
-     "trades": 20,
-     "volume_usd": 1067.77,
-     "buy_usd": 1067.77,
+     "trades": 22,
+     "volume_usd": 1108.1,
+     "buy_usd": 1108.1,
      "sell_usd": 0.0,
-     "net_usd": 1067.77,
-     "net_eqty": 635177.94,
-     "share_pct": 1.4
+     "net_usd": 1108.1,
+     "net_eqty": 678226.22,
+     "share_pct": 1.45
     },
     {
      "trader": "0x912ccbce20f38d9121170a5339dfa482530ca317",
@@ -530,7 +530,7 @@
      "sell_usd": 399.92,
      "net_usd": -17.52,
      "net_eqty": -782.76,
-     "share_pct": 1.03
+     "share_pct": 1.02
     },
     {
      "trader": "0xb42f812a44c22cc6b861478900401ee759ebead6",
@@ -708,22 +708,15 @@
   },
   {
    "month": "2026-11",
-   "buy_usd": 5122.08,
-   "sell_usd": 5930.4,
-   "buy_eqty": 3995467.9,
-   "sell_eqty": 4613006.71,
-   "trades": 222,
-   "avg_price": 0.00128391
+   "buy_usd": 5238.08,
+   "sell_usd": 6319.0,
+   "buy_eqty": 4121965.13,
+   "sell_eqty": 5026839.82,
+   "trades": 231,
+   "avg_price": 0.00126323
   }
  ],
  "daily_90d": [
-  {
-   "date": "2026-08-25",
-   "price": 0.00174479,
-   "buy_usd": 179.91,
-   "sell_usd": 163.94,
-   "trades": 9
-  },
   {
    "date": "2026-08-26",
    "price": 0.00166277,
@@ -1342,10 +1335,17 @@
   },
   {
    "date": "2026-11-22",
-   "price": 0.0009761,
-   "buy_usd": 0.0,
-   "sell_usd": 27.03,
-   "trades": 1
+   "price": 0.0009361,
+   "buy_usd": 75.67,
+   "sell_usd": 387.68,
+   "trades": 7
+  },
+  {
+   "date": "2026-11-23",
+   "price": 0.00093482,
+   "buy_usd": 40.33,
+   "sell_usd": 27.96,
+   "trades": 3
   }
  ],
  "price_history": [
@@ -2983,19 +2983,23 @@
   },
   {
    "date": "2026-11-22",
-   "price": 0.0009761
+   "price": 0.0009361
+  },
+  {
+   "date": "2026-11-23",
+   "price": 0.00093482
   }
  ],
  "buckets_all": [
   {
    "bucket": "Micro (under $100)",
-   "trades": 68731,
-   "usd": 984685.0
+   "trades": 68739,
+   "usd": 984964.95
   },
   {
    "bucket": "Small ($100\u2013500)",
-   "trades": 3897,
-   "usd": 708075.37
+   "trades": 3898,
+   "usd": 708300.03
   },
   {
    "bucket": "Medium ($500\u20132.5k)",
@@ -3016,13 +3020,13 @@
  "buckets_30d": [
   {
    "bucket": "Micro (under $100)",
-   "trades": 308,
-   "usd": 10670.95
+   "trades": 315,
+   "usd": 10949.23
   },
   {
    "bucket": "Small ($100\u2013500)",
-   "trades": 43,
-   "usd": 7491.23
+   "trades": 44,
+   "usd": 7715.89
   },
   {
    "bucket": "Medium ($500\u20132.5k)",
@@ -3042,11 +3046,101 @@
  ],
  "recent_trades": [
   {
+   "time": "2026-11-23T04:02:05.000Z",
+   "side": "sell",
+   "eqty": 30000.0,
+   "usd": 27.96,
+   "price": 0.00093194,
+   "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
+   "tx_hash": "0x26f4bd86f05fac608099f6b24481858cd03519d6e7918f2f02dc6a539aca28b8",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-23T02:37:18.000Z",
+   "side": "buy",
+   "eqty": 21504.37,
+   "usd": 20.2,
+   "price": 0.00093956,
+   "taker": "0x768fb85fe1c89502e49440c54ade996930c49604",
+   "tx_hash": "0x8644df574fde384bcc4dd835dc9373d0c0dd810168df8a9362f12398c1ee11dc",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-23T01:48:53.000Z",
+   "side": "buy",
+   "eqty": 21543.92,
+   "usd": 20.12,
+   "price": 0.00093409,
+   "taker": "0x768fb85fe1c89502e49440c54ade996930c49604",
+   "tx_hash": "0xff8796fb5dedc7d10554abdaa2e4048b9a328f35f10f1f39c0ff4d96b33cc547",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-22T19:38:43.000Z",
+   "side": "buy",
+   "eqty": 49887.57,
+   "usd": 45.44,
+   "price": 0.00091086,
+   "taker": "0x0216de0aff9ed847375a76cfcde5a83bd8ea99c2",
+   "tx_hash": "0x0f8687444eeb989b852de873d41669b4c75ce62bfa61389314a7dbbc73e349fb",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-22T19:38:43.000Z",
+   "side": "sell",
+   "eqty": 244111.62,
+   "usd": 224.66,
+   "price": 0.00092033,
+   "taker": "0x4b5c33c3c7a31bd108f5a99b64683b0056a62226",
+   "tx_hash": "0xc436fa6709a924bc3712d68d9d6cbb2327710d7c407dda0176bd5f1b368e930a",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-22T19:38:43.000Z",
+   "side": "buy",
+   "eqty": 33561.37,
+   "usd": 30.23,
+   "price": 0.0009007,
+   "taker": "0x6011b76b4b7badc0c4aa28a703a7eedc28334181",
+   "tx_hash": "0x0ff06760ba5096e4d3487d5bb9d3355f2ae87dc3be6577aff4555b0f957e2113",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-22T18:55:17.000Z",
+   "side": "sell",
+   "eqty": 77311.73,
+   "usd": 74.34,
+   "price": 0.00096151,
+   "taker": "0xaab0c9766a1f74c887fabee58bf5df7b72af5373",
+   "tx_hash": "0x3e2cb0c0c403bbc62388a085d1b6edf8404e1b5f23388231bb6b1cb3ef1cb8bc",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-22T18:48:09.000Z",
+   "side": "sell",
+   "eqty": 62349.71,
+   "usd": 61.13,
+   "price": 0.00098036,
+   "taker": "0x501ef174b66883ba40f92e6fb24bfb49331d4d4c",
+   "tx_hash": "0x8d794c9f407722d8848f113c76dcf5450529422a504922140e90a35bc683f0c4",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
+   "time": "2026-11-22T06:10:47.000Z",
+   "side": "sell",
+   "eqty": 60.05,
+   "usd": 0.06,
+   "price": 0.00098896,
+   "taker": "0xfa00a9ed787f3793db668bff3e6e6e7db0f92a1b",
+   "tx_hash": "0x45f37e1de135c1bc82dba7c861a1deb63560035eb603c2abba578b5daad81dcd",
+   "pool": "ETH/EQTY (Dune pool)"
+  },
+  {
    "time": "2026-11-22T04:55:24.000Z",
    "side": "sell",
    "eqty": 27695.0,
-   "usd": 27.03,
-   "price": 0.0009761,
+   "usd": 27.5,
+   "price": 0.00099282,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xdbd9e2a734d132c6b7932638ab2added4a0b562e187c129066046eb4e67d5514",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3949,96 +4043,6 @@
    "price": 0.00113879,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xbdfe61f1313d3a7bf4811106fa1a4e4249d7da326805f0e65c86c0d036351c1b",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-12T19:20:46.000Z",
-   "side": "sell",
-   "eqty": 30000.0,
-   "usd": 34.41,
-   "price": 0.00114698,
-   "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
-   "tx_hash": "0x6fc1c7c1e930210b26dc1b31a8f2cd3fd984c23e779178b17ebaa496cad68d89",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-12T19:20:43.000Z",
-   "side": "buy",
-   "eqty": 95399.31,
-   "usd": 109.2,
-   "price": 0.00114465,
-   "taker": "0x501ef174b66883ba40f92e6fb24bfb49331d4d4c",
-   "tx_hash": "0xefab8502e02f3551d5c399ad9efcc343fc72389c51c3f50ef8b62bce3494a497",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-12T16:28:57.000Z",
-   "side": "sell",
-   "eqty": 30000.0,
-   "usd": 33.79,
-   "price": 0.00112638,
-   "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
-   "tx_hash": "0xe6ac3f4648b054fcb20ef7589060be1aee9968c0de9d23e06b65128160c227fa",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-12T16:28:36.000Z",
-   "side": "sell",
-   "eqty": 30000.0,
-   "usd": 34.07,
-   "price": 0.00113571,
-   "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
-   "tx_hash": "0x419b690b398006808f3e463bbbcbea708d0717ebe2610776f3d7de43351e4e67",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-12T16:27:56.000Z",
-   "side": "sell",
-   "eqty": 30000.0,
-   "usd": 34.35,
-   "price": 0.00114516,
-   "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
-   "tx_hash": "0x8b1161c693a378ce02bc924848d2b48c3b3f863e4f88fdac8fa4b619a3563dc1",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-12T01:57:31.000Z",
-   "side": "sell",
-   "eqty": 30000.0,
-   "usd": 34.64,
-   "price": 0.00115473,
-   "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
-   "tx_hash": "0x4eca210e7c139004eef6dc97e1a2249b5b45da00de9aee83456451f66352e40a",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-11T13:27:34.000Z",
-   "side": "buy",
-   "eqty": 51770.0,
-   "usd": 61.31,
-   "price": 0.00118425,
-   "taker": "0xf8d7467c822e53209bdba7fe6a35adbe54129f7e",
-   "tx_hash": "0x02fd6ee6c9d64fe65627852c450c345a6322c9cbf8928d1df4b4cc8e4a409cc0",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-11T13:27:33.000Z",
-   "side": "sell",
-   "eqty": 51390.39,
-   "usd": 60.43,
-   "price": 0.00117588,
-   "taker": "0x501ef174b66883ba40f92e6fb24bfb49331d4d4c",
-   "tx_hash": "0x5c68a1ae4a09693da6a7ec3b58b6ac9c2e1fe417ba32078e7040832e3813eb8d",
-   "pool": "ETH/EQTY (Dune pool)"
-  },
-  {
-   "time": "2026-11-11T13:27:23.000Z",
-   "side": "buy",
-   "eqty": 8437.56,
-   "usd": 10.05,
-   "price": 0.00119122,
-   "taker": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
-   "tx_hash": "0x4f2eccffe09395620c83d60e74816797700c510e812104fb6e9dfd76d64c949e",
    "pool": "ETH/EQTY (Dune pool)"
   }
  ]
