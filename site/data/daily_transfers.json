@@ -1,6 +1,11 @@
 {
- "updated_at": "2026-11-25T15:36:26+00:00",
+ "updated_at": "2026-11-26T15:15:53+00:00",
  "rows": [
+  {
+   "date": "2026-11-26",
+   "total_transfers": 49,
+   "total_volume_tokens": 2424803.15
+  },
   {
    "date": "2026-11-25",
    "total_transfers": 17,
@@ -148,13 +153,8 @@
   },
   {
    "date": "2026-10-27",
-   "total_transfers": 22,
-   "total_volume_tokens": 556553.56
-  },
-  {
-   "date": "2026-10-26",
-   "total_transfers": 1,
-   "total_volume_tokens": 126548.04
+   "total_transfers": 2,
+   "total_volume_tokens": 8005.32
   }
  ]
 }
