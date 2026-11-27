@@ -376,12 +376,14 @@
       <h2>Position value vs. just holding</h2>
       <p class="note">What the position is worth over time, versus simply holding the deposited tokens (HODL). The green line adds estimated fees.</p>
       <div id="lp-value"></div>
+      <div id="lp-value-ctl"></div>
       <div class="legend"><span><i style="background:var(--up)"></i>position + fees</span><span><i style="background:var(--accent)"></i>position value</span><span><i style="background:var(--muted)"></i>just holding (HODL)</span></div>
     </section>
     <section class="card">
       <h2>Estimated fees earned (cumulative)</h2>
       <p class="note">Pool swap volume &times; 0.3% &times; the position's liquidity share, while in range. An estimate, not a direct on-chain fee read; Uniswap only.</p>
       <div id="lp-fees"></div>
+      <div id="lp-fees-ctl"></div>
     </section>
   </div>
 
@@ -929,12 +931,21 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
       ["Fees minus impermanent loss", (k.net_vs_hodl_usd >= 0 ? "+$" : "-$") + fmt(Math.abs(k.net_vs_hodl_usd)), "providing liquidity vs. simply holding", (k.net_vs_hodl_usd >= 0 ? "pos" : "neg")],
     ].map(([l, v, d, cls]) => `<div class="card kpi"><div class="label">${l}</div><div class="value ${cls}">${v}</div><div class="delta">${d}</div></div>`).join("");
     $("lp-headline").innerHTML = `The DAO supplies about <b>$${fmt(k.position_value_usd)}</b> of live liquidity so EQTY can be traded on-chain. Since launch it has earned an estimated <b>$${fmt(k.fees_est_usd)}</b> in fees &mdash; larger than the <b>$${fmt(Math.abs(k.impermanent_loss_usd))}</b> impermanent loss, so providing liquidity came out <b>$${fmt(k.net_vs_hodl_usd)}</b> above simply holding the tokens. Total value tracks the EQTY price, down from <b>$${fmt(k.deposit_usd)}</b> at launch.`;
-    multiLine($("lp-value"), S.map(r => r.date), [
-      { color: "var(--up)", pts: S.map(r => r.pos_value + r.fees_cum) },
-      { color: "var(--accent)", pts: S.map(r => r.pos_value) },
-      { color: "var(--muted)", dash: true, pts: S.map(r => r.hodl_value) },
-    ]);
-    lineChart($("lp-fees"), S.map(r => ({ x: r.date, y: r.fees_cum })), v => "$" + compact(v));
+    const lpPresets = [["30d", 30], ["90d", 90], ["6m", 180], ["All", 0]];
+    rangeCtl($("lp-value-ctl"), S.length, lpPresets, (a, z) => {
+      const sl = S.slice(a, z + 1);
+      multiLine($("lp-value"), sl.map(r => r.date), [
+        { color: "var(--up)", pts: sl.map(r => r.pos_value + r.fees_cum) },
+        { color: "var(--accent)", pts: sl.map(r => r.pos_value) },
+        { color: "var(--muted)", dash: true, pts: sl.map(r => r.hodl_value) },
+      ]);
+      return `${sl[0].date} &rarr; ${sl[sl.length - 1].date} &middot; ${sl.length} days`;
+    });
+    rangeCtl($("lp-fees-ctl"), S.length, lpPresets, (a, z) => {
+      const sl = S.slice(a, z + 1);
+      lineChart($("lp-fees"), sl.map(r => ({ x: r.date, y: r.fees_cum })), v => "$" + compact(v));
+      return `${sl[0].date} &rarr; ${sl[sl.length - 1].date} &middot; +$${compact(sl[sl.length - 1].fees_cum - sl[0].fees_cum)} fees in range`;
+    });
     $("lp-cav-mix").innerHTML = `As EQTY fell, the pool automatically traded ETH for EQTY &mdash; from ${fmt(k.deposit_eth, 2)} ETH + ${compact(k.deposit_eqty)} EQTY at launch to ${fmt(k.now_eth, 2)} ETH + ${compact(k.now_eqty)} EQTY now. A liquidity position always ends up holding more of the asset that dropped; this is how an automated market maker works, not a decision. The cost of that shift (impermanent loss) was about $${fmt(Math.abs(k.impermanent_loss_usd))}.`;
     $("lp-cav-src").textContent = "Deposit amounts are the actual on-chain transfers into the pool; current value is " + (k.now_source === "live pool reserves" ? "the live pool reserves" : "modelled from on-chain liquidity and daily prices (within ~2% of live reserves)") + ". This section refreshes daily.";
   }
