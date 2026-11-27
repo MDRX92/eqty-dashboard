@@ -112,6 +112,18 @@
   .tablebox tbody tr:last-child td { border-bottom: none; }
   .meter { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; min-width: 80px; }
   .meter span { display: block; height: 100%; background: var(--accent); }
+  .range { position: relative; height: 26px; margin: 10px 0 2px; }
+  .range .track { position: absolute; left: 0; right: 0; top: 11px; height: 4px; border-radius: 2px; background: var(--line); }
+  .range .sel { position: absolute; top: 11px; height: 4px; border-radius: 2px; background: var(--accent); }
+  .range input { position: absolute; left: 0; width: 100%; top: 2px; margin: 0; height: 22px; background: none;
+                 pointer-events: none; -webkit-appearance: none; appearance: none; }
+  .range input::-webkit-slider-thumb { pointer-events: auto; -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%;
+                 background: var(--card); border: 2px solid var(--accent); cursor: ew-resize; }
+  .range input::-moz-range-thumb { pointer-events: auto; width: 12px; height: 12px; border-radius: 50%;
+                 background: var(--card); border: 2px solid var(--accent); cursor: ew-resize; }
+  .range input::-moz-range-track { background: none; }
+  .range-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+  .range-row .tabs { margin: 0; }
   footer { color: var(--muted); font-size: 13px; margin-top: 32px; }
   @media (max-width: 520px) { .grid2 { grid-template-columns: 1fr; } }
 </style>
@@ -157,8 +169,13 @@
 
   <section class="card" style="margin-top:16px">
     <h2>EQTY price (USD)</h2>
-    <p class="note">Daily volume-weighted average price in the main ETH/EQTY pool (since 10 Oct 2025).</p>
+    <p class="note">Daily volume-weighted average price in the main ETH/EQTY pool (since 10 Oct 2025). Drag the slider handles or pick a period to zoom in.</p>
     <div id="price-line"></div>
+    <div class="range" id="pr-range"><div class="track"></div><div class="sel" id="pr-sel"></div>
+      <input type="range" id="pr-from" min="0" max="1" value="0" step="1" aria-label="Start date">
+      <input type="range" id="pr-to" min="0" max="1" value="1" step="1" aria-label="End date"></div>
+    <div class="range-row"><span id="pr-label"></span>
+      <div class="tabs" id="pr-tabs"><button data-d="30">30d</button><button data-d="90">90d</button><button data-d="180">6m</button><button data-d="0" class="on">All</button></div></div>
   </section>
 
   <div class="grid2">
@@ -578,7 +595,26 @@ function bars(el, rows, value, title) {
     $("m-trades").textContent = fmt(k.trades_30d);
     $("m-traders").textContent = `${fmt(k.traders_30d)} unique traders`;
 
-    lineChart($("price-line"), market.price_history.map(r => ({ x: r.date, y: r.price })), v => "$" + Number(v).toPrecision(2));
+    const pts = market.price_history.map(r => ({ x: r.date, y: r.price }));
+    const pf = $("pr-from"), pt = $("pr-to"), last = Math.max(pts.length - 1, 1);
+    pf.max = pt.max = last; pf.value = 0; pt.value = last;
+    const drawPrice = () => {
+      let a = +pf.value, b = +pt.value;
+      if (b - a < 2) { if (document.activeElement === pf) a = Math.max(0, b - 2); else b = Math.min(last, a + 2); pf.value = a; pt.value = b; }
+      const sl = pts.slice(a, b + 1);
+      lineChart($("price-line"), sl, v => "$" + Number(v).toPrecision(2));
+      $("pr-sel").style.left = (a / last * 100) + "%"; $("pr-sel").style.width = ((b - a) / last * 100) + "%";
+      const ch = sl.length > 1 ? (sl[sl.length - 1].y / sl[0].y - 1) * 100 : 0;
+      $("pr-label").innerHTML = sl.length ? `${sl[0].x} → ${sl[sl.length - 1].x} · ${sl.length} days · <span class="${ch >= 0 ? "pos" : "neg"}">${ch > 0 ? "+" : ""}${fmt(ch, 1)}%</span>` : "";
+    };
+    const tabs = document.querySelectorAll("#pr-tabs button");
+    pf.oninput = pt.oninput = () => { tabs.forEach(x => x.classList.remove("on")); drawPrice(); };
+    tabs.forEach(btn => btn.onclick = () => {
+      tabs.forEach(x => x.classList.toggle("on", x === btn));
+      const d = +btn.dataset.d;
+      pt.value = last; pf.value = d ? Math.max(0, last - d + 1) : 0; drawPrice();
+    });
+    drawPrice();
     buySellChart($("m-monthly"), market.monthly);
 
     const gd = {};
