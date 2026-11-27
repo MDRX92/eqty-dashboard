@@ -124,6 +124,12 @@
   .range input::-moz-range-track { background: none; }
   .range-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
   .range-row .tabs { margin: 0; }
+  .bars .col { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; border-radius: 3px 3px 0 0; overflow: hidden; min-height: 2px; }
+  .bars .col span { display: block; width: 100%; flex: none; opacity: .85; }
+  .bars .col:hover span { opacity: 1; }
+  .life-grid { display: grid; grid-template-columns: minmax(260px, 1fr) 2fr; gap: 24px; align-items: start; }
+  .life-grid .donut-wrap { margin-bottom: 0; }
+  @media (max-width: 760px) { .life-grid { grid-template-columns: 1fr; } }
   footer { color: var(--muted); font-size: 13px; margin-top: 32px; }
   @media (max-width: 520px) { .grid2 { grid-template-columns: 1fr; } }
 </style>
@@ -216,9 +222,10 @@
   <div class="grid2" style="margin-top:16px" id="gate-block">
     <section class="card">
       <h2>Monthly volume: Gate.io vs. Uniswap</h2>
-      <p class="note">Total USD volume per month since the Gate.io listing (Nov 2025). Bar = Gate.io; hover for the Uniswap volume and Gate's share.</p>
+      <p class="note">Total USD volume per month since the Gate.io listing (Nov 2025), Gate.io stacked on Uniswap. Hover for amounts and Gate's share.</p>
       <div class="bars" id="g-monthly" style="height:150px"></div>
       <div class="axis"><span id="gm-start"></span><span id="gm-end"></span></div>
+      <div class="legend"><span><i style="background:var(--vol)"></i>Gate.io <b id="gm-gate"></b></span><span><i style="background:var(--accent)"></i>Uniswap <b id="gm-uni"></b></span><span id="gm-share"></span></div>
     </section>
     <section class="card">
       <h2>Latest trades – Gate.io</h2>
@@ -254,27 +261,27 @@
     <div id="holders-line"></div>
   </section>
 
-  <div class="grid2">
-    <section class="card">
+  <section class="card">
       <h2>New vs. exited holders – last 90 days</h2>
       <p class="note">New = balance went from zero to positive; exited = balance went to zero.</p>
       <div class="div-bars" id="newexit"></div>
       <div class="axis"><span id="ne-start"></span><span id="ne-end"></span></div>
       <div class="legend"><span><i style="background:var(--up)"></i>new <b id="ne-new"></b></span><span><i style="background:var(--down)"></i>exited <b id="ne-exit"></b></span></div>
-    </section>
+  </section>
 
-    <section class="card">
+  <section class="card">
       <h2>Holder lifecycle</h2>
       <p class="note">By year of first transfer and time since last activity.</p>
-      <div class="donut-wrap"><div id="life-donut"></div><div class="donut-legend" id="life-legend"></div></div>
-      <div class="scroll">
-        <table>
-          <thead><tr><th>Cohort</th><th>Status</th><th class="num">Holders</th><th class="num">Balance (EQTY)</th><th>Share of holders</th></tr></thead>
-          <tbody id="lifecycle"></tbody>
-        </table>
+      <div class="life-grid">
+        <div class="donut-wrap"><div id="life-donut"></div><div class="donut-legend" id="life-legend"></div></div>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Cohort</th><th>Status</th><th class="num">Holders</th><th class="num">Balance (EQTY)</th><th>Share of holders</th></tr></thead>
+            <tbody id="lifecycle"></tbody>
+          </table>
+        </div>
       </div>
-    </section>
-  </div>
+  </section>
 
   <h3>Activity</h3>
   <p class="sectext">Core transfer activity: short-term momentum (last 30 days) and long-term trends (last 12 months). Bars show the number of transfers, the orange line the amount of EQTY moved.</p>
@@ -635,7 +642,10 @@ function bars(el, rows, value, title) {
     const sum = f => "$" + compact(dd.reduce((t, r) => t + f(r), 0));
     $("md-buy").textContent = sum(r => r.buy_usd); $("md-sell").textContent = sum(r => r.sell_usd);
     $("md-gbuy").textContent = sum(r => r.g.buy_usd); $("md-gsell").textContent = sum(r => r.g.sell_usd);
-    if (gate && gate.since) $("md-gate-note").textContent = `Gate.io buy/sell from ${gate.since}.`;
+    if (gate && gate.since && gate.since > dd[0].date) {
+      const full = new Date(Date.parse(gate.since) + 89 * 864e5).toISOString().slice(0, 10);
+      $("md-gate-note").textContent = `Gate.io only shares the last ~30 days, so its buy/sell data is being collected from ${gate.since} onwards and covers the full 90 days from ${full}.`;
+    }
 
     const colors = ["var(--c4)", "var(--c3)", "var(--c2)", "var(--c1)", "var(--vol)"];
     const showBuckets = key => donut($("bk-donut"), $("bk-legend"),
@@ -673,11 +683,16 @@ function bars(el, rows, value, title) {
     ((market && market.monthly) || []).forEach(r => um[r.month] = r.buy_usd + r.sell_usd);
     const gm = gate.monthly || [];
     if (gm.length) {
-      bars($("g-monthly"), gm, r => r.volume_usdt, r => {
+      const gmMax = Math.max(...gm.map(r => r.volume_usdt + (um[r.month] || 0)), 1);
+      $("g-monthly").innerHTML = gm.map(r => {
         const u = um[r.month] || 0, t = r.volume_usdt + u;
-        return `${r.month}: Gate.io $${fmt(r.volume_usdt)} · Uniswap $${fmt(u)} · Gate share ${fmt(t ? r.volume_usdt / t * 100 : 0)}%`;
-      });
+        const tip = `${r.month}: Gate.io $${fmt(r.volume_usdt)} · Uniswap $${fmt(u)} · Gate share ${fmt(t ? r.volume_usdt / t * 100 : 0)}%`;
+        return `<div class="col" style="height:${t / gmMax * 100}%" title="${tip}"><span style="height:${t ? r.volume_usdt / t * 100 : 0}%;background:var(--vol)"></span><span style="height:${t ? u / t * 100 : 0}%;background:var(--accent)"></span></div>`;
+      }).join("");
       $("gm-start").textContent = gm[0].month; $("gm-end").textContent = gm[gm.length - 1].month;
+      const gT = gm.reduce((a, r) => a + r.volume_usdt, 0), uT = gm.reduce((a, r) => a + (um[r.month] || 0), 0);
+      $("gm-gate").textContent = "$" + compact(gT); $("gm-uni").textContent = "$" + compact(uT);
+      $("gm-share").textContent = `Gate.io share ${fmt(gT + uT ? gT / (gT + uT) * 100 : 0)}%`;
     }
     $("g-trades-tb").innerHTML = (gate.recent_trades || []).map(t => `
       <tr>
