@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T15:59:40+00:00",
+ "updated_at": "2026-11-27T17:30:13+00:00",
  "kpis": {
   "owner": "EQTY DAO",
   "wallet": "0xa0f71c74054bcd9b1009b63770b7c6bdb227297c",
@@ -11,16 +11,16 @@
   "deposit_eqty": 4345361.71,
   "deposit_usd": 56662.36,
   "deposit_source": "on-chain transfers",
-  "now_eth": 4.4795,
-  "now_eqty": 6582222.0,
-  "position_value_usd": 14843.79,
+  "now_eth": 4.4764,
+  "now_eqty": 6586894.0,
+  "position_value_usd": 14955.9,
   "now_source": "live pool reserves",
-  "hodl_value_usd": 16518.44,
-  "impermanent_loss_usd": -1674.65,
-  "fees_est_usd": 5821.14,
-  "net_vs_deposit_usd": -35997.42,
-  "net_vs_hodl_usd": 4146.49,
-  "return_pct": -63.5,
+  "hodl_value_usd": 16494.61,
+  "impermanent_loss_usd": -1538.71,
+  "fees_est_usd": 5821.35,
+  "net_vs_deposit_usd": -35885.11,
+  "net_vs_hodl_usd": 4282.64,
+  "return_pct": -63.3,
   "in_range_now": true
  },
  "series": [
@@ -3743,11 +3743,11 @@
   },
   {
    "date": "2026-11-27",
-   "pos_value": 14843.79,
-   "hodl_value": 16518.44,
-   "fees_cum": 5821.14,
-   "eth": 4.4795,
-   "eqty": 6582222.0,
+   "pos_value": 14955.9,
+   "hodl_value": 16494.61,
+   "fees_cum": 5821.35,
+   "eth": 4.4764,
+   "eqty": 6586894.0,
    "in_range": true
   }
  ]

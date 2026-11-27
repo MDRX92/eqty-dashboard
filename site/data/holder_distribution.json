@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T15:59:40+00:00",
+ "updated_at": "2026-11-27T17:30:13+00:00",
  "rows": [
   {
    "band": 1,
@@ -16,7 +16,7 @@
   {
    "band": 3,
    "band_label": "10k - 100k",
-   "total_eqty": 19001327.97,
+   "total_eqty": 19001306.08,
    "wallets": 506
   },
   {
@@ -28,13 +28,13 @@
   {
    "band": 5,
    "band_label": "1M - 10M",
-   "total_eqty": 83358034.01,
+   "total_eqty": 83418034.01,
    "wallets": 38
   },
   {
    "band": 6,
    "band_label": "10M+",
-   "total_eqty": 129425513.71,
+   "total_eqty": 129365535.6,
    "wallets": 4
   }
  ]

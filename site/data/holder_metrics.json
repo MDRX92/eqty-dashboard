@@ -1,10 +1,10 @@
 {
- "updated_at": "2026-11-27T15:59:40+00:00",
+ "updated_at": "2026-11-27T17:30:13+00:00",
  "rows": [
   {
    "cohort_year": 2026,
    "lifecycle_status": "1. Active (0-30d)",
-   "total_token_balance": 52335391.91,
+   "total_token_balance": 52335370.02,
    "unique_holders": 43
   },
   {
@@ -22,7 +22,7 @@
   {
    "cohort_year": 2025,
    "lifecycle_status": "1. Active (0-30d)",
-   "total_token_balance": 89248195.79,
+   "total_token_balance": 89248217.68,
    "unique_holders": 12
   },
   {
