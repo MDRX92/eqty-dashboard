@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T14:21:57+00:00",
+ "updated_at": "2026-11-27T14:27:55+00:00",
  "pair": "EQTY_USDT",
  "since": "2026-10-29",
  "kpis": {
@@ -894,27 +894,27 @@
  ],
  "buckets_30d": [
   {
-   "bucket": "Micro (under $100)",
-   "trades": 2066,
-   "usd": 22133.88
+   "bucket": "Micro (under $10)",
+   "trades": 1405,
+   "usd": 5444.19
   },
   {
-   "bucket": "Small ($100\u2013500)",
-   "trades": 34,
-   "usd": 5169.12
+   "bucket": "Small ($10\u201350)",
+   "trades": 620,
+   "usd": 13756.7
   },
   {
-   "bucket": "Medium ($500\u20132.5k)",
-   "trades": 0,
-   "usd": 0.0
+   "bucket": "Medium ($50\u2013250)",
+   "trades": 73,
+   "usd": 7599.73
   },
   {
-   "bucket": "Large ($2.5k\u201310k)",
-   "trades": 0,
-   "usd": 0.0
+   "bucket": "Large ($250\u20131k)",
+   "trades": 2,
+   "usd": 502.37
   },
   {
-   "bucket": "Whale ($10k+)",
+   "bucket": "Very large ($1k+)",
    "trades": 0,
    "usd": 0.0
   }

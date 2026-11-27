@@ -1,19 +1,19 @@
 {
- "updated_at": "2026-11-27T14:21:57+00:00",
+ "updated_at": "2026-11-27T14:27:55+00:00",
  "kpis": {
   "price_usd": 0.00114995630045911,
-  "price_eur": 0.00105021,
+  "price_eur": 0.00105037,
   "price_source": "GeckoTerminal",
   "change_24h_pct": 9.705,
-  "liquidity_usd": 15291.2279,
+  "liquidity_usd": 15289.8957,
   "fdv_usd": 334689.0,
-  "volume_30d_usd": 20748.32,
-  "buy_30d_usd": 10257.12,
-  "sell_30d_usd": 10491.2,
+  "volume_30d_usd": 20748.29,
+  "buy_30d_usd": 10257.1,
+  "sell_30d_usd": 10491.18,
   "trades_30d": 434,
   "traders_30d": 67,
   "trades_all": 73019,
-  "volume_all_usd": 1945480.12
+  "volume_all_usd": 1945480.08
  },
  "leaderboard": {
   "30d": {
@@ -24,9 +24,9 @@
      "trader": "0x2b253a24600ccd524a7264c2360cae49679a9495",
      "label": "Automated trader",
      "trades": 182,
-     "volume_usd": 6038.12,
-     "buy_usd": 2387.32,
-     "sell_usd": 3650.8,
+     "volume_usd": 6038.1,
+     "buy_usd": 2387.31,
+     "sell_usd": 3650.79,
      "net_usd": -1263.48,
      "net_eqty": -914494.0,
      "share_pct": 29.1
@@ -35,10 +35,10 @@
      "trader": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
      "label": "",
      "trades": 44,
-     "volume_usd": 3104.22,
-     "buy_usd": 3104.22,
+     "volume_usd": 3104.21,
+     "buy_usd": 3104.21,
      "sell_usd": 0.0,
-     "net_usd": 3104.22,
+     "net_usd": 3104.21,
      "net_eqty": 2178746.55,
      "share_pct": 14.96
     },
@@ -305,9 +305,9 @@
      "trader": "0x2b253a24600ccd524a7264c2360cae49679a9495",
      "label": "Automated trader",
      "trades": 523,
-     "volume_usd": 22061.6,
-     "buy_usd": 8805.45,
-     "sell_usd": 13256.15,
+     "volume_usd": 22061.58,
+     "buy_usd": 8805.44,
+     "sell_usd": 13256.14,
      "net_usd": -4450.7,
      "net_eqty": -2721211.57,
      "share_pct": 30.86
@@ -316,10 +316,10 @@
      "trader": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
      "label": "",
      "trades": 96,
-     "volume_usd": 6859.55,
-     "buy_usd": 6859.55,
+     "volume_usd": 6859.54,
+     "buy_usd": 6859.54,
      "sell_usd": 0.0,
-     "net_usd": 6859.55,
+     "net_usd": 6859.54,
      "net_eqty": 4217003.86,
      "share_pct": 9.59
     },
@@ -385,7 +385,7 @@
      "volume_usd": 1972.16,
      "buy_usd": 724.46,
      "sell_usd": 1247.7,
-     "net_usd": -523.23,
+     "net_usd": -523.24,
      "net_eqty": -283322.48,
      "share_pct": 2.76
     },
@@ -708,8 +708,8 @@
   },
   {
    "month": "2026-11",
-   "buy_usd": 7588.83,
-   "sell_usd": 7885.8,
+   "buy_usd": 7588.81,
+   "sell_usd": 7885.79,
    "buy_eqty": 6454602.76,
    "sell_eqty": 6615420.58,
    "trades": 341,
@@ -1342,9 +1342,9 @@
   },
   {
    "date": "2026-11-27",
-   "price": 0.00112969,
-   "buy_usd": 617.69,
-   "sell_usd": 321.63,
+   "price": 0.00112965,
+   "buy_usd": 617.67,
+   "sell_usd": 321.62,
    "trades": 37
   }
  ],
@@ -3003,59 +3003,59 @@
   },
   {
    "date": "2026-11-27",
-   "price": 0.00112969
+   "price": 0.00112965
   }
  ],
  "buckets_all": [
   {
-   "bucket": "Micro (under $100)",
-   "trades": 68841,
-   "usd": 987559.92
+   "bucket": "Micro (under $10)",
+   "trades": 50073,
+   "usd": 185940.57
   },
   {
-   "bucket": "Small ($100\u2013500)",
-   "trades": 3906,
-   "usd": 709622.59
+   "bucket": "Small ($10\u201350)",
+   "trades": 11890,
+   "usd": 294504.15
   },
   {
-   "bucket": "Medium ($500\u20132.5k)",
-   "trades": 265,
-   "usd": 227356.12
+   "bucket": "Medium ($50\u2013250)",
+   "trades": 10107,
+   "usd": 972425.99
   },
   {
-   "bucket": "Large ($2.5k\u201310k)",
-   "trades": 7,
-   "usd": 20940.14
+   "bucket": "Large ($250\u20131k)",
+   "trades": 879,
+   "usd": 376502.62
   },
   {
-   "bucket": "Whale ($10k+)",
-   "trades": 0,
-   "usd": 0.0
+   "bucket": "Very large ($1k+)",
+   "trades": 70,
+   "usd": 116105.42
   }
  ],
  "buckets_30d": [
   {
-   "bucket": "Micro (under $100)",
-   "trades": 386,
-   "usd": 12590.07
+   "bucket": "Micro (under $10)",
+   "trades": 59,
+   "usd": 299.78
   },
   {
-   "bucket": "Small ($100\u2013500)",
-   "trades": 48,
-   "usd": 8158.19
+   "bucket": "Small ($10\u201350)",
+   "trades": 266,
+   "usd": 8032.02
   },
   {
-   "bucket": "Medium ($500\u20132.5k)",
-   "trades": 0,
-   "usd": 0.0
+   "bucket": "Medium ($50\u2013250)",
+   "trades": 101,
+   "usd": 9836.59
   },
   {
-   "bucket": "Large ($2.5k\u201310k)",
-   "trades": 0,
-   "usd": 0.0
+   "bucket": "Large ($250\u20131k)",
+   "trades": 8,
+   "usd": 2579.85
   },
   {
-   "bucket": "Whale ($10k+)",
+   "bucket": "Very large ($1k+)",
    "trades": 0,
    "usd": 0.0
   }
@@ -3066,7 +3066,7 @@
    "side": "sell",
    "eqty": 8116.0,
    "usd": 9.36,
-   "price": 0.00115289,
+   "price": 0.00115285,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xaf8211032f934b40863d2ce27ae44dbd980ccb60614a0ca2f03c5036c2f600d3",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3076,7 +3076,7 @@
    "side": "sell",
    "eqty": 21884.0,
    "usd": 25.34,
-   "price": 0.0011581,
+   "price": 0.00115806,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x54980fd8c0f842c70a8cb375782c508d7e005a0e39c9dec3033af38b1518af0d",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3086,7 +3086,7 @@
    "side": "sell",
    "eqty": 30000.0,
    "usd": 35.02,
-   "price": 0.00116721,
+   "price": 0.00116717,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x48d3a61943d952eaeeb0f7c3308e77474494764da691d6d7deaf9d97b2541990",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3096,7 +3096,7 @@
    "side": "buy",
    "eqty": 51504.69,
    "usd": 60.34,
-   "price": 0.00117159,
+   "price": 0.00117155,
    "taker": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
    "tx_hash": "0x66c4f10699120c1b269ae3c37179099ff7fe10446fac910ef62ffb06084fc9cb",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3106,7 +3106,7 @@
    "side": "buy",
    "eqty": 44793.66,
    "usd": 51.72,
-   "price": 0.00115467,
+   "price": 0.00115463,
    "taker": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
    "tx_hash": "0x4d2db361e8730c40f2a4166603181df94faf9713a0bf9b8c5a701a1a9523de29",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3116,7 +3116,7 @@
    "side": "buy",
    "eqty": 17448.2,
    "usd": 19.96,
-   "price": 0.00114393,
+   "price": 0.00114389,
    "taker": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
    "tx_hash": "0x361bbee93d6269a9ae2ae32c6cc7ea5135d0bfc9f73f60baa4af843895bd9845",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3125,8 +3125,8 @@
    "time": "2026-11-27T10:12:08.000Z",
    "side": "buy",
    "eqty": 30000.0,
-   "usd": 34.08,
-   "price": 0.00113585,
+   "usd": 34.07,
+   "price": 0.00113581,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x77066eab5bb839e1f3f63b6175bfa91af0b79269bc09b5ef80f1f558e8456c7d",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3136,7 +3136,7 @@
    "side": "buy",
    "eqty": 1525.03,
    "usd": 1.72,
-   "price": 0.00113052,
+   "price": 0.00113048,
    "taker": "0x0764d659ffeb9e086b4a9ac60986ca36a61139a8",
    "tx_hash": "0x2763b4fb793c94424e963878bf97f992262404357b9827dc0a06b20d2ef3734b",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3146,7 +3146,7 @@
    "side": "buy",
    "eqty": 1596.4,
    "usd": 1.8,
-   "price": 0.00112999,
+   "price": 0.00112995,
    "taker": "0x754dcfb2861547015b221e963b4133a71dbdc024",
    "tx_hash": "0x2cc6aab5462ffe947a6b30dc22ccc123f488cbc2dd3272bd5dc395ddc7d57dc5",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3156,7 +3156,7 @@
    "side": "buy",
    "eqty": 807.04,
    "usd": 0.91,
-   "price": 0.00112959,
+   "price": 0.00112955,
    "taker": "0x59a2c9bd639226012d59bba67b6990743193af78",
    "tx_hash": "0x43c9cd6be633bae7bfd522affff1dda458f32aa910e37697c84a901997a2e0a2",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3166,7 +3166,7 @@
    "side": "buy",
    "eqty": 2561.58,
    "usd": 2.89,
-   "price": 0.00112902,
+   "price": 0.00112898,
    "taker": "0xf57519ebc17347af5a6eb3df2eab68204b1df4e1",
    "tx_hash": "0x4c7ae119dc5bb27eb0af7417118ec7b0c622041375eca6b0a3bb255d1215df1f",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3176,7 +3176,7 @@
    "side": "sell",
    "eqty": 30000.0,
    "usd": 33.77,
-   "price": 0.00112571,
+   "price": 0.00112567,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xdfebddfdfabdfffadf156df969f889c73150fad4982fe6681f0ded40959b5bef",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3186,7 +3186,7 @@
    "side": "sell",
    "eqty": 30000.0,
    "usd": 34.07,
-   "price": 0.00113581,
+   "price": 0.00113577,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x5291cfd94b83e9ec01f94b7174246efacc9ed231cc3f1ec22e4584f2a32976e7",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3196,7 +3196,7 @@
    "side": "sell",
    "eqty": 30000.0,
    "usd": 34.38,
-   "price": 0.00114605,
+   "price": 0.00114601,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x08c3c8c558148c121ef1792a0bb51cf2fb98205b8135aa28d3316c3d2c596325",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3206,7 +3206,7 @@
    "side": "buy",
    "eqty": 21191.0,
    "usd": 24.49,
-   "price": 0.00115562,
+   "price": 0.00115558,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xb73ab06ca463742fabdd660385c268c8f00f330168cbd7ca07140a69202bfd3a",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3216,7 +3216,7 @@
    "side": "buy",
    "eqty": 8616.36,
    "usd": 9.91,
-   "price": 0.00115045,
+   "price": 0.00115041,
    "taker": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
    "tx_hash": "0x9ad48573c7d761387c0b4d743d8299258c298c2e30c0591939d860966869550b",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3226,7 +3226,7 @@
    "side": "sell",
    "eqty": 30000.0,
    "usd": 34.38,
-   "price": 0.00114608,
+   "price": 0.00114604,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x4c57ed640ec5cb4dc35c06a5063df7a662b8d512cc4e2095c1056361efe62cdf",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3236,7 +3236,7 @@
    "side": "sell",
    "eqty": 18206.0,
    "usd": 21.02,
-   "price": 0.0011544,
+   "price": 0.00115436,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xd5a8fb9e6ddd837de9f38f31334ce00ce0a34f5638f425095234553d4c2903d3",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3246,7 +3246,7 @@
    "side": "buy",
    "eqty": 59693.2,
    "usd": 68.96,
-   "price": 0.00115529,
+   "price": 0.00115525,
    "taker": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
    "tx_hash": "0xaac5385c6297691928eeeebb64bb2b296d2a0ce3a4260ecc84f368bdfdb03a51",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3256,7 +3256,7 @@
    "side": "buy",
    "eqty": 20565.0,
    "usd": 23.47,
-   "price": 0.00114144,
+   "price": 0.0011414,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x1f66623d1635cf6cf251c67b40451c08f6ef556eda4a5495e23e19b5d38d90be",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3266,7 +3266,7 @@
    "side": "sell",
    "eqty": 30000.0,
    "usd": 34.05,
-   "price": 0.00113505,
+   "price": 0.00113501,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x70f603cb44af04b7dd43019c313949af9ec05030b909160e536b2c065f61763c",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3276,7 +3276,7 @@
    "side": "buy",
    "eqty": 30000.0,
    "usd": 34.29,
-   "price": 0.00114302,
+   "price": 0.00114298,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x9be209743bebd94ae867ec204035f2c78cc1d0ee8f4d1193a4f09cdbe1a1964b",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3286,7 +3286,7 @@
    "side": "sell",
    "eqty": 8783.79,
    "usd": 9.94,
-   "price": 0.00113143,
+   "price": 0.00113139,
    "taker": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
    "tx_hash": "0x072993e86109d90a24733633731013c7174cc852e4abce21239f0412c2aa80b2",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3296,7 +3296,7 @@
    "side": "buy",
    "eqty": 8827.57,
    "usd": 10.06,
-   "price": 0.00113937,
+   "price": 0.00113933,
    "taker": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
    "tx_hash": "0x6a179e376d1d34c3f68245a54a159cc8eca6f3d6414284e3865431c9dc9b24e7",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3306,7 +3306,7 @@
    "side": "buy",
    "eqty": 21540.0,
    "usd": 24.43,
-   "price": 0.00113422,
+   "price": 0.00113418,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x899447552094fa5494ce7cd342835e2b9fa115c131a75d53cc32d431534c39a1",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3316,7 +3316,7 @@
    "side": "buy",
    "eqty": 11274.0,
    "usd": 12.72,
-   "price": 0.00112869,
+   "price": 0.00112865,
    "taker": "0xf8d7467c822e53209bdba7fe6a35adbe54129f7e",
    "tx_hash": "0xe25f08c6dfe45596dd9a3020a3e0e801a6379ff1a98cc70db847c0cc9b402654",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3326,7 +3326,7 @@
    "side": "buy",
    "eqty": 7149.0,
    "usd": 8.05,
-   "price": 0.0011256,
+   "price": 0.00112557,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xd08285e2a5a2d5867cc21de89f248dd6a81a94c3718caac7449cbe7240444fb5",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3336,7 +3336,7 @@
    "side": "buy",
    "eqty": 22851.0,
    "usd": 25.61,
-   "price": 0.00112061,
+   "price": 0.00112057,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x0a21180d3a2852b3e123b026fc2e2ccd25bf2a1ffe8f7ff29a79e0f68ac55456",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3346,7 +3346,7 @@
    "side": "buy",
    "eqty": 22180.0,
    "usd": 24.69,
-   "price": 0.00111317,
+   "price": 0.00111313,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x2103fe950a453370eed6c90d80b00e85ac4c31141d9122e2de48cd800e760003",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3356,7 +3356,7 @@
    "side": "buy",
    "eqty": 14176.0,
    "usd": 15.7,
-   "price": 0.00110721,
+   "price": 0.00110717,
    "taker": "0xf8d7467c822e53209bdba7fe6a35adbe54129f7e",
    "tx_hash": "0xd6c8f655563cd4fd68135dbec0d3cd2fb7bee64ad3586435127342399f473d5f",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3366,7 +3366,7 @@
    "side": "buy",
    "eqty": 9183.3,
    "usd": 10.13,
-   "price": 0.00110341,
+   "price": 0.00110337,
    "taker": "0x2f6c24fcace697f8f52d14c94a57e9eb1e2666a1",
    "tx_hash": "0x5921c92220a7d2fd69148ea87fbc0f296efab6c425bedc249c411af2f37335b1",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3376,7 +3376,7 @@
    "side": "buy",
    "eqty": 30000.0,
    "usd": 32.91,
-   "price": 0.00109708,
+   "price": 0.00109704,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x1ed8d305b911d6b279882a42ac19ec42986ce57962da21f741e7f9d17ed77e99",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3386,7 +3386,7 @@
    "side": "buy",
    "eqty": 30000.0,
    "usd": 32.62,
-   "price": 0.00108749,
+   "price": 0.00108746,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x082e89e49d0091a0bfb8e3d3e7c4c2091d97369f3568abc65740794fa9a0948b",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3396,7 +3396,7 @@
    "side": "buy",
    "eqty": 40040.24,
    "usd": 43.1,
-   "price": 0.00107646,
+   "price": 0.00107642,
    "taker": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
    "tx_hash": "0x1b575ba2cafb20ddfa7d6771396ff5da933b8a9cecd8fca6830755ed7a22ef83",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3405,8 +3405,8 @@
    "time": "2026-11-27T01:17:40.000Z",
    "side": "sell",
    "eqty": 24571.0,
-   "usd": 26.21,
-   "price": 0.00106652,
+   "usd": 26.2,
+   "price": 0.00106649,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0xcb1406b5de3b25d3bc9c27fb758fdeba34dfa8a2a76bc2ac3a89285ba4666130",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3416,7 +3416,7 @@
    "side": "sell",
    "eqty": 22437.0,
    "usd": 24.09,
-   "price": 0.00107381,
+   "price": 0.00107377,
    "taker": "0x2b253a24600ccd524a7264c2360cae49679a9495",
    "tx_hash": "0x1cd7472f9569c936941eeea2f34b9fb6a3cede70d16c7960729f123176ed021e",
    "pool": "ETH/EQTY (Dune pool)"
@@ -3426,7 +3426,7 @@
    "side": "buy",
    "eqty": 39960.68,
    "usd": 43.1,
-   "price": 0.0010786,
+   "price": 0.00107857,
    "taker": "0x03f6bda9bf191a2e841ae3a80dd2bbeb5de62fbf",
    "tx_hash": "0xf964fe83f516f8c3e239867787ec9cee10f551203ed9216b013a753398447847",
    "pool": "ETH/EQTY (Dune pool)"
