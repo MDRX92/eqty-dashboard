@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T14:27:55+00:00",
+ "updated_at": "2026-11-27T15:05:11+00:00",
  "rows": [
   {
    "cohort_year": 2026,
@@ -23,7 +23,7 @@
    "cohort_year": 2025,
    "lifecycle_status": "1. Active (0-30d)",
    "total_token_balance": 89248195.79,
-   "unique_holders": 11
+   "unique_holders": 12
   },
   {
    "cohort_year": 2025,

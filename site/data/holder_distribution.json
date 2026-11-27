@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T14:27:55+00:00",
+ "updated_at": "2026-11-27T15:05:11+00:00",
  "rows": [
   {
    "band": 1,
@@ -22,13 +22,13 @@
   {
    "band": 4,
    "band_label": "100k - 1M",
-   "total_eqty": 57527879.99,
-   "wallets": 203
+   "total_eqty": 57630343.99,
+   "wallets": 204
   },
   {
    "band": 5,
    "band_label": "1M - 10M",
-   "total_eqty": 83460498.01,
+   "total_eqty": 83358034.01,
    "wallets": 38
   },
   {
