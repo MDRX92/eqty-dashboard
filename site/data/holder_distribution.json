@@ -1,40 +1,40 @@
 {
- "updated_at": "2026-11-26T15:15:53+00:00",
+ "updated_at": "2026-11-27T14:09:28+00:00",
  "rows": [
   {
    "band": 1,
    "band_label": "under 1k",
-   "total_eqty": 62414.39,
-   "wallets": 298
+   "total_eqty": 62428.46,
+   "wallets": 301
   },
   {
    "band": 2,
    "band_label": "1k - 10k",
-   "total_eqty": 1565469.28,
-   "wallets": 360
+   "total_eqty": 1566981.04,
+   "wallets": 361
   },
   {
    "band": 3,
    "band_label": "10k - 100k",
-   "total_eqty": 18992593.05,
-   "wallets": 507
+   "total_eqty": 19001327.97,
+   "wallets": 506
   },
   {
    "band": 4,
    "band_label": "100k - 1M",
-   "total_eqty": 57522915.77,
+   "total_eqty": 57527879.99,
    "wallets": 203
   },
   {
    "band": 5,
    "band_label": "1M - 10M",
-   "total_eqty": 83487991.69,
+   "total_eqty": 83460498.01,
    "wallets": 38
   },
   {
    "band": 6,
    "band_label": "10M+",
-   "total_eqty": 129413244.99,
+   "total_eqty": 129425513.71,
    "wallets": 4
   }
  ]

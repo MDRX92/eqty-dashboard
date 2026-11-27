@@ -1,0 +1,1624 @@
+{
+ "updated_at": "2026-11-27T14:09:28+00:00",
+ "pair": "EQTY_USDT",
+ "since": "2026-10-29",
+ "kpis": {
+  "window_start": "2026-10-29",
+  "volume_30d_usd": 27302.85,
+  "buy_30d_usd": 13562.96,
+  "sell_30d_usd": 13739.89,
+  "buy_30d_eqty": 10961226.0,
+  "sell_30d_eqty": 11235622.0,
+  "trades_30d": 2100,
+  "candle_volume_30d_usd": 28773.72,
+  "last_price": 0.0011916
+ },
+ "daily_90d": [
+  {
+   "date": "2026-08-30",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-08-31",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-01",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-02",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-03",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-04",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-05",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-06",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-07",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-08",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-09",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-10",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-11",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-12",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-13",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-14",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-15",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-16",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-17",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-18",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-19",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-20",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-21",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-22",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-23",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-24",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-25",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-26",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-27",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-28",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-29",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-09-30",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-01",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-02",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-03",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-04",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-05",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-06",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-07",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-08",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-09",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-10",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-11",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-12",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-13",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-14",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-15",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-16",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-17",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-18",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-19",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-20",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-21",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-22",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-23",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-24",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-25",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-26",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-27",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-28",
+   "covered": false,
+   "buy_usd": 0.0,
+   "sell_usd": 0.0,
+   "buy_eqty": 0.0,
+   "sell_eqty": 0.0,
+   "trades": 0
+  },
+  {
+   "date": "2026-10-29",
+   "covered": true,
+   "buy_usd": 148.2,
+   "sell_usd": 138.58,
+   "buy_eqty": 87472.0,
+   "sell_eqty": 83215.0,
+   "trades": 44
+  },
+  {
+   "date": "2026-10-30",
+   "covered": true,
+   "buy_usd": 973.19,
+   "sell_usd": 1084.36,
+   "buy_eqty": 616065.0,
+   "sell_eqty": 672501.0,
+   "trades": 66
+  },
+  {
+   "date": "2026-10-31",
+   "covered": true,
+   "buy_usd": 832.56,
+   "sell_usd": 352.68,
+   "buy_eqty": 534499.0,
+   "sell_eqty": 229895.0,
+   "trades": 78
+  },
+  {
+   "date": "2026-11-01",
+   "covered": true,
+   "buy_usd": 254.27,
+   "sell_usd": 320.89,
+   "buy_eqty": 165086.0,
+   "sell_eqty": 211210.0,
+   "trades": 39
+  },
+  {
+   "date": "2026-11-02",
+   "covered": true,
+   "buy_usd": 517.74,
+   "sell_usd": 691.05,
+   "buy_eqty": 345107.0,
+   "sell_eqty": 464460.0,
+   "trades": 82
+  },
+  {
+   "date": "2026-11-03",
+   "covered": true,
+   "buy_usd": 1295.92,
+   "sell_usd": 712.32,
+   "buy_eqty": 885130.0,
+   "sell_eqty": 488348.0,
+   "trades": 93
+  },
+  {
+   "date": "2026-11-04",
+   "covered": true,
+   "buy_usd": 1039.55,
+   "sell_usd": 959.72,
+   "buy_eqty": 701978.0,
+   "sell_eqty": 658357.0,
+   "trades": 120
+  },
+  {
+   "date": "2026-11-05",
+   "covered": true,
+   "buy_usd": 763.37,
+   "sell_usd": 899.98,
+   "buy_eqty": 491914.0,
+   "sell_eqty": 594375.0,
+   "trades": 106
+  },
+  {
+   "date": "2026-11-06",
+   "covered": true,
+   "buy_usd": 123.97,
+   "sell_usd": 670.84,
+   "buy_eqty": 82917.0,
+   "sell_eqty": 452263.0,
+   "trades": 52
+  },
+  {
+   "date": "2026-11-07",
+   "covered": true,
+   "buy_usd": 0.0,
+   "sell_usd": 19.03,
+   "buy_eqty": 0.0,
+   "sell_eqty": 13037.0,
+   "trades": 3
+  },
+  {
+   "date": "2026-11-08",
+   "covered": true,
+   "buy_usd": 220.02,
+   "sell_usd": 225.25,
+   "buy_eqty": 152789.0,
+   "sell_eqty": 158710.0,
+   "trades": 37
+  },
+  {
+   "date": "2026-11-09",
+   "covered": true,
+   "buy_usd": 142.47,
+   "sell_usd": 384.04,
+   "buy_eqty": 103545.0,
+   "sell_eqty": 282964.0,
+   "trades": 36
+  },
+  {
+   "date": "2026-11-10",
+   "covered": true,
+   "buy_usd": 573.83,
+   "sell_usd": 320.52,
+   "buy_eqty": 480410.0,
+   "sell_eqty": 249670.0,
+   "trades": 51
+  },
+  {
+   "date": "2026-11-11",
+   "covered": true,
+   "buy_usd": 236.31,
+   "sell_usd": 265.96,
+   "buy_eqty": 196003.0,
+   "sell_eqty": 222097.0,
+   "trades": 39
+  },
+  {
+   "date": "2026-11-12",
+   "covered": true,
+   "buy_usd": 163.14,
+   "sell_usd": 355.07,
+   "buy_eqty": 144201.0,
+   "sell_eqty": 306028.0,
+   "trades": 29
+  },
+  {
+   "date": "2026-11-13",
+   "covered": true,
+   "buy_usd": 361.98,
+   "sell_usd": 199.56,
+   "buy_eqty": 322273.0,
+   "sell_eqty": 179030.0,
+   "trades": 64
+  },
+  {
+   "date": "2026-11-14",
+   "covered": true,
+   "buy_usd": 48.56,
+   "sell_usd": 452.76,
+   "buy_eqty": 44146.0,
+   "sell_eqty": 423552.0,
+   "trades": 31
+  },
+  {
+   "date": "2026-11-15",
+   "covered": true,
+   "buy_usd": 330.47,
+   "sell_usd": 52.22,
+   "buy_eqty": 315110.0,
+   "sell_eqty": 51418.0,
+   "trades": 21
+  },
+  {
+   "date": "2026-11-16",
+   "covered": true,
+   "buy_usd": 62.79,
+   "sell_usd": 121.63,
+   "buy_eqty": 58911.0,
+   "sell_eqty": 117220.0,
+   "trades": 21
+  },
+  {
+   "date": "2026-11-17",
+   "covered": true,
+   "buy_usd": 225.26,
+   "sell_usd": 195.51,
+   "buy_eqty": 212026.0,
+   "sell_eqty": 187787.0,
+   "trades": 31
+  },
+  {
+   "date": "2026-11-18",
+   "covered": true,
+   "buy_usd": 55.65,
+   "sell_usd": 135.6,
+   "buy_eqty": 52887.0,
+   "sell_eqty": 130302.0,
+   "trades": 20
+  },
+  {
+   "date": "2026-11-19",
+   "covered": true,
+   "buy_usd": 277.82,
+   "sell_usd": 491.82,
+   "buy_eqty": 253276.0,
+   "sell_eqty": 453505.0,
+   "trades": 48
+  },
+  {
+   "date": "2026-11-20",
+   "covered": true,
+   "buy_usd": 394.51,
+   "sell_usd": 374.31,
+   "buy_eqty": 385342.0,
+   "sell_eqty": 372130.0,
+   "trades": 53
+  },
+  {
+   "date": "2026-11-21",
+   "covered": true,
+   "buy_usd": 265.64,
+   "sell_usd": 459.07,
+   "buy_eqty": 267067.0,
+   "sell_eqty": 479082.0,
+   "trades": 46
+  },
+  {
+   "date": "2026-11-22",
+   "covered": true,
+   "buy_usd": 93.36,
+   "sell_usd": 160.4,
+   "buy_eqty": 93785.0,
+   "sell_eqty": 169733.0,
+   "trades": 21
+  },
+  {
+   "date": "2026-11-23",
+   "covered": true,
+   "buy_usd": 486.11,
+   "sell_usd": 237.57,
+   "buy_eqty": 498438.0,
+   "sell_eqty": 248528.0,
+   "trades": 78
+  },
+  {
+   "date": "2026-11-24",
+   "covered": true,
+   "buy_usd": 361.4,
+   "sell_usd": 734.54,
+   "buy_eqty": 389670.0,
+   "sell_eqty": 808134.0,
+   "trades": 76
+  },
+  {
+   "date": "2026-11-25",
+   "covered": true,
+   "buy_usd": 302.83,
+   "sell_usd": 246.79,
+   "buy_eqty": 331348.0,
+   "sell_eqty": 274589.0,
+   "trades": 111
+  },
+  {
+   "date": "2026-11-26",
+   "covered": true,
+   "buy_usd": 1325.81,
+   "sell_usd": 867.82,
+   "buy_eqty": 1284386.0,
+   "sell_eqty": 833820.0,
+   "trades": 329
+  },
+  {
+   "date": "2026-11-27",
+   "covered": true,
+   "buy_usd": 1686.25,
+   "sell_usd": 1610.0,
+   "buy_eqty": 1465445.0,
+   "sell_eqty": 1419662.0,
+   "trades": 275
+  }
+ ],
+ "monthly": [
+  {
+   "month": "2025-11",
+   "volume_usdt": 551265.4,
+   "volume_eqty": 122272645.0
+  },
+  {
+   "month": "2025-12",
+   "volume_usdt": 769216.74,
+   "volume_eqty": 206328278.0
+  },
+  {
+   "month": "2026-01",
+   "volume_usdt": 525926.59,
+   "volume_eqty": 136755676.0
+  },
+  {
+   "month": "2026-02",
+   "volume_usdt": 445378.89,
+   "volume_eqty": 143726271.0
+  },
+  {
+   "month": "2026-03",
+   "volume_usdt": 401547.8,
+   "volume_eqty": 143537085.0
+  },
+  {
+   "month": "2026-04",
+   "volume_usdt": 204940.81,
+   "volume_eqty": 78513979.0
+  },
+  {
+   "month": "2026-05",
+   "volume_usdt": 64837.86,
+   "volume_eqty": 25420014.0
+  },
+  {
+   "month": "2026-06",
+   "volume_usdt": 145381.25,
+   "volume_eqty": 76014916.0
+  },
+  {
+   "month": "2026-07",
+   "volume_usdt": 299857.76,
+   "volume_eqty": 149875163.0
+  },
+  {
+   "month": "2026-08",
+   "volume_usdt": 152303.28,
+   "volume_eqty": 85691739.0
+  },
+  {
+   "month": "2026-09",
+   "volume_usdt": 68224.95,
+   "volume_eqty": 39472039.0
+  },
+  {
+   "month": "2026-10",
+   "volume_usdt": 32063.57,
+   "volume_eqty": 17770917.0
+  },
+  {
+   "month": "2026-11",
+   "volume_usdt": 23773.27,
+   "volume_eqty": 19973201.0
+  }
+ ],
+ "buckets_30d": [
+  {
+   "bucket": "Micro (under $100)",
+   "trades": 2066,
+   "usd": 22133.88
+  },
+  {
+   "bucket": "Small ($100\u2013500)",
+   "trades": 34,
+   "usd": 5169.12
+  },
+  {
+   "bucket": "Medium ($500\u20132.5k)",
+   "trades": 0,
+   "usd": 0.0
+  },
+  {
+   "bucket": "Large ($2.5k\u201310k)",
+   "trades": 0,
+   "usd": 0.0
+  },
+  {
+   "bucket": "Whale ($10k+)",
+   "trades": 0,
+   "usd": 0.0
+  }
+ ],
+ "recent_trades": [
+  {
+   "time": "2026-11-27T13:56:02.757Z",
+   "side": "buy",
+   "eqty": 59642.0,
+   "usd": 71.07,
+   "price": 0.0011916
+  },
+  {
+   "time": "2026-11-27T13:56:02.757Z",
+   "side": "buy",
+   "eqty": 30400.0,
+   "usd": 36.11,
+   "price": 0.0011879
+  },
+  {
+   "time": "2026-11-27T13:56:02.757Z",
+   "side": "buy",
+   "eqty": 19720.0,
+   "usd": 23.42,
+   "price": 0.0011878
+  },
+  {
+   "time": "2026-11-27T13:56:02.757Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 4.04,
+   "price": 0.0011551
+  },
+  {
+   "time": "2026-11-27T13:51:25.486Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.07,
+   "price": 0.0011641
+  },
+  {
+   "time": "2026-11-27T13:51:12.594Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.07,
+   "price": 0.0011642
+  },
+  {
+   "time": "2026-11-27T13:51:01.839Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.07,
+   "price": 0.001164
+  },
+  {
+   "time": "2026-11-27T13:39:42.132Z",
+   "side": "sell",
+   "eqty": 5072.0,
+   "usd": 5.76,
+   "price": 0.0011352
+  },
+  {
+   "time": "2026-11-27T13:39:42.132Z",
+   "side": "sell",
+   "eqty": 4302.0,
+   "usd": 4.88,
+   "price": 0.0011353
+  },
+  {
+   "time": "2026-11-27T13:39:42.132Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.03,
+   "price": 0.001152
+  },
+  {
+   "time": "2026-11-27T13:36:26.626Z",
+   "side": "sell",
+   "eqty": 1059.0,
+   "usd": 1.2,
+   "price": 0.0011353
+  },
+  {
+   "time": "2026-11-27T13:36:26.626Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.03,
+   "price": 0.0011528
+  },
+  {
+   "time": "2026-11-27T13:36:24.161Z",
+   "side": "sell",
+   "eqty": 2755.0,
+   "usd": 3.13,
+   "price": 0.0011352
+  },
+  {
+   "time": "2026-11-27T13:36:18.446Z",
+   "side": "buy",
+   "eqty": 11384.0,
+   "usd": 13.02,
+   "price": 0.0011436
+  },
+  {
+   "time": "2026-11-27T13:36:15.299Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.0,
+   "price": 0.0011436
+  },
+  {
+   "time": "2026-11-27T13:35:39.172Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 4.01,
+   "price": 0.0011471
+  },
+  {
+   "time": "2026-11-27T13:35:28.192Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 4.01,
+   "price": 0.0011471
+  },
+  {
+   "time": "2026-11-27T13:19:09.213Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 4.02,
+   "price": 0.0011476
+  },
+  {
+   "time": "2026-11-27T13:16:45.234Z",
+   "side": "buy",
+   "eqty": 1348.0,
+   "usd": 1.56,
+   "price": 0.0011565
+  },
+  {
+   "time": "2026-11-27T13:02:29.888Z",
+   "side": "buy",
+   "eqty": 4954.0,
+   "usd": 5.87,
+   "price": 0.0011856
+  },
+  {
+   "time": "2026-11-27T13:02:29.888Z",
+   "side": "buy",
+   "eqty": 4397.0,
+   "usd": 5.12,
+   "price": 0.0011645
+  },
+  {
+   "time": "2026-11-27T13:02:29.888Z",
+   "side": "buy",
+   "eqty": 3458.0,
+   "usd": 4.01,
+   "price": 0.0011583
+  },
+  {
+   "time": "2026-11-27T12:55:57.855Z",
+   "side": "buy",
+   "eqty": 18553.0,
+   "usd": 21.5,
+   "price": 0.0011591
+  },
+  {
+   "time": "2026-11-27T12:27:53.612Z",
+   "side": "buy",
+   "eqty": 947.0,
+   "usd": 1.07,
+   "price": 0.0011307
+  },
+  {
+   "time": "2026-11-27T12:19:26.173Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.93,
+   "price": 0.0011228
+  },
+  {
+   "time": "2026-11-27T12:19:14.934Z",
+   "side": "sell",
+   "eqty": 5793.0,
+   "usd": 6.44,
+   "price": 0.0011119
+  },
+  {
+   "time": "2026-11-27T12:19:14.934Z",
+   "side": "sell",
+   "eqty": 5000.0,
+   "usd": 5.61,
+   "price": 0.0011224
+  },
+  {
+   "time": "2026-11-27T12:19:14.934Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 3.94,
+   "price": 0.0011248
+  },
+  {
+   "time": "2026-11-27T11:49:59.208Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.93,
+   "price": 0.0011229
+  },
+  {
+   "time": "2026-11-27T11:49:48.174Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.93,
+   "price": 0.0011229
+  },
+  {
+   "time": "2026-11-27T11:49:37.171Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.93,
+   "price": 0.0011229
+  },
+  {
+   "time": "2026-11-27T11:49:26.172Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.93,
+   "price": 0.0011229
+  },
+  {
+   "time": "2026-11-27T11:49:15.171Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.93,
+   "price": 0.0011229
+  },
+  {
+   "time": "2026-11-27T11:49:04.215Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.93,
+   "price": 0.0011229
+  },
+  {
+   "time": "2026-11-27T11:44:07.358Z",
+   "side": "sell",
+   "eqty": 4396.0,
+   "usd": 4.97,
+   "price": 0.0011305
+  },
+  {
+   "time": "2026-11-27T11:43:51.497Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 3.98,
+   "price": 0.0011373
+  },
+  {
+   "time": "2026-11-27T11:42:44.789Z",
+   "side": "sell",
+   "eqty": 3511.0,
+   "usd": 4.0,
+   "price": 0.0011382
+  },
+  {
+   "time": "2026-11-27T11:24:21.834Z",
+   "side": "sell",
+   "eqty": 8839.0,
+   "usd": 10.0,
+   "price": 0.0011311
+  },
+  {
+   "time": "2026-11-27T11:23:39.616Z",
+   "side": "sell",
+   "eqty": 27954.0,
+   "usd": 31.62,
+   "price": 0.0011313
+  },
+  {
+   "time": "2026-11-27T11:23:39.616Z",
+   "side": "sell",
+   "eqty": 22046.0,
+   "usd": 25.29,
+   "price": 0.001147
+  },
+  {
+   "time": "2026-11-27T11:22:37.663Z",
+   "side": "sell",
+   "eqty": 3479.0,
+   "usd": 4.0,
+   "price": 0.0011488
+  },
+  {
+   "time": "2026-11-27T11:13:25.151Z",
+   "side": "sell",
+   "eqty": 3466.0,
+   "usd": 4.0,
+   "price": 0.001153
+  },
+  {
+   "time": "2026-11-27T11:06:13.483Z",
+   "side": "sell",
+   "eqty": 50000.0,
+   "usd": 57.38,
+   "price": 0.0011477
+  },
+  {
+   "time": "2026-11-27T11:04:36.791Z",
+   "side": "sell",
+   "eqty": 43530.0,
+   "usd": 49.96,
+   "price": 0.0011477
+  },
+  {
+   "time": "2026-11-27T11:04:36.791Z",
+   "side": "sell",
+   "eqty": 6469.0,
+   "usd": 7.43,
+   "price": 0.0011478
+  },
+  {
+   "time": "2026-11-27T11:04:18.233Z",
+   "side": "sell",
+   "eqty": 515.0,
+   "usd": 0.59,
+   "price": 0.0011477
+  },
+  {
+   "time": "2026-11-27T11:04:18.233Z",
+   "side": "sell",
+   "eqty": 12493.0,
+   "usd": 14.34,
+   "price": 0.001148
+  },
+  {
+   "time": "2026-11-27T10:58:26.403Z",
+   "side": "sell",
+   "eqty": 15778.0,
+   "usd": 18.11,
+   "price": 0.001148
+  },
+  {
+   "time": "2026-11-27T10:58:26.403Z",
+   "side": "sell",
+   "eqty": 5870.0,
+   "usd": 6.74,
+   "price": 0.0011481
+  },
+  {
+   "time": "2026-11-27T10:37:33.051Z",
+   "side": "sell",
+   "eqty": 12113.0,
+   "usd": 13.96,
+   "price": 0.0011521
+  },
+  {
+   "time": "2026-11-27T10:37:33.051Z",
+   "side": "sell",
+   "eqty": 5335.0,
+   "usd": 6.15,
+   "price": 0.0011522
+  },
+  {
+   "time": "2026-11-27T10:37:05.453Z",
+   "side": "sell",
+   "eqty": 856.0,
+   "usd": 0.99,
+   "price": 0.0011521
+  },
+  {
+   "time": "2026-11-27T10:37:05.453Z",
+   "side": "sell",
+   "eqty": 5335.0,
+   "usd": 6.15,
+   "price": 0.0011522
+  },
+  {
+   "time": "2026-11-27T10:36:55.282Z",
+   "side": "buy",
+   "eqty": 982.0,
+   "usd": 1.16,
+   "price": 0.0011854
+  },
+  {
+   "time": "2026-11-27T10:36:55.282Z",
+   "side": "buy",
+   "eqty": 3471.0,
+   "usd": 4.0,
+   "price": 0.0011537
+  },
+  {
+   "time": "2026-11-27T10:16:46.270Z",
+   "side": "sell",
+   "eqty": 4575.0,
+   "usd": 5.41,
+   "price": 0.0011833
+  },
+  {
+   "time": "2026-11-27T10:15:17.069Z",
+   "side": "sell",
+   "eqty": 27668.0,
+   "usd": 31.75,
+   "price": 0.0011477
+  },
+  {
+   "time": "2026-11-27T10:15:17.069Z",
+   "side": "sell",
+   "eqty": 6060.0,
+   "usd": 6.96,
+   "price": 0.0011478
+  },
+  {
+   "time": "2026-11-27T10:12:40.178Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.13,
+   "price": 0.0011793
+  },
+  {
+   "time": "2026-11-27T10:12:29.176Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.13,
+   "price": 0.0011793
+  },
+  {
+   "time": "2026-11-27T10:12:18.193Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.13,
+   "price": 0.0011793
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 6150.0,
+   "usd": 7.47,
+   "price": 0.0012152
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 13981.0,
+   "usd": 16.99,
+   "price": 0.0012152
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 9438.0,
+   "usd": 11.37,
+   "price": 0.0012044
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 22827.0,
+   "usd": 27.23,
+   "price": 0.001193
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 21199.0,
+   "usd": 25.29,
+   "price": 0.0011929
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 18722.0,
+   "usd": 22.06,
+   "price": 0.0011782
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 36164.0,
+   "usd": 42.18,
+   "price": 0.0011663
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 30000.0,
+   "usd": 34.99,
+   "price": 0.0011662
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 4625.0,
+   "usd": 5.39,
+   "price": 0.0011661
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 17123.0,
+   "usd": 19.7,
+   "price": 0.0011507
+  },
+  {
+   "time": "2026-11-27T10:12:07.878Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 4.01,
+   "price": 0.0011464
+  },
+  {
+   "time": "2026-11-27T09:27:14.530Z",
+   "side": "buy",
+   "eqty": 899.0,
+   "usd": 1.03,
+   "price": 0.0011507
+  },
+  {
+   "time": "2026-11-27T09:27:14.530Z",
+   "side": "buy",
+   "eqty": 17249.0,
+   "usd": 19.85,
+   "price": 0.0011506
+  },
+  {
+   "time": "2026-11-27T09:27:14.530Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.99,
+   "price": 0.0011387
+  },
+  {
+   "time": "2026-11-27T09:23:44.993Z",
+   "side": "buy",
+   "eqty": 20639.0,
+   "usd": 23.75,
+   "price": 0.0011506
+  },
+  {
+   "time": "2026-11-27T09:23:44.993Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.99,
+   "price": 0.0011387
+  },
+  {
+   "time": "2026-11-27T09:03:38.464Z",
+   "side": "sell",
+   "eqty": 3000.0,
+   "usd": 3.42,
+   "price": 0.0011385
+  },
+  {
+   "time": "2026-11-27T08:53:24.251Z",
+   "side": "sell",
+   "eqty": 23599.0,
+   "usd": 26.65,
+   "price": 0.0011292
+  },
+  {
+   "time": "2026-11-27T08:45:26.271Z",
+   "side": "sell",
+   "eqty": 1807.0,
+   "usd": 2.04,
+   "price": 0.0011292
+  },
+  {
+   "time": "2026-11-27T08:45:26.271Z",
+   "side": "sell",
+   "eqty": 30000.0,
+   "usd": 33.88,
+   "price": 0.0011293
+  },
+  {
+   "time": "2026-11-27T08:45:26.271Z",
+   "side": "sell",
+   "eqty": 21199.0,
+   "usd": 24.32,
+   "price": 0.001147
+  },
+  {
+   "time": "2026-11-27T08:45:26.271Z",
+   "side": "sell",
+   "eqty": 3482.0,
+   "usd": 4.0,
+   "price": 0.0011478
+  },
+  {
+   "time": "2026-11-27T08:36:45.600Z",
+   "side": "buy",
+   "eqty": 2739.0,
+   "usd": 3.15,
+   "price": 0.0011502
+  },
+  {
+   "time": "2026-11-27T08:29:32.113Z",
+   "side": "sell",
+   "eqty": 6330.0,
+   "usd": 7.26,
+   "price": 0.0011473
+  },
+  {
+   "time": "2026-11-27T08:27:34.197Z",
+   "side": "sell",
+   "eqty": 3473.0,
+   "usd": 4.0,
+   "price": 0.0011507
+  },
+  {
+   "time": "2026-11-27T07:19:59.564Z",
+   "side": "sell",
+   "eqty": 9610.0,
+   "usd": 11.02,
+   "price": 0.0011471
+  },
+  {
+   "time": "2026-11-27T06:50:21.873Z",
+   "side": "sell",
+   "eqty": 2164.0,
+   "usd": 2.44,
+   "price": 0.0011285
+  },
+  {
+   "time": "2026-11-27T06:50:21.873Z",
+   "side": "sell",
+   "eqty": 9686.0,
+   "usd": 10.93,
+   "price": 0.0011286
+  },
+  {
+   "time": "2026-11-27T06:41:23.762Z",
+   "side": "sell",
+   "eqty": 2773.0,
+   "usd": 3.15,
+   "price": 0.0011352
+  },
+  {
+   "time": "2026-11-27T06:39:25.945Z",
+   "side": "sell",
+   "eqty": 64490.0,
+   "usd": 73.2,
+   "price": 0.001135
+  },
+  {
+   "time": "2026-11-27T06:39:25.945Z",
+   "side": "sell",
+   "eqty": 8103.0,
+   "usd": 9.2,
+   "price": 0.0011351
+  },
+  {
+   "time": "2026-11-27T06:39:05.376Z",
+   "side": "sell",
+   "eqty": 4625.0,
+   "usd": 5.25,
+   "price": 0.0011353
+  },
+  {
+   "time": "2026-11-27T06:39:05.376Z",
+   "side": "sell",
+   "eqty": 30000.0,
+   "usd": 34.06,
+   "price": 0.0011354
+  },
+  {
+   "time": "2026-11-27T06:39:05.376Z",
+   "side": "sell",
+   "eqty": 8010.0,
+   "usd": 9.1,
+   "price": 0.0011355
+  },
+  {
+   "time": "2026-11-27T06:39:05.376Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 3.98,
+   "price": 0.0011367
+  },
+  {
+   "time": "2026-11-27T06:31:40.289Z",
+   "side": "sell",
+   "eqty": 2935.0,
+   "usd": 3.34,
+   "price": 0.001138
+  },
+  {
+   "time": "2026-11-27T06:29:54.960Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.01,
+   "price": 0.0011467
+  },
+  {
+   "time": "2026-11-27T06:29:25.858Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.03,
+   "price": 0.0011512
+  },
+  {
+   "time": "2026-11-27T06:28:13.260Z",
+   "side": "sell",
+   "eqty": 3500.0,
+   "usd": 4.06,
+   "price": 0.0011601
+  }
+ ]
+}
