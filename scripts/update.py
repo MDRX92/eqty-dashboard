@@ -3,7 +3,8 @@
 Phase 1: supply, top holders, daily transfers.
 Phase 2: holder growth (new / exited / total), cohorts × lifecycle, monthly volume.
 Phase 3: market (swaps, price, buy/sell volume, trade sizes) via market.py.
-Next: whale transfers.
+Phase 4: whale transfers (whales.py, called from market.py).
+Gate.io: CEX trades + daily candles via gate.py (public API, no CDP queries).
 """
 import csv
 import json
@@ -68,6 +69,14 @@ def main() -> int:
         print(f"[FAIL] market: {exc}", file=sys.stderr)
         failures.append("market")
 
+    # Gate.io (CEX) trades + candles. Public API, no CDP queries. Isolated like market.
+    try:
+        import gate
+        (OUT / "gate.json").write_text(json.dumps(gate.update(now), indent=1))
+    except Exception as exc:
+        print(f"[FAIL] gate: {exc}", file=sys.stderr)
+        failures.append("gate")
+
     # Wallet labels (manual + automatic) for every address shown on the page.
     try:
         import labels
@@ -80,6 +89,11 @@ def main() -> int:
     try:
         import labels as _labels
         warnings = _labels.WARNINGS[:20]
+    except Exception:
+        pass
+    try:
+        import gate as _gate
+        warnings = (_gate.WARNINGS + warnings)[:20]
     except Exception:
         pass
     (OUT / "meta.json").write_text(

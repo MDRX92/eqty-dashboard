@@ -53,6 +53,11 @@
   .div-col span { width: 100%; display: block; }
   .div-col .top span { background: var(--up); border-radius: 2px 2px 0 0; }
   .div-col .bot span { background: var(--down); border-radius: 0 0 2px 2px; }
+  .div-col .stk { width: 100%; display: flex; flex-direction: column; overflow: hidden; }
+  .div-col .top .stk { border-radius: 2px 2px 0 0; } .div-col .bot .stk { border-radius: 0 0 2px 2px; }
+  .div-col .stk span { border-radius: 0; flex: none; }
+  .div-col span.g { opacity: .45; }
+  .legend i.g { opacity: .45; }
   .axis { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 6px; }
   .legend { display: flex; gap: 14px; color: var(--muted); font-size: 12px; margin-top: 6px; }
   .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
@@ -115,7 +120,7 @@
 <main>
   <h1>EQTY on Base</h1>
   <div id="stale" class="card" style="display:none;border-color:var(--down);color:var(--down);margin-bottom:16px"></div>
-  <p class="sub">Community dashboard for the EQTY DAO · data: Coinbase CDP SQL API · <span id="updated">loading…</span> · <a href="mini/">At a glance (mobile)</a></p>
+  <p class="sub">Community dashboard for the EQTY DAO · data: Coinbase CDP SQL API · Gate.io API · <span id="updated">loading…</span> · <a href="mini/">At a glance (mobile)</a></p>
 
   <details class="card about">
     <summary>About this dashboard</summary>
@@ -124,11 +129,12 @@
       <li><b>Holders</b> – how many wallets hold EQTY, how that changed over time, who joined or left, and how active holders are.</li>
       <li><b>Activity</b> – daily and monthly transfer counts and the amount of EQTY moved.</li>
       <li><b>Distribution</b> – holders by balance size and how concentrated the supply is across the 50 largest wallets.</li>
-      <li><b>Market</b> – price (USD/EUR), Uniswap buy/sell volume, trade sizes, the latest trades and a trader leaderboard.</li>
+      <li><b>Market</b> – price (USD/EUR), buy/sell volume on Uniswap and Gate.io, trade sizes, the latest trades and a trader leaderboard.</li>
       <li><b>Whale tracker</b> – large wallet-to-wallet transfers and the most active large senders.</li>
     </ul>
     <p><b>Wallet labels.</b> Some wallets carry a label so you can see who is who. Labels without a mark are verified (detected from the contract itself, or a well-known address). Labels marked <b>≈</b> are an estimate based on on-chain behaviour – useful context, but not yet confirmed. Community input is very welcome: suggest or correct a label via GitHub.</p>
     <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Suggestions and address labels are welcome via GitHub.</p>
+    <p><b>Gate.io.</b> Most EQTY trading happens on Gate.io (EQTY/USDT). Those trades come from Gate's public API and are anonymous: no wallets or labels, and the exchange's market-making bots are included. Buy or sell is the side of the person who took the order, the same as for Uniswap swaps. Gate only shares individual trades for about 30 days, so the buy/sell split starts from the day we began storing them; total daily volume goes back to the listing (Nov 2025). Other exchanges (e.g. CoinSpot) are not included.</p>
   </details>
 
   <div class="kpis">
@@ -139,10 +145,12 @@
   </div>
 
   <h3>Market</h3>
-  <p class="sectext">Price, volume and trades of EQTY on Uniswap.</p>
+  <p class="sectext">Price, volume and trades of EQTY on Uniswap (on-chain) and Gate.io (exchange).</p>
   <div class="kpis">
     <div class="card kpi"><div class="label">Price (USD)</div><div class="value" id="m-price">–</div><div class="delta" id="m-price-d"></div></div>
     <div class="card kpi"><div class="label">Fully diluted value</div><div class="value" id="m-fdv">–</div><div class="delta" id="m-liq"></div></div>
+    <div class="card kpi"><div class="label">Total volume (30 days)</div><div class="value" id="m-tot">–</div><div class="delta" id="m-tot-d"></div></div>
+    <div class="card kpi"><div class="label">Gate.io buys vs. sells (30 days)</div><div class="value" id="g-ratio">–</div><div class="delta" id="g-ratio-d"></div></div>
     <div class="card kpi"><div class="label">DEX volume (30 days)</div><div class="value" id="m-vol">–</div><div class="delta" id="m-vol-d"></div></div>
     <div class="card kpi"><div class="label">Trades (30 days)</div><div class="value" id="m-trades">–</div><div class="delta" id="m-traders"></div></div>
   </div>
@@ -155,17 +163,17 @@
 
   <div class="grid2">
     <section class="card">
-      <h2>Monthly buy vs. sell volume</h2>
+      <h2>Monthly buy vs. sell volume (Uniswap)</h2>
       <p class="note">USD value of buys (green) and sells (red); orange line = average price.</p>
       <div id="m-monthly"></div>
       <div class="legend"><span><i style="background:var(--up)"></i>buy</span><span><i style="background:var(--down)"></i>sell</span><span><i style="background:var(--vol)"></i>avg. price (right)</span></div>
     </section>
     <section class="card">
       <h2>Daily buys vs. sells – last 90 days</h2>
-      <p class="note">USD volume per day. Hover for details.</p>
+      <p class="note">USD volume per day, Uniswap (solid) stacked with Gate.io (light). <span id="md-gate-note"></span> Hover for details.</p>
       <div class="div-bars" id="m-daily"></div>
       <div class="axis"><span id="md-start"></span><span id="md-end"></span></div>
-      <div class="legend"><span><i style="background:var(--up)"></i>buys <b id="md-buy"></b></span><span><i style="background:var(--down)"></i>sells <b id="md-sell"></b></span></div>
+      <div class="legend" style="flex-wrap:wrap"><span><i style="background:var(--up)"></i>buys Uniswap <b id="md-buy"></b></span><span><i class="g" style="background:var(--up)"></i>buys Gate.io <b id="md-gbuy"></b></span><span><i style="background:var(--down)"></i>sells Uniswap <b id="md-sell"></b></span><span><i class="g" style="background:var(--down)"></i>sells Gate.io <b id="md-gsell"></b></span></div>
     </section>
   </div>
 
@@ -177,12 +185,31 @@
       <div class="donut-wrap"><div id="bk-donut"></div><div class="donut-legend" id="bk-legend"></div></div>
     </section>
     <section class="card">
-      <h2>Latest trades</h2>
+      <h2>Latest trades – Uniswap</h2>
       <p class="note">Most recent 100 swaps. Scroll for more.</p>
       <div class="tablebox" style="max-height:300px">
         <table>
           <thead><tr><th>Time (UTC)</th><th>Side</th><th class="num">EQTY</th><th class="num">USD</th><th>Trader</th></tr></thead>
           <tbody id="m-trades-tb"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <div class="grid2" style="margin-top:16px" id="gate-block">
+    <section class="card">
+      <h2>Monthly volume: Gate.io vs. Uniswap</h2>
+      <p class="note">Total USD volume per month since the Gate.io listing (Nov 2025). Bar = Gate.io; hover for the Uniswap volume and Gate's share.</p>
+      <div class="bars" id="g-monthly" style="height:150px"></div>
+      <div class="axis"><span id="gm-start"></span><span id="gm-end"></span></div>
+    </section>
+    <section class="card">
+      <h2>Latest trades – Gate.io</h2>
+      <p class="note">Most recent 100 trades on EQTY/USDT. Exchange trades are anonymous.</p>
+      <div class="tablebox" style="max-height:300px">
+        <table>
+          <thead><tr><th>Time (UTC)</th><th>Side</th><th class="num">EQTY</th><th class="num">USDT</th><th class="num">Price</th></tr></thead>
+          <tbody id="g-trades-tb"></tbody>
         </table>
       </div>
     </section>
@@ -511,8 +538,8 @@ function bars(el, rows, value, title) {
 }
 
 (async () => {
-  const [supply, holders, daily, growth, life, monthly, market, whales, dist] = await Promise.all(
-    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales", "holder_distribution"].map(get));
+  const [supply, holders, daily, growth, life, monthly, market, whales, dist, gate] = await Promise.all(
+    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales", "holder_distribution", "gate"].map(get));
 
   const lab = await get("labels");
   LABELS = (lab && lab.labels) || {};
@@ -554,15 +581,25 @@ function bars(el, rows, value, title) {
     lineChart($("price-line"), market.price_history.map(r => ({ x: r.date, y: r.price })), v => "$" + Number(v).toPrecision(2));
     buySellChart($("m-monthly"), market.monthly);
 
-    const dd = market.daily_90d, mx = Math.max(...dd.map(r => Math.max(r.buy_usd, r.sell_usd)), 1);
-    $("m-daily").innerHTML = dd.map(r => `
-      <div class="div-col" title="${r.date}: buy $${fmt(r.buy_usd)} · sell $${fmt(r.sell_usd)} · ${r.trades} trades · price ${price(r.price)}">
-        <div class="top"><span style="height:${(r.buy_usd / mx) * 100}%"></span></div>
-        <div class="bot"><span style="height:${(r.sell_usd / mx) * 100}%"></span></div>
-      </div>`).join("");
+    const gd = {};
+    ((gate && gate.daily_90d) || []).forEach(r => gd[r.date] = r);
+    const zero = { buy_usd: 0, sell_usd: 0, trades: 0, covered: false };
+    const dd = market.daily_90d.map(r => ({ ...r, g: gd[r.date] || zero }));
+    const mx = Math.max(...dd.map(r => Math.max(r.buy_usd + r.g.buy_usd, r.sell_usd + r.g.sell_usd)), 1);
+    const pct = (part, whole) => whole ? (part / whole) * 100 : 0;
+    $("m-daily").innerHTML = dd.map(r => {
+      const b = r.buy_usd + r.g.buy_usd, s = r.sell_usd + r.g.sell_usd;
+      const gTip = r.g.covered ? ` · Gate.io: buy $${fmt(r.g.buy_usd)} / sell $${fmt(r.g.sell_usd)} (${r.g.trades} trades)` : " · Gate.io: no buy/sell data yet";
+      return `
+      <div class="div-col" title="${r.date} – Uniswap: buy $${fmt(r.buy_usd)} / sell $${fmt(r.sell_usd)} (${r.trades} trades)${gTip} · price ${price(r.price)}">
+        <div class="top"><div class="stk" style="height:${pct(b, mx)}%"><span class="g" style="height:${pct(r.g.buy_usd, b)}%"></span><span style="height:${pct(r.buy_usd, b)}%"></span></div></div>
+        <div class="bot"><div class="stk" style="height:${pct(s, mx)}%"><span style="height:${pct(r.sell_usd, s)}%"></span><span class="g" style="height:${pct(r.g.sell_usd, s)}%"></span></div></div>
+      </div>`; }).join("");
     $("md-start").textContent = dd[0].date; $("md-end").textContent = dd[dd.length - 1].date;
-    $("md-buy").textContent = "$" + compact(dd.reduce((t, r) => t + r.buy_usd, 0));
-    $("md-sell").textContent = "$" + compact(dd.reduce((t, r) => t + r.sell_usd, 0));
+    const sum = f => "$" + compact(dd.reduce((t, r) => t + f(r), 0));
+    $("md-buy").textContent = sum(r => r.buy_usd); $("md-sell").textContent = sum(r => r.sell_usd);
+    $("md-gbuy").textContent = sum(r => r.g.buy_usd); $("md-gsell").textContent = sum(r => r.g.sell_usd);
+    if (gate && gate.since) $("md-gate-note").textContent = `Gate.io buy/sell from ${gate.since}.`;
 
     const colors = ["var(--c4)", "var(--c3)", "var(--c2)", "var(--c1)", "var(--vol)"];
     const showBuckets = key => donut($("bk-donut"), $("bk-legend"),
@@ -581,6 +618,41 @@ function bars(el, rows, value, title) {
         <td class="num">$${fmt(t.usd, t.usd < 10 ? 2 : 0)}</td>
         <td><a href="https://basescan.org/address/${esc(t.taker)}">${short(t.taker)}</a>${badge(t.taker)}</td>
       </tr>`).join("");
+  }
+
+  // Gate.io (CEX)
+  if (gate && gate.kpis) {
+    const g = gate.kpis, k = market ? market.kpis : null;
+    if (k) {
+      const tot = k.volume_30d_usd + g.candle_volume_30d_usd;
+      $("m-tot").textContent = "$" + fmt(tot);
+      $("m-tot-d").textContent = `Gate.io ${fmt(tot ? g.candle_volume_30d_usd / tot * 100 : 0)}% · Uniswap ${fmt(tot ? k.volume_30d_usd / tot * 100 : 0)}%`;
+    }
+    if (g.trades_30d) {
+      $("g-ratio").innerHTML = `<span class="pos">${fmt(g.buy_30d_usd / g.volume_30d_usd * 100)}%</span> / <span class="neg">${fmt(g.sell_30d_usd / g.volume_30d_usd * 100)}%</span>`;
+      $("g-ratio-d").textContent = `buy $${compact(g.buy_30d_usd)} · sell $${compact(g.sell_30d_usd)}` +
+        (g.window_start && gate.daily_90d && g.window_start > gate.daily_90d[60].date ? ` · since ${g.window_start}` : "");
+    }
+    const um = {};
+    ((market && market.monthly) || []).forEach(r => um[r.month] = r.buy_usd + r.sell_usd);
+    const gm = gate.monthly || [];
+    if (gm.length) {
+      bars($("g-monthly"), gm, r => r.volume_usdt, r => {
+        const u = um[r.month] || 0, t = r.volume_usdt + u;
+        return `${r.month}: Gate.io $${fmt(r.volume_usdt)} · Uniswap $${fmt(u)} · Gate share ${fmt(t ? r.volume_usdt / t * 100 : 0)}%`;
+      });
+      $("gm-start").textContent = gm[0].month; $("gm-end").textContent = gm[gm.length - 1].month;
+    }
+    $("g-trades-tb").innerHTML = (gate.recent_trades || []).map(t => `
+      <tr>
+        <td>${esc(t.time.slice(0, 16).replace("T", " "))}</td>
+        <td class="side-${t.side === "buy" ? "buy" : "sell"}">${esc(t.side)}</td>
+        <td class="num">${fmt(t.eqty)}</td>
+        <td class="num">${fmt(t.usd, t.usd < 10 ? 2 : 0)}</td>
+        <td class="num">${price(t.price)}</td>
+      </tr>`).join("");
+  } else {
+    const gb = $("gate-block"); if (gb) gb.style.display = "none";
   }
 
   // Trader leaderboard
