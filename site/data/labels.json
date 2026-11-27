@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T15:05:11+00:00",
+ "updated_at": "2026-11-27T15:59:40+00:00",
  "labels": {
   "0x2b253a24600ccd524a7264c2360cae49679a9495": {
    "label": "Automated trader",
@@ -132,6 +132,13 @@
    "type": "trader",
    "confidence": "estimated",
    "note": "Receives many small transfers from an automated trader",
+   "source": "manual"
+  },
+  "0xa0f71c74054bcd9b1009b63770b7c6bdb227297c": {
+   "label": "EQTY DAO (pool liquidity)",
+   "type": "dao",
+   "confidence": "verified",
+   "note": "Full-range ETH/EQTY liquidity seeded by the DAO at launch (10 Oct 2025); confirmed by the team",
    "source": "manual"
   }
  }

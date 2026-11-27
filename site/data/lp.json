@@ -1,0 +1,3754 @@
+{
+ "updated_at": "2026-11-27T15:59:40+00:00",
+ "kpis": {
+  "owner": "EQTY DAO",
+  "wallet": "0xa0f71c74054bcd9b1009b63770b7c6bdb227297c",
+  "tick_lower": -887220.0,
+  "tick_upper": 887220.0,
+  "full_range": true,
+  "deposit_date": "2025-10-10",
+  "deposit_eth": 6.819,
+  "deposit_eqty": 4345361.71,
+  "deposit_usd": 56662.36,
+  "deposit_source": "on-chain transfers",
+  "now_eth": 4.4795,
+  "now_eqty": 6582222.0,
+  "position_value_usd": 14843.79,
+  "now_source": "live pool reserves",
+  "hodl_value_usd": 16518.44,
+  "impermanent_loss_usd": -1674.65,
+  "fees_est_usd": 5821.14,
+  "net_vs_deposit_usd": -35997.42,
+  "net_vs_hodl_usd": 4146.49,
+  "return_pct": -63.5,
+  "in_range_now": true
+ },
+ "series": [
+  {
+   "date": "2025-10-10",
+   "pos_value": 56523.2,
+   "hodl_value": 56662.36,
+   "fees_cum": 0.02,
+   "eth": 6.818963,
+   "eqty": 4324070.27,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-11",
+   "pos_value": 50413.51,
+   "hodl_value": 50552.18,
+   "fees_cum": 3.27,
+   "eth": 6.640102,
+   "eqty": 4440545.31,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-12",
+   "pos_value": 52217.48,
+   "hodl_value": 52368.27,
+   "fees_cum": 3.68,
+   "eth": 6.606178,
+   "eqty": 4463348.12,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-13",
+   "pos_value": 55508.36,
+   "hodl_value": 55657.75,
+   "fees_cum": 8.01,
+   "eth": 6.657371,
+   "eqty": 4429026.57,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-14",
+   "pos_value": 53998.04,
+   "hodl_value": 54149.25,
+   "fees_cum": 8.3,
+   "eth": 6.62699,
+   "eqty": 4449331.53,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-15",
+   "pos_value": 51640.21,
+   "hodl_value": 51882.99,
+   "fees_cum": 14.53,
+   "eth": 6.362218,
+   "eqty": 4634496.28,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-16",
+   "pos_value": 49010.49,
+   "hodl_value": 49356.32,
+   "fees_cum": 26.47,
+   "eth": 6.181232,
+   "eqty": 4770193.89,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-17",
+   "pos_value": 49413.85,
+   "hodl_value": 49600.74,
+   "fees_cum": 51.93,
+   "eth": 6.46159,
+   "eqty": 4563222.49,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-18",
+   "pos_value": 44393.99,
+   "hodl_value": 45166.15,
+   "fees_cum": 100.47,
+   "eth": 5.725051,
+   "eqty": 5150290.5,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-19",
+   "pos_value": 47813.78,
+   "hodl_value": 48243.87,
+   "fees_cum": 121.89,
+   "eth": 6.068555,
+   "eqty": 4858763.36,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-20",
+   "pos_value": 53098.3,
+   "hodl_value": 53245.52,
+   "fees_cum": 139.39,
+   "eth": 6.634169,
+   "eqty": 4444516.46,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-21",
+   "pos_value": 50036.64,
+   "hodl_value": 50285.18,
+   "fees_cum": 153.17,
+   "eth": 6.33778,
+   "eqty": 4652366.46,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-22",
+   "pos_value": 51777.01,
+   "hodl_value": 51905.36,
+   "fees_cum": 166.12,
+   "eth": 6.759294,
+   "eqty": 4362241.38,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-23",
+   "pos_value": 51480.33,
+   "hodl_value": 51616.9,
+   "fees_cum": 176.75,
+   "eth": 6.669732,
+   "eqty": 4420818.43,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-24",
+   "pos_value": 51267.28,
+   "hodl_value": 51437.17,
+   "fees_cum": 179.32,
+   "eth": 6.527055,
+   "eqty": 4517454.17,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-25",
+   "pos_value": 50745.74,
+   "hodl_value": 50946.96,
+   "fees_cum": 182.04,
+   "eth": 6.439423,
+   "eqty": 4578931.07,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-26",
+   "pos_value": 50842.67,
+   "hodl_value": 51113.32,
+   "fees_cum": 187.06,
+   "eth": 6.3071,
+   "eqty": 4674996.61,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-27",
+   "pos_value": 51058.65,
+   "hodl_value": 51481.94,
+   "fees_cum": 218.28,
+   "eth": 6.107041,
+   "eqty": 4828143.91,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-28",
+   "pos_value": 47371.22,
+   "hodl_value": 48099.66,
+   "fees_cum": 222.99,
+   "eth": 5.794347,
+   "eqty": 5088696.65,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-29",
+   "pos_value": 47514.05,
+   "hodl_value": 48034.83,
+   "fees_cum": 224.88,
+   "eth": 5.972148,
+   "eqty": 4937197.6,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-30",
+   "pos_value": 45573.43,
+   "hodl_value": 46097.91,
+   "fees_cum": 231.84,
+   "eth": 5.947577,
+   "eqty": 4957594.06,
+   "in_range": true
+  },
+  {
+   "date": "2025-10-31",
+   "pos_value": 44934.64,
+   "hodl_value": 45570.05,
+   "fees_cum": 236.87,
+   "eth": 5.840021,
+   "eqty": 5048898.92,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-01",
+   "pos_value": 45302.9,
+   "hodl_value": 45927.32,
+   "fees_cum": 241.97,
+   "eth": 5.853753,
+   "eqty": 5037054.28,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-02",
+   "pos_value": 46263.55,
+   "hodl_value": 46766.38,
+   "fees_cum": 245.91,
+   "eth": 5.976354,
+   "eqty": 4933722.75,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-03",
+   "pos_value": 45084.66,
+   "hodl_value": 45474.08,
+   "fees_cum": 250.52,
+   "eth": 6.087767,
+   "eqty": 4843430.31,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-04",
+   "pos_value": 41284.03,
+   "hodl_value": 41675.52,
+   "fees_cum": 255.09,
+   "eth": 6.043257,
+   "eqty": 4879102.76,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-05",
+   "pos_value": 41144.65,
+   "hodl_value": 41463.03,
+   "fees_cum": 257.81,
+   "eth": 6.13905,
+   "eqty": 4802969.94,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-06",
+   "pos_value": 40668.55,
+   "hodl_value": 41042.49,
+   "fees_cum": 263.13,
+   "eth": 6.05807,
+   "eqty": 4867172.85,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-07",
+   "pos_value": 43011.4,
+   "hodl_value": 43176.95,
+   "fees_cum": 276.75,
+   "eth": 6.453323,
+   "eqty": 4569068.1,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-08",
+   "pos_value": 44258.76,
+   "hodl_value": 44423.08,
+   "fees_cum": 285.25,
+   "eth": 6.470427,
+   "eqty": 4556990.42,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-09",
+   "pos_value": 51136.4,
+   "hodl_value": 51415.39,
+   "fees_cum": 343.43,
+   "eth": 7.348937,
+   "eqty": 4012236.39,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-10",
+   "pos_value": 61025.35,
+   "hodl_value": 62709.54,
+   "fees_cum": 622.59,
+   "eth": 8.505725,
+   "eqty": 3466567.81,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-11",
+   "pos_value": 54703.18,
+   "hodl_value": 55311.68,
+   "fees_cum": 752.16,
+   "eth": 7.757314,
+   "eqty": 3801015.83,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-12",
+   "pos_value": 49166.63,
+   "hodl_value": 49336.91,
+   "fees_cum": 802.08,
+   "eth": 7.113619,
+   "eqty": 4144961.27,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-13",
+   "pos_value": 45034.27,
+   "hodl_value": 45157.11,
+   "fees_cum": 855.48,
+   "eth": 6.646556,
+   "eqty": 4436233.38,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-14",
+   "pos_value": 40690.86,
+   "hodl_value": 40866.54,
+   "fees_cum": 883.24,
+   "eth": 6.40045,
+   "eqty": 4606812.85,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-15",
+   "pos_value": 45307.04,
+   "hodl_value": 45473.79,
+   "fees_cum": 972.09,
+   "eth": 7.146424,
+   "eqty": 4125933.97,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-16",
+   "pos_value": 44956.04,
+   "hodl_value": 45127.2,
+   "fees_cum": 1031.56,
+   "eth": 7.164309,
+   "eqty": 4115634.11,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-17",
+   "pos_value": 42904.2,
+   "hodl_value": 43012.67,
+   "fees_cum": 1095.22,
+   "eth": 6.882623,
+   "eqty": 4284075.29,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-18",
+   "pos_value": 42646.36,
+   "hodl_value": 42763.76,
+   "fees_cum": 1149.4,
+   "eth": 6.968975,
+   "eqty": 4230991.59,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-19",
+   "pos_value": 41266.1,
+   "hodl_value": 41367.81,
+   "fees_cum": 1162.97,
+   "eth": 6.825379,
+   "eqty": 4320005.36,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-20",
+   "pos_value": 39337.83,
+   "hodl_value": 39442.29,
+   "fees_cum": 1216.02,
+   "eth": 6.668922,
+   "eqty": 4421355.47,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-21",
+   "pos_value": 36496.15,
+   "hodl_value": 36599.37,
+   "fees_cum": 1224.49,
+   "eth": 6.620088,
+   "eqty": 4453969.72,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-22",
+   "pos_value": 32846.12,
+   "hodl_value": 33199.08,
+   "fees_cum": 1272.48,
+   "eth": 5.982029,
+   "eqty": 4929042.41,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-23",
+   "pos_value": 32919.33,
+   "hodl_value": 33382.11,
+   "fees_cum": 1278.36,
+   "eth": 5.843184,
+   "eqty": 5046165.38,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-24",
+   "pos_value": 33265.74,
+   "hodl_value": 33756.44,
+   "fees_cum": 1301.28,
+   "eth": 5.817153,
+   "eqty": 5068746.7,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-25",
+   "pos_value": 33161.58,
+   "hodl_value": 33784.03,
+   "fees_cum": 1305.3,
+   "eth": 5.680843,
+   "eqty": 5190368.9,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-26",
+   "pos_value": 32966.42,
+   "hodl_value": 33711.85,
+   "fees_cum": 1315.01,
+   "eth": 5.568181,
+   "eqty": 5295387.11,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-27",
+   "pos_value": 33558.21,
+   "hodl_value": 34344.58,
+   "fees_cum": 1317.88,
+   "eth": 5.545821,
+   "eqty": 5316736.9,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-28",
+   "pos_value": 35382.2,
+   "hodl_value": 35893.32,
+   "fees_cum": 1341.55,
+   "eth": 5.828509,
+   "eqty": 5058870.74,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-29",
+   "pos_value": 34907.87,
+   "hodl_value": 35441.03,
+   "fees_cum": 1347.85,
+   "eth": 5.798091,
+   "eqty": 5085410.55,
+   "in_range": true
+  },
+  {
+   "date": "2025-11-30",
+   "pos_value": 34818.81,
+   "hodl_value": 35380.43,
+   "fees_cum": 1363.04,
+   "eth": 5.767778,
+   "eqty": 5112137.51,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-01",
+   "pos_value": 30259.15,
+   "hodl_value": 31170.0,
+   "fees_cum": 1398.75,
+   "eth": 5.381394,
+   "eqty": 5479188.39,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-02",
+   "pos_value": 30927.2,
+   "hodl_value": 31925.91,
+   "fees_cum": 1410.75,
+   "eth": 5.332846,
+   "eqty": 5529068.98,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-03",
+   "pos_value": 34071.38,
+   "hodl_value": 34906.23,
+   "fees_cum": 1424.9,
+   "eth": 5.517471,
+   "eqty": 5344056.01,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-04",
+   "pos_value": 35637.75,
+   "hodl_value": 36385.1,
+   "fees_cum": 1449.72,
+   "eth": 5.614579,
+   "eqty": 5251627.15,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-05",
+   "pos_value": 35150.6,
+   "hodl_value": 35817.47,
+   "fees_cum": 1471.17,
+   "eth": 5.674559,
+   "eqty": 5196116.88,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-06",
+   "pos_value": 33673.63,
+   "hodl_value": 34468.24,
+   "fees_cum": 1481.29,
+   "eth": 5.541416,
+   "eqty": 5320963.54,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-07",
+   "pos_value": 33881.67,
+   "hodl_value": 34666.16,
+   "fees_cum": 1487.62,
+   "eth": 5.553371,
+   "eqty": 5309508.7,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-08",
+   "pos_value": 33692.94,
+   "hodl_value": 34689.31,
+   "fees_cum": 1501.01,
+   "eth": 5.393494,
+   "eqty": 5466896.6,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-09",
+   "pos_value": 35595.1,
+   "hodl_value": 36459.27,
+   "fees_cum": 1515.56,
+   "eth": 5.523364,
+   "eqty": 5338354.43,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-10",
+   "pos_value": 43124.99,
+   "hodl_value": 43294.34,
+   "fees_cum": 1683.17,
+   "eth": 6.443952,
+   "eqty": 4575712.46,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-11",
+   "pos_value": 40467.68,
+   "hodl_value": 40687.45,
+   "fees_cum": 1723.99,
+   "eth": 6.298237,
+   "eqty": 4681575.94,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-12",
+   "pos_value": 37275.38,
+   "hodl_value": 37765.01,
+   "fees_cum": 1734.98,
+   "eth": 5.879268,
+   "eqty": 5015195.01,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-13",
+   "pos_value": 35720.69,
+   "hodl_value": 36317.08,
+   "fees_cum": 1743.67,
+   "eth": 5.748367,
+   "eqty": 5129400.36,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-14",
+   "pos_value": 38229.32,
+   "hodl_value": 38501.72,
+   "fees_cum": 1787.92,
+   "eth": 6.176799,
+   "eqty": 4773616.97,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-15",
+   "pos_value": 38454.19,
+   "hodl_value": 38653.13,
+   "fees_cum": 1819.26,
+   "eth": 6.319712,
+   "eqty": 4665667.03,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-16",
+   "pos_value": 36148.77,
+   "hodl_value": 36423.65,
+   "fees_cum": 1835.92,
+   "eth": 6.147081,
+   "eqty": 4796695.36,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-17",
+   "pos_value": 35114.19,
+   "hodl_value": 35447.17,
+   "fees_cum": 1845.02,
+   "eth": 6.043251,
+   "eqty": 4879107.68,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-18",
+   "pos_value": 35161.46,
+   "hodl_value": 35432.6,
+   "fees_cum": 1854.55,
+   "eth": 6.140645,
+   "eqty": 4801722.41,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-19",
+   "pos_value": 35449.8,
+   "hodl_value": 35798.18,
+   "fees_cum": 1867.6,
+   "eth": 6.025966,
+   "eqty": 4893102.98,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-20",
+   "pos_value": 35583.65,
+   "hodl_value": 35974.73,
+   "fees_cum": 1870.09,
+   "eth": 5.970793,
+   "eqty": 4938318.16,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-21",
+   "pos_value": 34889.86,
+   "hodl_value": 35373.72,
+   "fees_cum": 1883.49,
+   "eth": 5.85047,
+   "eqty": 5039880.94,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-22",
+   "pos_value": 35165.69,
+   "hodl_value": 35693.25,
+   "fees_cum": 1887.44,
+   "eth": 5.807921,
+   "eqty": 5076803.08,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-23",
+   "pos_value": 34648.85,
+   "hodl_value": 35133.38,
+   "fees_cum": 1897.5,
+   "eth": 5.846013,
+   "eqty": 5043723.47,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-24",
+   "pos_value": 34359.05,
+   "hodl_value": 34832.99,
+   "fees_cum": 1901.14,
+   "eth": 5.853351,
+   "eqty": 5037400.42,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-25",
+   "pos_value": 34027.33,
+   "hodl_value": 34555.56,
+   "fees_cum": 1904.08,
+   "eth": 5.789107,
+   "eqty": 5093302.77,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-26",
+   "pos_value": 34454.89,
+   "hodl_value": 34933.56,
+   "fees_cum": 1911.63,
+   "eth": 5.849529,
+   "eqty": 5040692.22,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-27",
+   "pos_value": 33906.44,
+   "hodl_value": 34433.84,
+   "fees_cum": 1917.52,
+   "eth": 5.788019,
+   "eqty": 5094260.25,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-28",
+   "pos_value": 34003.23,
+   "hodl_value": 34537.64,
+   "fees_cum": 1920.17,
+   "eth": 5.782272,
+   "eqty": 5099322.72,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-29",
+   "pos_value": 34501.43,
+   "hodl_value": 35021.41,
+   "fees_cum": 1922.51,
+   "eth": 5.80541,
+   "eqty": 5078999.62,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-30",
+   "pos_value": 38285.64,
+   "hodl_value": 38430.88,
+   "fees_cum": 2028.71,
+   "eth": 6.460163,
+   "eqty": 4564230.6,
+   "in_range": true
+  },
+  {
+   "date": "2025-12-31",
+   "pos_value": 39210.1,
+   "hodl_value": 39327.32,
+   "fees_cum": 2142.89,
+   "eth": 6.58451,
+   "eqty": 4478036.03,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-01",
+   "pos_value": 39473.39,
+   "hodl_value": 39585.53,
+   "fees_cum": 2174.97,
+   "eth": 6.617035,
+   "eqty": 4456025.05,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-02",
+   "pos_value": 39746.99,
+   "hodl_value": 39898.24,
+   "fees_cum": 2188.04,
+   "eth": 6.458704,
+   "eqty": 4565261.83,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-03",
+   "pos_value": 39865.54,
+   "hodl_value": 40033.83,
+   "fees_cum": 2196.18,
+   "eth": 6.410653,
+   "eqty": 4599480.69,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-04",
+   "pos_value": 39639.75,
+   "hodl_value": 39848.73,
+   "fees_cum": 2203.92,
+   "eth": 6.311378,
+   "eqty": 4671827.94,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-05",
+   "pos_value": 38681.29,
+   "hodl_value": 39029.19,
+   "fees_cum": 2215.46,
+   "eth": 6.068606,
+   "eqty": 4858722.76,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-06",
+   "pos_value": 39130.62,
+   "hodl_value": 39511.47,
+   "fees_cum": 2224.01,
+   "eth": 6.030672,
+   "eqty": 4889284.72,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-07",
+   "pos_value": 39180.17,
+   "hodl_value": 39500.54,
+   "fees_cum": 2228.83,
+   "eth": 6.113476,
+   "eqty": 4823061.84,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-08",
+   "pos_value": 37926.21,
+   "hodl_value": 38255.47,
+   "fees_cum": 2231.97,
+   "eth": 6.08537,
+   "eqty": 4845338.07,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-09",
+   "pos_value": 37757.76,
+   "hodl_value": 38081.64,
+   "fees_cum": 2238.76,
+   "eth": 6.091043,
+   "eqty": 4840825.28,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-10",
+   "pos_value": 37092.8,
+   "hodl_value": 37471.44,
+   "fees_cum": 2242.59,
+   "eth": 6.007418,
+   "eqty": 4908210.45,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-11",
+   "pos_value": 38546.1,
+   "hodl_value": 38804.99,
+   "fees_cum": 2262.61,
+   "eth": 6.203544,
+   "eqty": 4753036.52,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-12",
+   "pos_value": 37087.85,
+   "hodl_value": 37514.11,
+   "fees_cum": 2271.66,
+   "eth": 5.948256,
+   "eqty": 4957028.28,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-13",
+   "pos_value": 38167.0,
+   "hodl_value": 38547.12,
+   "fees_cum": 2276.65,
+   "eth": 6.019482,
+   "eqty": 4898374.25,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-14",
+   "pos_value": 40274.81,
+   "hodl_value": 40667.92,
+   "fees_cum": 2293.97,
+   "eth": 6.02929,
+   "eqty": 4890405.6,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-15",
+   "pos_value": 41007.65,
+   "hodl_value": 41305.85,
+   "fees_cum": 2306.36,
+   "eth": 6.167547,
+   "eqty": 4780777.99,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-16",
+   "pos_value": 40084.34,
+   "hodl_value": 40434.25,
+   "fees_cum": 2319.84,
+   "eth": 6.082786,
+   "eqty": 4847396.07,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-17",
+   "pos_value": 39641.37,
+   "hodl_value": 40051.51,
+   "fees_cum": 2324.8,
+   "eth": 6.000795,
+   "eqty": 4913627.54,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-18",
+   "pos_value": 39635.84,
+   "hodl_value": 40085.24,
+   "fees_cum": 2328.38,
+   "eth": 5.955118,
+   "eqty": 4951316.05,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-19",
+   "pos_value": 36387.48,
+   "hodl_value": 37087.94,
+   "fees_cum": 2355.93,
+   "eth": 5.665961,
+   "eqty": 5204001.77,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-20",
+   "pos_value": 36482.0,
+   "hodl_value": 36936.52,
+   "fees_cum": 2362.49,
+   "eth": 5.906907,
+   "eqty": 4991727.97,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-21",
+   "pos_value": 36037.07,
+   "hodl_value": 36355.92,
+   "fees_cum": 2368.93,
+   "eth": 6.07638,
+   "eqty": 4852506.47,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-22",
+   "pos_value": 36073.8,
+   "hodl_value": 36416.74,
+   "fees_cum": 2369.98,
+   "eth": 6.042047,
+   "eqty": 4880080.17,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-23",
+   "pos_value": 37280.68,
+   "hodl_value": 37470.95,
+   "fees_cum": 2410.74,
+   "eth": 6.325751,
+   "eqty": 4661213.35,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-24",
+   "pos_value": 33299.68,
+   "hodl_value": 33978.07,
+   "fees_cum": 2429.78,
+   "eth": 5.63212,
+   "eqty": 5235270.85,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-25",
+   "pos_value": 34223.95,
+   "hodl_value": 34674.48,
+   "fees_cum": 2434.77,
+   "eth": 5.878121,
+   "eqty": 5016173.68,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-26",
+   "pos_value": 34619.47,
+   "hodl_value": 34985.26,
+   "fees_cum": 2460.07,
+   "eth": 5.990398,
+   "eqty": 4922155.75,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-27",
+   "pos_value": 35319.54,
+   "hodl_value": 35680.94,
+   "fees_cum": 2473.81,
+   "eth": 6.006234,
+   "eqty": 4909178.19,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-28",
+   "pos_value": 36001.94,
+   "hodl_value": 36390.26,
+   "fees_cum": 2483.97,
+   "eth": 5.98015,
+   "eqty": 4930591.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-29",
+   "pos_value": 35506.34,
+   "hodl_value": 35784.98,
+   "fees_cum": 2512.41,
+   "eth": 6.132546,
+   "eqty": 4808064.02,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-30",
+   "pos_value": 32420.14,
+   "hodl_value": 32798.24,
+   "fees_cum": 2521.48,
+   "eth": 5.940823,
+   "eqty": 4963230.51,
+   "in_range": true
+  },
+  {
+   "date": "2026-01-31",
+   "pos_value": 30978.63,
+   "hodl_value": 31270.05,
+   "fees_cum": 2551.69,
+   "eth": 6.047112,
+   "eqty": 4875992.66,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-01",
+   "pos_value": 28909.7,
+   "hodl_value": 29158.54,
+   "fees_cum": 2565.65,
+   "eth": 6.089405,
+   "eqty": 4842126.94,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-02",
+   "pos_value": 28349.4,
+   "hodl_value": 28544.45,
+   "fees_cum": 2580.37,
+   "eth": 6.192664,
+   "eqty": 4761387.76,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-03",
+   "pos_value": 28807.92,
+   "hodl_value": 28955.62,
+   "fees_cum": 2587.39,
+   "eth": 6.32374,
+   "eqty": 4662695.38,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-04",
+   "pos_value": 28294.74,
+   "hodl_value": 28413.48,
+   "fees_cum": 2593.98,
+   "eth": 6.413336,
+   "eqty": 4597556.17,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-05",
+   "pos_value": 25320.38,
+   "hodl_value": 25461.32,
+   "fees_cum": 2613.17,
+   "eth": 6.28731,
+   "eqty": 4689712.41,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-06",
+   "pos_value": 24213.23,
+   "hodl_value": 24372.21,
+   "fees_cum": 2637.8,
+   "eth": 6.213747,
+   "eqty": 4745232.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-07",
+   "pos_value": 26565.0,
+   "hodl_value": 26665.3,
+   "fees_cum": 2645.52,
+   "eth": 6.462435,
+   "eqty": 4562625.69,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-08",
+   "pos_value": 27945.76,
+   "hodl_value": 28022.31,
+   "fees_cum": 2667.63,
+   "eth": 6.643346,
+   "eqty": 4438377.2,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-09",
+   "pos_value": 27478.48,
+   "hodl_value": 27555.86,
+   "fees_cum": 2681.52,
+   "eth": 6.623011,
+   "eqty": 4452004.26,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-10",
+   "pos_value": 26855.61,
+   "hodl_value": 26933.27,
+   "fees_cum": 2688.4,
+   "eth": 6.605279,
+   "eqty": 4463955.88,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-11",
+   "pos_value": 25541.45,
+   "hodl_value": 25628.82,
+   "fees_cum": 2699.21,
+   "eth": 6.510727,
+   "eqty": 4528783.81,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-12",
+   "pos_value": 24704.04,
+   "hodl_value": 24830.68,
+   "fees_cum": 2706.82,
+   "eth": 6.323798,
+   "eqty": 4662652.96,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-13",
+   "pos_value": 24041.26,
+   "hodl_value": 24268.25,
+   "fees_cum": 2713.92,
+   "eth": 6.045349,
+   "eqty": 4877414.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-14",
+   "pos_value": 24588.06,
+   "hodl_value": 24880.0,
+   "fees_cum": 2720.42,
+   "eth": 5.931694,
+   "eqty": 4970868.93,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-15",
+   "pos_value": 24749.81,
+   "hodl_value": 24954.27,
+   "fees_cum": 2729.01,
+   "eth": 6.108712,
+   "eqty": 4826823.0,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-16",
+   "pos_value": 24236.54,
+   "hodl_value": 24422.92,
+   "fees_cum": 2737.84,
+   "eth": 6.141929,
+   "eqty": 4800718.71,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-17",
+   "pos_value": 26665.24,
+   "hodl_value": 26732.45,
+   "fees_cum": 2777.27,
+   "eth": 6.727328,
+   "eqty": 4382969.45,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-18",
+   "pos_value": 31366.9,
+   "hodl_value": 31814.82,
+   "fees_cum": 2972.19,
+   "eth": 7.930146,
+   "eqty": 3718175.24,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-19",
+   "pos_value": 28358.01,
+   "hodl_value": 28494.03,
+   "fees_cum": 3002.19,
+   "eth": 7.282936,
+   "eqty": 4048597.02,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-20",
+   "pos_value": 27412.17,
+   "hodl_value": 27491.4,
+   "fees_cum": 3010.62,
+   "eth": 7.004731,
+   "eqty": 4209394.37,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-21",
+   "pos_value": 27772.8,
+   "hodl_value": 27853.68,
+   "fees_cum": 3021.79,
+   "eth": 7.009865,
+   "eqty": 4206311.4,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-22",
+   "pos_value": 26493.79,
+   "hodl_value": 26559.74,
+   "fees_cum": 3026.86,
+   "eth": 6.749563,
+   "eqty": 4368530.46,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-23",
+   "pos_value": 25477.21,
+   "hodl_value": 25540.55,
+   "fees_cum": 3037.96,
+   "eth": 6.752255,
+   "eqty": 4366788.79,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-24",
+   "pos_value": 24959.0,
+   "hodl_value": 25020.42,
+   "fees_cum": 3041.17,
+   "eth": 6.789755,
+   "eqty": 4342671.27,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-25",
+   "pos_value": 27981.55,
+   "hodl_value": 28068.48,
+   "fees_cum": 3061.2,
+   "eth": 7.051198,
+   "eqty": 4181654.59,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-26",
+   "pos_value": 27730.57,
+   "hodl_value": 27798.82,
+   "fees_cum": 3071.44,
+   "eth": 6.786893,
+   "eqty": 4344502.62,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-27",
+   "pos_value": 25901.19,
+   "hodl_value": 25985.16,
+   "fees_cum": 3098.71,
+   "eth": 6.538657,
+   "eqty": 4509438.85,
+   "in_range": true
+  },
+  {
+   "date": "2026-02-28",
+   "pos_value": 25288.12,
+   "hodl_value": 25357.95,
+   "fees_cum": 3109.55,
+   "eth": 6.637198,
+   "eqty": 4442488.36,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-01",
+   "pos_value": 26109.52,
+   "hodl_value": 26188.45,
+   "fees_cum": 3116.06,
+   "eth": 6.577866,
+   "eqty": 4482559.11,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-02",
+   "pos_value": 26378.85,
+   "hodl_value": 26453.45,
+   "fees_cum": 3125.28,
+   "eth": 6.620201,
+   "eqty": 4453893.95,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-03",
+   "pos_value": 25882.59,
+   "hodl_value": 25966.4,
+   "fees_cum": 3142.44,
+   "eth": 6.539277,
+   "eqty": 4509011.17,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-04",
+   "pos_value": 25972.72,
+   "hodl_value": 26120.98,
+   "fees_cum": 3151.97,
+   "eth": 6.276151,
+   "eqty": 4698050.05,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-05",
+   "pos_value": 26309.74,
+   "hodl_value": 26471.93,
+   "fees_cum": 3159.56,
+   "eth": 6.241961,
+   "eqty": 4723783.79,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-06",
+   "pos_value": 26023.49,
+   "hodl_value": 26131.93,
+   "fees_cum": 3163.55,
+   "eth": 6.416554,
+   "eqty": 4595250.45,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-07",
+   "pos_value": 26834.81,
+   "hodl_value": 26900.88,
+   "fees_cum": 3179.16,
+   "eth": 6.785239,
+   "eqty": 4345561.45,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-08",
+   "pos_value": 26066.99,
+   "hodl_value": 26134.53,
+   "fees_cum": 3192.42,
+   "eth": 6.692629,
+   "eqty": 4405693.96,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-09",
+   "pos_value": 26591.5,
+   "hodl_value": 26664.37,
+   "fees_cum": 3200.09,
+   "eth": 6.642994,
+   "eqty": 4438612.32,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-10",
+   "pos_value": 25786.18,
+   "hodl_value": 25926.62,
+   "fees_cum": 3213.47,
+   "eth": 6.29696,
+   "eqty": 4682525.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-11",
+   "pos_value": 26337.09,
+   "hodl_value": 26443.02,
+   "fees_cum": 3225.13,
+   "eth": 6.432844,
+   "eqty": 4583613.92,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-12",
+   "pos_value": 26516.81,
+   "hodl_value": 26620.41,
+   "fees_cum": 3228.22,
+   "eth": 6.44632,
+   "eqty": 4574032.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-13",
+   "pos_value": 25126.58,
+   "hodl_value": 25437.81,
+   "fees_cum": 3266.34,
+   "eth": 5.909911,
+   "eqty": 4989190.66,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-14",
+   "pos_value": 25828.49,
+   "hodl_value": 26002.74,
+   "fees_cum": 3270.65,
+   "eth": 6.201526,
+   "eqty": 4754583.35,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-15",
+   "pos_value": 26757.62,
+   "hodl_value": 26893.77,
+   "fees_cum": 3277.29,
+   "eth": 6.327085,
+   "eqty": 4660230.07,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-16",
+   "pos_value": 27653.54,
+   "hodl_value": 27903.79,
+   "fees_cum": 3280.84,
+   "eth": 6.065676,
+   "eqty": 4861069.44,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-17",
+   "pos_value": 27070.41,
+   "hodl_value": 27477.63,
+   "fees_cum": 3284.8,
+   "eth": 5.806433,
+   "eqty": 5078104.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-18",
+   "pos_value": 26818.89,
+   "hodl_value": 27118.28,
+   "fees_cum": 3292.02,
+   "eth": 5.962961,
+   "eqty": 4944804.3,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-19",
+   "pos_value": 25953.66,
+   "hodl_value": 26206.0,
+   "fees_cum": 3335.64,
+   "eth": 6.031162,
+   "eqty": 4888887.58,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-20",
+   "pos_value": 26029.53,
+   "hodl_value": 26258.38,
+   "fees_cum": 3345.91,
+   "eth": 6.079394,
+   "eqty": 4850100.75,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-21",
+   "pos_value": 25809.31,
+   "hodl_value": 26073.79,
+   "fees_cum": 3351.69,
+   "eth": 6.005518,
+   "eqty": 4909763.78,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-22",
+   "pos_value": 25330.6,
+   "hodl_value": 25550.91,
+   "fees_cum": 3354.88,
+   "eth": 6.084523,
+   "eqty": 4846011.96,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-23",
+   "pos_value": 24951.73,
+   "hodl_value": 25269.22,
+   "fees_cum": 3362.0,
+   "eth": 5.895938,
+   "eqty": 5001015.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-24",
+   "pos_value": 25517.16,
+   "hodl_value": 25803.71,
+   "fees_cum": 3373.06,
+   "eth": 5.959977,
+   "eqty": 4947280.14,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-25",
+   "pos_value": 25419.87,
+   "hodl_value": 25769.01,
+   "fees_cum": 3388.76,
+   "eth": 5.85563,
+   "eqty": 5035440.12,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-26",
+   "pos_value": 25099.59,
+   "hodl_value": 25358.26,
+   "fees_cum": 3396.33,
+   "eth": 6.002734,
+   "eqty": 4912040.33,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-27",
+   "pos_value": 23686.41,
+   "hodl_value": 23996.42,
+   "fees_cum": 3405.16,
+   "eth": 5.881169,
+   "eqty": 5013573.52,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-28",
+   "pos_value": 23571.23,
+   "hodl_value": 23885.12,
+   "fees_cum": 3418.78,
+   "eth": 5.87205,
+   "eqty": 5021359.37,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-29",
+   "pos_value": 24513.34,
+   "hodl_value": 24702.34,
+   "fees_cum": 3443.67,
+   "eth": 6.140708,
+   "eqty": 4801673.57,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-30",
+   "pos_value": 28030.6,
+   "hodl_value": 28100.53,
+   "fees_cum": 3541.92,
+   "eth": 6.859956,
+   "eqty": 4298230.55,
+   "in_range": true
+  },
+  {
+   "date": "2026-03-31",
+   "pos_value": 25471.7,
+   "hodl_value": 25660.94,
+   "fees_cum": 3572.53,
+   "eth": 6.157762,
+   "eqty": 4788375.33,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-01",
+   "pos_value": 25621.06,
+   "hodl_value": 25876.79,
+   "fees_cum": 3577.41,
+   "eth": 6.018402,
+   "eqty": 4899252.87,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-02",
+   "pos_value": 25504.47,
+   "hodl_value": 25684.99,
+   "fees_cum": 3588.03,
+   "eth": 6.179846,
+   "eqty": 4771263.17,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-03",
+   "pos_value": 25305.25,
+   "hodl_value": 25493.62,
+   "fees_cum": 3593.5,
+   "eth": 6.156845,
+   "eqty": 4789088.31,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-04",
+   "pos_value": 25259.2,
+   "hodl_value": 25453.18,
+   "fees_cum": 3600.11,
+   "eth": 6.142533,
+   "eqty": 4800247.02,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-05",
+   "pos_value": 25228.78,
+   "hodl_value": 25425.71,
+   "fees_cum": 3609.96,
+   "eth": 6.135015,
+   "eqty": 4806128.68,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-06",
+   "pos_value": 25325.94,
+   "hodl_value": 25632.69,
+   "fees_cum": 3616.28,
+   "eth": 5.921482,
+   "eqty": 4979441.27,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-07",
+   "pos_value": 24594.06,
+   "hodl_value": 24970.8,
+   "fees_cum": 3671.96,
+   "eth": 5.796466,
+   "eqty": 5086836.2,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-08",
+   "pos_value": 25939.91,
+   "hodl_value": 26321.68,
+   "fees_cum": 3694.9,
+   "eth": 5.818393,
+   "eqty": 5067666.0,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-09",
+   "pos_value": 26065.14,
+   "hodl_value": 26370.34,
+   "fees_cum": 3703.82,
+   "eth": 5.938797,
+   "eqty": 4964923.31,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-10",
+   "pos_value": 26125.43,
+   "hodl_value": 26464.19,
+   "fees_cum": 3706.96,
+   "eth": 5.886067,
+   "eqty": 5009401.31,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-11",
+   "pos_value": 26709.35,
+   "hodl_value": 27046.27,
+   "fees_cum": 3711.83,
+   "eth": 5.900453,
+   "eqty": 4997187.66,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-12",
+   "pos_value": 26255.56,
+   "hodl_value": 26562.69,
+   "fees_cum": 3713.82,
+   "eth": 5.939284,
+   "eqty": 4964516.35,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-13",
+   "pos_value": 26196.98,
+   "hodl_value": 26564.25,
+   "fees_cum": 3722.29,
+   "eth": 5.844643,
+   "eqty": 5044905.89,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-14",
+   "pos_value": 27376.62,
+   "hodl_value": 27793.18,
+   "fees_cum": 3732.12,
+   "eth": 5.800155,
+   "eqty": 5083600.76,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-15",
+   "pos_value": 26830.42,
+   "hodl_value": 27289.79,
+   "fees_cum": 3735.78,
+   "eth": 5.734075,
+   "eqty": 5142185.2,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-16",
+   "pos_value": 26644.94,
+   "hodl_value": 27133.61,
+   "fees_cum": 3738.11,
+   "eth": 5.694409,
+   "eqty": 5178003.86,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-17",
+   "pos_value": 28365.73,
+   "hodl_value": 28712.6,
+   "fees_cum": 3758.08,
+   "eth": 5.916553,
+   "eqty": 4983589.79,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-18",
+   "pos_value": 28111.74,
+   "hodl_value": 28451.16,
+   "fees_cum": 3769.25,
+   "eth": 5.923099,
+   "eqty": 4978082.39,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-19",
+   "pos_value": 26907.2,
+   "hodl_value": 27306.7,
+   "fees_cum": 3779.69,
+   "eth": 5.813601,
+   "eqty": 5071843.69,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-20",
+   "pos_value": 26519.94,
+   "hodl_value": 26962.21,
+   "fees_cum": 3780.86,
+   "eth": 5.749006,
+   "eqty": 5128829.59,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-21",
+   "pos_value": 27341.11,
+   "hodl_value": 27681.28,
+   "fees_cum": 3805.92,
+   "eth": 5.907606,
+   "eqty": 4991137.59,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-22",
+   "pos_value": 29057.81,
+   "hodl_value": 29311.87,
+   "fees_cum": 3997.37,
+   "eth": 6.082017,
+   "eqty": 4848009.09,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-23",
+   "pos_value": 27536.37,
+   "hodl_value": 27885.71,
+   "fees_cum": 4002.08,
+   "eth": 5.897501,
+   "eqty": 4999689.57,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-24",
+   "pos_value": 27389.86,
+   "hodl_value": 27731.17,
+   "fees_cum": 4008.1,
+   "eth": 5.906806,
+   "eqty": 4991813.2,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-25",
+   "pos_value": 26918.92,
+   "hodl_value": 27319.88,
+   "fees_cum": 4015.87,
+   "eth": 5.811837,
+   "eqty": 5073382.98,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-26",
+   "pos_value": 26921.39,
+   "hodl_value": 27376.6,
+   "fees_cum": 4016.47,
+   "eth": 5.741172,
+   "eqty": 5135828.44,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-27",
+   "pos_value": 26836.79,
+   "hodl_value": 27263.94,
+   "fees_cum": 4019.51,
+   "eth": 5.775229,
+   "eqty": 5105542.17,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-28",
+   "pos_value": 26562.21,
+   "hodl_value": 26957.29,
+   "fees_cum": 4020.25,
+   "eth": 5.812631,
+   "eqty": 5072689.41,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-29",
+   "pos_value": 26616.41,
+   "hodl_value": 27008.95,
+   "fees_cum": 4023.53,
+   "eth": 5.81726,
+   "eqty": 5068652.82,
+   "in_range": true
+  },
+  {
+   "date": "2026-04-30",
+   "pos_value": 26687.25,
+   "hodl_value": 27018.91,
+   "fees_cum": 4041.54,
+   "eth": 5.908207,
+   "eqty": 4990629.79,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-01",
+   "pos_value": 26681.56,
+   "hodl_value": 27074.29,
+   "fees_cum": 4053.37,
+   "eth": 5.818325,
+   "eqty": 5067725.57,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-02",
+   "pos_value": 26469.21,
+   "hodl_value": 26921.51,
+   "fees_cum": 4066.85,
+   "eth": 5.735175,
+   "eqty": 5141198.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-03",
+   "pos_value": 26569.06,
+   "hodl_value": 27035.04,
+   "fees_cum": 4070.16,
+   "eth": 5.720271,
+   "eqty": 5154593.96,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-04",
+   "pos_value": 26192.52,
+   "hodl_value": 26789.38,
+   "fees_cum": 4088.79,
+   "eth": 5.563361,
+   "eqty": 5299975.31,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-05",
+   "pos_value": 26787.47,
+   "hodl_value": 27328.01,
+   "fees_cum": 4100.49,
+   "eth": 5.637853,
+   "eqty": 5229946.98,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-06",
+   "pos_value": 26332.31,
+   "hodl_value": 26942.36,
+   "fees_cum": 4123.01,
+   "eth": 5.552996,
+   "eqty": 5309867.37,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-07",
+   "pos_value": 26462.04,
+   "hodl_value": 26931.64,
+   "fees_cum": 4128.24,
+   "eth": 5.713492,
+   "eqty": 5160709.59,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-08",
+   "pos_value": 26624.16,
+   "hodl_value": 27022.02,
+   "fees_cum": 4140.62,
+   "eth": 5.810066,
+   "eqty": 5074929.59,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-09",
+   "pos_value": 27352.63,
+   "hodl_value": 27699.55,
+   "fees_cum": 4144.59,
+   "eth": 5.897633,
+   "eqty": 4999577.26,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-10",
+   "pos_value": 27024.51,
+   "hodl_value": 27454.62,
+   "fees_cum": 4149.43,
+   "eth": 5.775258,
+   "eqty": 5105516.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-11",
+   "pos_value": 28125.76,
+   "hodl_value": 28406.08,
+   "fees_cum": 4171.38,
+   "eth": 6.019115,
+   "eqty": 4898672.87,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-12",
+   "pos_value": 28211.19,
+   "hodl_value": 28419.85,
+   "fees_cum": 4232.06,
+   "eth": 6.159783,
+   "eqty": 4786803.86,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-13",
+   "pos_value": 26963.81,
+   "hodl_value": 27292.2,
+   "fees_cum": 4235.28,
+   "eth": 5.918646,
+   "eqty": 4981827.33,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-14",
+   "pos_value": 26026.32,
+   "hodl_value": 26488.15,
+   "fees_cum": 4248.15,
+   "eth": 5.71354,
+   "eqty": 5160666.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-15",
+   "pos_value": 25733.51,
+   "hodl_value": 26174.19,
+   "fees_cum": 4253.55,
+   "eth": 5.733951,
+   "eqty": 5142296.35,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-16",
+   "pos_value": 25766.08,
+   "hodl_value": 26104.66,
+   "fees_cum": 4258.58,
+   "eth": 5.879069,
+   "eqty": 5015364.83,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-17",
+   "pos_value": 25581.26,
+   "hodl_value": 25923.25,
+   "fees_cum": 4260.2,
+   "eth": 5.86998,
+   "eqty": 5023130.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-18",
+   "pos_value": 24961.09,
+   "hodl_value": 25279.17,
+   "fees_cum": 4262.75,
+   "eth": 5.895169,
+   "eqty": 5001666.92,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-19",
+   "pos_value": 24667.63,
+   "hodl_value": 25029.34,
+   "fees_cum": 4266.46,
+   "eth": 5.820391,
+   "eqty": 5065926.44,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-20",
+   "pos_value": 24779.49,
+   "hodl_value": 25138.65,
+   "fees_cum": 4266.94,
+   "eth": 5.826683,
+   "eqty": 5060455.77,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-21",
+   "pos_value": 24647.1,
+   "hodl_value": 25034.49,
+   "fees_cum": 4270.22,
+   "eth": 5.782229,
+   "eqty": 5099361.11,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-22",
+   "pos_value": 24476.72,
+   "hodl_value": 24852.34,
+   "fees_cum": 4278.86,
+   "eth": 5.795474,
+   "eqty": 5087707.09,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-23",
+   "pos_value": 24347.67,
+   "hodl_value": 24656.37,
+   "fees_cum": 4279.87,
+   "eth": 5.897804,
+   "eqty": 4999432.76,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-24",
+   "pos_value": 24297.3,
+   "hodl_value": 24689.03,
+   "fees_cum": 4285.37,
+   "eth": 5.768042,
+   "eqty": 5111903.31,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-25",
+   "pos_value": 23368.82,
+   "hodl_value": 23932.87,
+   "fees_cum": 4296.28,
+   "eth": 5.527079,
+   "eqty": 5334765.68,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-26",
+   "pos_value": 22948.73,
+   "hodl_value": 23546.08,
+   "fees_cum": 4302.74,
+   "eth": 5.478435,
+   "eqty": 5382134.36,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-27",
+   "pos_value": 22430.37,
+   "hodl_value": 23053.28,
+   "fees_cum": 4306.29,
+   "eth": 5.435767,
+   "eqty": 5424381.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-28",
+   "pos_value": 21975.04,
+   "hodl_value": 22524.0,
+   "fees_cum": 4315.55,
+   "eth": 5.505072,
+   "eqty": 5356092.4,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-29",
+   "pos_value": 23050.48,
+   "hodl_value": 23448.53,
+   "fees_cum": 4339.44,
+   "eth": 5.729161,
+   "eqty": 5146595.62,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-30",
+   "pos_value": 23681.18,
+   "hodl_value": 24000.47,
+   "fees_cum": 4351.29,
+   "eth": 5.865482,
+   "eqty": 5026982.17,
+   "in_range": true
+  },
+  {
+   "date": "2026-05-31",
+   "pos_value": 22627.77,
+   "hodl_value": 23100.51,
+   "fees_cum": 4352.65,
+   "eth": 5.616865,
+   "eqty": 5249489.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-01",
+   "pos_value": 22250.81,
+   "hodl_value": 22729.91,
+   "fees_cum": 4358.86,
+   "eth": 5.598448,
+   "eqty": 5266758.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-02",
+   "pos_value": 21723.81,
+   "hodl_value": 22188.68,
+   "fees_cum": 4363.34,
+   "eth": 5.602241,
+   "eqty": 5263192.6,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-03",
+   "pos_value": 21039.86,
+   "hodl_value": 21421.76,
+   "fees_cum": 4365.98,
+   "eth": 5.700439,
+   "eqty": 5172527.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-04",
+   "pos_value": 20556.75,
+   "hodl_value": 20870.52,
+   "fees_cum": 4371.93,
+   "eth": 5.798441,
+   "eqty": 5085103.23,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-05",
+   "pos_value": 18803.46,
+   "hodl_value": 19124.5,
+   "fees_cum": 4382.15,
+   "eth": 5.735666,
+   "eqty": 5140758.3,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-06",
+   "pos_value": 17076.73,
+   "hodl_value": 17525.09,
+   "fees_cum": 4388.64,
+   "eth": 5.472784,
+   "eqty": 5387691.43,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-07",
+   "pos_value": 17850.18,
+   "hodl_value": 18306.56,
+   "fees_cum": 4391.17,
+   "eth": 5.490101,
+   "eqty": 5370698.23,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-08",
+   "pos_value": 18729.69,
+   "hodl_value": 19154.92,
+   "fees_cum": 4393.31,
+   "eth": 5.565665,
+   "eqty": 5297780.74,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-09",
+   "pos_value": 18397.87,
+   "hodl_value": 18829.96,
+   "fees_cum": 4394.72,
+   "eth": 5.544399,
+   "eqty": 5318100.49,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-10",
+   "pos_value": 17469.55,
+   "hodl_value": 18017.05,
+   "fees_cum": 4398.29,
+   "eth": 5.353668,
+   "eqty": 5507564.93,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-11",
+   "pos_value": 17774.67,
+   "hodl_value": 18320.83,
+   "fees_cum": 4403.05,
+   "eth": 5.367299,
+   "eqty": 5493577.42,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-12",
+   "pos_value": 18121.72,
+   "hodl_value": 18630.3,
+   "fees_cum": 4408.74,
+   "eth": 5.428753,
+   "eqty": 5431389.41,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-13",
+   "pos_value": 18258.3,
+   "hodl_value": 18755.8,
+   "fees_cum": 4411.14,
+   "eth": 5.448386,
+   "eqty": 5411818.31,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-14",
+   "pos_value": 19147.03,
+   "hodl_value": 19500.88,
+   "fees_cum": 4440.33,
+   "eth": 5.689953,
+   "eqty": 5182058.96,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-15",
+   "pos_value": 19062.78,
+   "hodl_value": 19662.21,
+   "fees_cum": 4465.03,
+   "eth": 5.351347,
+   "eqty": 5509953.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-16",
+   "pos_value": 18659.05,
+   "hodl_value": 19371.36,
+   "fees_cum": 4469.33,
+   "eth": 5.212694,
+   "eqty": 5656513.42,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-17",
+   "pos_value": 18550.84,
+   "hodl_value": 19222.76,
+   "fees_cum": 4477.65,
+   "eth": 5.251121,
+   "eqty": 5615119.87,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-18",
+   "pos_value": 18072.13,
+   "hodl_value": 18726.17,
+   "fees_cum": 4489.11,
+   "eth": 5.251726,
+   "eqty": 5614473.44,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-19",
+   "pos_value": 17900.22,
+   "hodl_value": 18536.8,
+   "fees_cum": 4490.58,
+   "eth": 5.264368,
+   "eqty": 5600989.95,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-20",
+   "pos_value": 17844.65,
+   "hodl_value": 18561.58,
+   "fees_cum": 4495.14,
+   "eth": 5.174732,
+   "eqty": 5698009.32,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-21",
+   "pos_value": 17910.52,
+   "hodl_value": 18616.83,
+   "fees_cum": 4497.12,
+   "eth": 5.188626,
+   "eqty": 5682751.42,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-22",
+   "pos_value": 17894.62,
+   "hodl_value": 18650.5,
+   "fees_cum": 4500.15,
+   "eth": 5.136907,
+   "eqty": 5739966.83,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-23",
+   "pos_value": 17266.3,
+   "hodl_value": 17979.06,
+   "fees_cum": 4500.97,
+   "eth": 5.154333,
+   "eqty": 5720559.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-24",
+   "pos_value": 16833.61,
+   "hodl_value": 17519.37,
+   "fees_cum": 4502.61,
+   "eth": 5.164316,
+   "eqty": 5709501.73,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-25",
+   "pos_value": 16793.25,
+   "hodl_value": 17394.81,
+   "fees_cum": 4504.68,
+   "eth": 5.259132,
+   "eqty": 5606566.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-26",
+   "pos_value": 17262.75,
+   "hodl_value": 17667.88,
+   "fees_cum": 4516.41,
+   "eth": 5.544875,
+   "eqty": 5317644.04,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-27",
+   "pos_value": 17520.73,
+   "hodl_value": 17938.43,
+   "fees_cum": 4518.36,
+   "eth": 5.534936,
+   "eqty": 5327192.74,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-28",
+   "pos_value": 19388.24,
+   "hodl_value": 19529.68,
+   "fees_cum": 4586.57,
+   "eth": 6.166076,
+   "eqty": 4781918.52,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-29",
+   "pos_value": 19737.57,
+   "hodl_value": 19862.47,
+   "fees_cum": 4748.28,
+   "eth": 6.230294,
+   "eqty": 4732629.77,
+   "in_range": true
+  },
+  {
+   "date": "2026-06-30",
+   "pos_value": 17732.76,
+   "hodl_value": 18097.71,
+   "fees_cum": 4785.74,
+   "eth": 5.625984,
+   "eqty": 5240980.99,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-01",
+   "pos_value": 17326.85,
+   "hodl_value": 17814.8,
+   "fees_cum": 4809.16,
+   "eth": 5.426442,
+   "eqty": 5433702.43,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-02",
+   "pos_value": 16774.01,
+   "hodl_value": 17580.58,
+   "fees_cum": 4823.1,
+   "eth": 5.036334,
+   "eqty": 5854591.07,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-03",
+   "pos_value": 17342.83,
+   "hodl_value": 18205.42,
+   "fees_cum": 4842.11,
+   "eth": 5.009424,
+   "eqty": 5886041.05,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-04",
+   "pos_value": 18128.74,
+   "hodl_value": 18915.52,
+   "fees_cum": 4850.57,
+   "eth": 5.116229,
+   "eqty": 5763165.53,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-05",
+   "pos_value": 18436.44,
+   "hodl_value": 19147.48,
+   "fees_cum": 4858.87,
+   "eth": 5.205152,
+   "eqty": 5664709.54,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-06",
+   "pos_value": 19799.55,
+   "hodl_value": 20242.21,
+   "fees_cum": 4885.8,
+   "eth": 5.575234,
+   "eqty": 5288688.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-07",
+   "pos_value": 20854.84,
+   "hodl_value": 21143.58,
+   "fees_cum": 4936.04,
+   "eth": 5.851363,
+   "eqty": 5039112.07,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-08",
+   "pos_value": 19432.95,
+   "hodl_value": 19867.21,
+   "fees_cum": 4960.99,
+   "eth": 5.57553,
+   "eqty": 5288407.33,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-09",
+   "pos_value": 19441.57,
+   "hodl_value": 19872.53,
+   "fees_cum": 4971.51,
+   "eth": 5.580533,
+   "eqty": 5283666.26,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-10",
+   "pos_value": 19479.52,
+   "hodl_value": 19997.65,
+   "fees_cum": 4976.22,
+   "eth": 5.464286,
+   "eqty": 5396070.84,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-11",
+   "pos_value": 19360.54,
+   "hodl_value": 19962.07,
+   "fees_cum": 4978.42,
+   "eth": 5.359645,
+   "eqty": 5501423.15,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-12",
+   "pos_value": 19611.05,
+   "hodl_value": 20165.54,
+   "fees_cum": 4982.44,
+   "eth": 5.42377,
+   "eqty": 5436379.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-13",
+   "pos_value": 20750.61,
+   "hodl_value": 21056.07,
+   "fees_cum": 5024.0,
+   "eth": 5.818264,
+   "eqty": 5067778.59,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-14",
+   "pos_value": 22528.53,
+   "hodl_value": 22703.91,
+   "fees_cum": 5059.13,
+   "eth": 6.136256,
+   "eqty": 4805157.15,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-15",
+   "pos_value": 23033.27,
+   "hodl_value": 23252.56,
+   "fees_cum": 5074.89,
+   "eth": 6.041322,
+   "eqty": 4880665.57,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-16",
+   "pos_value": 21282.19,
+   "hodl_value": 21714.4,
+   "fees_cum": 5081.83,
+   "eth": 5.633993,
+   "eqty": 5233529.9,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-17",
+   "pos_value": 20556.73,
+   "hodl_value": 21004.14,
+   "fees_cum": 5084.14,
+   "eth": 5.591843,
+   "eqty": 5272979.57,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-18",
+   "pos_value": 20143.36,
+   "hodl_value": 20685.98,
+   "fees_cum": 5088.64,
+   "eth": 5.455948,
+   "eqty": 5404317.24,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-19",
+   "pos_value": 19253.11,
+   "hodl_value": 20045.88,
+   "fees_cum": 5105.51,
+   "eth": 5.156244,
+   "eqty": 5718439.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-20",
+   "pos_value": 19237.15,
+   "hodl_value": 20066.49,
+   "fees_cum": 5108.1,
+   "eth": 5.12133,
+   "eqty": 5757424.84,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-21",
+   "pos_value": 20129.71,
+   "hodl_value": 20885.19,
+   "fees_cum": 5117.6,
+   "eth": 5.225212,
+   "eqty": 5642962.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-22",
+   "pos_value": 19940.95,
+   "hodl_value": 20754.92,
+   "fees_cum": 5126.87,
+   "eth": 5.162813,
+   "eqty": 5711164.12,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-23",
+   "pos_value": 19747.82,
+   "hodl_value": 20535.04,
+   "fees_cum": 5135.66,
+   "eth": 5.18057,
+   "eqty": 5691588.45,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-24",
+   "pos_value": 19932.16,
+   "hodl_value": 20578.23,
+   "fees_cum": 5147.24,
+   "eth": 5.330225,
+   "eqty": 5531788.26,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-25",
+   "pos_value": 20152.26,
+   "hodl_value": 20735.3,
+   "fees_cum": 5152.42,
+   "eth": 5.40832,
+   "eqty": 5451910.18,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-26",
+   "pos_value": 21086.09,
+   "hodl_value": 21588.54,
+   "fees_cum": 5237.75,
+   "eth": 5.53525,
+   "eqty": 5326890.92,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-27",
+   "pos_value": 22312.55,
+   "hodl_value": 22692.04,
+   "fees_cum": 5340.15,
+   "eth": 5.73785,
+   "eqty": 5138801.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-28",
+   "pos_value": 21821.06,
+   "hodl_value": 22172.85,
+   "fees_cum": 5348.38,
+   "eth": 5.768068,
+   "eqty": 5111880.21,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-29",
+   "pos_value": 20132.59,
+   "hodl_value": 20824.67,
+   "fees_cum": 5357.69,
+   "eth": 5.288697,
+   "eqty": 5575224.2,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-30",
+   "pos_value": 20018.32,
+   "hodl_value": 20768.5,
+   "fees_cum": 5363.16,
+   "eth": 5.226307,
+   "eqty": 5641780.19,
+   "in_range": true
+  },
+  {
+   "date": "2026-07-31",
+   "pos_value": 19765.21,
+   "hodl_value": 20480.87,
+   "fees_cum": 5367.0,
+   "eth": 5.251371,
+   "eqty": 5614853.0,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-01",
+   "pos_value": 20012.6,
+   "hodl_value": 20608.71,
+   "fees_cum": 5371.93,
+   "eth": 5.388567,
+   "eqty": 5471894.65,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-02",
+   "pos_value": 20145.31,
+   "hodl_value": 20745.13,
+   "fees_cum": 5373.43,
+   "eth": 5.388837,
+   "eqty": 5471620.9,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-03",
+   "pos_value": 20310.88,
+   "hodl_value": 20847.37,
+   "fees_cum": 5378.25,
+   "eth": 5.468853,
+   "eqty": 5391564.85,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-04",
+   "pos_value": 20443.84,
+   "hodl_value": 20977.61,
+   "fees_cum": 5386.68,
+   "eth": 5.47646,
+   "eqty": 5384075.25,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-05",
+   "pos_value": 20651.86,
+   "hodl_value": 21188.55,
+   "fees_cum": 5388.26,
+   "eth": 5.479487,
+   "eqty": 5381100.8,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-06",
+   "pos_value": 20914.02,
+   "hodl_value": 21452.72,
+   "fees_cum": 5389.87,
+   "eth": 5.48527,
+   "eqty": 5375427.81,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-07",
+   "pos_value": 20655.33,
+   "hodl_value": 21259.26,
+   "fees_cum": 5391.01,
+   "eth": 5.401186,
+   "eqty": 5459110.46,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-08",
+   "pos_value": 20879.82,
+   "hodl_value": 21452.94,
+   "fees_cum": 5392.25,
+   "eth": 5.443521,
+   "eqty": 5416655.08,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-09",
+   "pos_value": 20665.79,
+   "hodl_value": 21284.18,
+   "fees_cum": 5394.93,
+   "eth": 5.385445,
+   "eqty": 5475066.79,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-10",
+   "pos_value": 21188.5,
+   "hodl_value": 21661.64,
+   "fees_cum": 5401.38,
+   "eth": 5.575979,
+   "eqty": 5287981.61,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-11",
+   "pos_value": 19832.36,
+   "hodl_value": 20517.1,
+   "fees_cum": 5421.11,
+   "eth": 5.285584,
+   "eqty": 5578508.1,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-12",
+   "pos_value": 20659.95,
+   "hodl_value": 21213.59,
+   "fees_cum": 5437.69,
+   "eth": 5.459385,
+   "eqty": 5400914.63,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-13",
+   "pos_value": 20160.85,
+   "hodl_value": 20796.71,
+   "fees_cum": 5452.39,
+   "eth": 5.349266,
+   "eqty": 5512096.79,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-14",
+   "pos_value": 19697.12,
+   "hodl_value": 20415.04,
+   "fees_cum": 5471.1,
+   "eth": 5.246577,
+   "eqty": 5619983.46,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-15",
+   "pos_value": 19693.95,
+   "hodl_value": 20423.34,
+   "fees_cum": 5488.22,
+   "eth": 5.234912,
+   "eqty": 5632506.01,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-16",
+   "pos_value": 19424.11,
+   "hodl_value": 20211.05,
+   "fees_cum": 5505.76,
+   "eth": 5.16846,
+   "eqty": 5704924.14,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-17",
+   "pos_value": 19398.33,
+   "hodl_value": 20254.01,
+   "fees_cum": 5514.79,
+   "eth": 5.103722,
+   "eqty": 5777288.13,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-18",
+   "pos_value": 18420.84,
+   "hodl_value": 19551.65,
+   "fees_cum": 5526.54,
+   "eth": 4.835703,
+   "eqty": 6097494.8,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-19",
+   "pos_value": 19598.9,
+   "hodl_value": 21042.91,
+   "fees_cum": 5543.61,
+   "eth": 4.676269,
+   "eqty": 6305384.87,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-20",
+   "pos_value": 21068.66,
+   "hodl_value": 22759.1,
+   "fees_cum": 5551.72,
+   "eth": 4.598999,
+   "eqty": 6411323.67,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-21",
+   "pos_value": 21969.86,
+   "hodl_value": 23818.93,
+   "fees_cum": 5559.21,
+   "eth": 4.554886,
+   "eqty": 6473415.97,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-22",
+   "pos_value": 22557.96,
+   "hodl_value": 24368.35,
+   "fees_cum": 5568.74,
+   "eth": 4.598766,
+   "eqty": 6411648.3,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-23",
+   "pos_value": 22232.81,
+   "hodl_value": 24068.6,
+   "fees_cum": 5572.28,
+   "eth": 4.572582,
+   "eqty": 6448364.12,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-24",
+   "pos_value": 22543.42,
+   "hodl_value": 24444.1,
+   "fees_cum": 5578.62,
+   "eth": 4.55325,
+   "eqty": 6475741.82,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-25",
+   "pos_value": 22581.46,
+   "hodl_value": 24478.71,
+   "fees_cum": 5579.65,
+   "eth": 4.556498,
+   "eqty": 6471125.52,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-26",
+   "pos_value": 21977.3,
+   "hodl_value": 24019.7,
+   "fees_cum": 5593.9,
+   "eth": 4.46169,
+   "eqty": 6608633.41,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-27",
+   "pos_value": 22509.67,
+   "hodl_value": 24551.66,
+   "fees_cum": 5602.41,
+   "eth": 4.484606,
+   "eqty": 6574863.73,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-28",
+   "pos_value": 22533.03,
+   "hodl_value": 24440.87,
+   "fees_cum": 5604.51,
+   "eth": 4.549333,
+   "eqty": 6481317.87,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-29",
+   "pos_value": 22331.11,
+   "hodl_value": 24179.73,
+   "fees_cum": 5606.33,
+   "eth": 4.570223,
+   "eqty": 6451692.86,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-30",
+   "pos_value": 22575.28,
+   "hodl_value": 24450.05,
+   "fees_cum": 5609.11,
+   "eth": 4.567288,
+   "eqty": 6455837.78,
+   "in_range": true
+  },
+  {
+   "date": "2026-08-31",
+   "pos_value": 22664.12,
+   "hodl_value": 24425.72,
+   "fees_cum": 5610.45,
+   "eth": 4.627994,
+   "eqty": 6371156.77,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-01",
+   "pos_value": 22884.65,
+   "hodl_value": 24547.46,
+   "fees_cum": 5613.96,
+   "eth": 4.688708,
+   "eqty": 6288656.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-02",
+   "pos_value": 22279.42,
+   "hodl_value": 23966.53,
+   "fees_cum": 5617.99,
+   "eth": 4.651623,
+   "eqty": 6338792.12,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-03",
+   "pos_value": 21909.51,
+   "hodl_value": 23938.07,
+   "fees_cum": 5623.87,
+   "eth": 4.465223,
+   "eqty": 6603403.96,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-04",
+   "pos_value": 21622.74,
+   "hodl_value": 23861.13,
+   "fees_cum": 5624.72,
+   "eth": 4.357561,
+   "eqty": 6766554.8,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-05",
+   "pos_value": 21956.72,
+   "hodl_value": 24022.46,
+   "fees_cum": 5626.06,
+   "eth": 4.449958,
+   "eqty": 6626056.29,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-06",
+   "pos_value": 21503.96,
+   "hodl_value": 23853.72,
+   "fees_cum": 5633.77,
+   "eth": 4.304356,
+   "eqty": 6850194.23,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-07",
+   "pos_value": 21956.89,
+   "hodl_value": 24130.56,
+   "fees_cum": 5637.13,
+   "eth": 4.401007,
+   "eqty": 6699755.73,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-08",
+   "pos_value": 21903.02,
+   "hodl_value": 24052.55,
+   "fees_cum": 5638.67,
+   "eth": 4.409423,
+   "eqty": 6686968.59,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-09",
+   "pos_value": 21309.29,
+   "hodl_value": 23713.55,
+   "fees_cum": 5642.6,
+   "eth": 4.272521,
+   "eqty": 6901235.1,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-10",
+   "pos_value": 21001.93,
+   "hodl_value": 23361.48,
+   "fees_cum": 5643.65,
+   "eth": 4.276751,
+   "eqty": 6894409.43,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-11",
+   "pos_value": 21169.02,
+   "hodl_value": 23750.84,
+   "fees_cum": 5645.51,
+   "eth": 4.194161,
+   "eqty": 7030171.82,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-12",
+   "pos_value": 21661.39,
+   "hodl_value": 24063.36,
+   "fees_cum": 5646.75,
+   "eth": 4.289793,
+   "eqty": 6873449.65,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-13",
+   "pos_value": 21326.62,
+   "hodl_value": 23742.18,
+   "fees_cum": 5647.45,
+   "eth": 4.268654,
+   "eqty": 6907487.36,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-14",
+   "pos_value": 21249.38,
+   "hodl_value": 23794.67,
+   "fees_cum": 5647.94,
+   "eth": 4.212435,
+   "eqty": 6999674.55,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-15",
+   "pos_value": 20704.44,
+   "hodl_value": 23117.19,
+   "fees_cum": 5648.39,
+   "eth": 4.240159,
+   "eqty": 6953907.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-16",
+   "pos_value": 20514.35,
+   "hodl_value": 22819.6,
+   "fees_cum": 5649.96,
+   "eth": 4.27655,
+   "eqty": 6894733.86,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-17",
+   "pos_value": 20675.21,
+   "hodl_value": 23119.35,
+   "fees_cum": 5650.62,
+   "eth": 4.225726,
+   "eqty": 6977659.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-18",
+   "pos_value": 21372.35,
+   "hodl_value": 23969.93,
+   "fees_cum": 5651.19,
+   "eth": 4.197686,
+   "eqty": 7024268.56,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-19",
+   "pos_value": 21845.66,
+   "hodl_value": 24630.81,
+   "fees_cum": 5654.84,
+   "eth": 4.148923,
+   "eqty": 7106825.54,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-20",
+   "pos_value": 21604.62,
+   "hodl_value": 24373.1,
+   "fees_cum": 5654.98,
+   "eth": 4.143706,
+   "eqty": 7115773.14,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-21",
+   "pos_value": 22362.12,
+   "hodl_value": 25347.5,
+   "fees_cum": 5655.66,
+   "eth": 4.101486,
+   "eqty": 7189022.5,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-22",
+   "pos_value": 22649.32,
+   "hodl_value": 25606.15,
+   "fees_cum": 5656.97,
+   "eth": 4.124582,
+   "eqty": 7148766.04,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-23",
+   "pos_value": 23084.9,
+   "hodl_value": 25709.12,
+   "fees_cum": 5663.57,
+   "eth": 4.26503,
+   "eqty": 6913356.55,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-24",
+   "pos_value": 24822.8,
+   "hodl_value": 26727.05,
+   "fees_cum": 5677.69,
+   "eth": 4.639898,
+   "eqty": 6354811.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-25",
+   "pos_value": 24346.74,
+   "hodl_value": 26468.86,
+   "fees_cum": 5678.6,
+   "eth": 4.52224,
+   "eqty": 6520148.3,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-26",
+   "pos_value": 25554.41,
+   "hodl_value": 27278.65,
+   "fees_cum": 5694.46,
+   "eth": 4.75415,
+   "eqty": 6202092.0,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-27",
+   "pos_value": 24998.5,
+   "hodl_value": 26926.06,
+   "fees_cum": 5697.36,
+   "eth": 4.635257,
+   "eqty": 6361173.55,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-28",
+   "pos_value": 24023.93,
+   "hodl_value": 26195.35,
+   "fees_cum": 5702.69,
+   "eth": 4.488055,
+   "eqty": 6569811.76,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-29",
+   "pos_value": 24679.46,
+   "hodl_value": 26700.16,
+   "fees_cum": 5703.65,
+   "eth": 4.580365,
+   "eqty": 6437407.06,
+   "in_range": true
+  },
+  {
+   "date": "2026-09-30",
+   "pos_value": 24740.68,
+   "hodl_value": 26704.75,
+   "fees_cum": 5706.08,
+   "eth": 4.60873,
+   "eqty": 6397787.03,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-01",
+   "pos_value": 24523.21,
+   "hodl_value": 26592.76,
+   "fees_cum": 5709.13,
+   "eth": 4.552379,
+   "eqty": 6476981.65,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-02",
+   "pos_value": 24880.43,
+   "hodl_value": 26937.83,
+   "fees_cum": 5710.39,
+   "eth": 4.571239,
+   "eqty": 6450257.99,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-03",
+   "pos_value": 24498.72,
+   "hodl_value": 26528.26,
+   "fees_cum": 5711.34,
+   "eth": 4.569549,
+   "eqty": 6452644.24,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-04",
+   "pos_value": 24776.97,
+   "hodl_value": 26795.17,
+   "fees_cum": 5711.97,
+   "eth": 4.585135,
+   "eqty": 6430709.81,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-05",
+   "pos_value": 24840.7,
+   "hodl_value": 26882.57,
+   "fees_cum": 5712.2,
+   "eth": 4.576754,
+   "eqty": 6442485.87,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-06",
+   "pos_value": 24257.71,
+   "hodl_value": 26468.6,
+   "fees_cum": 5715.34,
+   "eth": 4.480172,
+   "eqty": 6581370.46,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-07",
+   "pos_value": 23694.22,
+   "hodl_value": 25652.39,
+   "fees_cum": 5717.17,
+   "eth": 4.571773,
+   "eqty": 6449505.08,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-08",
+   "pos_value": 23048.79,
+   "hodl_value": 24914.75,
+   "fees_cum": 5720.12,
+   "eth": 4.59077,
+   "eqty": 6422816.08,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-09",
+   "pos_value": 23307.1,
+   "hodl_value": 25017.24,
+   "fees_cum": 5724.46,
+   "eth": 4.679971,
+   "eqty": 6300396.15,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-10",
+   "pos_value": 23355.69,
+   "hodl_value": 25076.26,
+   "fees_cum": 5727.58,
+   "eth": 4.676395,
+   "eqty": 6305214.85,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-11",
+   "pos_value": 23565.76,
+   "hodl_value": 25292.42,
+   "fees_cum": 5729.12,
+   "eth": 4.681245,
+   "eqty": 6298682.37,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-12",
+   "pos_value": 23902.41,
+   "hodl_value": 25559.71,
+   "fees_cum": 5732.78,
+   "eth": 4.730248,
+   "eqty": 6233431.24,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-13",
+   "pos_value": 24096.27,
+   "hodl_value": 25595.27,
+   "fees_cum": 5736.48,
+   "eth": 4.824367,
+   "eqty": 6111822.42,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-14",
+   "pos_value": 23617.06,
+   "hodl_value": 25153.48,
+   "fees_cum": 5739.22,
+   "eth": 4.785897,
+   "eqty": 6160949.73,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-15",
+   "pos_value": 22775.52,
+   "hodl_value": 24290.3,
+   "fees_cum": 5743.36,
+   "eth": 4.766707,
+   "eqty": 6185752.94,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-16",
+   "pos_value": 22767.83,
+   "hodl_value": 24458.9,
+   "fees_cum": 5744.33,
+   "eth": 4.66904,
+   "eqty": 6315146.28,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-17",
+   "pos_value": 22485.38,
+   "hodl_value": 24168.75,
+   "fees_cum": 5746.39,
+   "eth": 4.661922,
+   "eqty": 6324789.03,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-18",
+   "pos_value": 22349.25,
+   "hodl_value": 24007.05,
+   "fees_cum": 5747.55,
+   "eth": 4.670222,
+   "eqty": 6313548.89,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-19",
+   "pos_value": 22515.43,
+   "hodl_value": 24195.14,
+   "fees_cum": 5748.23,
+   "eth": 4.665075,
+   "eqty": 6320513.92,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-20",
+   "pos_value": 22137.06,
+   "hodl_value": 23950.23,
+   "fees_cum": 5749.52,
+   "eth": 4.580037,
+   "eqty": 6437867.85,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-21",
+   "pos_value": 22853.56,
+   "hodl_value": 24652.73,
+   "fees_cum": 5752.67,
+   "eth": 4.616359,
+   "eqty": 6387214.07,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-22",
+   "pos_value": 22245.78,
+   "hodl_value": 23999.82,
+   "fees_cum": 5753.06,
+   "eth": 4.614942,
+   "eqty": 6389174.6,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-23",
+   "pos_value": 22248.13,
+   "hodl_value": 23950.31,
+   "fees_cum": 5753.07,
+   "eth": 4.64232,
+   "eqty": 6351495.65,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-24",
+   "pos_value": 21685.06,
+   "hodl_value": 23396.25,
+   "fees_cum": 5754.5,
+   "eth": 4.614215,
+   "eqty": 6390182.13,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-25",
+   "pos_value": 21776.96,
+   "hodl_value": 23422.61,
+   "fees_cum": 5755.11,
+   "eth": 4.653494,
+   "eqty": 6336243.77,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-26",
+   "pos_value": 21133.61,
+   "hodl_value": 22902.25,
+   "fees_cum": 5757.46,
+   "eth": 4.56014,
+   "eqty": 6465957.28,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-27",
+   "pos_value": 21250.71,
+   "hodl_value": 23017.08,
+   "fees_cum": 5758.57,
+   "eth": 4.566451,
+   "eqty": 6457022.16,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-28",
+   "pos_value": 21461.31,
+   "hodl_value": 23250.39,
+   "fees_cum": 5762.43,
+   "eth": 4.56375,
+   "eqty": 6460843.21,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-29",
+   "pos_value": 21373.0,
+   "hodl_value": 23038.79,
+   "fees_cum": 5766.09,
+   "eth": 4.625509,
+   "eqty": 6374579.11,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-30",
+   "pos_value": 20498.02,
+   "hodl_value": 22135.05,
+   "fees_cum": 5767.86,
+   "eth": 4.603256,
+   "eqty": 6405394.49,
+   "in_range": true
+  },
+  {
+   "date": "2026-10-31",
+   "pos_value": 20307.43,
+   "hodl_value": 22080.23,
+   "fees_cum": 5774.39,
+   "eth": 4.520779,
+   "eqty": 6522255.24,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-01",
+   "pos_value": 20248.99,
+   "hodl_value": 22112.09,
+   "fees_cum": 5775.29,
+   "eth": 4.471181,
+   "eqty": 6594605.34,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-02",
+   "pos_value": 19753.13,
+   "hodl_value": 21834.76,
+   "fees_cum": 5779.45,
+   "eth": 4.340087,
+   "eqty": 6793797.03,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-03",
+   "pos_value": 19622.47,
+   "hodl_value": 21738.96,
+   "fees_cum": 5784.02,
+   "eth": 4.317205,
+   "eqty": 6829806.7,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-04",
+   "pos_value": 20243.07,
+   "hodl_value": 22448.62,
+   "fees_cum": 5788.76,
+   "eth": 4.307238,
+   "eqty": 6845609.82,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-05",
+   "pos_value": 20272.94,
+   "hodl_value": 22330.83,
+   "fees_cum": 5790.8,
+   "eth": 4.376696,
+   "eqty": 6736970.96,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-06",
+   "pos_value": 19576.89,
+   "hodl_value": 21539.83,
+   "fees_cum": 5792.37,
+   "eth": 4.388651,
+   "eqty": 6718618.76,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-07",
+   "pos_value": 19633.98,
+   "hodl_value": 21609.48,
+   "fees_cum": 5792.39,
+   "eth": 4.385287,
+   "eqty": 6723773.14,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-08",
+   "pos_value": 19164.75,
+   "hodl_value": 21097.1,
+   "fees_cum": 5792.64,
+   "eth": 4.38324,
+   "eqty": 6726912.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-09",
+   "pos_value": 18455.86,
+   "hodl_value": 20383.63,
+   "fees_cum": 5794.64,
+   "eth": 4.348777,
+   "eqty": 6780222.13,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-10",
+   "pos_value": 17561.61,
+   "hodl_value": 19594.22,
+   "fees_cum": 5796.48,
+   "eth": 4.247002,
+   "eqty": 6942703.71,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-11",
+   "pos_value": 16996.07,
+   "hodl_value": 19231.03,
+   "fees_cum": 5797.64,
+   "eth": 4.117106,
+   "eqty": 7161748.08,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-12",
+   "pos_value": 16501.39,
+   "hodl_value": 18743.53,
+   "fees_cum": 5798.56,
+   "eth": 4.08321,
+   "eqty": 7221199.75,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-13",
+   "pos_value": 16045.18,
+   "hodl_value": 18148.28,
+   "fees_cum": 5799.69,
+   "eth": 4.120445,
+   "eqty": 7155943.91,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-14",
+   "pos_value": 15230.43,
+   "hodl_value": 17159.89,
+   "fees_cum": 5801.33,
+   "eth": 4.155439,
+   "eqty": 7095681.38,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-15",
+   "pos_value": 14840.6,
+   "hodl_value": 16770.68,
+   "fees_cum": 5801.86,
+   "eth": 4.128491,
+   "eqty": 7141998.12,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-16",
+   "pos_value": 14954.83,
+   "hodl_value": 16924.0,
+   "fees_cum": 5801.98,
+   "eth": 4.115728,
+   "eqty": 7164145.56,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-17",
+   "pos_value": 14987.79,
+   "hodl_value": 16895.47,
+   "fees_cum": 5802.44,
+   "eth": 4.150617,
+   "eqty": 7103926.08,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-18",
+   "pos_value": 14830.45,
+   "hodl_value": 16702.47,
+   "fees_cum": 5802.66,
+   "eth": 4.159129,
+   "eqty": 7089387.02,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-19",
+   "pos_value": 15052.96,
+   "hodl_value": 16838.29,
+   "fees_cum": 5803.27,
+   "eth": 4.22243,
+   "eqty": 6983104.64,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-20",
+   "pos_value": 14107.35,
+   "hodl_value": 15828.7,
+   "fees_cum": 5806.31,
+   "eth": 4.193698,
+   "eqty": 7030948.58,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-21",
+   "pos_value": 13755.63,
+   "hodl_value": 15387.86,
+   "fees_cum": 5807.47,
+   "eth": 4.221953,
+   "eqty": 6983894.48,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-22",
+   "pos_value": 13680.0,
+   "hodl_value": 15626.05,
+   "fees_cum": 5808.86,
+   "eth": 4.035326,
+   "eqty": 7306887.98,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-23",
+   "pos_value": 14224.66,
+   "hodl_value": 16172.34,
+   "fees_cum": 5810.82,
+   "eth": 4.075226,
+   "eqty": 7235346.82,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-24",
+   "pos_value": 13528.37,
+   "hodl_value": 15503.1,
+   "fees_cum": 5813.26,
+   "eth": 4.00824,
+   "eqty": 7356263.97,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-25",
+   "pos_value": 13480.91,
+   "hodl_value": 15329.26,
+   "fees_cum": 5814.7,
+   "eth": 4.073817,
+   "eqty": 7237849.0,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-26",
+   "pos_value": 14153.02,
+   "hodl_value": 15916.51,
+   "fees_cum": 5818.0,
+   "eth": 4.172371,
+   "eqty": 7066886.81,
+   "in_range": true
+  },
+  {
+   "date": "2026-11-27",
+   "pos_value": 14843.79,
+   "hodl_value": 16518.44,
+   "fees_cum": 5821.14,
+   "eth": 4.4795,
+   "eqty": 6582222.0,
+   "in_range": true
+  }
+ ]
+}

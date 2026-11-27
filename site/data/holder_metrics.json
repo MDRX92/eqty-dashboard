@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T15:05:11+00:00",
+ "updated_at": "2026-11-27T15:59:40+00:00",
  "rows": [
   {
    "cohort_year": 2026,
@@ -10,14 +10,14 @@
   {
    "cohort_year": 2026,
    "lifecycle_status": "2. Steady holder (30-90d)",
-   "total_token_balance": 4780816.25,
-   "unique_holders": 59
+   "total_token_balance": 4698896.25,
+   "unique_holders": 58
   },
   {
    "cohort_year": 2026,
    "lifecycle_status": "3. Diamond hands (90d-1yr)",
-   "total_token_balance": 24538364.57,
-   "unique_holders": 224
+   "total_token_balance": 24620284.57,
+   "unique_holders": 225
   },
   {
    "cohort_year": 2025,

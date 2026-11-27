@@ -1,17 +1,17 @@
 {
- "updated_at": "2026-11-27T15:05:11+00:00",
+ "updated_at": "2026-11-27T15:59:40+00:00",
  "pair": "EQTY_USDT",
  "since": "2026-10-29",
  "kpis": {
   "window_start": "2026-10-29",
-  "volume_30d_usd": 27449.34,
-  "buy_30d_usd": 13562.96,
+  "volume_30d_usd": 27453.33,
+  "buy_30d_usd": 13566.95,
   "sell_30d_usd": 13886.38,
-  "buy_30d_eqty": 10961226.0,
+  "buy_30d_eqty": 10964726.0,
   "sell_30d_eqty": 11363000.0,
-  "trades_30d": 2114,
-  "candle_volume_30d_usd": 28920.2,
-  "last_price": 0.0011398
+  "trades_30d": 2115,
+  "candle_volume_30d_usd": 28924.19,
+  "last_price": 0.0011399
  },
  "daily_90d": [
   {
@@ -818,11 +818,11 @@
   {
    "date": "2026-11-27",
    "covered": true,
-   "buy_usd": 1686.25,
+   "buy_usd": 1690.24,
    "sell_usd": 1756.49,
-   "buy_eqty": 1465445.0,
+   "buy_eqty": 1468945.0,
    "sell_eqty": 1547040.0,
-   "trades": 289
+   "trades": 290
   }
  ],
  "monthly": [
@@ -888,15 +888,15 @@
   },
   {
    "month": "2026-11",
-   "volume_usdt": 23919.75,
-   "volume_eqty": 20100579.0
+   "volume_usdt": 23923.74,
+   "volume_eqty": 20104079.0
   }
  ],
  "buckets_30d": [
   {
    "bucket": "Micro (under $10)",
-   "trades": 1414,
-   "usd": 5491.29
+   "trades": 1415,
+   "usd": 5495.28
   },
   {
    "bucket": "Small ($10\u201350)",
@@ -920,6 +920,13 @@
   }
  ],
  "recent_trades": [
+  {
+   "time": "2026-11-27T15:37:59.198Z",
+   "side": "buy",
+   "eqty": 3500.0,
+   "usd": 3.99,
+   "price": 0.0011399
+  },
   {
    "time": "2026-11-27T15:01:28.755Z",
    "side": "sell",
@@ -1612,13 +1619,6 @@
    "eqty": 6330.0,
    "usd": 7.26,
    "price": 0.0011473
-  },
-  {
-   "time": "2026-11-27T08:27:34.197Z",
-   "side": "sell",
-   "eqty": 3473.0,
-   "usd": 4.0,
-   "price": 0.0011507
   }
  ]
 }
