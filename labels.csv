@@ -12,3 +12,4 @@ address,label,type,confidence,note
 0x2b253a24600ccd524a7264c2360cae49679a9495,Automated trader,trader,estimated,Very frequent trades of similar size – likely a market-making or trading bot
 0x802b65b5d9016621e66003aed0b16615093f328b,Automated trader,trader,estimated,Thousands of small pool trades
 0x278d858f05b94576c1e6f73285886876ff6ef8d2,Automated trader,trader,estimated,Receives many small transfers from an automated trader
+0xa0f71c74054bcd9b1009b63770b7c6bdb227297c,EQTY DAO (pool liquidity),dao,verified,Full-range ETH/EQTY liquidity seeded by the DAO at launch (10 Oct 2025); confirmed by the team

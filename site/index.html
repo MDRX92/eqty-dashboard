@@ -366,6 +366,36 @@
     </div>
   </section>
 
+  <h3>DAO liquidity (Uniswap)</h3>
+  <p class="sectext">The pool's liquidity is a single full-range position owned by the EQTY DAO (seeded at launch, never withdrawn). It exists so EQTY can be traded on-chain &mdash; it is liquidity, not a yield investment.</p>
+  <div class="kpis" id="lp-kpis"></div>
+  <p class="sectext" id="lp-headline" style="margin-top:4px"></p>
+
+  <div class="grid2" style="margin-top:4px">
+    <section class="card">
+      <h2>Position value vs. just holding</h2>
+      <p class="note">What the position is worth over time, versus simply holding the deposited tokens (HODL). The green line adds estimated fees.</p>
+      <div id="lp-value"></div>
+      <div class="legend"><span><i style="background:var(--up)"></i>position + fees</span><span><i style="background:var(--accent)"></i>position value</span><span><i style="background:var(--muted)"></i>just holding (HODL)</span></div>
+    </section>
+    <section class="card">
+      <h2>Estimated fees earned (cumulative)</h2>
+      <p class="note">Pool swap volume &times; 0.3% &times; the position's liquidity share, while in range. An estimate, not a direct on-chain fee read; Uniswap only.</p>
+      <div id="lp-fees"></div>
+    </section>
+  </div>
+
+  <details class="card about" style="margin-top:16px">
+    <summary>How to read this</summary>
+    <ul style="margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:14px">
+      <li id="lp-cav-mix" style="margin:4px 0"></li>
+      <li style="margin:4px 0">Absolute value fell because EQTY (and ETH) are down since launch; simply holding the tokens would have fallen about the same.</li>
+      <li style="margin:4px 0">Fees vs. impermanent loss: estimated fees were larger than the impermanent loss, so position + fees sits above the HODL line. Fees are an estimate (Uniswap swaps only, not Gate.io).</li>
+      <li style="margin:4px 0">Ownership confirmed by the team as the DAO's own liquidity, seeded at launch; separate from the <a href="https://basescan.org/address/0x2Bc456799F3Cf071B10CE7216269471e0A40381a">treasury Safe</a>.</li>
+      <li id="lp-cav-src" style="margin:4px 0"></li>
+    </ul>
+  </details>
+
   <details class="card about guide" style="display:none;margin-top:16px" id="label-guide">
     <summary>Wallet label guide</summary>
     <p class="note">What each label on this dashboard means. Labels without a mark are verified; labels marked <b>≈</b> are an estimate from on-chain behaviour – helpful context while we wait for confirmation. Know who is behind a wallet? You are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
@@ -465,6 +495,19 @@ function lineChart(el, points, yfmt = v => compact(Math.round(v))) {   // points
   const xl = [0, Math.floor(points.length / 2), points.length - 1].map((i, k) =>
     `<text x="${sx(i)}" y="${H - 4}" text-anchor="${["start", "middle", "end"][k]}">${points[i].x}</text>`).join("");
   el.innerHTML = `<svg class="line" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${ticks}<path class="a" d="${area}"/><path class="l" d="${d}" vector-effect="non-scaling-stroke"/>${xl}</svg>`;
+}
+
+function multiLine(el, labels, series, yfmt = v => "$" + compact(v)) {   // series: [{color,dash,pts:[y]}]
+  const n = labels.length; if (!n) return;
+  const W = 1000, H = 190, P = { l: 52, r: 10, t: 10, b: 20 };
+  const allY = series.flatMap(s => s.pts), mn = Math.min(...allY), mx = Math.max(...allY);
+  const lo = Math.min(0, mn), hi = (mx + (mx - lo) * 0.05) || 1;
+  const sx = i => P.l + (i / Math.max(n - 1, 1)) * (W - P.l - P.r);
+  const sy = v => P.t + (1 - (v - lo) / (hi - lo)) * (H - P.t - P.b);
+  const grid = [lo, (lo + hi) / 2, hi].map(v => `<line x1="${P.l}" x2="${W - P.r}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${P.l - 6}" y="${sy(v) + 4}" text-anchor="end">${yfmt(v)}</text>`).join("");
+  const paths = series.map(sv => `<path d="${sv.pts.map((y, i) => `${i ? "L" : "M"}${sx(i).toFixed(1)},${sy(y).toFixed(1)}`).join("")}" fill="none" stroke="${sv.color}" stroke-width="2" ${sv.dash ? 'stroke-dasharray="5 4"' : ''} vector-effect="non-scaling-stroke"/>`).join("");
+  const xl = [0, Math.floor(n / 2), n - 1].map((i, k) => `<text x="${sx(i)}" y="${H - 4}" text-anchor="${["start", "middle", "end"][k]}">${labels[i]}</text>`).join("");
+  el.innerHTML = `<svg class="line" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${paths}${xl}</svg>`;
 }
 
 function comboChart(el, rows) {          // bars = balance, line = cumulative %
@@ -587,8 +630,8 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
 }
 
 (async () => {
-  const [supply, holders, daily, growth, life, monthly, market, whales, dist, gate] = await Promise.all(
-    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales", "holder_distribution", "gate"].map(get));
+  const [supply, holders, daily, growth, life, monthly, market, whales, dist, gate, lp] = await Promise.all(
+    ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales", "holder_distribution", "gate", "lp"].map(get));
 
   const lab = await get("labels");
   LABELS = (lab && lab.labels) || {};
@@ -877,6 +920,25 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
       <td class="num">${fmt(r.pct_of_supply, 2)}%</td>
       <td class="num">${fmt(r.cumulative_pct, 1)}%</td>
     </tr>`).join("");
+  // DAO liquidity (Uniswap LP)
+  if (lp && lp.kpis && lp.series && lp.series.length) {
+    const k = lp.kpis, S = lp.series;
+    $("lp-kpis").innerHTML = [
+      ["Liquidity provided (now)", "$" + fmt(k.position_value_usd), "the DAO's live liquidity in the pool", ""],
+      ["Fees earned (est.)", "$" + fmt(k.fees_est_usd), "since launch, at 0.3% per swap", ""],
+      ["Fees minus impermanent loss", (k.net_vs_hodl_usd >= 0 ? "+$" : "-$") + fmt(Math.abs(k.net_vs_hodl_usd)), "providing liquidity vs. simply holding", (k.net_vs_hodl_usd >= 0 ? "pos" : "neg")],
+    ].map(([l, v, d, cls]) => `<div class="card kpi"><div class="label">${l}</div><div class="value ${cls}">${v}</div><div class="delta">${d}</div></div>`).join("");
+    $("lp-headline").innerHTML = `The DAO supplies about <b>$${fmt(k.position_value_usd)}</b> of live liquidity so EQTY can be traded on-chain. Since launch it has earned an estimated <b>$${fmt(k.fees_est_usd)}</b> in fees &mdash; larger than the <b>$${fmt(Math.abs(k.impermanent_loss_usd))}</b> impermanent loss, so providing liquidity came out <b>$${fmt(k.net_vs_hodl_usd)}</b> above simply holding the tokens. Total value tracks the EQTY price, down from <b>$${fmt(k.deposit_usd)}</b> at launch.`;
+    multiLine($("lp-value"), S.map(r => r.date), [
+      { color: "var(--up)", pts: S.map(r => r.pos_value + r.fees_cum) },
+      { color: "var(--accent)", pts: S.map(r => r.pos_value) },
+      { color: "var(--muted)", dash: true, pts: S.map(r => r.hodl_value) },
+    ]);
+    lineChart($("lp-fees"), S.map(r => ({ x: r.date, y: r.fees_cum })), v => "$" + compact(v));
+    $("lp-cav-mix").innerHTML = `As EQTY fell, the pool automatically traded ETH for EQTY &mdash; from ${fmt(k.deposit_eth, 2)} ETH + ${compact(k.deposit_eqty)} EQTY at launch to ${fmt(k.now_eth, 2)} ETH + ${compact(k.now_eqty)} EQTY now. A liquidity position always ends up holding more of the asset that dropped; this is how an automated market maker works, not a decision. The cost of that shift (impermanent loss) was about $${fmt(Math.abs(k.impermanent_loss_usd))}.`;
+    $("lp-cav-src").textContent = "Deposit amounts are the actual on-chain transfers into the pool; current value is " + (k.now_source === "live pool reserves" ? "the live pool reserves" : "modelled from on-chain liquidity and daily prices (within ~2% of live reserves)") + ". This section refreshes daily.";
+  }
+
   [holders, market, whales].forEach(d => d && scanLabels(d));
   renderGuide();
 })();

@@ -69,6 +69,14 @@ def main() -> int:
         print(f"[FAIL] market: {exc}", file=sys.stderr)
         failures.append("market")
 
+    # DAO liquidity position (Uniswap v4 LP economics). Isolated like market.
+    try:
+        import lp
+        lp.update(now)
+    except Exception as exc:
+        print(f"[FAIL] lp: {exc}", file=sys.stderr)
+        failures.append("lp")
+
     # Gate.io (CEX) trades + candles. Public API, no CDP queries. Isolated like market.
     try:
         import gate
