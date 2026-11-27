@@ -33,8 +33,8 @@ HISTORY_DAYS = 29            # Gate refuses windows that start ~30 days back
 GAP_WARN_DAYS = 25           # warn when the newest stored trade is older than this
 TRADE_FIELDS = ["id", "time", "side", "amount", "price", "usdt"]
 CANDLE_FIELDS = ["date", "volume_usdt", "volume_eqty", "open", "high", "low", "close"]
-BUCKETS = [(100, "Micro (under $100)"), (500, "Small ($100–500)"), (2500, "Medium ($500–2.5k)"),
-           (10000, "Large ($2.5k–10k)"), (float("inf"), "Whale ($10k+)")]
+BUCKETS = [(10, "Micro (under $10)"), (50, "Small ($10–50)"), (250, "Medium ($50–250)"),
+           (1000, "Large ($250–1k)"), (float("inf"), "Very large ($1k+)")]
 
 WARNINGS: list[str] = []
 SESSION = requests.Session()

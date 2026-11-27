@@ -175,13 +175,9 @@
 
   <section class="card" style="margin-top:16px">
     <h2>EQTY price (USD)</h2>
-    <p class="note">Daily volume-weighted average price in the main ETH/EQTY pool (since 10 Oct 2025). Drag the slider handles or pick a period to zoom in.</p>
+    <p class="note">Daily volume-weighted average price in the main ETH/EQTY pool (since 10 Oct 2025). Drag the slider or pick a period to zoom in.</p>
     <div id="price-line"></div>
-    <div class="range" id="pr-range"><div class="track"></div><div class="sel" id="pr-sel"></div>
-      <input type="range" id="pr-from" min="0" max="1" value="0" step="1" aria-label="Start date">
-      <input type="range" id="pr-to" min="0" max="1" value="1" step="1" aria-label="End date"></div>
-    <div class="range-row"><span id="pr-label"></span>
-      <div class="tabs" id="pr-tabs"><button data-d="30">30d</button><button data-d="90">90d</button><button data-d="180">6m</button><button data-d="0" class="on">All</button></div></div>
+    <div id="pr-ctl"></div>
   </section>
 
   <div class="grid2">
@@ -193,9 +189,10 @@
     </section>
     <section class="card">
       <h2>Daily buys vs. sells – last 90 days</h2>
-      <p class="note">USD volume per day, Uniswap (solid) stacked with Gate.io (light). <span id="md-gate-note"></span> Hover for details.</p>
+      <p class="note">USD volume per day, Uniswap (solid) stacked with Gate.io (light). <span id="md-gate-note"></span> Drag the slider to zoom in; hover for details.</p>
       <div class="div-bars" id="m-daily"></div>
       <div class="axis"><span id="md-start"></span><span id="md-end"></span></div>
+      <div id="md-ctl"></div>
       <div class="legend" style="flex-wrap:wrap"><span><i style="background:var(--up)"></i>buys Uniswap <b id="md-buy"></b></span><span><i class="g" style="background:var(--up)"></i>buys Gate.io <b id="md-gbuy"></b></span><span><i style="background:var(--down)"></i>sells Uniswap <b id="md-sell"></b></span><span><i class="g" style="background:var(--down)"></i>sells Gate.io <b id="md-gsell"></b></span></div>
     </section>
   </div>
@@ -204,7 +201,7 @@
     <section class="card">
       <h2>Trades by size</h2>
       <p class="note">Number of trades per USD size bucket.</p>
-      <div class="tabs" id="bk-tabs"><button data-k="buckets_30d" class="on">30 days</button><button data-k="buckets_all">All time</button></div>
+      <div class="tabs" id="bk-tabs"><button data-k="buckets_30d" class="on">Uniswap 30d</button><button data-k="buckets_all">Uniswap all time</button><button data-k="gate_30d">Gate.io 30d</button></div>
       <div class="donut-wrap"><div id="bk-donut"></div><div class="donut-legend" id="bk-legend"></div></div>
     </section>
     <section class="card">
@@ -222,9 +219,10 @@
   <div class="grid2" style="margin-top:16px" id="gate-block">
     <section class="card">
       <h2>Monthly volume: Gate.io vs. Uniswap</h2>
-      <p class="note">Total USD volume per month since the Gate.io listing (Nov 2025), Gate.io stacked on Uniswap. Hover for amounts and Gate's share.</p>
+      <p class="note">Total USD volume per month since the Gate.io listing (Nov 2025), Gate.io stacked on Uniswap. Drag the slider to zoom in; hover for amounts and Gate's share.</p>
       <div class="bars" id="g-monthly" style="height:150px"></div>
       <div class="axis"><span id="gm-start"></span><span id="gm-end"></span></div>
+      <div id="gm-ctl"></div>
       <div class="legend"><span><i style="background:var(--vol)"></i>Gate.io <b id="gm-gate"></b></span><span><i style="background:var(--accent)"></i>Uniswap <b id="gm-uni"></b></span><span id="gm-share"></span></div>
     </section>
     <section class="card">
@@ -561,6 +559,33 @@ function bars(el, rows, value, title) {
   el.innerHTML = rows.map(r => `<div class="bar" style="height:${(value(r) / max) * 100}%" title="${title(r)}"></div>`).join("");
 }
 
+// Range slider with two handles + preset buttons. presets: [[label, lastN]] (0 = all).
+// draw(a, b) gets inclusive indexes and returns the label HTML shown left of the buttons.
+function rangeCtl(host, n, presets, draw, minGap = 2) {
+  if (!host || n < 2) { if (n) draw(0, n - 1); return; }
+  const last = n - 1;
+  host.innerHTML = `<div class="range"><div class="track"></div><div class="sel"></div>
+      <input type="range" min="0" max="${last}" value="0" step="1" aria-label="Start">
+      <input type="range" min="0" max="${last}" value="${last}" step="1" aria-label="End"></div>
+    <div class="range-row"><span class="rl"></span><div class="tabs">${presets.map(([l, d]) =>
+      `<button data-d="${d}"${d ? "" : ' class="on"'}>${l}</button>`).join("")}</div></div>`;
+  const [f, t] = host.querySelectorAll("input"), sel = host.querySelector(".sel"), lab = host.querySelector(".rl");
+  const tabs = host.querySelectorAll("button");
+  const gap = Math.min(minGap, last);
+  const go = () => {
+    let a = +f.value, b = +t.value;
+    if (b - a < gap) { if (document.activeElement === f) a = Math.max(0, b - gap); else b = Math.min(last, a + gap); f.value = a; t.value = b; }
+    sel.style.left = (a / last * 100) + "%"; sel.style.width = ((b - a) / last * 100) + "%";
+    lab.innerHTML = draw(a, b) || "";
+  };
+  f.oninput = t.oninput = () => { tabs.forEach(x => x.classList.remove("on")); go(); };
+  tabs.forEach(btn => btn.onclick = () => {
+    tabs.forEach(x => x.classList.toggle("on", x === btn));
+    const d = +btn.dataset.d; t.value = last; f.value = d ? Math.max(0, last - d + 1) : 0; go();
+  });
+  go();
+}
+
 (async () => {
   const [supply, holders, daily, growth, life, monthly, market, whales, dist, gate] = await Promise.all(
     ["supply", "top_holders", "daily_transfers", "holder_growth", "holder_metrics", "monthly_volume", "market", "whales", "holder_distribution", "gate"].map(get));
@@ -603,33 +628,22 @@ function bars(el, rows, value, title) {
     $("m-traders").textContent = `${fmt(k.traders_30d)} unique traders`;
 
     const pts = market.price_history.map(r => ({ x: r.date, y: r.price }));
-    const pf = $("pr-from"), pt = $("pr-to"), last = Math.max(pts.length - 1, 1);
-    pf.max = pt.max = last; pf.value = 0; pt.value = last;
-    const drawPrice = () => {
-      let a = +pf.value, b = +pt.value;
-      if (b - a < 2) { if (document.activeElement === pf) a = Math.max(0, b - 2); else b = Math.min(last, a + 2); pf.value = a; pt.value = b; }
+    rangeCtl($("pr-ctl"), pts.length, [["30d", 30], ["90d", 90], ["6m", 180], ["All", 0]], (a, b) => {
       const sl = pts.slice(a, b + 1);
       lineChart($("price-line"), sl, v => "$" + Number(v).toPrecision(2));
-      $("pr-sel").style.left = (a / last * 100) + "%"; $("pr-sel").style.width = ((b - a) / last * 100) + "%";
       const ch = sl.length > 1 ? (sl[sl.length - 1].y / sl[0].y - 1) * 100 : 0;
-      $("pr-label").innerHTML = sl.length ? `${sl[0].x} → ${sl[sl.length - 1].x} · ${sl.length} days · <span class="${ch >= 0 ? "pos" : "neg"}">${ch > 0 ? "+" : ""}${fmt(ch, 1)}%</span>` : "";
-    };
-    const tabs = document.querySelectorAll("#pr-tabs button");
-    pf.oninput = pt.oninput = () => { tabs.forEach(x => x.classList.remove("on")); drawPrice(); };
-    tabs.forEach(btn => btn.onclick = () => {
-      tabs.forEach(x => x.classList.toggle("on", x === btn));
-      const d = +btn.dataset.d;
-      pt.value = last; pf.value = d ? Math.max(0, last - d + 1) : 0; drawPrice();
+      return `${sl[0].x} → ${sl[sl.length - 1].x} · ${sl.length} days · <span class="${ch >= 0 ? "pos" : "neg"}">${ch > 0 ? "+" : ""}${fmt(ch, 1)}%</span>`;
     });
-    drawPrice();
     buySellChart($("m-monthly"), market.monthly);
 
     const gd = {};
     ((gate && gate.daily_90d) || []).forEach(r => gd[r.date] = r);
     const zero = { buy_usd: 0, sell_usd: 0, trades: 0, covered: false };
-    const dd = market.daily_90d.map(r => ({ ...r, g: gd[r.date] || zero }));
-    const mx = Math.max(...dd.map(r => Math.max(r.buy_usd + r.g.buy_usd, r.sell_usd + r.g.sell_usd)), 1);
+    const dAll = market.daily_90d.map(r => ({ ...r, g: gd[r.date] || zero }));
     const pct = (part, whole) => whole ? (part / whole) * 100 : 0;
+    rangeCtl($("md-ctl"), dAll.length, [["7d", 7], ["30d", 30], ["All", 0]], (a, z) => {
+    const dd = dAll.slice(a, z + 1);
+    const mx = Math.max(...dd.map(r => Math.max(r.buy_usd + r.g.buy_usd, r.sell_usd + r.g.sell_usd)), 1);
     $("m-daily").innerHTML = dd.map(r => {
       const b = r.buy_usd + r.g.buy_usd, s = r.sell_usd + r.g.sell_usd;
       const gTip = r.g.covered ? ` · Gate.io: buy $${fmt(r.g.buy_usd)} / sell $${fmt(r.g.sell_usd)} (${r.g.trades} trades)` : " · Gate.io: no buy/sell data yet";
@@ -642,14 +656,17 @@ function bars(el, rows, value, title) {
     const sum = f => "$" + compact(dd.reduce((t, r) => t + f(r), 0));
     $("md-buy").textContent = sum(r => r.buy_usd); $("md-sell").textContent = sum(r => r.sell_usd);
     $("md-gbuy").textContent = sum(r => r.g.buy_usd); $("md-gsell").textContent = sum(r => r.g.sell_usd);
-    if (gate && gate.since && gate.since > dd[0].date) {
+    const bT = dd.reduce((t, r) => t + r.buy_usd + r.g.buy_usd, 0), sT = dd.reduce((t, r) => t + r.sell_usd + r.g.sell_usd, 0);
+    return `${dd[0].date} → ${dd[dd.length - 1].date} · ${dd.length} days · total buy <span class="pos">$${compact(bT)}</span> / sell <span class="neg">$${compact(sT)}</span>`;
+    }, 6);
+    if (gate && gate.since && gate.since > dAll[0].date) {
       const full = new Date(Date.parse(gate.since) + 89 * 864e5).toISOString().slice(0, 10);
       $("md-gate-note").textContent = `Gate.io only shares the last ~30 days, so its buy/sell data is being collected from ${gate.since} onwards and covers the full 90 days from ${full}.`;
     }
 
     const colors = ["var(--c4)", "var(--c3)", "var(--c2)", "var(--c1)", "var(--vol)"];
     const showBuckets = key => donut($("bk-donut"), $("bk-legend"),
-      market[key].map((b, i) => ({ label: b.bucket, value: b.trades, extra: b.usd, color: colors[i] })), "trades", x => "$" + compact(x));
+      (key === "gate_30d" ? (gate && gate.buckets_30d) || [] : market[key]).map((b, i) => ({ label: b.bucket, value: b.trades, extra: b.usd, color: colors[i] })), "trades", x => "$" + compact(x));
     showBuckets("buckets_30d");
     document.querySelectorAll("#bk-tabs button").forEach(b => b.onclick = () => {
       document.querySelectorAll("#bk-tabs button").forEach(x => x.classList.toggle("on", x === b));
@@ -682,18 +699,20 @@ function bars(el, rows, value, title) {
     const um = {};
     ((market && market.monthly) || []).forEach(r => um[r.month] = r.buy_usd + r.sell_usd);
     const gm = gate.monthly || [];
-    if (gm.length) {
-      const gmMax = Math.max(...gm.map(r => r.volume_usdt + (um[r.month] || 0)), 1);
-      $("g-monthly").innerHTML = gm.map(r => {
+    if (gm.length) rangeCtl($("gm-ctl"), gm.length, [["6m", 6], ["12m", 12], ["All", 0]], (a, z) => {
+      const gs = gm.slice(a, z + 1);
+      const gmMax = Math.max(...gs.map(r => r.volume_usdt + (um[r.month] || 0)), 1);
+      $("g-monthly").innerHTML = gs.map(r => {
         const u = um[r.month] || 0, t = r.volume_usdt + u;
         const tip = `${r.month}: Gate.io $${fmt(r.volume_usdt)} · Uniswap $${fmt(u)} · Gate share ${fmt(t ? r.volume_usdt / t * 100 : 0)}%`;
         return `<div class="col" style="height:${t / gmMax * 100}%" title="${tip}"><span style="height:${t ? r.volume_usdt / t * 100 : 0}%;background:var(--vol)"></span><span style="height:${t ? u / t * 100 : 0}%;background:var(--accent)"></span></div>`;
       }).join("");
-      $("gm-start").textContent = gm[0].month; $("gm-end").textContent = gm[gm.length - 1].month;
-      const gT = gm.reduce((a, r) => a + r.volume_usdt, 0), uT = gm.reduce((a, r) => a + (um[r.month] || 0), 0);
+      $("gm-start").textContent = gs[0].month; $("gm-end").textContent = gs[gs.length - 1].month;
+      const gT = gs.reduce((a, r) => a + r.volume_usdt, 0), uT = gs.reduce((a, r) => a + (um[r.month] || 0), 0);
       $("gm-gate").textContent = "$" + compact(gT); $("gm-uni").textContent = "$" + compact(uT);
       $("gm-share").textContent = `Gate.io share ${fmt(gT + uT ? gT / (gT + uT) * 100 : 0)}%`;
-    }
+      return `${gs[0].month} → ${gs[gs.length - 1].month} · ${gs.length} months`;
+    }, 1);
     $("g-trades-tb").innerHTML = (gate.recent_trades || []).map(t => `
       <tr>
         <td>${esc(t.time.slice(0, 16).replace("T", " "))}</td>

@@ -31,8 +31,8 @@ ETH_LIKE = {"0x0000000000000000000000000000000000000000", "0x4200000000000000000
 USDC = "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
 
 SWAP_FIELDS = ["time", "tx_hash", "log_index", "taker", "pool_id", "eqty_amount", "amount0_raw"]
-BUCKETS = [(100, "Micro (under $100)"), (500, "Small ($100–500)"), (2500, "Medium ($500–2.5k)"),
-           (10000, "Large ($2.5k–10k)"), (float("inf"), "Whale ($10k+)")]
+BUCKETS = [(10, "Micro (under $10)"), (50, "Small ($10–50)"), (250, "Medium ($50–250)"),
+           (1000, "Large ($250–1k)"), (float("inf"), "Very large ($1k+)")]
 
 
 # ---------------------------------------------------------------- helpers
