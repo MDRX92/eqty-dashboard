@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-28T09:12:09+00:00",
+ "updated_at": "2026-11-28T14:12:04+00:00",
  "rows": [
   {
    "month": "2025-11-01",
@@ -63,8 +63,8 @@
   },
   {
    "month": "2026-11-01",
-   "monthly_transfers": 779,
-   "monthly_volume_tokens": 36170475.36
+   "monthly_transfers": 787,
+   "monthly_volume_tokens": 36294087.63
   }
  ]
 }
