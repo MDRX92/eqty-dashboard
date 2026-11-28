@@ -550,7 +550,7 @@ function comboChart(el, rows) {          // bars = balance, line = cumulative %
     return `<rect class="${catOf(r.address, r.label) !== "private" ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${esc(labelText(r.address, r.label))}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
   }).join("");
   const d = rows.map((r, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${yp(r.cumulative_pct).toFixed(1)}`).join("");
-  const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yp(r.cumulative_pct).toFixed(1)}" r="2.5"><title>Top ${r.rank}: ${fmt(r.cumulative_pct, 1)}% of supply</title></circle>`).join("");
+  const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yp(r.cumulative_pct).toFixed(1)}" r="2.5"><title>${r.dotLabel || "Top " + r.rank}: ${fmt(r.cumulative_pct, 1)}% of supply</title></circle>`).join("");
   const xl = [1, 10, 20, 30, 40, 50].filter(k => k <= n).map(k =>
     `<text x="${cx(k - 1)}" y="${H - 6}" text-anchor="middle">#${k}</text>`).join("");
   el.innerHTML = `<svg class="combo" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${grid}${barsSvg}<path class="cum" d="${d}" vector-effect="non-scaling-stroke"/>${dots}${xl}</svg>`;
@@ -947,7 +947,7 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
     document.querySelectorAll("#t50-tabs button").forEach(x => x.classList.toggle("on", x === b));
     let rows = h, cum = 0;
     if (b.dataset.k === "private")
-      rows = h.filter(r => catOf(r.address, r.label) === "private").map(r => ({ ...r, cumulative_pct: (cum += Number(r.pct_of_supply) || 0) }));
+      rows = h.filter(r => catOf(r.address, r.label) === "private").map((r, i) => ({ ...r, cumulative_pct: (cum += Number(r.pct_of_supply) || 0), dotLabel: `${i + 1} largest private / unidentified wallets` }));
     comboChart($("top50-chart"), rows);
   });
   $("holders").innerHTML = h.map(r => `
