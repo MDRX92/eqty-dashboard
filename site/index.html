@@ -102,6 +102,8 @@
   svg.combo { width: 100%; height: 240px; display: block; overflow: visible; margin-bottom: 14px; }
   svg.combo rect { fill: var(--accent); opacity: .85; }
   svg.combo rect.lab { fill: var(--muted); opacity: .6; }
+  .stackbar { display: flex; height: 14px; border-radius: 4px; overflow: hidden; background: var(--line); margin: 6px 0 8px; }
+  .stackbar span { display: block; height: 100%; }
   svg.combo rect:hover { opacity: 1; }
   svg.combo path.cum { fill: none; stroke: var(--down); stroke-width: 2; }
   svg.combo circle { fill: var(--down); }
@@ -151,14 +153,14 @@
       <li><b>Whale tracker</b> – large wallet-to-wallet transfers and the most active large senders.</li>
     </ul>
     <p><b>Wallet labels.</b> Some wallets carry a label so you can see who is who. Labels without a mark are verified (detected from the contract itself, or a well-known address). Labels marked <b>≈</b> are an estimate based on on-chain behaviour – useful context, but not yet confirmed. Community input is very welcome: suggest or correct a label via GitHub.</p>
-    <p><b>Method notes.</b> A holder is a wallet (address) with more than 0.0001 EQTY &ndash; not a person. One exchange wallet can hold tokens for many customers, and one person can use several wallets, so holder counts, "new" and "exited" holders and activity groups describe wallets, not people. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. "30 days" always means the 30 most recent calendar days in UTC, including today so far (90 days likewise). Suggestions and address labels are welcome via GitHub.</p>
+    <p><b>Method notes.</b> A holder is a wallet (address) with more than 0.0001 EQTY &ndash; not a person. One exchange wallet can hold tokens for many customers, and one person can use several wallets, so holder counts, "new" and "exited" holders and activity groups describe wallets, not people. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled; the top-50 share is also shown without exchanges, the DAO and contracts. "30 days" always means the 30 most recent calendar days in UTC, including today so far (90 days likewise). Suggestions and address labels are welcome via GitHub.</p>
     <p><b>Gate.io.</b> Most EQTY trading happens on Gate.io (EQTY/USDT). Those trades come from Gate's public API and are anonymous: no wallets or labels, and the exchange's market-making bots are included. Buy or sell is the side of the person who took the order, the same as for Uniswap swaps. Gate only shares individual trades for about 30 days, so the buy/sell split starts from the day we began storing them; total daily volume goes back to the listing (Nov 2025). Other exchanges (e.g. CoinSpot) are not included.</p>
   </details>
 
   <div class="kpis">
     <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div></div>
     <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div><div class="delta" id="k-holders-d"></div></div>
-    <div class="card kpi"><div class="label">Top 50 share of supply</div><div class="value" id="k-top50">–</div><div class="delta">incl. pool &amp; contracts (see labels)</div></div>
+    <div class="card kpi"><div class="label">Top 50 share of supply</div><div class="value" id="k-top50">–</div><div class="delta" id="k-top50-d"></div></div>
     <div class="card kpi"><div class="label">Transfers (last 30 days)</div><div class="value" id="k-tx30">–</div><div class="delta" id="k-vol30"></div></div>
   </div>
 
@@ -316,10 +318,12 @@
 
   <section class="card">
     <h2>Top 50 holders</h2>
-    <p class="note">Scroll the table to see all 50.</p>
+    <p class="note">Who holds the top-50 share, by type of wallet. Exchange wallets hold tokens on behalf of many customers. The Uniswap v4 PoolManager holds the tokens of every v4 pool (mostly the DAO's own liquidity, see <a href="#lp">DAO liquidity</a>) and does not own them. <b>Private / unidentified</b> means an address we have not identified &ndash; not a verified individual; it includes wallets with an estimated (≈) label, such as automated traders. The categories follow the wallet labels, so a new label updates these figures automatically. Scroll the table to see all 50.</p>
+    <div id="top50-mix"></div>
 <p class="label-key">Wallet labels: <span class="tag">Verified</span> confirmed on-chain or by the community · <span class="tag est">≈ Estimated</span> our best guess from on-chain behaviour, not yet confirmed. Hover a label for details or open the <a class="guide-link" href="#label-guide" onclick="openGuide()">label guide</a> – and if you know who is behind a wallet, you are welcome to <a href="https://github.com/mdrx92/eqty-dashboard/blob/main/labels.csv">suggest a label</a>.</p>
+    <div class="tabs" id="t50-tabs"><button data-k="all" class="on">All top-50 wallets</button><button data-k="private">Private / unidentified only</button></div>
     <div id="top50-chart"></div>
-    <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>contract, exchange or service wallet</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
+    <div class="legend" style="margin:-6px 0 14px"><span><i style="background:var(--accent)"></i>balance (EQTY, left axis)</span><span><i style="background:var(--muted);opacity:.6"></i>exchange, DAO or contract</span><span><i style="background:var(--down)"></i>cumulative % of supply (right axis)</span></div>
     <div class="tablebox">
       <table>
         <thead><tr><th>#</th><th>Address</th><th class="num">Balance (EQTY)</th><th class="num">% of supply</th><th class="num">Cumulative %</th></tr></thead>
@@ -366,7 +370,7 @@
     </div>
   </section>
 
-  <h3>DAO liquidity (Uniswap)</h3>
+  <h3 id="lp">DAO liquidity (Uniswap)</h3>
   <p class="sectext">The pool's liquidity is a single full-range position owned by the EQTY DAO (seeded at launch, never withdrawn). It exists so EQTY can be traded on-chain &mdash; it is liquidity, not a yield investment.</p>
   <div class="kpis" id="lp-kpis"></div>
   <p class="sectext" id="lp-headline" style="margin-top:4px"></p>
@@ -472,6 +476,18 @@ function renderGuide() {
 function openGuide() { const g = $("label-guide"); if (g) g.open = true; }
 const labelText = (addr, fallback) => { const l = labelOf(addr, fallback); return l ? ` (${l.confidence === "estimated" ? "≈ " : ""}${l.label})` : ""; };
 const CONTRACT_TYPES = new Set(["dex", "bridge", "system", "contract", "multisig", "service", "exchange"]);
+// Wallet categories for supply concentration (from the wallet labels). Estimated labels count as private.
+const CATS = [["exchange", "Exchanges", "var(--vol)"], ["dao", "EQTY DAO", "var(--up)"], ["dex", "DEX / pool contracts", "var(--c3)"],
+              ["contract", "Other contracts", "var(--c4)"], ["private", "Private / unidentified", "var(--accent)"]];
+const catOf = (addr, fallback) => {
+  const lb = labelOf(addr, fallback);
+  if (!lb || lb.confidence === "estimated") return "private";
+  if (lb.type === "exchange") return "exchange";
+  if (lb.type === "dao" || /^EQTY DAO\b/i.test(lb.label || "")) return "dao";
+  if (lb.type === "dex") return "dex";
+  if (["bridge", "system", "contract", "service"].includes(lb.type)) return "contract";
+  return "private";       // personal wallets, smart wallets, other multisigs
+};
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d });
 const compact = n => Number(n).toLocaleString("en-US", { notation: "compact", maximumFractionDigits: 1 });
@@ -531,7 +547,7 @@ function comboChart(el, rows) {          // bars = balance, line = cumulative %
   const barsSvg = rows.map((r, i) => {
     const y = yb(r.balance);
     const lb = labelOf(r.address, r.label);
-    return `<rect class="${lb && CONTRACT_TYPES.has(lb.type) ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${esc(labelText(r.address, r.label))}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
+    return `<rect class="${catOf(r.address, r.label) !== "private" ? "lab" : ""}" x="${(P.l + cw * i + cw * 0.15).toFixed(1)}" y="${y.toFixed(1)}" width="${(cw * 0.7).toFixed(1)}" height="${(H - P.b - y).toFixed(1)}"><title>#${r.rank} ${short(r.address)}${esc(labelText(r.address, r.label))}: ${fmt(r.balance)} EQTY · ${fmt(r.pct_of_supply, 2)}% · cumulative ${fmt(r.cumulative_pct, 1)}%</title></rect>`;
   }).join("");
   const d = rows.map((r, i) => `${i ? "L" : "M"}${cx(i).toFixed(1)},${yp(r.cumulative_pct).toFixed(1)}`).join("");
   const dots = rows.map((r, i) => `<circle cx="${cx(i).toFixed(1)}" cy="${yp(r.cumulative_pct).toFixed(1)}" r="2.5"><title>Top ${r.rank}: ${fmt(r.cumulative_pct, 1)}% of supply</title></circle>`).join("");
@@ -661,6 +677,13 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
   if (h.length) {
     $("k-holders").textContent = fmt(h[0].total_holders);
     $("k-top50").textContent = fmt(h[h.length - 1].cumulative_pct, 1) + "%";
+    const t50 = Object.fromEntries(CATS.map(([k]) => [k, 0]));
+    h.forEach(r => { t50[catOf(r.address, r.label)] += Number(r.pct_of_supply) || 0; });
+    $("k-top50-d").innerHTML = `excl. exchanges, DAO &amp; contracts: <b>${fmt(t50.private, 1)}%</b>`;
+    $("top50-mix").innerHTML = `<div class="stackbar" role="img" aria-label="Top-50 share of supply by wallet type">${CATS.map(([k, n, c]) =>
+        `<span style="width:${t50[k]}%;background:${c}" title="${n}: ${fmt(t50[k], 1)}% of supply"></span>`).join("")}</div>
+      <div class="legend" style="margin:0 0 12px">${CATS.filter(([k]) => t50[k] > 0.05).map(([k, n, c]) =>
+        `<span><i style="background:${c}"></i>${n} <b>${fmt(t50[k], 1)}%</b></span>`).join("")}<span><i style="background:var(--line)"></i>rest of supply <b>${fmt(Math.max(0, 100 - h[h.length - 1].cumulative_pct), 1)}%</b></span></div>`;
   }
 
   // Market
@@ -920,6 +943,13 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
 
   // Top 50
   comboChart($("top50-chart"), h);
+  document.querySelectorAll("#t50-tabs button").forEach(b => b.onclick = () => {
+    document.querySelectorAll("#t50-tabs button").forEach(x => x.classList.toggle("on", x === b));
+    let rows = h, cum = 0;
+    if (b.dataset.k === "private")
+      rows = h.filter(r => catOf(r.address, r.label) === "private").map(r => ({ ...r, cumulative_pct: (cum += Number(r.pct_of_supply) || 0) }));
+    comboChart($("top50-chart"), rows);
+  });
   $("holders").innerHTML = h.map(r => `
     <tr>
       <td>${r.rank}</td>
