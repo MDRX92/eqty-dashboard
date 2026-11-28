@@ -1,19 +1,19 @@
 {
- "updated_at": "2026-11-27T17:30:13+00:00",
+ "updated_at": "2026-11-28T08:08:07+00:00",
  "kpis": {
-  "large_30d": 6,
-  "large_30d_eqty": 31463079.26,
+  "large_30d": 5,
+  "large_30d_eqty": 9995248.0,
   "large_all": 121,
   "largest_30d": {
-   "time": "2026-10-29T12:08:03.000Z",
-   "tx_hash": "0xdf8b8ecab1fa8e39fbcc4c80cfde9836d1e5e3cb8e622526a03bba59b65edad3",
-   "sender": "0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f",
-   "sender_label": "Distribution wallet",
-   "recipient": "0x32eef6c0ab7267e474051351e8c82066d93f4948",
-   "recipient_label": "",
-   "eqty": 21467831.26,
-   "pct_supply": 7.376,
-   "usd": 35989.19
+   "time": "2026-10-30T17:06:57.000Z",
+   "tx_hash": "0x357ffca0f8e0f77383cb8bc0bb5bcb6d620a41332e48df9c4336667f29470137",
+   "sender": "0x34a3ec7219659201a1c11e83eb520ea5d6f6ed7f",
+   "sender_label": "",
+   "recipient": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+   "recipient_label": "Gate.io (exchange)",
+   "eqty": 2850312.0,
+   "pct_supply": 0.979,
+   "usd": 4560.67
   },
   "threshold_eqty": 727612.0
  },
@@ -1431,5 +1431,10 @@
   "large_pct": 0.25,
   "pivot_pct": 0.5,
   "usd_min": 10000
+ },
+ "coverage": {
+  "candidates": 809,
+  "limit": 5000,
+  "truncated": false
  }
 }
