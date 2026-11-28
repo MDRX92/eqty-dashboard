@@ -156,12 +156,13 @@ def live_reserves():
 
 
 def compute(events):
-    pos_L, tlo, thi = 0.0, None, None
+    pos_L, tlo, thi, first_add = 0.0, None, None, None
     for r in events:
         if r["lp"] == POSITION:
             liq = float(r["liq"])
             pos_L += liq
             if liq > 0:
+                first_add = r["ts"][:10] if first_add is None else min(first_add, r["ts"][:10])
                 tl, tu = float(r["tick_lower"]), float(r["tick_upper"])
                 tlo = tl if tlo is None else min(tlo, tl)
                 thi = tu if thi is None else max(thi, tu)
@@ -186,7 +187,8 @@ def compute(events):
     trades, vwap = market.enrich(swaps, eth, market.load_pools())
     vol_day = defaultdict(float)
     for t in trades:
-        vol_day[t["day"]] += t["usd"]
+        if t["main"]:          # fees accrue only in the DAO's own pool (ETH/EQTY 0.3%)
+            vol_day[t["day"]] += t["usd"]
 
     vwap_keys, eth_keys = sorted(vwap), sorted(eth)
 
@@ -196,7 +198,10 @@ def compute(events):
         earlier = [k for k in keys if k <= d]
         return mapping[earlier[-1]] if earlier else (mapping[keys[0]] if keys else None)
 
-    launch = min(vwap) if vwap else str(date.today())
+    # start at the DAO's first deposit, never earlier (no fees before the position existed)
+    launch = first_add or (min(vwap) if vwap else str(date.today()))
+    if vwap and launch < min(vwap):
+        launch = min(vwap)
     e0, h0 = ff(vwap, vwap_keys, launch), ff(eth, eth_keys, launch)
     P0 = h0 / e0
     dep_eth, dep_eqty_math = amounts(pos_L, P0, Pa, Pb)

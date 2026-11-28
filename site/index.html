@@ -144,14 +144,14 @@
     <summary>About this dashboard</summary>
     <p>A free, open-source view of EQTY's on-chain activity on Base, built for the EQTY DAO community. Data is pulled directly from the Base blockchain via the Coinbase CDP SQL API and refreshed once a day (around 05:20 UTC).</p>
     <ul>
-      <li><b>Holders</b> – how many wallets hold EQTY, how that changed over time, who joined or left, and how active holders are.</li>
+      <li><b>Holders</b> – how many wallets hold EQTY, how that changed over time, which wallets started or stopped holding, and how active they are.</li>
       <li><b>Activity</b> – daily and monthly transfer counts and the amount of EQTY moved.</li>
       <li><b>Distribution</b> – holders by balance size and how concentrated the supply is across the 50 largest wallets.</li>
       <li><b>Market</b> – price (USD/EUR), buy/sell volume on Uniswap and Gate.io, trade sizes, the latest trades and a trader leaderboard.</li>
       <li><b>Whale tracker</b> – large wallet-to-wallet transfers and the most active large senders.</li>
     </ul>
     <p><b>Wallet labels.</b> Some wallets carry a label so you can see who is who. Labels without a mark are verified (detected from the contract itself, or a well-known address). Labels marked <b>≈</b> are an estimate based on on-chain behaviour – useful context, but not yet confirmed. Community input is very welcome: suggest or correct a label via GitHub.</p>
-    <p><b>Method notes.</b> A holder is a wallet with more than 0.0001 EQTY. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. Suggestions and address labels are welcome via GitHub.</p>
+    <p><b>Method notes.</b> A holder is a wallet (address) with more than 0.0001 EQTY &ndash; not a person. One exchange wallet can hold tokens for many customers, and one person can use several wallets, so holder counts, "new" and "exited" holders and activity groups describe wallets, not people. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled. "30 days" always means the 30 most recent calendar days in UTC, including today so far (90 days likewise). Suggestions and address labels are welcome via GitHub.</p>
     <p><b>Gate.io.</b> Most EQTY trading happens on Gate.io (EQTY/USDT). Those trades come from Gate's public API and are anonymous: no wallets or labels, and the exchange's market-making bots are included. Buy or sell is the side of the person who took the order, the same as for Uniswap swaps. Gate only shares individual trades for about 30 days, so the buy/sell split starts from the day we began storing them; total daily volume goes back to the listing (Nov 2025). Other exchanges (e.g. CoinSpot) are not included.</p>
   </details>
 
@@ -252,7 +252,7 @@
   </section>
 
   <h3>Holders</h3>
-  <p class="sectext">Community growth and retention since launch (30 Aug 2025). A steady upward line means organic adoption; spikes in exits can signal sell-offs or wallet consolidation.</p>
+  <p class="sectext">Growth and retention of holder wallets since launch (30 Aug 2025). Each holder is a wallet, not a person. A steady upward line suggests growing adoption; spikes in exits can signal sell-offs or wallet consolidation.</p>
   <section class="card">
     <h2>Holders over time</h2>
     <p class="note">Wallets holding more than 0.0001 EQTY at the end of each day (historically reconstructed from all transfers).</p>
@@ -260,16 +260,16 @@
   </section>
 
   <section class="card">
-      <h2>New vs. exited holders – last 90 days</h2>
-      <p class="note">New = balance went from zero to positive; exited = balance went to zero.</p>
+      <h2>New vs. exited holder wallets – last 90 days</h2>
+      <p class="note">New = a wallet's balance went from zero to positive; exited = a wallet's balance went to zero. A wallet can enter and exit more than once.</p>
       <div class="div-bars" id="newexit"></div>
       <div class="axis"><span id="ne-start"></span><span id="ne-end"></span></div>
       <div class="legend"><span><i style="background:var(--up)"></i>new <b id="ne-new"></b></span><span><i style="background:var(--down)"></i>exited <b id="ne-exit"></b></span></div>
   </section>
 
   <section class="card">
-      <h2>Holder lifecycle</h2>
-      <p class="note">By year of first transfer and time since last activity.</p>
+      <h2>Holder wallet lifecycle</h2>
+      <p class="note">Wallets by year of their first transfer and time since their last transfer.</p>
       <div class="life-grid">
         <div class="donut-wrap"><div id="life-donut"></div><div class="donut-legend" id="life-legend"></div></div>
         <div class="scroll">
@@ -329,7 +329,7 @@
   </section>
 
   <h3>Whale tracker</h3>
-  <p class="sectext">Large wallet-to-wallet transfers (swaps, liquidity moves and mints excluded). A transfer counts as large when it is at least 0.25% of total supply or worth $10k+ at that day's price. Large inflows to exchanges can precede selling; transfers between known wallets are often internal moves.</p>
+  <p class="sectext">Large wallet-to-wallet transfers (swaps, liquidity moves, mints and burns excluded). A transfer counts as large when it is at least 0.25% of the current total supply or worth $10k+ at that day's price. Supply has been stable since the last mint in Oct 2025, so earlier percentages are slightly understated. Large inflows to exchanges can precede selling; transfers between known wallets are often internal moves.</p>
   <div class="kpis">
     <div class="card kpi"><div class="label">Large transfers (30 days)</div><div class="value" id="w-30">–</div><div class="delta" id="w-30e"></div></div>
     <div class="card kpi"><div class="label">Largest transfer (30 days)</div><div class="value" id="w-max">–</div><div class="delta" id="w-maxd"></div></div>
@@ -380,8 +380,8 @@
       <div class="legend"><span><i style="background:var(--up)"></i>position + fees</span><span><i style="background:var(--accent)"></i>position value</span><span><i style="background:var(--muted)"></i>just holding (HODL)</span></div>
     </section>
     <section class="card">
-      <h2>Estimated fees earned (cumulative)</h2>
-      <p class="note">Pool swap volume &times; 0.3% &times; the position's liquidity share, while in range. An estimate, not a direct on-chain fee read; Uniswap only.</p>
+      <h2>Estimated fees (cumulative)</h2>
+      <p class="note">Main-pool swap volume &times; 0.3% &times; the position's liquidity share, while in range, since the deposit. A model estimate, not collected fees read on-chain; Uniswap only.</p>
       <div id="lp-fees"></div>
       <div id="lp-fees-ctl"></div>
     </section>
@@ -391,8 +391,8 @@
     <summary>How to read this</summary>
     <ul style="margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:14px">
       <li id="lp-cav-mix" style="margin:4px 0"></li>
-      <li style="margin:4px 0">Absolute value fell because EQTY (and ETH) are down since launch; simply holding the tokens would have fallen about the same.</li>
-      <li style="margin:4px 0">Fees vs. impermanent loss: estimated fees were larger than the impermanent loss, so position + fees sits above the HODL line. Fees are an estimate (Uniswap swaps only, not Gate.io).</li>
+      <li id="lp-cav-abs" style="margin:4px 0"></li>
+      <li id="lp-cav-fees" style="margin:4px 0"></li>
       <li style="margin:4px 0">Ownership confirmed by the team as the DAO's own liquidity, seeded at launch; separate from the <a href="https://basescan.org/address/0x2Bc456799F3Cf071B10CE7216269471e0A40381a">treasury Safe</a>.</li>
       <li id="lp-cav-src" style="margin:4px 0"></li>
     </ul>
@@ -475,6 +475,11 @@ const CONTRACT_TYPES = new Set(["dex", "bridge", "system", "contract", "multisig
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmt = (n, d = 0) => Number(n).toLocaleString("en-US", { maximumFractionDigits: d });
 const compact = n => Number(n).toLocaleString("en-US", { notation: "compact", maximumFractionDigits: 1 });
+// LP vs. holding: "even" when the gap is under $50 or 1% of the HODL value.
+const lpOutcome = k => {
+  const net = Number(k.net_vs_hodl_usd) || 0, tol = Math.max(50, Math.abs(Number(k.hodl_value_usd) || 0) * 0.01);
+  return Math.abs(net) < tol ? "even" : (net > 0 ? "above" : "below");
+};
 const short = a => a.slice(0, 6) + "…" + a.slice(-4);
 const signed = n => (n > 0 ? "+" : "") + fmt(n);
 const get = async name => {
@@ -844,7 +849,8 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
   if (life) {
     const total = life.rows.reduce((t, r) => t + r.unique_holders, 0) || 1;
     const statuses = [["1.", "Active (0–30d)", "var(--c1)"], ["2.", "Steady (30–90d)", "var(--c2)"],
-                      ["3.", "Diamond hands (90d–1yr)", "var(--c3)"], ["4.", "Sleeping (>1yr)", "var(--c4)"]];
+                      ["3.", "Inactive (90d–1yr)", "var(--c3)"], ["4.", "Inactive (>1yr)", "var(--c4)"]];
+    const statusName = s => (statuses.find(([k]) => String(s).startsWith(k)) || [0, String(s).replace(/^\d\.\s*/, "")])[1];
     donut($("life-donut"), $("life-legend"), statuses.map(([k, label, color]) => {
       const rs = life.rows.filter(r => String(r.lifecycle_status).startsWith(k));
       return { label, color, value: rs.reduce((t, r) => t + r.unique_holders, 0), extra: rs.reduce((t, r) => t + r.total_token_balance, 0) };
@@ -852,7 +858,7 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
     $("lifecycle").innerHTML = life.rows.map(r => `
       <tr>
         <td>${r.cohort_year}</td>
-        <td>${String(r.lifecycle_status).replace(/^\d\.\s*/, "")}</td>
+        <td>${esc(statusName(r.lifecycle_status))}</td>
         <td class="num">${fmt(r.unique_holders)}</td>
         <td class="num">${compact(r.total_token_balance)}</td>
         <td><div class="meter"><span style="width:${(r.unique_holders / total) * 100}%"></span></div></td>
@@ -927,10 +933,27 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
     const k = lp.kpis, S = lp.series;
     $("lp-kpis").innerHTML = [
       ["Liquidity provided (now)", "$" + fmt(k.position_value_usd), "the DAO's live liquidity in the pool", ""],
-      ["Fees earned (est.)", "$" + fmt(k.fees_est_usd), "since launch, at 0.3% per swap", ""],
-      ["Fees minus impermanent loss", (k.net_vs_hodl_usd >= 0 ? "+$" : "-$") + fmt(Math.abs(k.net_vs_hodl_usd)), "providing liquidity vs. simply holding", (k.net_vs_hodl_usd >= 0 ? "pos" : "neg")],
+      ["Estimated fees", "$" + fmt(k.fees_est_usd), "since the deposit, model at 0.3% per swap", ""],
+      ["Est. fees minus impermanent loss", (k.net_vs_hodl_usd >= 0 ? "+$" : "-$") + fmt(Math.abs(k.net_vs_hodl_usd)), "providing liquidity vs. simply holding", ""],
     ].map(([l, v, d, cls]) => `<div class="card kpi"><div class="label">${l}</div><div class="value ${cls}">${v}</div><div class="delta">${d}</div></div>`).join("");
-    $("lp-headline").innerHTML = `The DAO supplies about <b>$${fmt(k.position_value_usd)}</b> of live liquidity so EQTY can be traded on-chain. Since launch it has earned an estimated <b>$${fmt(k.fees_est_usd)}</b> in fees &mdash; larger than the <b>$${fmt(Math.abs(k.impermanent_loss_usd))}</b> impermanent loss, so providing liquidity came out <b>$${fmt(k.net_vs_hodl_usd)}</b> above simply holding the tokens. Total value tracks the EQTY price, down from <b>$${fmt(k.deposit_usd)}</b> at launch.`;
+    // All comparisons are generated from the figures; "about even" when the gap is small.
+    const lpOut = lpOutcome(k);
+    const fees = `<b>$${fmt(k.fees_est_usd)}</b>`, il = `<b>$${fmt(Math.abs(k.impermanent_loss_usd))}</b>`, gap = `<b>$${fmt(Math.abs(k.net_vs_hodl_usd))}</b>`;
+    const vsHodl = {
+      above: `Estimated fees of ${fees} are larger than the ${il} impermanent loss, so providing liquidity is an estimated ${gap} above simply holding the tokens.`,
+      even: `Estimated fees of ${fees} roughly offset the ${il} impermanent loss, so providing liquidity is about even with simply holding the tokens.`,
+      below: `Estimated fees of ${fees} are smaller than the ${il} impermanent loss, so providing liquidity is an estimated ${gap} below simply holding the tokens.`,
+    }[lpOut];
+    const dir = k.position_value_usd < k.deposit_usd ? "down" : "up";
+    $("lp-headline").innerHTML = `The DAO supplies about <b>$${fmt(k.position_value_usd)}</b> of live liquidity so EQTY can be traded on-chain. ${vsHodl} Total value tracks the EQTY price: ${dir} from <b>$${fmt(k.deposit_usd)}</b> at launch.`;
+    $("lp-cav-abs").textContent = k.hodl_value_usd < k.deposit_usd
+      ? "Absolute value is lower than at launch because EQTY (and ETH) prices fell; simply holding the deposited tokens would also be worth less (about $" + fmt(k.hodl_value_usd) + " now)."
+      : "Absolute value follows the EQTY and ETH prices; simply holding the deposited tokens would be worth about $" + fmt(k.hodl_value_usd) + " now.";
+    $("lp-cav-fees").textContent = {
+      above: "Estimated fees are larger than the impermanent loss, so position + fees sits above the HODL line.",
+      even: "Estimated fees and impermanent loss are about equal, so position + fees sits close to the HODL line.",
+      below: "Estimated fees are smaller than the impermanent loss, so position + fees sits below the HODL line.",
+    }[lpOut] + " Fees are a model estimate (Uniswap main-pool swaps only, not Gate.io), not fees collected on-chain.";
     const lpPresets = [["30d", 30], ["90d", 90], ["6m", 180], ["All", 0]];
     rangeCtl($("lp-value-ctl"), S.length, lpPresets, (a, z) => {
       const sl = S.slice(a, z + 1);

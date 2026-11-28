@@ -104,6 +104,11 @@ def main() -> int:
         warnings = (_gate.WARNINGS + warnings)[:20]
     except Exception:
         pass
+    try:
+        import whales as _whales
+        warnings = (_whales.WARNINGS + warnings)[:20]
+    except Exception:
+        pass
     (OUT / "meta.json").write_text(
         json.dumps({"updated_at": now, "failed": failures, "warnings": warnings}, indent=1)
     )

@@ -186,7 +186,8 @@ def aggregate(trades: list[dict], candles: list[dict], today: date) -> dict:
         t["usdt"] = float(t["usdt"])
         t["amount"] = float(t["amount"])
     since = min((t["time"][:10] for t in trades), default=None)
-    d30 = str(today - timedelta(days=30))
+    # 30-day windows = the 30 most recent UTC calendar days, today (partial) included
+    d30 = str(today - timedelta(days=29))
     d90 = str(today - timedelta(days=89))
     last30 = [t for t in trades if t["time"][:10] >= d30]
 

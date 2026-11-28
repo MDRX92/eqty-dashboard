@@ -1,6 +1,6 @@
 """Whale tracker: large wallet-to-wallet EQTY transfers (no swaps, no LP, no mints).
 
-Rules (same as the old Dune dashboard):
+Rules (same as the old Dune dashboard; mints and burns excluded):
   * large transfer  = >= 0.25% of total supply  OR  >= $10k at that day's price
   * pivot by sender = >= 0.50% of total supply  OR  >= $10k
 Candidates (>= 100k EQTY) come from queries/08_large_transfers.sql; the USD rule uses the
@@ -15,6 +15,9 @@ from cdp_client import run_query
 
 ROOT = Path(__file__).resolve().parent.parent
 LARGE_PCT, PIVOT_PCT, USD_MIN = 0.25, 0.50, 10_000
+CANDIDATE_LIMIT = 5000        # must match LIMIT in queries/08_large_transfers.sql
+PREFILTER_EQTY = 100_000      # must match the >= 100000 prefilter in the same query
+WARNINGS: list[str] = []
 
 
 def load_labels() -> dict[str, str]:
@@ -72,7 +75,8 @@ def build(candidates: list[dict], vwap: dict[str, float], total_supply: float) -
                      "recipients": len(p["recipients"]), "last": p["last"]} for s, p in piv.items()),
                    key=lambda x: (-x["count"], -x["total_eqty"]))[:50]
 
-    since = str(datetime.now(timezone.utc) - timedelta(days=30))[:10]
+    # 30-day windows = the 30 most recent UTC calendar days, today (partial) included
+    since = str(datetime.now(timezone.utc).date() - timedelta(days=29))
     last30 = [r for r in large if str(r["time"])[:10] >= since]
     kpis = {
         "large_30d": len(last30),
@@ -88,6 +92,16 @@ def build(candidates: list[dict], vwap: dict[str, float], total_supply: float) -
 def update(vwap: dict[str, float], total_supply: float) -> dict:
     sql = (ROOT / "queries" / "08_large_transfers.sql").read_text()
     candidates = run_query(sql)
+    # Coverage checks: the query keeps only the newest CANDIDATE_LIMIT transfers of >= PREFILTER_EQTY.
+    if len(candidates) >= CANDIDATE_LIMIT:
+        WARNINGS.append(f"whales: query returned {len(candidates)} candidates (limit {CANDIDATE_LIMIT}) – "
+                        "older large transfers may be missing; raise the LIMIT")
+    max_price = max(vwap.values(), default=0)
+    if max_price and PREFILTER_EQTY * max_price >= USD_MIN:
+        WARNINGS.append(f"whales: max EQTY price ${max_price:.4f} means transfers under {PREFILTER_EQTY:,} EQTY "
+                        f"can exceed ${USD_MIN:,}; lower the prefilter in query 08")
     result = build(candidates, vwap, total_supply)
+    result["coverage"] = {"candidates": len(candidates), "limit": CANDIDATE_LIMIT,
+                          "truncated": len(candidates) >= CANDIDATE_LIMIT}
     print(f"[whales] {len(candidates)} candidates -> {result['kpis']['large_all']} large transfers")
     return result

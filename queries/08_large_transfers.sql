@@ -19,7 +19,8 @@ SELECT
 FROM base.events
 WHERE address = '0xc71f37d9bf4c5d1e7fe4bccb97e6f30b11b37d29'
   AND event_name = 'Transfer'
-  AND parameters['from'] != '0x0000000000000000000000000000000000000000'
+  AND parameters['from'] != '0x0000000000000000000000000000000000000000'   -- geen mints
+  AND parameters['to']   != '0x0000000000000000000000000000000000000000'   -- geen burns
   AND toFloat64(variantElement(parameters['value'], 'UInt256')) / 1e18 >= 100000
   AND NOT (transaction_hash IN (SELECT transaction_hash FROM pm_tx))
 ORDER BY time DESC

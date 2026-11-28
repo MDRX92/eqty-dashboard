@@ -1,0 +1,7 @@
+# Keeps the SHA-pinned GitHub Actions up to date (opens a PR when a new release exists).
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

@@ -260,7 +260,8 @@ def bucket(usd: float) -> str:
 
 def aggregate(trades, vwap, live, total_supply):
     today = datetime.now(timezone.utc).date()
-    d30 = str(today - timedelta(days=30))
+    # 30-day windows = the 30 most recent UTC calendar days, today (partial) included
+    d30 = str(today - timedelta(days=29))
     d90 = str(today - timedelta(days=89))
 
     # monthly buy/sell
