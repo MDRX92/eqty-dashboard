@@ -154,11 +154,12 @@
     </ul>
     <p><b>Wallet labels.</b> Some wallets carry a label so you can see who is who. Labels without a mark are verified (detected from the contract itself, or a well-known address). Labels marked <b>≈</b> are an estimate based on on-chain behaviour – useful context, but not yet confirmed. Community input is very welcome: suggest or correct a label via GitHub.</p>
     <p><b>Method notes.</b> A holder is a wallet (address) with more than 0.0001 EQTY &ndash; not a person. One exchange wallet can hold tokens for many customers, and one person can use several wallets, so holder counts, "new" and "exited" holders and activity groups describe wallets, not people. The Uniswap v4 PoolManager and other contracts are counted as holders but labelled; the top-50 share is also shown without exchanges, the DAO and contracts. "30 days" always means the 30 most recent calendar days in UTC, including today so far (90 days likewise). Suggestions and address labels are welcome via GitHub.</p>
+    <p><b>Supply &amp; valuation.</b> Total supply is the on-chain <code>totalSupply</code> of the <a href="https://basescan.org/token/0xc71f37d9bf4c5d1e7fe4bccb97e6f30b11b37d29">EQTY contract</a> (minted minus burned). The contract has a 500M cap, but only the bridge wallet could mint, and only until its <code>mintDeadline</code> of 1 Nov 2025. Minting stopped at 291.04M, so that is also the maximum supply: it can never grow and only shrinks through burns (<a href="https://github.com/eqty-dao/eqty-contracts/blob/main/src/EQTY.sol">contract source</a>, <a href="https://hacken.io/audits/eqty/sca-eqty-token-sep2025/">Hacken audit</a>). <b>Fully diluted value</b> = price &times; total supply. <b>Circulating supply</b> = total supply minus the DAO treasury Safe; the DAO's pool liquidity is counted as circulating because it can be traded. <b>Market cap</b> = price &times; circulating supply.</p>
     <p><b>Gate.io.</b> Most EQTY trading happens on Gate.io (EQTY/USDT). Those trades come from Gate's public API and are anonymous: no wallets or labels, and the exchange's market-making bots are included. Buy or sell is the side of the person who took the order, the same as for Uniswap swaps. Gate only shares individual trades for about 30 days, so the buy/sell split starts from the day we began storing them; total daily volume goes back to the listing (Nov 2025). Other exchanges (e.g. CoinSpot) are not included.</p>
   </details>
 
   <div class="kpis">
-    <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div></div>
+    <div class="card kpi"><div class="label">Total supply</div><div class="value" id="k-supply">–</div><div class="delta" id="k-supply-d"></div></div>
     <div class="card kpi"><div class="label">Holders</div><div class="value" id="k-holders">–</div><div class="delta" id="k-holders-d"></div></div>
     <div class="card kpi"><div class="label">Top 50 share of supply</div><div class="value" id="k-top50">–</div><div class="delta" id="k-top50-d"></div></div>
     <div class="card kpi"><div class="label">Transfers (last 30 days)</div><div class="value" id="k-tx30">–</div><div class="delta" id="k-vol30"></div></div>
@@ -672,6 +673,11 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
   // KPIs
   const s = supply.rows[0] || {};
   $("k-supply").textContent = fmt(s.total_supply);
+  // Minting ended at the contract's mintDeadline (1 Nov 2025), so total supply is also the maximum supply.
+  const TREASURY = "0x2bc456799f3cf071b10ce7216269471e0a40381a";
+  const treasuryBal = Number((((holders && holders.rows) || []).find(r => String(r.address).toLowerCase() === TREASURY) || {}).balance) || 0;
+  const circulating = treasuryBal && s.total_supply ? s.total_supply - treasuryBal : null;
+  $("k-supply-d").textContent = "fixed: minting ended 1 Nov 2025" + (circulating ? ` · circulating ${compact(circulating)}` : "");
 
   const h = holders ? holders.rows : [];
   if (h.length) {
@@ -694,7 +700,8 @@ function rangeCtl(host, n, presets, draw, minGap = 2) {
     $("m-price-d").innerHTML = (ch != null ? `<span class="${ch >= 0 ? "pos" : "neg"}">${ch > 0 ? "+" : ""}${fmt(ch, 1)}%</span> 24h · ` : "") +
       (k.price_eur ? `€${Number(k.price_eur).toPrecision(3)}` : "");
     $("m-fdv").textContent = k.fdv_usd ? "$" + compact(k.fdv_usd) : "–";
-    $("m-liq").textContent = k.liquidity_usd ? `pool liquidity $${compact(k.liquidity_usd)}` : "";
+    $("m-liq").textContent = [circulating && k.price_usd ? `market cap $${compact(circulating * k.price_usd)}` : "",
+                              k.liquidity_usd ? `pool liquidity $${compact(k.liquidity_usd)}` : ""].filter(Boolean).join(" · ");
     $("m-vol").textContent = "$" + fmt(k.volume_30d_usd);
     $("m-vol-d").innerHTML = `<span class="pos">buy $${compact(k.buy_30d_usd)}</span> · <span class="neg">sell $${compact(k.sell_30d_usd)}</span>`;
     $("m-trades").textContent = fmt(k.trades_30d);
