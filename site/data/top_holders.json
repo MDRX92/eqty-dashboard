@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-28T08:08:07+00:00",
+ "updated_at": "2026-11-28T08:54:00+00:00",
  "rows": [
   {
    "address": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
@@ -352,7 +352,7 @@
    "type": ""
   },
   {
-   "address": "0xe538db22da27f5238df46132a3593389151a9f36",
+   "address": "0x84a5a1c35b06ed7345566be676157375b8cfa634",
    "balance": 1126407,
    "cumulative_pct": 71.33,
    "pct_of_supply": 0.39,
@@ -362,7 +362,7 @@
    "type": ""
   },
   {
-   "address": "0x84a5a1c35b06ed7345566be676157375b8cfa634",
+   "address": "0xe538db22da27f5238df46132a3593389151a9f36",
    "balance": 1126407,
    "cumulative_pct": 71.33,
    "pct_of_supply": 0.39,
