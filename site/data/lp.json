@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-28T08:56:26+00:00",
+ "updated_at": "2026-11-28T09:12:09+00:00",
  "kpis": {
   "owner": "EQTY DAO",
   "wallet": "0xa0f71c74054bcd9b1009b63770b7c6bdb227297c",
@@ -15,11 +15,11 @@
   "now_eqty": 6644738.0,
   "position_value_usd": 14727.97,
   "now_source": "live pool reserves",
-  "hodl_value_usd": 16095.68,
-  "impermanent_loss_usd": -1367.71,
+  "hodl_value_usd": 16094.13,
+  "impermanent_loss_usd": -1366.16,
   "fees_est_usd": 5798.53,
   "net_vs_deposit_usd": -36135.86,
-  "net_vs_hodl_usd": 4430.82,
+  "net_vs_hodl_usd": 4432.37,
   "return_pct": -63.8,
   "in_range_now": true
  },
@@ -3753,7 +3753,7 @@
   {
    "date": "2026-11-28",
    "pos_value": 14727.97,
-   "hodl_value": 16095.68,
+   "hodl_value": 16094.13,
    "fees_cum": 5798.53,
    "eth": 4.4374,
    "eqty": 6644738.0,
